@@ -1,0 +1,78 @@
+This file was created with JabRef 2.2.
+Encoding: GBK
+
+@ARTICLE{Charikar2002,
+  author = {Moses Charikar AND  Ronald Fagin AND  Venkatesan Guruswami AND Jon
+	Kleinberg AND Prabhakar Raghavan AND  Amit Sahai},
+  title = {Query strategies for priced information},
+  journal = {Journal of Computer and System Sciences},
+  year = {2002},
+  volume = {64},
+  pages = {785 - 819},
+  number = {4},
+  abstract = {We consider a class of problems in which an algorithm seeks to compute
+	a function f over a set of n inputs, where each input has an associated
+	price. The algorithm queries inputs sequentially, trying to learn
+	the value of the function for the minimum cost. We apply the competitive
+	analysis of algorithms to this framework, designing algorithms that
+	incur large cost only when the cost of the cheapest "proof" for the
+	value of f is also large. We provide algorithms that achieve the
+	optimal competitive ratio for functions that include arbitrary Boolean
+	AND/OR trees, and for the problem of searching in a sorted array.
+	We also investigate a model for pricing in this framework and construct,
+	for every AND/OR tree, a set of prices that satisfies a very strong
+	type of equilibrium property.},
+  doi = {10.1006/jcss.2002.1828},
+  owner = {Administrator},
+  timestamp = {2007.06.29}
+}
+
+@INPROCEEDINGS{Cicalese2005,
+  author = {Ferdinando Cicalese AND  Eduardo Sany Laber},
+  title = {A new strategy for querying priced information},
+  booktitle = {Proceedings of the thirty-seventh annual ACM symposium on Theory
+	of computing},
+  year = {2005},
+  pages = {674 - 683},
+  address = {1515 Broadway, 17th Floor New York, NY USA 
+	
+	
+	1515 Broadway, 17th Floor New York, NY USA},
+  month = {May},
+  publisher = {ACM Press},
+  abstract = {This paper focuses on competitive function evaluation in the context
+	of computing with priced information. A function f is given together
+	with a cost cx for each variable x of f. The cost cx has to be paid
+	to read the value of x. The problem is to design algorithms that
+	query the values of the variables sequentially in order to compute
+	the function while trying to minimize the total cost incurred. Competitive
+	analysis is employed to evaluate the performance of the algorithms.
+	We describe a novel approach for devising efficient algorithms in
+	this setting. We apply our approach to several classes of functions
+	which have been studied in the literature of computing with priced
+	information. In all cases considered, our approach provides algorithms
+	that achieve better bounds than the best known algorithm for the
+	same class of functions.More precisely, for the class of monotone
+	boolean functions, we give a polynomial time algorithm with extremal
+	competitiveness (k+l - ¡Ì min(k,l)) where k (l) denotes the minimum
+	number of variables that one must read, in the worst case, in order
+	to prove that the function under consideration evaluates to 1 (0).
+	This dramatically improves upon the best known result which is an
+	exponential time 2 max(k, l)-competitive algorithm. For the subclass
+	of monotone boolean functions known as Threshold Trees we further
+	improve our bounds and give a polynomial time algorithm with extremal
+	competitive ratio 1.618 max(k, l).We then apply our methodology to
+	classes of non-boolean functions. We consider the case of the so
+	called Game Trees. We improve upon previously published results for
+	this class of functions providing a polynomial time algorithm with
+	extremal competitive ratio 1.5 ¦Ã(f), where ¦Ã(f) is a lower bound
+	on the extremal competitive ratio of any deterministic algorithm.Finally,
+	we consider the case when f is the function min (minimum). In this
+	case, we are able to determine the optimal competitiveness for the
+	problem. In fact we provide an algorithm with an (n-2)-competitive
+	ratio, which matches the known lower bound.},
+  doi = {10.1145/1060590.1060691},
+  owner = {Administrator},
+  timestamp = {2007.06.29}
+}
+
