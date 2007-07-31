@@ -33,3 +33,8 @@
 ;;;reftex
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
 (add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
+(setq reftex-section-levels 
+      '(("part" . 0) ("chapter" . 1) ("section" . 2) ("subsection" . 3)
+       ("subsubsection" . 4)  ("paragraph" . 5)
+        ("subparagraph" . 6)  ("frametitle" . 4)  ("addchap" . -1) ("addsec" . -2)))
+;;…Ë÷√’¬Ω⁄≤„¥Œ
