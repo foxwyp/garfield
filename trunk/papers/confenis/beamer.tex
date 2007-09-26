@@ -15,15 +15,115 @@
     \end{frame}
 
 \section{Introduction}
+
 \begin{frame}
+  \frametitle{Why knowledge inventories are important}
 Knowledge inventory:
 \begin{quote}
  A small number of specialized competencies maintianed by the
  individuals and groups that make up the organization.
 \end{quote}
-\begin{definition}
+Facing challengies:
+\begin{itemize}
+   \item Changing envioronment
+     \item Proper responses
+       \item Managers' myopia
+         \begin{itemize}
+         \item Temporal myopia
+           \item Spatial myopiax
+         \end{itemize}
+\end{itemize}
+\begin{block}{Knowledge inventory management}
  Knowledge inventory management involves acquiring, retaining, deploying, idling, and abandoning knowledge over time.
-\end{definition}
+\end{block}
+\end{frame}
+
+
+\section{Literatures Review}
+\begin{frame}
+\frametitle{Former methodologies and shortcoming}
+\begin{itemize}
+\item DCF method
+
+Unable to deal with investment decision under uncertainty.
+\item Real option method
+  Good to deal with investment decision under uncertainty, but the
+  restrictive modeling assumptions fail this method to deal with
+  knowledge inventories problems.
+  \begin{itemize}
+  \item  Accident will happen definitely in the future but not at a
+      definite day, so there is no maturity day needed in real option
+      model.
+      \item When an accident happens, there is no right to choose but
+        an obligation.
+        \item Investment in advance may not bring any profit to organizations. Nevertheless, if it could reduce the contingent loss brought by the accident.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{ACTUARIAL MODEL}
+
+\begin{frame}
+  \frametitle{Model Assumptions}
+  \begin{itemize}
+  \item Accident will incur in the future but not a definite day as we
+    point out above.
+    \item Investing in some specific technology initially will cover
+      the whole loss if the accident incurs. That means there is no
+      extra expense needed when it happens.
+      \item Every technology has its lifecycle. Investment in a
+        technology will bring no returns after the technology has
+        ended its lifecycle.
+        \item The loss distributions at any time during n years are identical.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Math}
+We define $T(0)$ as the length from current time to some time in the
+future when accident happens, thus $T(0)$ is a random variable.
+\begin{exampleblock}{Equation}
+  \begin{equation}
+    S_0=P[T(0)\ge t], t \ge 0
+  \end{equation}
+\end{exampleblock}
+Characteristics of S:
+\begin{itemize}
+\item $S(0)=0$ Accident will incur only in the future, so there is no
+  uncertainty at current time.
+  \item $S_0(t)$ is a decreasing function.
+    \item  $S_0(t)$ is usually a continuous function and derivable.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Payment Incurrence Until The End Of Year}
+We note $ \ _{t|1}q_0=P[t<T(0) \le t+1], t \ge 0 $
+  \begin{exampleblock}{Equation}
+    \begin{equation}
+      A=\sum_{t=0}^{n-1}v^{t+1} \ _{t|1}q_0E(X)=\sum_{t=0}^{n-1}v^{t+1}[S_0(k)-S_0(k+1)]E(X)
+    \end{equation}
+Where:
+
+$X$ = the loss of accident. X is a random variable
+
+$E(X)$ = expectation of X
+
+$v^t$ = discounted rate from period t to period 0
+
+n = lifecycle of the technology (n=1, 2, 3 \ldots)
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Payment Incurrence At Accident Time}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Deferring Investment}
+  
 \end{frame}
 
 \end{document}
