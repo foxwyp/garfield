@@ -8,7 +8,7 @@
 \begin{document}
 
 \title{Knowledge Inventory Management Using Actuarial Method}
-    \author{Yunpeng Wu}
+    \author{Yunpeng Wu, Lu Liu, Yin Guo}
     \institute[buaa]{Beihang University}
     \begin{frame}
       \titlepage
@@ -39,7 +39,7 @@ Facing challengies:
 \end{frame}
 
 
-\section{Literatures Review}
+\section{Review}
 \begin{frame}
 \frametitle{Former methodologies and shortcoming}
 \begin{itemize}
@@ -56,7 +56,8 @@ Unable to deal with investment decision under uncertainty.
       model.
       \item When an accident happens, there is no right to choose but
         an obligation.
-        \item Investment in advance may not bring any profit to organizations. Nevertheless, if it could reduce the contingent loss brought by the accident.
+        \item Investment in advance may not bring any profit to
+          organizations, but can reduce the contingent loss brought by the accident.
   \end{itemize}
 \end{itemize}
 \end{frame}
@@ -68,10 +69,10 @@ Unable to deal with investment decision under uncertainty.
   \begin{itemize}
   \item Accident will incur in the future but not a definite day as we
     point out above.
-    \item Investing in some specific technology initially will cover
+    \item Investing in some specific technology knowledge initially will cover
       the whole loss if the accident incurs. That means there is no
       extra expense needed when it happens.
-      \item Every technology has its lifecycle. Investment in a
+      \item Every technology knowledge has its lifecycle. Investment in a
         technology will bring no returns after the technology has
         ended its lifecycle.
         \item The loss distributions at any time during n years are identical.
@@ -99,10 +100,11 @@ Characteristics of S:
 
 \begin{frame}
   \frametitle{Payment Incurrence Until The End Of Year}
+
 We note $ \ _{t|1}q_0=P[t<T(0) \le t+1], t \ge 0 $
   \begin{exampleblock}{Equation}
     \begin{equation}
-      A=\sum_{t=0}^{n-1}v^{t+1} \ _{t|1}q_0E(X)=\sum_{t=0}^{n-1}v^{t+1}[S_0(k)-S_0(k+1)]E(X)
+      A=\sum_{t=0}^{n-1}v^{t+1} \ _{t|1}q_0E(X)=\sum_{t=0}^{n-1}v^{t+1}[S_0(t)-S_0(t+1)]E(X)
     \end{equation}
 Where:
 
@@ -118,12 +120,48 @@ n = lifecycle of the technology (n=1, 2, 3 \ldots)
 
 \begin{frame}
   \frametitle{Payment Incurrence At Accident Time}
-  
+  For some reasons, when the accident happens, the payment has to be made immediately instead of waiting until the end of the period to maintain operation.
+
+  \begin{exampleblock}{Equation}
+    \begin{equation}
+      \label{eq:1}
+      \mu _0=lim_{dx \rightarrow 0} \frac{P[x< T(0) \le x+dx|T(0)>x]}{dx}
+    \end{equation}
+    \begin{equation}
+      \label{eq:2}
+      A=\int_0^nS_0(t)\mu_tE(X)v^tdt
+    \end{equation}
+    
+  \end{exampleblock}
 \end{frame}
 
 \begin{frame}
   \frametitle{Deferring Investment}
-  
+ If the organization determines to defer the investment to the end of T year, then the actuarial value from 0 to T is lost but capital time value can be achieved.
+ \begin{exampleblock}{Actuarial value}
+     \begin{equation}
+    \label{eq:3}
+    A=\sum_{k=0}^Tv^{k+1}[s_0(k)-s_0(k+1)]E(X)
+  \end{equation}
+\end{exampleblock}
+
+\begin{exampleblock}{Time value}
+    \begin{equation}
+      \label{eq:4}
+      A^1=\sum_{t=1}^Tar/(1+r)^t
+    \end{equation}
+  \end{exampleblock}
+\end{frame}
+
+\section{Discussion}
+
+\begin{frame}
+  \frametitle{Future works}
+  \begin{itemize}
+  \item The insurance term which mapped to knowledge  lifecycle is hard to determine.
+    \item we assume interest rate is constant during time period we consider, which is not always true in actual world.
+      \item the contingent loss is not easily to estimate and the distribution is unclear because of lack of samples.
+  \end{itemize}
 \end{frame}
 
 \end{document}
