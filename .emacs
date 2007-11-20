@@ -20,16 +20,56 @@
 (set-language-environment "Chinese-GB18030") 
 (setq file-name-coding-system 'gb18030) 
 
+;;;set load path
+;;;(setq load-path (append load-path '("~\.emacs.d")))
 
+;;;为什么不能显示个时间什么的
+(display-time)
+
+;;;为什么不显示当前所在的行号和列号
+(column-number-mode t)
+(require 'setnu)
+(setnu-mode t)
+(global-set-key [f3] (quote setnu-mode))
+
+;;;flyspell
+(add-hook 'LaTex-load-hook 'flyspell-mode)
+(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+(setq-default ispell-program-name "aspell")
+(setq-default ispell-local-dictionary "american")
 
 
 ;;;auctex
 (load "auctex.el" nil t t)
+(setq auto-save-mode t)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill) 
 
+
+;;;version control
+(setq version-control t)
+(setq kept-new-versions 3)
+(setq delete-old-versions t)
+(setq kept-old-versions 2)
+(setq dired-kept-versions 1)
+
+;; 我承认我常常删除重要的东西，200也不一定够的
+(setq kill-ring-max 200)
+
+;; 想在输入tex命令时得到帮助吗
+(setq  TeX-electric-escape t)
+
+;; 很容易输入数学符号，但没有cdlatex强
+(setq LaTeX-math-mode t) 
+
+;; 在编辑tex时自动调用preview-latex
+(autoload 'LaTeX-preview-setup "preview")
+(add-hook 'LaTeX-mode-hook #'LaTeX-preview-setup)
+
+;;;反向搜索
+(setq TeX-source-specials-mode t)
 
 ;;;reftex
 (setq reftex-plug-into-AUCTeX t)
@@ -40,6 +80,7 @@
        ("subsubsection" . 4)  ("paragraph" . 5)
         ("subparagraph" . 6)  ("frametitle" . 4)  ("addchap" . -1) ("addsec" . -2)))
 ;;设置章节层次
+
 
 ;; 让emacs能计算日出日落的时间，在 calendar 上用 S 即可看到
 (setq calendar-latitude +39.54)
