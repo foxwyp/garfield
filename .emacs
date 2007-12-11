@@ -118,3 +118,19 @@
                          (holiday-fixed 9 10 "教师节")
                          (holiday-fixed 10 1 "国庆节")
                          (holiday-fixed 12 25 "圣诞节")))
+						 
+						 
+;;python mode
+(defun my-python-mode()
+;;     (define-key python-mode-map [return] 'newline-and-indent)
+;; 这种定义的方式与上一句那种不同的是当在注释的模式下按回车新的一行是对齐的注释
+     (define-key python-mode-map [return] 'comment-indent-new-line)
+     (define-key python-mode-map "\C-cc" 'comment-or-uncomment-region)
+     (interactive)
+     (imenu-add-menubar-index) ;; 在菜单条里加入函数列表菜单
+     (hs-minor-mode) ;; 打开可以折叠的模式
+     (custom-set-variables
+      '(python-honour-comment-indentation t)
+      '(show-paren-mode t)) ;; 括号成对指示
+)
+(add-hook 'python-mode-hook 'my-python-mode)
