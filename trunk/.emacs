@@ -120,6 +120,7 @@
                          (holiday-fixed 12 25 "圣诞节")))
 						 
 						 
+		
 ;;python mode
 (defun my-python-mode()
 ;;     (define-key python-mode-map [return] 'newline-and-indent)
@@ -134,3 +135,17 @@
       '(show-paren-mode t)) ;; 括号成对指示
 )
 (add-hook 'python-mode-hook 'my-python-mode)
+
+
+// user shell to exxcute the file
+(defun w32-browser (doc)
+  "Browse to a particular file/URL using default web browser"
+  (w32-shell-execute 1 doc))
+
+(eval-after-load "dired"
+  '(define-key dired-mode-map [f3] (lambda () 
+				     (interactive)
+				     (w32-browser
+				      (dired-replace-in-string 
+				       "/" "\\" 
+				       (dired-get-filename))))))
