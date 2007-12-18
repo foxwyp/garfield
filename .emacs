@@ -137,7 +137,7 @@
 (add-hook 'python-mode-hook 'my-python-mode)
 
 
-// user shell to exxcute the file
+;; user shell to exxcute the file
 (defun w32-browser (doc)
   "Browse to a particular file/URL using default web browser"
   (w32-shell-execute 1 doc))
