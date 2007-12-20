@@ -149,3 +149,31 @@
 				      (dired-replace-in-string 
 				       "/" "\\" 
 				       (dired-get-filename))))))
+
+ ; 可以递归的删除目录
+(setq dired-recursive-deletes t)
+; 可以递归的进行拷贝
+(setq dired-recursive-copies t)  
+
+;   1. s s 按照文件大小排序。
+;   2. s x 按照文件扩展名排序。
+;   3. s t 按照文件访问时间排序。
+;   4. s b 按照文件名称的字母顺序排序。
+
+(add-hook 'dired-mode-hook (lambda ()
+  (interactive)
+  (make-local-variable  'dired-sort-map)
+  (setq dired-sort-map (make-sparse-keymap))
+  (define-key dired-mode-map "s" dired-sort-map)
+  (define-key dired-sort-map "s"
+              '(lambda () "sort by Size"
+                (interactive) (dired-sort-other (concat dired-listing-switches "S"))))
+  (define-key dired-sort-map "x"
+              '(lambda () "sort by eXtension"
+                 (interactive) (dired-sort-other (concat dired-listing-switches "X"))))
+  (define-key dired-sort-map "t"
+              '(lambda () "sort by Time"
+                 (interactive) (dired-sort-other (concat dired-listing-switches "t"))))
+  (define-key dired-sort-map "n"
+              '(lambda () "sort by Name"
+                 (interactive) (dired-sort-other (concat dired-listing-switches ""))))))
