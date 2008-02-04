@@ -121,23 +121,9 @@
 						 
 						 
 		
-;;python mode
-(defun my-python-mode()
-;;     (define-key python-mode-map [return] 'newline-and-indent)
-;; 这种定义的方式与上一句那种不同的是当在注释的模式下按回车新的一行是对齐的注释
-     (define-key python-mode-map [return] 'comment-indent-new-line)
-     (define-key python-mode-map "\C-cc" 'comment-or-uncomment-region)
-     (interactive)
-     (imenu-add-menubar-index) ;; 在菜单条里加入函数列表菜单
-     (hs-minor-mode) ;; 打开可以折叠的模式
-     (custom-set-variables
-      '(python-honour-comment-indentation t)
-      '(show-paren-mode t)) ;; 括号成对指示
-)
-(add-hook 'python-mode-hook 'my-python-mode)
 
 
-;; user shell to exxcute the file
+;; user shell to execute the file
 (defun w32-browser (doc)
   "Browse to a particular file/URL using default web browser"
   (w32-shell-execute 1 doc))
@@ -177,3 +163,83 @@
   (define-key dired-sort-map "n"
               '(lambda () "sort by Name"
                  (interactive) (dired-sort-other (concat dired-listing-switches ""))))))
+
+
+
+;; Load CEDET
+(load-file "~/.emacs.d/cedet-1.0pre4/common/cedet.el")
+
+;; Enabling various SEMANTIC minor modes.  See semantic/INSTALL for more ideas.
+;; Select one of the following:
+
+;; * This enables the database and idle reparse engines
+;;(semantic-load-enable-minimum-features)
+
+;; * This enables some tools useful for coding, such as summary mode
+;;   imenu support, and the semantic navigator
+(semantic-load-enable-code-helpers)
+
+;; * This enables even more coding tools such as the nascent intellisense mode
+;;   decoration mode, and stickyfunc mode (plus regular code helpers)
+;; (semantic-load-enable-guady-code-helpers)
+
+;; * This turns on which-func support (Plus all other code helpers)
+;; (semantic-load-enable-excessive-code-helpers)
+
+;; This turns on modes that aid in grammar writing and semantic tool
+;; development.  It does not enable any other features such as code
+;; helpers above.
+;; (semantic-load-enable-semantic-debugging-helpers)
+(global-set-key [(f5)] 'speedbar)
+
+;;; jdee
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site/jde/lisp"))
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/site/elib"))
+  (require 'jde)
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(jde-jdk-registry (quote (("1.6.0" . "D:\\Program Files\\Java\\jdk1.6.0_03")))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+
+ 
+ ;;cc-mode
+ (autoload 'awk-mode "cc-mode" nil t)
+ 
+ ;;cscope
+ (add-to-list 'load-path (expand-file-name "~/.emacs.d/site/xcscope"))
+(require 'xcscope) 
+
+;;;groovy-mode
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site/groovy"))
+;;; turn on syntax hilighting
+(global-font-lock-mode 1)
+
+;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
+(autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
+(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
+
+;;for sage
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site/sage"))
+
+(load "pyrex-mode")
+(load "python-mode")
+(setq ipython-command "~/bin/sage")  ;; depends on where your sage is.
+(load "sage") 
+(require 'ipython)
+
+(fset 'py-shell-fullscreen
+   [?\M-x ?p ?y ?- ?s ?h ?e ?l ?l return ?\C-x ?1])
+(define-key esc-map "i" 'py-shell-fullscreen)
+
+(setq auto-mode-alist (cons '("\\.pyx\\'" . pyrex-mode) auto-mode-alist)) 
+(setq auto-mode-alist (cons '("\\.pxd\\'" . pyrex-mode) auto-mode-alist)) 
+(setq auto-mode-alist (cons '("\\.pxi\\'" . python-mode) auto-mode-alist)) 
