@@ -164,6 +164,14 @@
               '(lambda () "sort by Name"
                  (interactive) (dired-sort-other (concat dired-listing-switches ""))))))
 
+;;为什么不能像Windows下编辑器那样, 高亮显示要拷贝的区域
+
+(transient-mark-mode t)
+
+;;我要显示匹配的括号
+
+(show-paren-mode t)
+
 
 
 ;; Load CEDET
