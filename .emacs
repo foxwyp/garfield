@@ -172,6 +172,12 @@
 
 (show-paren-mode t)
 
+(require 'ido)
+(ido-mode t)
+
+(load-file "~/.emacs.d/site/tabbar.el")
+(require 'tabbar)
+(tabbar-mode)
 
 
 ;; Load CEDET
@@ -209,6 +215,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(ecb-source-path (quote ("e:/spps" "e:/papers.trunk")))
  '(jde-jdk-registry (quote (("1.6.0" . "D:\\Program Files\\Java\\jdk1.6.0_03")))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
@@ -251,3 +258,14 @@
 (setq auto-mode-alist (cons '("\\.pyx\\'" . pyrex-mode) auto-mode-alist)) 
 (setq auto-mode-alist (cons '("\\.pxd\\'" . pyrex-mode) auto-mode-alist)) 
 (setq auto-mode-alist (cons '("\\.pxi\\'" . python-mode) auto-mode-alist)) 
+
+;;yasnippet
+(add-to-list 'load-path
+             "~/.emacs.d/site/yasnippet-0.2.1")
+(require 'yasnippet-bundle)
+
+
+;;ECB
+(add-to-list 'load-path
+             "~/.emacs.d/site/ecb-2.32")
+(require 'ecb-autoloads)
