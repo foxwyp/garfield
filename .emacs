@@ -215,8 +215,9 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(ecb-source-path (quote ("e:/spps" "e:/papers.trunk")))
- '(jde-jdk-registry (quote (("1.6.0" . "D:\\Program Files\\Java\\jdk1.6.0_03")))))
+ '(ecb-source-path (quote ("e:/spps" "e:/paper.trunk" "e:/paper.trunk")))
+ '(jde-jdk-registry (quote (("1.6.0" . "D:\\Program Files\\Java\\jdk1.6.0_03"))))
+ '(truncate-partial-width-windows nil))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -264,8 +265,13 @@
              "~/.emacs.d/site/yasnippet-0.2.1")
 (require 'yasnippet-bundle)
 
-
 ;;ECB
 (add-to-list 'load-path
              "~/.emacs.d/site/ecb-2.32")
 (require 'ecb-autoloads)
+
+;;javascript
+(load-file "~/.emacs.d/site/javascript.el")
+(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
+(autoload 'javascript-mode "javascript" nil t)
+
