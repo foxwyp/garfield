@@ -1,0 +1,60 @@
+\documentclass{elsarticle}
+\usepackage{amssymb}
+\journal{Expert System with Applicaitons}
+\begin{document}
+
+\begin{frontmatter}
+
+
+\title{Knowledge Acquisition Method from Domain Text Based on Theme Logic Model and Artificial Neural Network \tnoteref{t1,t2}}
+\tnotetext[t1]{This document is a collaborative effort.}
+\tnotetext[t2]{The second title footnote.}
+
+% use optional labels to link authors explicitly to addresses:
+% \author[label1,label2]{}
+% \address[label1]{}
+% \address[label2]{}
+
+\author[buaa]{Jun Wang\corref{cor1}}
+\ead{king.wang@buaa.edu.cn}
+\author[buaa]{Yunpeng Wu\corref{cor2}}
+\ead{yunpeng.wu@sem.buaa.edu.cn}
+\author[buaa]{Xuening Liu\corref{cor2}}
+\ead{xx@gmail.com}
+
+
+\cortext[cor1]{Corresponding author}
+\cortext[cor2]{Principal corresponding author}
+\fntext[fn1]{This is the specimen author footnote.}
+\fntext[fn2]{Another author footnote, but a little more longer.}
+
+
+
+\address[buaa]{School of Economics \& Management, Beihang University, Beijing 100083,
+P.R. China }
+
+
+\begin{abstract}
+% Text of abstract
+In order to acquire knowledge from domain text such as failure analysis text of aviation product, a framework is proposed to enhance the efficiency and accuracy of knowledge acquisition. In this framework, sentence templates are defined to extract the meta-knowledge and RDF is used to manage the extracted knowledge.  After the preprocessing steps, we propose a new model theme logic model (TLM) to present all the themes in a text and the logic relations between different themes. In this model, the text of each theme can be represented as an attribute-value vector based on domain ontology, and the logic relation is the domain knowledge to be acquired. Then the theme logic model will be transformed to the training set of the artificial neural network to acquire the failure analysis knowledge. After training the knowledge acquired will be extracted by SD method from the artificial neural network and represented by rules. At last, a prototype is developed to acquire knowledge from failure analysis reports of aviation product. Empirical results show that the framework can acquire knowledge from domain text efficiently.
+\end{abstract}
+
+\begin{keyword}
+% keywords here, in the form: keyword \sep keyword
+
+% PACS codes here, in the form: \PACS code \sep code
+
+% MSC codes here, in the form: \MSC code \sep code
+% or \MSC[2008] code \sep code (2000 is the default)
+Knowledge Acquisition; Domain Text; Theme Logic Model; Artificial Neural Network; Failure Analysis Report
+
+
+\end{keyword}
+
+\end{frontmatter}
+
+\section{Introduction}
+\label{sec:introduction}
+
+Over the past decades, massive volumes of data have been collected in corporations, of which more than eighty percent is stored in text. But unfortunately, the explosive growth of information has often resulted in frustrating situations when corporations are not able to organize the information well and understand the knowledge it contains. Knowledge management is implemented by enterprise and organization to manage their knowledge more effectively. 
+\end{document}
