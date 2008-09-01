@@ -1,5 +1,7 @@
 \documentclass{elsarticle}
 \usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{graphics}
 \journal{Expert System with Applicaitons}
 \begin{document}
 
@@ -56,5 +58,201 @@ Knowledge Acquisition; Domain Text; Theme Logic Model; Artificial Neural Network
 \section{Introduction}
 \label{sec:introduction}
 
-Over the past decades, massive volumes of data have been collected in corporations, of which more than eighty percent is stored in text. But unfortunately, the explosive growth of information has often resulted in frustrating situations when corporations are not able to organize the information well and understand the knowledge it contains. Knowledge management is implemented by enterprise and organization to manage their knowledge more effectively. 
+Over the past decades, massive volumes of data have been collected in
+corporations, of which more than eighty percent is stored in
+text \cite{Mitchell2003}. But unfortunately, the explosive growth of
+information has often resulted in frustrating situations when
+corporations are not able to organize the information well and
+understand the knowledge it contains. Knowledge management is
+implemented by enterprise and organization to manage their knowledge
+more effectively. According to Turban and Aronson, knowledge
+management includes sorting useful knowledge from information, storing
+knowledge in good order, and finding knowledge in an existing
+knowledge base \cite{turban2001dss}. Knowledge acquisition from text
+(KAT) is to extract knowledge contained in texts and is an important
+way of knowledge acquisition. The text collection in a specific domain
+can be called domain text. The label ‘domain text’, in this term,
+means that although written in natural language, the content of the
+text is closely related to a specific domain. These texts have two
+main characteristics: on the one hand, the set of terms used to
+describe their contents, and on the other, a well-defined structure to
+organize these contents comprehensibly and improve readability for the
+user \cite{Campos2004}. The text follows a certain controllable syntax
+which can be easily summarized and formulated. Thus the domain text
+referred in this paper is semi-structured. 
+
+The domain knowledge is valuable but often buried in domain text within a range of sources such as failure analysis reports of aviation product, government files, records of meetings and experimental reports, to name a few. The domain text collection can be mined to learn about a subfield. Through automated approaches, knowledge correlated to a specific domain can be extracted and integrated from these disparate text sources. The knowledge acquired is valuable for a variety of applications including decision support, quality assurance and knowledge retrieval.
+
+There have been many research efforts devoted to automatic knowledge
+acquisition from text \cite{salton1975vsm,361220,215383,Tai2002,130346} . The early
+knowledge acquisition systems operate on the principal of indexing the
+texts in the collection using Boolean model. The model is over
+simplify and cannot rank the relevant texts together with automatic
+indexing, so Salton proposed Vector Space Model (VSM) in 1975 \cite{salton1975vsm,361220}. In this model, text is represented by vectors in a multidimensional space. According to the literature, VSM is the most popular and effective indexing approach \cite{215383}. To improve the performance of VSM, a number of enhanced methods have been proposed. These approaches include methods based on dimensionality reduction and methods using feedback information from the user \cite{Tai2002}. The former centers on reducing the high-dimensional vector space into a low-dimensional one, among them the Latent Semantic Indexing (LSI) using Single Valued Decomposition is probably used most widely \cite{130346}. The latter uses feedback information from a user to increase the effectiveness.
+
+In this research, we focus on developing an effective methodology of knowledge acquisition from domain text such as failure analysis reports of aviation product based on a new text indexing model, theme logic model. Salton described text themes as a main text decomposition strategy \cite{234834}. The text theme is represented by semantically homogeneous text pieces where all components treat a common subject area. The theme logic model employs two sets to represent a text: a set of themes in the text and a set of relations among the themes. The text of each theme can be represented as an attribute-value vector based on domain ontology, so the set of themes is a set of vectors of all the themes in the text. In addition, there are meaningful logic relation existing between different themes, and for a domain the logic relation is the domain knowledge to be acquired. Artificial neural network belong to the family of learning-by-example paradigm in which problem-solving knowledge is automatically generated according to actual examples \cite{Huang2002,Kim2004}. The theme logic model will be transformed to the training set of the artificial neural network to acquire the failure analysis knowledge. Then the knowledge acquired will be extracted by SD method from the artificial neural network and represented by rules \cite{130346,Sestito1991}. Furthermore, a prototype system is implemented and tested for scenario demonstration. Empirical results show that the framework can acquire knowledge from domain text efficiently.
+
+The paper is organized as follows. In Section 2 we review some related work about knowledge acquisition from text and failure analysis. We then propose the framework of knowledge acquisition in detail in Section 3. The structure analysis of domain text is presented in Section 4. In Section 5 we describe how to construct the theme logic model of domain text based on the domain ontology. And then in Section 6, we use BP neural network to acquire the knowledge based on the theme logic model. At last, in Section 7 we show some experimental results and discussion and in Section 8 we give some conclusions. 
+
+\section{Related Work
+}
+\label{sec:related-work}
+
+\subsection{Knowledge Acquisition from Text
+}
+\label{sec:knowl-acqu-from}
+
+Knowledge acquisition from text is one of the most fruitful research
+areas in artificial intelligence. Text-based knowledge acquisition
+methods and tools can help to manage the wealth of information and
+discover facts, relationships and implications in domain texts
+\cite{Hahn2000,Gunn1999}. 
+
+Gunn et al discusses existing knowledge acquisition techniques based
+on manual learning, machine learning and logic programming [21]. The
+manual learning methodology relies on knowledge engineers to acquire
+and formalize knowledge from experts or free texts. However, any
+natural language is extremely difficult for computer systems to
+understand, the machine learning and inductive logic programming
+methodologies both require at least some manual processing of the
+large quantity of source information \cite{matwin:tac,Richardson1997}. Training set and background knowledge must be built to aid and the interaction of knowledge engineers is necessary. And the result of an inductive system can never be guaranteed to be accurate because identification of relevant features and selection of representative examples are important to this approach. None of the aforementioned KA techniques seem adequate for acquiring knowledge from domain text, for the reasons given. 
+Most knowledge acquisition systems operate on the principal of
+indexing the texts in the collection. The most popular indexing
+approach is based on the vector space model [5][6]. According to the
+literature, VSM is the most effective methodology [7]. In this model,
+text is represented by vectors in an n-dimensional space, where n is
+the number of distinct terms. There are three-step strategy where
+terms are first extracted from the document text, then the weights of
+the indexed terms are derived to improve the document retrieval
+accuracy, and then the documents are ranked with respect to a
+similarity measure \cite{Raghavan1986}. To improve the performance of
+VSM, a number of enhanced methods have been proposed. The reduction of
+the dimensionality of the model is one way to solve these
+problems. The LSI model is accomplished by mapping a high-dimensional
+space into a low-dimensional space by using SVD. Wenlei Mao and Wesley
+W. Chu discuss three types of schemes, the stem-based, concept-based
+and phrase-based schemes, and show the retrieval effectiveness of the
+phrased-based VSM is significantly higher than that of the current
+gold-standard—the term-based VSM \cite{Mao2007}. Chih-Ping Wei et
+al. propose an LSI-based multilingual document clustering technique
+that employs LSI analysis to a parallel corpus and constructs a
+multilingual semantic space, which reduces the dimensions and thereby
+improves both clustering effectiveness and efficiency \cite{Wei2008}.
+
+\subsection{Failure Analysis
+}
+\label{sec:failure-analysis-}
+
+Failure, as defined by the International Electro-technical Commission (IEC), is ‘the termination of the ability of an item to perform a required function’. Whenever a failure occurs, the failed component and the failure situation must be examined to determine the cause. This investigation process is called failure analysis \cite{Liao1999}. Robert suggests that there should be a systematic way of performing failure analysis and the investigation and analysis process will follow a logical series of stages \cite{roberts1980stm}. An opinion regarding the failure mechanism will be formed and a final conclusion will be reached by the domain experts. Finally, a failure analysis will be written to note the entire process of failure analysis. The failure analysis report is an important source of engineering knowledge, which contains substantial and essential failure knowledge and conveys some inherent phenomena or regularities about the processes generating failure. Acquiring knowledge from failure analysis report will lead to design, material selection or fabrication modifications and important economies \cite{Castro2004}. 
+Traditionally, the failure analysis process is carried out by vast
+numbers of human experts. However, as the volume of failure analysis
+report is growing at explosive rates, this process become extremely
+ineffective and inefficient. The availability and use of accurate
+knowledge acquisition from this large volume is
+required. Computer-assisted knowledge acquisition is necessary to
+support quality decision-making and help to overcome human cognitive
+constraints.  Numerous studies have been conducted to develop
+computer-assisted systems and various approaches have been taken such
+as fault tree analysis [30], expert systems \cite{Kim2004}, neural
+network \cite{Zakarian1999}, neuro-fuzzy system [33], etc. Mayer described an expert system for electric utility power plant personnel to identify a basic failure mechanism that can produce the type of boiler tube failure under investigation []34. T. Warren Liao developed an integrated database and expert system for indentifying the failure mechanism of mechanical components \cite{liao1999ida}. Relatively fewer attempts have been made to develop computerized failure analysis systems whose knowledge is acquired from domain text such as failure analysis report.
+
+
+\section{A Framework for Knowledge Acquisition from Domain Text
+}
+\label{sec:fram-knowl-acqu}
+
+The aim of this framework is to acquire knowledge from semi-structure
+domain texts. The knowledge acquisition is processed through several
+modules including structure analysis, theme logic model construction
+and artificial neural network, as shown in Figure 1. The structure
+analysis transforms the failure analysis report into unique RDF by
+defining sentence templates. The theme logic model represents all the
+texts based on domain ontology using two sets: a set of all themes in
+a text and a set of the relations among the themes. The ontology is
+frame-oriented and a set of classes, relations, attributes and
+values. The artificial neural network processes a train set
+transformed from the theme logic model based on the domain ontology,
+and the acquired knowledge will be extracted by SD method and
+represented by rules. At last, the acquired knowledge rules will be
+stored into a knowledge base.
+\begin{figure}[htp]
+  \centering
+  \includegraphics{esa/1.eps}
+
+  \caption{The Framework for Knowledge Acquisition from Domain Text}
+  \label{fig:1}
+\end{figure}
+
+\section{Structure Analysis of Domain Text 
+}
+\label{sec:struct-analys-doma}
+
+There are tremendous domain texts in an enterprise, so the first step
+is to transform them to a unique format. The main purpose of the
+structure analysis and meta-knowledge acquisition is to analyze the
+structure of the domain text and use meta-knowledge to help to manage
+them. As the base of OWL, RDF offers a generic framework and plays an
+important role in the construction of semantic web [36]. Thus we
+choose RDF and the output of the structure analysis is a set of RDF
+documents, as is shown in Figure2. 
+\begin{figure}[htp]
+  \centering
+  \includegraphics{esa/2.eps}
+
+  \caption{Transform failure analysis report into RDF}
+  \label{fig:2}
+\end{figure}
+Although written in natural language, the content of the domain text is closely related to a specific domain and follows a certain controllable syntax which can be easily summarized and formulated. Thus the domain text referred in this paper is semi-structured. The main steps of transform are:
+Step1 Analyze domain texts set T-Set, and define a grammar G used for defining the information extraction rule;
+Step2 Define the information extraction rules set R;
+Step3 Build a validator to test whether R conforms to all the domain texts;
+Step4 If there are texts violate R, return to Step 3;
+Step5 Write a parser to analyze the texts and find text blocks
+matching rule in R, transform T-Set to R-Set.  
+
+The purpose of structure analysis of domain text is to find the
+modeling ways based on the structural characteristics of the domain
+for the further access to acquire knowledge and effectively improve
+the accuracy and effectiveness of other follow-up
+text-processing. Salton described two main text decomposition
+strategies, including a chronological decomposition into text segments
+and semantic decomposition into text themes [14]. The text segment is
+a contiguous piece of text units that is linked internally, but
+largely disconnected from the adjacent text. The text theme is
+represented by semantically homogeneous text pieces where all
+components treat a common subject area.
+
+As to the failure analysis report, it is usually in a certain format
+in accordance with the requirements for writing, and can be called a
+semi-structured text. The well-defined structure is used to organize
+the content comprehensibly and improve readability for the user. Thus
+the text segment and the text theme are easily to be found and
+described. The text themes focus on the structure that contains the
+text of the ideological content and logical way of expression.
+
+\begin{itshape}
+  The text segments of failure analysis report= (title, author,
+  abstract, chapter, section, paragraph, sentence). 
+
+The text themes of failure analysis report= (title, author, abstract, phenomenon of the failure component, reasons and inference for the failure, judgment of the failure mode).
+
+\end{itshape}
+
+Salton used vector space model to represent the structure of the
+text. In this model, text is represented by vectors in an
+n-dimensional space, where n is the number of distinct
+terms. According to the literature, VSM is the most effective and
+popular indexing approach. There are three-step strategies where terms
+are first extracted from the document text, then the weights of the
+indexed terms are derived to improve the document retrieval accuracy,
+finally the documents are ranked with respect to a similarity measure.
+v
+In addition, different types of texts have different forms of organization, and paragraph is a basic organizational hierarchy. Different paragraphs constitute a hierarchy to express the common theme in an orderly manner. The division of text theme is based on the common subjects expressed by several paragraphs. And logic relations often exist between different themes of a text. As to failure analysis report, the three themes ‘phenomenon of the failure component’, ‘reasons and inference of failure’, ‘judgment of failure mode’ consist three themes and there are meaningful logic relations among them. Failure analysis report is a form record of the entire failure analysis process, in which the domain experts use the failure analysis techniques to do experiment, observe and analyze the failure phenomena to determine the reasons for failure and make the necessary preventive measures based on their own knowledge in a particular field [28]. Therefore, the logic relation between the themes ‘phenomenon of the failure component’ and ‘judgment of failure mode’ is the essential logic mapping from failure phenomenon to failure mode, which is the very failure knowledge to be acquired. Therefore, we build a new theme logic model to express the logic relation between different themes.
+
+
+
+
+\bibliographystyle{elsarticle-num}
+\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee.bib,../../bibtex/springer,../../bibtex/internet}
+
 \end{document}
