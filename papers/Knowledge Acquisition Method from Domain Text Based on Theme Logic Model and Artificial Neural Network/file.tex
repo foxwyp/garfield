@@ -423,6 +423,161 @@ After transformation, we get a set of n-dimensional input vector. We put the ent
   \end{array} \right]
 \]
 
+In order to enhance the efficiency of BPNN, we define a threshold k to reduce the dimension of input vector by remove the input nodes whose k value is more than a threshold. For a specific attribute value vj, kj is defined as follows. In fact, a higher k value of a specific attribute value indicates a lower importance in identifying the failure mode. In experiment, k can be assigned different values to reduce the dimension of input vector and find the best k value for BPNN.
+
+\[k_j = \frac{\sum_{i=1}^{m}no.of.zero(v_{ij})}{m}\]
+
+After determining the best k value, the BPNN can be trained and test by samples. The precision rate is the indicators for evaluating the BPNN’s performance, which measures the percentage of test samples are predicted to the right failure mode by the BPNN. 
+
+\subsection{Knowledge Extract from Artificial Neural Network }
+\label{sec:knowl-extr-from}
+
+Neural network generally represent knowledge at the lower level, while
+knowledge based systems use higher level knowledge
+representations. The knowledge acquired by neural network need to be
+extracted and represented in the forms of rules, frames or semantic
+nets. Sestito and Dillion proposed a SD method to extract knowledge
+from neural network \cite{Sestito1991,130346}. The main steps include:
+
+Step1 Extend the input nodes to include all the output nodes and training the new network with Back-propagation.
+Step2 Compute the Sum of Squared Error (SSEab) to measure the contribution of input a to output b.
+\[SSE_{ab} = \sum_{j=0}^{no.of.hidden.units}{(w_{bj}-w_{aj})}^2\]
+
+$no.of.hidden.units$represents the number of hidden nodes,
+$w_{aj}$represents the value of the link between input $a$ and hidden
+node $j$, $w_{bj}$ represents the value of the link between output $b$
+and hidden node $j$.
+
+Step3 Negate the input attributes while keeping the output attributes
+constant and use the Hebb’s rule to determine the inhibitatory links
+$weight_{ab}$ between the input $a$ and the output $b$.
+
+Compute the product between $SSE_{ab}$ and
+$weight_{ab}$. $Product_{ab}$ indicates which input is associated with
+an output. These $Product_{ab}$ will be closed to or equivalent to
+zero for those attributes which are directly associated. Thus, the
+input attributes using a particular output which have a small or zero
+product are taken to the attributes defining the output. These input
+attributes are taken to be part of the antecedent and the output is
+taken to be the consequent of a rule. 
+
+\[Product_{ab} = SSE_{ab}\times weight_{ab}\]
+
+\section{Experiments and Discussions }
+\label{sec:exper-disc-}
+
+\subsection{Experiments Design
+}
+\label{sec:experiments-design-}
+
+In order to measure the performance of the framework, we develop a
+prototype using Visual C ++ 6.0 and Matlab7.0 to acquire domain
+knowledge from 400 failure analysis reports of aviation engine. All
+the reports were divided into two groups: 300 documents are used for
+training and 100 documents are used for testing. The reports are
+related to four kinds of fracture failure, namely brittle fracture,
+overload fracture, fatigue fracture, environment fracture
+[45]\cite{medema}.
+
+The BPNN’s development and training followed the algorithm analyzed in
+the previous sections using MATLAB 7 application tool and the program
+were executed on a Pentium PC with 1G RAM and CPU speed of 2.4G. There
+are four output nodes according to four kind of fracture failure and
+the number of input node is determined by $k$. The maximum number of
+epoch for the BPNN was set as 2000 and the error goal was 0.001. As
+there are not formula to compute the number of nodes in hidden layer,
+it was selected through experiment around between $2Ni+1$ and $N_o(N_i
++1)$. The BPNN used ‘traingdx’as learning algorithm. Other parameters
+used default. The architecture of BPNN is shown in Figure 4.
+\begin{figure}[htb]
+  \centering
+  \includegraphics{esa/4.eps}
+  \caption{Architecture of the BPNN for Knowledge Acquisition
+  }
+\label{fig:4}
+\end{figure}
+
+\subsection{Results and Analysis
+}
+\label{sec:results-analysis-}
+
+The attribute-value vector of the P theme is extracted by the prototype system as is shown in Figure 5.
+
+ \begin{figure}[htb]
+  \centering
+  \scalebox{0.38}{\includegraphics{esa/5.eps}}
+  \caption{Theme logic model of training samples}
+\label{fig:5}
+\end{figure}
+
+The neural network’s input nodes number is equal to the number of column in the input matrix, which is corresponding to the number of attribute value in domain ontology of failure analysis technique. There are 68 distinct attribute values for fracture failure. We remove the columns in the input matrix whose value is all zero, and 41 distinct attribute values remain. That means the number of inputs nodes range from 1 to 41. We assign 1, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7 to k and choose five different number of hidden nodes between $2N_i+1$ and $N_o(N_i +1)$ to design different BPNN. And the result is shown in Figure 6.
+
+ \begin{figure}[htb]
+  \centering
+  \scalebox{0.33}{\includegraphics{esa/6.eps}}
+  \caption{Experiment results of different $k$ value}
+\label{fig:6}
+\end{figure}
+ 
+Out of all the networks tested, a network with $k$ equal to 0.8 and 56
+hidden nodes reached the best performance goal when compared with
+other networks. Then $Product_{ab}$  was computed to indicate the
+association of a specific input node to an output node, namely the
+association of a specific failure phenomenon to a failure mode as is
+shown in Figure 7. 
+
+ \begin{figure}[htb]
+  \centering
+  \scalebox{0.33}{\includegraphics{esa/7.eps}}
+  \caption{The association of failure phenomenon to failure mode measured by $Product_{ab}$
+}
+\label{fig:7}
+\end{figure}
+
+For each output node $b$, sort all of its corresponding $Product_{ab}$
+descend and select the appropriate cut-off points. The selection of
+cut-off point should be based on the SD method and the characteristics
+of the domain. The input below cut-off point will be grouped together
+in the antecedent and the output is taken to be the consequent of the
+rule. Take the first output as an example, the following rule will be
+extracted:
+\begin{verbatim}
+IF     “表面组织形态”=“有凹坑” 
+AND “材料缺陷在断口上所呈现的特征”=“存在材料缺陷”
+AND “断口或裂纹走向”=“沿晶扩展”
+AND “痕迹种类”=“机械接触痕迹”、“加工痕迹”
+THEN  “失效模式”=“韧性脆性断裂”
+(IF       ‘Surface morphology’=‘Pit’ 
+AND  ‘Defects in materials presented by fracture’=‘Yes’
+AND  ‘Tendency of fracture or crack’=‘Along crystal expansion’
+AND  ‘Trace type’=‘Trace of mechanical contacts’, ‘Manufacturing trace’
+THEN   ‘Failure mode’=‘Brittle fracture’
+）
+
+\end{verbatim}
+
+\section{Conclusion and Future Research 
+}
+\label{sec:concl-future-rese}
+
+In this paper, a framework for knowledge acquisition from domain text
+based on theme logic model and artificial neural network is
+presented. A prototype system is implemented to acquire knowledge from
+failure analysis reports and the performance is evaluated. According
+to our experiments, the knowledge acquisition framework is relatively
+easy to use and can improve the productivity dramatically. 
+
+Knowledge acquisition from domain text is a process of comprehensive
+analysis and incremental improvement. In future, more experiments are
+needed to carry out to testify the capability of this framework. And
+it should be extended to improve the domain ontology to enhance the
+efficiency of theme logic model generation.
+
+\section{Acknowledgement}
+\label{sec:acknowledgement}
+
+The work described in this paper was fully supported by a grant from ***( Project No.  ). 
+
 
 
 \bibliographystyle{elsarticle-num}
