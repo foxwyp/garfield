@@ -3,6 +3,8 @@
 \usepackage{hyperref}
 \usepackage{graphics}
 \journal{Expert System with Applicaitons}
+
+\newtheorem{definition}{Definition}
 \begin{document}
 
 \begin{frontmatter}
@@ -192,7 +194,7 @@ is to transform them to a unique format. The main purpose of the
 structure analysis and meta-knowledge acquisition is to analyze the
 structure of the domain text and use meta-knowledge to help to manage
 them. As the base of OWL, RDF offers a generic framework and plays an
-important role in the construction of semantic web [36]. Thus we
+important role in the construction of semantic web \cite{lassila1999rdf}. Thus we
 choose RDF and the output of the structure analysis is a set of RDF
 documents, as is shown in Figure2. 
 \begin{figure}[htp]
@@ -216,7 +218,7 @@ for the further access to acquire knowledge and effectively improve
 the accuracy and effectiveness of other follow-up
 text-processing. Salton described two main text decomposition
 strategies, including a chronological decomposition into text segments
-and semantic decomposition into text themes [14]. The text segment is
+and semantic decomposition into text themes \cite{234834}. The text segment is
 a contiguous piece of text units that is linked internally, but
 largely disconnected from the adjacent text. The text theme is
 represented by semantically homogeneous text pieces where all
@@ -247,8 +249,179 @@ are first extracted from the document text, then the weights of the
 indexed terms are derived to improve the document retrieval accuracy,
 finally the documents are ranked with respect to a similarity measure.
 v
-In addition, different types of texts have different forms of organization, and paragraph is a basic organizational hierarchy. Different paragraphs constitute a hierarchy to express the common theme in an orderly manner. The division of text theme is based on the common subjects expressed by several paragraphs. And logic relations often exist between different themes of a text. As to failure analysis report, the three themes ‘phenomenon of the failure component’, ‘reasons and inference of failure’, ‘judgment of failure mode’ consist three themes and there are meaningful logic relations among them. Failure analysis report is a form record of the entire failure analysis process, in which the domain experts use the failure analysis techniques to do experiment, observe and analyze the failure phenomena to determine the reasons for failure and make the necessary preventive measures based on their own knowledge in a particular field [28]. Therefore, the logic relation between the themes ‘phenomenon of the failure component’ and ‘judgment of failure mode’ is the essential logic mapping from failure phenomenon to failure mode, which is the very failure knowledge to be acquired. Therefore, we build a new theme logic model to express the logic relation between different themes.
+In addition, different types of texts have different forms of
+organization, and paragraph is a basic organizational
+hierarchy. Different paragraphs constitute a hierarchy to express the
+common theme in an orderly manner. The division of text theme is based
+on the common subjects expressed by several paragraphs. And logic
+relations often exist between different themes of a text. As to
+failure analysis report, the three themes  phenomenon of the failure component’, ‘reasons and inference of failure’, ‘judgment of failure mode’ consist three themes and there are meaningful logic relations among them. Failure analysis report is a form record of the entire failure analysis process, in which the domain experts use the failure analysis techniques to do experiment, observe and analyze the failure phenomena to determine the reasons for failure and make the necessary preventive measures based on their own knowledge in a particular field \cite{roberts1980stm}. Therefore, the logic relation between the themes ‘phenomenon of the failure component’ and ‘judgment of failure mode’ is the essential logic mapping from failure phenomenon to failure mode, which is the very failure knowledge to be acquired. Therefore, we build a new theme logic model to express the logic relation between different themes.
 
+
+
+\begin{definition}
+  The theme logic model of a text with n different themes is :
+\[ d = (T = \{T_1,T_2,\ldots,T_n\}, R = \{R_{ij} = R(T_i,T_j) \, | \, T_i,T_j \in
+T,1\le i,j \le n \}) \]
+where $T$ represents a set of themes in the text, $R$ represents a set of logic relation between two themes, $R_{ij}$ represents the logic relation between themes $T_i$ and $T_j$. 
+
+\end{definition}
+
+\section{Theme Logic Model of Dom
+}
+\label{sec:theme-logic-model}
+
+In order to acquire the domain knowledge of failure analysis, we
+choose two themes ‘Phenomenon of the failure component’ (represented
+by P) and ‘judgment of failure Mode’ (represented by M) to construct
+the theme logic model of failure analysis report as $d = (T = \{P,M\},
+R = \{R_{PM}\})$.
+
+$R_{PM}$ represents the logic relation between theme $P$ and $M$ and
+is the domain knowledge to be acquired. In failure analysis, the
+domain experts use their tacit knowledge to relate various phenomenons
+with a specific failure mode, but the tacit knowledge in their mind is
+not easily to be expressed and transformed to explicit knowledge even
+by the domain experts themselves, and that is the reason why the
+knowledge acquisition becomes the bottleneck in knowledge
+engineering. We will construct the theme logic model of the domain
+texts and transform them into the training set of artificial neural
+network to acquire the knowledge. More precisely, the text in each
+theme will be represented to an attribute-value vector based on the
+domain ontology. 
+
+The failure analysis techniques use by domain experts are relatively fixed, such as trace analysis, crack analysis and fracture analysis. Each analysis techniques observe phenomenon of failure component from different angles. And the phenomenon observed and the attributes of each phenomenon can be clearly described by domain ontology. In addition, the language and sentence structure to express and describe the failure phenomenon are usually relatively fixed. Therefore, the text of each theme can be presented by an attribute-value vector in an n-dimensional space based on lightweight domain ontology of failure analysis, which is frame-oriented and a set of classes, relations, attributes and values \cite{747902}.
+
+\begin{definition}
+  The attribute-value vector of theme $T_i$ in text is defined as:
+\[AVV_i = \{<a_1,v_1>,<a_2,v_2> \ldots,<a_n,v_n>\} \]
+\end{definition}
+$a_i$ represent the attributes in theme $T_i$, and vi represents the value of attribute $a_i$ , $n$ is the number of distinct attributes in domain ontology.
+
+\begin{definition}
+  A lightweight domain ontology ($O$) models a specific domain, and is
+  made up of a set of Concepts ($C$), Attributes ($A$), Attribute
+  Value ($V$) and Relations between the Concepts ($R$):$O = \{C,A,V,R\}$
+
+
+\end{definition}
+
+Concepts (or classes) are the abstract nodes or collections of objects. Attribute provides extra features used to identify and describe the concept. Each attribute has at least a name and a value, and is used to store information that is specific to the object it is attached to. In addition, the value of an attribute can be a complex data type, such as a numerical interval or a set. Relation is used to indicate a similarity between two concepts within ontology. The four elements are shown in Figure 3.
+\begin{figure}[htb]
+  \centering
+  \includegraphics{esa/3.eps}
+  \caption{Elements in Lightweight Domain Ontology}
+\end{figure}
+There are three steps to construct attribute-value vector.
+Step1 Pretreatment
+For the text of each theme in RDF documents to be processed, all the standing alone punctuation marks are removed first and the text will be divided into sections by full stop and comma.
+Step2 Construct lightweight domain ontology 
+The lightweight domain ontology comprises two sub-ontology: failure analysis technique ontology and failure mode ontology. Ontology construction is a large and tedious task. But here we only need lightweight domain ontology to express all the concepts, relations, attributes and values. Thus it is much easier to construct it. What’s more, a synonym base will be also included to store all the words having the same or nearly the same meaning as the attribute and attribute value in a language.
+Step3 Extract attribute-value vector based on lightweight domain ontology
+We do word segmentation and use string matching to identify and collect the attributes and values based on the lightweight domain ontology. The similarity of attribute (or attribute value) S1 of string S2 is defined as follows.
+\begin{definition}
+  Similarity of Attribute (or Value) S1 of String
+  S2 \[similarity(S_1,S_2) = \frac{V(S_1) \cap V(S_2)}{V(S_1)} \]
+
+\end{definition}
+
+$V(S_1)$ represents the number of single words in $S_1$, and $V(S_1)
+\cap V(S_2)$ represents the common single words in $S_1$ and $S_2$.
+
+The algorithm to construct attribute-value vector is as follows. ‘a’ and ‘b’ are two indicators of similarity.
+
+\begin{verbatim}
+Input: 
+A theme in RDF
+Lightweight domain ontology 
+String[] GetSynonymy (String) //a function to get the synonym of a word
+
+Output:
+attribute-value vector of a theme
+
+Algorithm:
+Each sentence in the theme is divided into sub sections by full stop and comma to form a vector of sub sentence vector={C1,C2,…,Ci,…,Cn} 
+
+For each Ci, i=1,2,..n 
+For each ai of Ontolgoy 
+aSyn=GetSynonymy(ai)
+    Foreach s of aSyn
+	  Search s in Ci
+       IF similarity>a THEN
+		 For each vi,j of ai
+  			vSyn=GetSynonymy(ai)
+    			 For each c of vSyn
+				Search c in Ci
+        			IF similarity> THEN
+				Add < ti, vi,j> to attribute-value vector
+			    ELSE Next c
+  ELSE Next s
+
+\end{verbatim}
+
+\section{Knowledge Acquisition Based on Theme Logic Model and Artificial Neural Network}
+\label{sec:knowl-acqu-based}
+
+Artificial neural network belongs to the family of learning-by-example paradigm in which problem-solving knowledge is automatically generated according to actual examples \cite{hassoun1995fan}. As there is a very complicated nonlinear relation between the phenomena of failure and the failure mode, it is difficult to establish a suitable model in practice. Artificial neural network with its adaptive, self-learning and non-linear system of powerful analytical capacity provides a new solution for failure analysis. The main steps include:
+Step1 Design the architecture of artificial neural network.
+Step2 Transform the theme logic model into the training set of the neural network, train and test the neural network. 
+Step3 Extract knowledge from neural network and represent the
+knowledge with rules.
+
+\subsection{Artificial Neural Network Design}
+\label{sec:artif-neur-netw}
+
+The ANN can be classified into several categories based on supervised
+and un-supervised learning methods and feed-forward and feedback
+recall architectures. The back-propagation network algorithm (BPNN) is
+a multi-layered network first proposed by Rumelhart
+\cite{rumelhart1986lir}. The algorithm is also called a supervised
+learning method that can be used to solve non-linear problems. The
+learning stage of BPNN involves a forward pass and a backward pass. An
+advantage of BPNN is that it does not need to change the network
+structure or activation functions of nodes and only adjusts the
+weights between nodes in the network [40]. BPNN is one of the most
+frequently utilized neural network techniques for classification and
+prediction \cite{graupe2007pan}. In this research, we also use the
+BPNN architecture in a supervised learning method to acquire knowledge
+from domain text. The neural network is concerned with acquiring
+failure knowledge from a set of data consisting of the theme logic
+model. 
+
+BPNN architecture comprises an input layers, an output layer and hidden layers. The BPNN parameters include a number of hidden layers, a number of hidden neurons, an activation function, learning rate, momentum, etc. All of these have significant impact on the performance of BPNN.
+\begin{itemize}
+\item The input neurons are used to represent the phenomena of failure component, which is according to the attribute value of failure analysis technique ontology. For each attribute-value vector.
+\item The output neurons are used to reflect the failure mode of failure component. There are different hierarchies of failure mode. We can assign the output neurons to reflect a specific hierarchy of failure mode and the knowledge mapping the phenomena to this hierarchy of failure mode will be acquired. 
+\item One hidden layer is sufficient for computing arbitrary decision
+  boundaries for the output in most cases [42]. It is import to
+  mention that there is no standard formula for calculating the number
+  of nodes in the hidden layer [43]\cite{turban:oaj}. Maren, Harston
+  and Pap demonstrated that the bound of neurons in the hidden layer
+  was between $2N_i+1$ and $N_o(N_i +1)$, where $N_i$ is the number of
+  input nodes and No is the number of output nodes
+  \cite{maren1990hnc}. The number of hidden nodes are selected through
+  experiment between $2N_i+1$ and $N_o(N_i +1)$. 
+\item The activation function is mathematical formula that determines the output of a processing neuron. Logistic activation functions are employer in the hidden layer and linear activation is utilized in the output layer.  
+\item As to the learning rate and momentum, most ANN software package provides default values for both parameters that typically work well. The learning rate determines the speed at which the weight change and the momentum constant prevent sudden changes in attaining the results.  
+
+
+\end{itemize}
+
+\subsection{Transform the Theme Logic Model to Training Set}
+\label{sec:transf-theme-logic}
+
+Every training sample is represented by theme logic model, and then every theme in the mode will be represented by an attribute-value vector as the training data of the BPNN. The P theme will be transformed to attribute-value vector based on the failure analysis technique ontology, and be used as the input vector of the BPNN. While the M theme will be transformed to attribute-value vector based on the failure mode ontology, and be used as the output vector of the BPNN. Each attribute value in ontology will be included in the input vector or output vector. For an attribute-value vector of a theme to be transformed, if the attribute value exist in it, we assign the attribute value to 1 in the input vector else to 0. 
+
+After transformation, we get a set of n-dimensional input vector. We put the entire input vectors transformed from m sample texts together to form the input matrix. 
+\[\begin{array}{cccccc}
+    V_1&V_2&\cdots&V_j&\cdots&V_n
+\end{array}
+\newline
+\left[  
+  \begin{array}{cccccc}
+    V_1&V_2&\cdots&V_j&\cdots&V_n
+  \end{array} \right]
+\]
 
 
 
