@@ -413,14 +413,17 @@ BPNN architecture comprises an input layers, an output layer and hidden layers. 
 Every training sample is represented by theme logic model, and then every theme in the mode will be represented by an attribute-value vector as the training data of the BPNN. The P theme will be transformed to attribute-value vector based on the failure analysis technique ontology, and be used as the input vector of the BPNN. While the M theme will be transformed to attribute-value vector based on the failure mode ontology, and be used as the output vector of the BPNN. Each attribute value in ontology will be included in the input vector or output vector. For an attribute-value vector of a theme to be transformed, if the attribute value exist in it, we assign the attribute value to 1 in the input vector else to 0. 
 
 After transformation, we get a set of n-dimensional input vector. We put the entire input vectors transformed from m sample texts together to form the input matrix. 
-\[\begin{array}{cccccc}
-    V_1&V_2&\cdots&V_j&\cdots&V_n
-\end{array}
-\newline
-\left[  
-  \begin{array}{cccccc}
-    V_1&V_2&\cdots&V_j&\cdots&V_n
-  \end{array} \right]
+
+\[
+Input - Matrix = \bordermatrix{%
+& V_1 & V_2 & \cdots & V_j & \cdots & V_n \cr
+& v_{11} & v_{12} & \cdots & v_{1j} &  \cdots & v_{1n} \cr
+& v_{21} & v_{22} & \cdots & v_{2j} &   \cdots & v_{2n} \cr
+& \vdots & \vdots & \ddots  \cr
+& v_{i1} & v_{i2} & \cdots & v_{ij} & \cdots & v_{in} \cr
+& \vdots & \vdots & &  & \ddots  \cr
+& v_{m1} & v_{m2} & \cdots & v_{mj} & \cdots & v_{mn} \cr
+}
 \]
 
 In order to enhance the efficiency of BPNN, we define a threshold k to reduce the dimension of input vector by remove the input nodes whose k value is more than a threshold. For a specific attribute value vj, kj is defined as follows. In fact, a higher k value of a specific attribute value indicates a lower importance in identifying the failure mode. In experiment, k can be assigned different values to reduce the dimension of input vector and find the best k value for BPNN.
