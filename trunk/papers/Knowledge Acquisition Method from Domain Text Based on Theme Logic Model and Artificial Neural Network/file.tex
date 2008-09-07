@@ -261,17 +261,26 @@ documents, as is shown in Figure2.
   \caption{Transform failure analysis report into RDF}
   \label{fig:2}
 \end{figure}
-Although written in natural language, the content of the domain text is closely related to a specific domain and follows a certain controllable syntax which can be easily summarized and formulated. Thus the domain text referred in this paper is semi-structured. The main steps of transform are:
-Step1 Analyze domain texts set T-Set, and define a grammar G used for defining the information extraction rule;
-Step2 Define the information extraction rules set R;
-Step3 Build a validator to test whether R conforms to all the domain texts;
-Step4 If there are texts violate R, return to Step 3;
-Step5 Write a parser to analyze the texts and find text blocks
+Although written in natural language, the content of the domain text
+is closely related to a specific domain and follows a certain
+controllable syntax which can be easily summarized and
+formulated. Thus the domain text referred in this paper is
+semi-structured. The main steps of transform are \cite{Wang2008}:
+\begin{enumerate}
+\item Analyze domain texts set T-Set, and define a grammar G used for
+defining the information extraction rule;
+\item Define the information extraction rules set R;
+\item Build a validator to test whether R conforms to all the domain
+texts;
+\item If there are texts violate R, return to Step 3;
+\item Write a parser to analyze the texts and find text blocks
 matching rule in R, transform T-Set to R-Set.  
+\end{enumerate}
+
 
 The purpose of structure analysis of domain text is to find the
 modeling ways based on the structural characteristics of the domain
-for the further access to acquire knowledge and effectively improve
+for further access to acquire knowledge and effectively improve
 the accuracy and effectiveness of other follow-up
 text-processing. Salton described two main text decomposition
 strategies, including a chronological decomposition into text segments
@@ -282,37 +291,28 @@ represented by semantically homogeneous text pieces where all
 components treat a common subject area.
 
 As to the failure analysis report, it is usually in a certain format
-in accordance with the requirements for writing, and can be called a
-semi-structured text. The well-defined structure is used to organize
+in accordance with the requirements for writing. The well-defined structure is used to organize
 the content comprehensibly and improve readability for the user. Thus
-the text segment and the text theme are easily to be found and
+the text segment and the text theme are easily found and
 described. The text themes focus on the structure that contains the
-text of the ideological content and logical way of expression.
+text of the ideological content and logical way of expression. Thus we
+can define the segment and theme of text.
 
 \begin{itshape}
-  The text segments of failure analysis report= (title, author,
+  The text segment of failure analysis report= (title, author,
   abstract, chapter, section, paragraph, sentence). 
 
-The text themes of failure analysis report= (title, author, abstract, phenomenon of the failure component, reasons and inference for the failure, judgment of the failure mode).
+The text theme of failure analysis report= (title, author, abstract, phenomenon of the failure component, reasons and inference for the failure, judgment of the failure mode).
 
 \end{itshape}
 
-Salton used vector space model to represent the structure of the
-text. In this model, text is represented by vectors in an
-n-dimensional space, where n is the number of distinct
-terms. According to the literature, VSM is the most effective and
-popular indexing approach. There are three-step strategies where terms
-are first extracted from the document text, then the weights of the
-indexed terms are derived to improve the document retrieval accuracy,
-finally the documents are ranked with respect to a similarity measure.
-v
-In addition, different types of texts have different forms of
+Different types of texts have different forms of
 organization, and paragraph is a basic organizational
 hierarchy. Different paragraphs constitute a hierarchy to express the
 common theme in an orderly manner. The division of text theme is based
 on the common subjects expressed by several paragraphs. And logic
 relations often exist between different themes of a text. As to
-failure analysis report, the three themes  phenomenon of the failure component’, ‘reasons and inference of failure’, ‘judgment of failure mode’ consist three themes and there are meaningful logic relations among them. Failure analysis report is a form record of the entire failure analysis process, in which the domain experts use the failure analysis techniques to do experiment, observe and analyze the failure phenomena to determine the reasons for failure and make the necessary preventive measures based on their own knowledge in a particular field \cite{roberts1980stm}. Therefore, the logic relation between the themes ‘phenomenon of the failure component’ and ‘judgment of failure mode’ is the essential logic mapping from failure phenomenon to failure mode, which is the very failure knowledge to be acquired. Therefore, we build a new theme logic model to express the logic relation between different themes.
+failure analysis report, ' phenomenon of the failure component’, ‘reasons and inference of failure’, ‘judgment of failure mode’ constitute three themes and there are meaningful logic relations among them. Failure analysis report is a form record of the entire failure analysis process, in which the domain experts use the failure analysis techniques to do experiment, observe and analyze the failure phenomena to determine the reasons for failure and make the necessary preventive measures based on their own knowledge in a particular field \cite{roberts1980stm}. Therefore, the logic relation between the themes ‘phenomenon of the failure component’ and ‘judgment of failure mode’ is the essential logic mapping from failure phenomenon to failure mode, which is the very failure knowledge to be acquired. Therefore, we build a new theme logic model to express the logic relation between different themes.
 
 
 
@@ -347,13 +347,18 @@ network to acquire the knowledge. More precisely, the text in each
 theme will be represented to an attribute-value vector based on the
 domain ontology. 
 
-The failure analysis techniques use by domain experts are relatively fixed, such as trace analysis, crack analysis and fracture analysis. Each analysis techniques observe phenomenon of failure component from different angles. And the phenomenon observed and the attributes of each phenomenon can be clearly described by domain ontology. In addition, the language and sentence structure to express and describe the failure phenomenon are usually relatively fixed. Therefore, the text of each theme can be presented by an attribute-value vector in an n-dimensional space based on lightweight domain ontology of failure analysis, which is frame-oriented and a set of classes, relations, attributes and values \cite{747902}.
+The failure analysis techniques used by domain experts are relatively
+fixed, such as trace analysis, crack analysis and fracture
+analysis. Each analysis techniques observe phenomenon of failure
+component from different perspectives. And the phenomenon observed and
+the attributes of each phenomenon can be clearly described by domain
+ontology. In addition, the language and sentence structure used to express and describe the failure phenomenon are usually relatively fixed. Therefore, the text of each theme can be presented by an attribute-value vector in an n-dimensional space based on lightweight domain ontology of failure analysis, which is frame-oriented and a set of classes, relations, attributes and values \cite{747902}.
 
 \begin{definition}
   The attribute-value vector of theme $T_i$ in text is defined as:
 \[AVV_i = \{<a_1,v_1>,<a_2,v_2> \ldots,<a_n,v_n>\} \]
 \end{definition}
-$a_i$ represent the attributes in theme $T_i$, and vi represents the value of attribute $a_i$ , $n$ is the number of distinct attributes in domain ontology.
+$a_i$ represent the attributes in theme $T_i$, and $v_i$ represents the value of attribute $a_i$ , $n$ is the number of distinct attributes in domain ontology.
 
 \begin{definition}
   A lightweight domain ontology ($O$) models a specific domain, and is
@@ -370,11 +375,13 @@ Concepts (or classes) are the abstract nodes or collections of objects. Attribut
   \caption{Elements in Lightweight Domain Ontology}
 \end{figure}
 There are three steps to construct attribute-value vector.
-Step1 Pretreatment
-For the text of each theme in RDF documents to be processed, all the standing alone punctuation marks are removed first and the text will be divided into sections by full stop and comma.
-Step2 Construct lightweight domain ontology 
-The lightweight domain ontology comprises two sub-ontology: failure analysis technique ontology and failure mode ontology. Ontology construction is a large and tedious task. But here we only need lightweight domain ontology to express all the concepts, relations, attributes and values. Thus it is much easier to construct it. What’s more, a synonym base will be also included to store all the words having the same or nearly the same meaning as the attribute and attribute value in a language.
-Step3 Extract attribute-value vector based on lightweight domain ontology
+\begin{enumerate}
+\item Pretreatment. For the text of each theme in RDF documents to be processed, all the standing alone punctuation marks are removed first and the text will be divided into sections by full stop and comma.
+\item  Construct lightweight domain ontology. The lightweight domain ontology comprises two sub-ontology: failure analysis technique ontology and failure mode ontology. Ontology construction is a large and tedious task. But here we only need lightweight domain ontology to express all the concepts, relations, attributes and values. Thus it is much easier to construct it. What’s more, a synonym base will be also included to store all the words having the same or nearly the same meaning as the attribute and attribute value in a language. 
+\item Extract attribute-value vector based on lightweight domain ontology.
+
+\end{enumerate}
+
 We do word segmentation and use string matching to identify and collect the attributes and values based on the lightweight domain ontology. The similarity of attribute (or attribute value) S1 of string S2 is defined as follows.
 \begin{definition}
   Similarity of Attribute (or Value) S1 of String
