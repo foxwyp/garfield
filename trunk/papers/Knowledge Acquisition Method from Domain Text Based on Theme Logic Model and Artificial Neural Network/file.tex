@@ -2,6 +2,9 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{graphics}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%\usepackage{algorithmicx}
 \journal{Expert System with Applications}
 
 \newtheorem{definition}{Definition}
@@ -388,35 +391,54 @@ $V(S_1)$ represents the number of single words in $S_1$, and $V(S_1)
 
 The algorithm to construct attribute-value vector is as follows. ‘a’ and ‘b’ are two indicators of similarity.
 
-\begin{verbatim}
-Input: 
-A theme in RDF
-Lightweight domain ontology 
+ \begin{algorithm}
+ \caption{algorithm}
+    \begin{algorithmic}
+    \STATE{   Input: A theme in RDF\\
+Lightweight domain ontology \\
 String[] GetSynonymy (String) //a function to get the synonym of a word
 
-Output:
-attribute-value vector of a theme
+Output:attribute-value vector of a theme
 
 Algorithm:
-Each sentence in the theme is divided into sub sections by full stop and comma to form a vector of sub sentence vector={C1,C2,…,Ci,…,Cn} 
-
-For each Ci, i=1,2,..n 
-For each ai of Ontology 
-aSyn=GetSynonymy(ai)
-    Foreach s of aSyn
-	  Search s in Ci
-
-       IF similarity>a THEN
-		 For each vi,j of ai
-  			vSyn=GetSynonymy(ai)
-    			 For each c of vSyn
-				Search c in Ci
-        			IF similarity> THEN
-				Add < ti, vi,j> to attribute-value vector
-			    ELSE Next c
-  ELSE Next s
-
-\end{verbatim}
+Each sentence in the theme is divided into sub sections by full stop
+and comma to form a vector of sub sentence $vector={C_1,C_2
+  ,\cdots,C_i,\cdots,C_n} $
+}
+\FORALL{ $C_i, i=1,2,..n$} {
+            \FORALL {$a_i$ of Ontology} {
+                \STATE{$aSyn=GetSynonymy(a_i)$}
+                 \FORALL {$s$ of $aSyn$}{
+	                  \STATE{ Search $s$ in $C_i$}
+                    \IF {$similarity>a$} 
+                            \FORALL{$v_{i,j} of a_i$}{
+  			       \STATE{$vSyn=GetSynonymy(a_i)$}
+                                  \FORALL{$c$ of $vSyn$}{
+				             \STATE{Search $c$ in
+                                               $C_i$}
+                                              \IF {$similarity>b$} 
+			                         	\STATE{Add $< ti, vi,j>$ to attribute-value vector}
+			                       \ELSE 
+                                               \STATE{Next $c$}
+                                               \ENDIF
+                                   }
+                                  \ENDFOR
+                             }
+                             \ENDFOR
+                   \ELSE
+                   \STATE{Next $s$}
+                   \ENDIF
+                 }
+                 \ENDFOR
+         }
+          \ENDFOR
+    
+}
+\ENDFOR
+    \end{algorithmic}
+   
+      
+    \end{algorithm}
 
 \section{Knowledge Acquisition Based on Theme Logic Model and Artificial Neural Network}
 \label{sec:knowl-acqu-based}
