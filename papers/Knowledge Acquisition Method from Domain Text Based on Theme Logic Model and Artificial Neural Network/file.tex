@@ -2,7 +2,7 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{graphics}
-\journal{Expert System with Applicaitons}
+\journal{Expert System with Applications}
 
 \newtheorem{definition}{Definition}
 \begin{document}
@@ -45,14 +45,14 @@ analysis text of aviation product, a framework is proposed to enhance
 the efficiency and accuracy of knowledge acquisition. In this
 framework, sentence templates are defined to extract the
 meta-knowledge and RDF is used to describe the extracted knowledge.
-After the preprocessing steps, we propose a new model theme logic
+After the preprocessing steps, the authors propose a new model: theme logic
 model (TLM) to present all the themes of a piece of text and the logical
-relations between different themes. In this model, the text of each
+relations among different themes. In this model, the text of each
 theme can be represented as an attribute-value vector based on domain
-ontology and the logical relations are the domain knowledge to be
+ontology. Meanwhile, the logical relations are the domain knowledge to be
 acquired. The theme logic model then will be transformed to the
 training set of the artificial neural network to acquire the failure
-analysis knowledge. After training process,  acquired knowledge will be extracted by SD method from the artificial neural network and represented by rules. Finally, a prototype is developed to acquire knowledge from failure analysis reports of aviation product. Empirical results show that the framework can acquire knowledge from domain text efficiently.
+analysis knowledge. After training process, acquired knowledge will be extracted by SD method from the artificial neural network and represented by rules. Therefore, a prototype is developed to acquire knowledge from failure analysis reports of aviation product. Empirical results show that the framework can acquire knowledge from domain text efficiently.
 \end{abstract}
 
 \begin{keyword}
@@ -73,43 +73,40 @@ Knowledge Acquisition; Domain Text; Theme Logic Model; Artificial Neural Network
 \label{sec:introduction}
 
 Over the past decades, massive volumes of data have been collected in
-corporations, of which more than eighty percent is stored in
+corporations, of which more than eighty percent are stored in
 text \cite{Mitchell2003}. Unfortunately, the explosive growth of
 information has often resulted in frustrating situations when
-corporations are not able to organize the information well and
-understand the knowledge it contains. Knowledge management is
-implemented by enterprise and organization to manage their knowledge
+corporations are not able to understand the knowledge it contains 
+and organize the information well. Knowledge management is
+implemented by enterprises and organizations to manage their knowledge
 more effectively, including sorting useful knowledge from information, storing
 knowledge in good order, and finding knowledge in an existing
 knowledge base \cite{turban2001dss}. Knowledge acquisition from text
-(KAT), which  is an important
-way of knowledge acquisition, extract useful knowledge contained in
-text, especially domain text. Domain text is the text collection in a specific domain. The label ‘domain text’, in this term,
-means that although written in natural language, the content of the
-text is closely related to a specific domain. These texts have two
-main characteristics: on the one hand, the set of terms used to
+(KAT) , as an important way of knowledge acquisition, 
+extracts useful knowledge from
+text, especially domain text. And domain text is the text collection in a specific domain. Meanwhile, the domain texts here have two
+main meanings: on one hand, the set of terms which are used to
 describe their contents, and on the other, a well-defined structure to
 organize these contents comprehensibly and improve readability for the
 user \cite{Campos2004}. The text follows a certain controllable syntax
-which can be easily summarized and formulated. Thus the domain text
-referred in this paper is semi-structured. 
+which can be easily summarized and formulated. Thus, the domain text
+mentioned in this paper is semi-structured. 
 
-The domain knowledge is valuable but often buried in domain text
+The domain knowledge is valuable but often buried in domain texts
 within a range of sources such as failure analysis reports of aviation
 product, government files, records of meetings and experimental
-reports, to name a few. The domain text collection can be mined to
-learn about a subfield. Through automated approaches, knowledge
+reports, and so on. Mining domain text collection is useful for better understanding
+the field. Through automated approaches, knowledge
 associated to a specific domain can be extracted and integrated from
-these disparate text sources. The accquired xknowledge is valuable for a variety of applications including decision support, quality assurance and knowledge retrieval.
+these disparate text sources. The acquired knowledge is valuable for a variety of applications including decision support, quality assurance and knowledge retrieval.
 
-There have been many research efforts devoted to automatic knowledge
-acquisition from text \cite{salton1975vsm,361220,215383,Tai2002,130346} . The early
-knowledge acquisition systems focused mainly on indexing the
-texts in the collection using Boolean model. The model is over
-simplify and can not rank the relevant texts together with automatic
-indexing, Salton proposed Vector Space Model (VSM) in 1975 \cite{salton1975vsm,361220}. In this model, text is represented by vectors in a multidimensional space. To improve the performance of VSM, a number of enhanced methods have been proposed. These approaches include methods based on dimensionality reduction and using feedback information from the user \cite{Tai2002}. The former focuses on reducing the high-dimensional vector space into a low-dimensional one, among which the Latent Semantic Indexing (LSI) using Single Valued Decomposition is probably used most widely \cite{130346}. The latter uses feedback information from a user to increase the effectiveness.
+Many efforts have been devoted to automatic knowledge
+acquisition from text \cite{salton1975vsm,361220,215383,Tai2002,130346} . The early knowledge acquisition systems focus mainly on indexing the
+texts in the collection using Boolean model. Such model is over
+simplified and cannot rank the relevant texts together with automatic
+indexing. In this condition, Salton proposed Vector Space Model (VSM) in 1975 \cite{salton1975vsm,361220}. In this model, text is represented by vectors in a multidimensional space. To improve the performance of VSM, a number of enhanced methods have been put forward. Some based on dimensionality reduction and others using feedback information from the user \cite{Tai2002}. The former focuses on reducing the high-dimensional vector space into a low-dimensional one, among which the Latent Semantic Indexing (LSI) using Single Valued Decomposition is probably used most widely \cite{130346}. The latter uses feedback information from a user to increase the efficiency.
 
-In this research, we focus on developing an effective methodology of
+In this paper, the authors make great efforts to develop an effective methodology of
 knowledge acquisition from domain text such as failure analysis
 reports of aviation product based on a new text indexing model, theme
 logic model. Salton described text themes as a main text decomposition
@@ -120,7 +117,7 @@ set of themes in the text and a set of relations among the themes. The
 text of each theme can be represented as an attribute-value vector
 based on domain ontology, so the set of themes is a set of vectors of
 all the themes in the text. In addition, there are meaningful logical
-relation existing between different themes, and for a domain the logic
+relations existing among different themes, and for a domain the logic
 relation is the domain knowledge to be acquired. The theme logic model
 then will be transformed to the training set of the artificial neural
 network to acquire the failure analysis knowledge. We use  artificial
@@ -128,7 +125,7 @@ neural network since it is a learning-by-example paradigm in which
 problem-solving knowledge is automatically generated according to
 actual examples \cite{Huang2002,Kim2004}. Then the acquired knowledge  will be extracted by SD method from the artificial neural network and represented by rules \cite{130346,Sestito1991}. Furthermore, a prototype system is implemented and tested for scenario demonstration. Empirical results show that the framework can acquire knowledge from domain text efficiently.
 
-The paper is organized as follows. In Section 2 we review some related work about knowledge acquisition from text and failure analysis. We then propose the framework of knowledge acquisition in detail in Section 3. The structure analysis of domain text is presented in Section 4. In Section 5 we describe how to construct the theme logic model of domain text based on the domain ontology. And then in Section 6, we use BP neural network to acquire the knowledge based on the theme logic model. At last, in Section 7 we show some experimental results and discussion and in Section 8 we give some conclusions. 
+This paper is organized as follows. In Section 2, we review some related work about knowledge acquisition from text and failure analysis. Then the framework of knowledge acquisition is explained in detail in Section 3. The structure analysis of domain text is presented in Section 4. Section 5 describes how to construct the theme logic model of domain text based on the domain ontology. And in Section 6, BP neural network is used to acquire the knowledge based on the theme logic model. Finally,  some experimental results are obtained and discussed in Section 7. Therefore, a conclusion is drawn in Section 8. 
 
 \section{Related Work
 }
@@ -144,7 +141,7 @@ methods and tools can help to manage the wealth of information and
 discover facts, relationships and implications in domain texts
 \cite{Hahn2000,Gunn1999}. 
 
-Gunn et al discusses existing knowledge acquisition techniques based
+Gunn et al has discussed the existing knowledge acquisition techniques based
 on manual learning, machine learning and logic programming \cite{Gunn1999}. The
 manual learning methodology relies on knowledge engineers to acquire
 and formalize knowledge from experts or free texts. However, since any
@@ -165,7 +162,7 @@ indexing the texts in the collection. The most popular indexing
 approach is based on the vector space model
 \cite{361220,salton1975vsm} which is the most effective methodology \cite{215383}. In this model,
 text is represented by vectors in an n-dimensional space, where n is
-the number of distinct terms. There are three-step strategy where
+the number of distinct terms. There are three-step in this strategy where
 terms are first extracted from the document text, then the weights of
 the indexed terms are derived to improve the document retrieval
 accuracy, and then the documents are ranked with respect to a
@@ -174,10 +171,10 @@ VSM, a number of enhanced methods have been proposed. The reduction of
 the dimensionality of the model is one way to solve these
 problems. The LSI model is accomplished by mapping a high-dimensional
 space into a low-dimensional space by using SVD. Mao and Chu discuss three types of schemes, the stem-based, concept-based
-and phrase-based schemes, and show the retrieval effectiveness of the
+and phrase-based schemes, showing the retrieval effectiveness of the
 phrased-based VSM is significantly higher than that of the current
 gold-standard—the term-based VSM \cite{Mao2007}. Wei et
-al. propose an LSI-based multilingual document clustering technique
+al. brings forward an LSI-based multilingual document clustering technique
 that employs LSI analysis to a parallel corpus and constructs a
 multilingual semantic space, which reduces the dimensions and thereby
 improves both clustering effectiveness and efficiency \cite{Wei2008}.
@@ -188,7 +185,7 @@ improves both clustering effectiveness and efficiency \cite{Wei2008}.
 
 Failure, as defined by the International Electro-technical Commission
 (IEC), is ‘the termination of the ability of an item to perform a
-required function’ \cite{failureiec}. Whenever a failure occurs, the
+required function’. Whenever a failure occurs, the
 failed component and the failure situation must be examined to
 determine the cause. This investigation process is called failure
 analysis \cite{Liao1999}. Robert suggests that there should be a
@@ -201,21 +198,21 @@ entire process of failure analysis. The failure analysis report is an
 important source of engineering knowledge, which contains substantial
 and essential failure knowledge and conveys some inherent phenomena or
 regularities about the processes generating failure. Acquiring
-knowledge from failure analysis report will lead to better design,
-material selection or fabrication modifications and important
+knowledge from failure analysis report will lead to better designs,
+material selections or fabrication modifications and important
 economies \cite{Castro2004}. 
 
 Traditionally, the failure analysis process is carried out by vast
 numbers of human experts. However, as the volume of failure analysis
-report is growing at explosive rates, this process become extremely
+report is growing at explosive rate, this process becomes extremely
 ineffective and inefficient. The availability and use of accurate
 knowledge acquisition from this large volume is
 required. Computer-assisted knowledge acquisition is necessary to
-support quality decision-making and help to overcome human cognitive
+support quality decision-making and to overcome human cognitive
 constraints.  Numerous studies have been conducted to develop
 computer-assisted systems and various approaches have been taken such
 as fault tree analysis \cite{Israel2006}, expert systems \cite{Kim2004}, neural
-network \cite{Zakarian1999}, neuro-fuzzy system \cite{Chen2006}, etc. Mayer described an expert system for electric utility power plant personnel to identify a basic failure mechanism that can produce the type of boiler tube failure under investigation \cite{Mayer1990}. Liao developed an integrated database and expert system for indentifying the failure mechanism of mechanical components \cite{liao1999ida}. Relatively fewer attempts have been made to develop computerized failure analysis systems whose knowledge is acquired from domain text such as failure analysis report.
+network \cite{Zakarian1999}, neuro-fuzzy system \cite{Chen2006}, etc. Mayer described an expert system for electric utility power plant personnel to identify a basic failure mechanism that can produce the type of boiler tube failure under investigation \cite{Mayer1990}. Liao developed an integrated database and expert system for identifying the failure mechanism of mechanical components \cite{liao1999ida}. Relatively fewer attempts have been made to develop computerized failure analysis systems in which knowledge is acquired from domain text such as failure analysis report.
 
 
 \section{A Framework for Knowledge Acquisition from Domain Text
@@ -229,11 +226,10 @@ and artificial neural network, as shown in Figure 1. The structure
 analysis transforms the failure analysis report into unique RDF by
 defining sentence templates. The theme logic model represents all the
 texts based on domain ontology using two sets: a set of all themes in
-a text and a set of the relations among the themes. The ontology is a set of classes, relations, attributes and
-values, which is frame-oriented. The artificial neural network processes a training set
+a text and a set of the relations among the themes. The frame-oriented ontology is a set of classes, relations, attributes and
+values. The artificial neural network processes a training set which is 
 transformed from the theme logic model based on the domain ontology,
-and the acquired knowledge will be converted into knowledge rules. Finally, the acquired knowledge rules will be
-stored into a knowledge base.
+and the acquired knowledge will be converted into knowledge rules. Finally, the acquired knowledge rules will be stored into a knowledge base.
 \begin{figure}[htp]
   \centering
   \includegraphics{esa/1.eps}
@@ -246,10 +242,10 @@ stored into a knowledge base.
 }
 \label{sec:struct-analys-doma}
 
-There are tremendous domain texts in an enterprise, so the first step
+There are tremendous domain texts in an enterprise, thus, the first step
 is to transform them to a unique format. The main purpose of the
 structure analysis and meta-knowledge acquisition is to analyze the
-structure of the domain text and use meta-knowledge to help to manage
+structure of the domain text and use meta-knowledge to help manage
 them. As the base of OWL, RDF offers a generic framework and plays an
 important role in the construction of semantic web \cite{lassila1999rdf}. Thus we
 choose RDF and the output of the structure analysis is a set of RDF
@@ -264,39 +260,38 @@ documents, as is shown in Figure2.
 Although written in natural language, the content of the domain text
 is closely related to a specific domain and follows a certain
 controllable syntax which can be easily summarized and
-formulated. Thus the domain text referred in this paper is
-semi-structured. The main steps of transform are \cite{Wang2008}:
+formulated. Thus the domain text mentioned in this paper is
+semi-structured. And the main steps of transforming are in the following \cite{Wang2008}:
 \begin{enumerate}
-\item Analyze domain texts set T-Set, and define a grammar G used for
+\item Analyze domain texts set (T-Set), and define a grammar G used for
 defining the information extraction rule;
 \item Define the information extraction rules set R;
-\item Build a validator to test whether R conforms to all the domain
+\item Build a validator to test whether R conforms to the entire domain
 texts;
 \item If there are texts violate R, return to Step 3;
 \item Write a parser to analyze the texts and find text blocks
-matching rule in R, transform T-Set to R-Set.  
+matching rule in R, and transform T-Set to R-Set.  
 \end{enumerate}
 
 
 The purpose of structure analysis of domain text is to find the
 modeling ways based on the structural characteristics of the domain
-for further access to acquire knowledge and effectively improve
-the accuracy and effectiveness of other follow-up
-text-processing. Salton described two main text decomposition
-strategies, including a chronological decomposition into text segments
+for further access to acquire knowledge and improve
+the accuracy and efficiency of other follow-up
+text-processing effectively. Salton has described two main text decomposition
+strategies: a chronological decomposition into text segments
 and semantic decomposition into text themes \cite{234834}. The text segment is
-a contiguous piece of text units that is linked internally, but
-largely disconnected from the adjacent text. The text theme is
+a contiguous piece of text units that are linked internally but
+largely disconnected with the adjacent texts. The text theme is
 represented by semantically homogeneous text pieces where all
 components treat a common subject area.
 
 As to the failure analysis report, it is usually in a certain format
-in accordance with the requirements for writing. The well-defined structure is used to organize
-the content comprehensibly and improve readability for the user. Thus
+in accordance with the requirements for writing. A well-defined structure is used to organize
+the content comprehensibly and improve readability for the user. Thus,
 the text segment and the text theme are easily found and
 described. The text themes focus on the structure that contains the
-text of the ideological content and logical way of expression. Thus we
-can define the segment and theme of text.
+text of the ideological content and logical way of expression. In this way, the segment and the theme of text is defined.
 
 \begin{itshape}
   The text segment of failure analysis report= (title, author,
@@ -311,8 +306,8 @@ organization, and paragraph is a basic organizational
 hierarchy. Different paragraphs constitute a hierarchy to express the
 common theme in an orderly manner. The division of text theme is based
 on the common subjects expressed by several paragraphs. And logic
-relations often exist between different themes of a text. As to
-failure analysis report, ' phenomenon of the failure component’, ‘reasons and inference of failure’, ‘judgment of failure mode’ constitute three themes and there are meaningful logic relations among them. Failure analysis report is a form record of the entire failure analysis process, in which the domain experts use the failure analysis techniques to do experiment, observe and analyze the failure phenomena to determine the reasons for failure and make the necessary preventive measures based on their own knowledge in a particular field \cite{roberts1980stm}. Therefore, the logic relation between the themes ‘phenomenon of the failure component’ and ‘judgment of failure mode’ is the essential logic mapping from failure phenomenon to failure mode, which is the very failure knowledge to be acquired. Therefore, we build a new theme logic model to express the logic relation between different themes.
+relations often exist among different themes of a text. As to
+failure analysis report, ' phenomenon of the failure component’, ‘reasons and inference of failure’, ‘judgment of failure mode’ constitute three themes and there are meaningful logic relations among them. Failure analysis report is a form record of the entire failure analysis process, in which the domain experts use the failure analysis techniques to do experiment, observe and analyze the failure phenomena to determine the causes of failure and make the necessary preventive measures based on their own knowledge in a particular field \cite{roberts1980stm}. Therefore, the logic relation between the themes ‘phenomenon of the failure component’ and ‘judgment of failure mode’ is the essential logic mapping from failure phenomenon to failure mode, which is the very failure knowledge to be acquired. Consequently, a new theme logic model to express the logic relation between different themes is built.
 
 
 
@@ -329,30 +324,29 @@ where $T$ represents a set of themes in the text, $R$ represents a set of logic 
 \label{sec:theme-logic-model}
 
 In order to acquire the domain knowledge of failure analysis, we
-choose two themes ‘Phenomenon of the failure component’ (represented
-by P) and ‘judgment of failure Mode’ (represented by M) to construct
+choose two themes: ‘Phenomenon of the failure component’ (represented
+by $P$) and ‘judgment of failure Mode’ (represented by $M$) to construct
 the theme logic model of failure analysis report as $d = (T = \{P,M\},
 R = \{R_{PM}\})$.
 
-$R_{PM}$ represents the logic relation between theme $P$ and $M$ and
-is the domain knowledge to be acquired. In failure analysis, the
-domain experts use their tacit knowledge to relate various phenomenons
-with a specific failure mode, but the tacit knowledge in their mind is
+$R_{PM}$ ,representing the logic relations between theme $P$ and $M$, is the domain knowledge to be acquired. In failure analysis, the
+domain experts use their tacit knowledge to connect various phenomena
+with a specific failure mode, but the tacit knowledge in their minds is
 not easily to be expressed and transformed to explicit knowledge even
-by the domain experts themselves, and that is the reason why the
-knowledge acquisition becomes the bottleneck in knowledge
-engineering. We will construct the theme logic model of the domain
+by the domain experts themselves. As a result, the
+knowledge acquisition becomes a bottleneck in knowledge
+engineering. In view of this, the authors of this paper intend to construct a theme logic model of the domain
 texts and transform them into the training set of artificial neural
-network to acquire the knowledge. More precisely, the text in each
-theme will be represented to an attribute-value vector based on the
+network to acquire knowledge. More precisely, the text in each
+theme will be represented with an attribute-value vector based on the
 domain ontology. 
 
 The failure analysis techniques used by domain experts are relatively
 fixed, such as trace analysis, crack analysis and fracture
-analysis. Each analysis techniques observe phenomenon of failure
-component from different perspectives. And the phenomenon observed and
+analysis. Each analysis techniques observes phenomena of failure
+components from different perspectives. And the observed phenomena and
 the attributes of each phenomenon can be clearly described by domain
-ontology. In addition, the language and sentence structure used to express and describe the failure phenomenon are usually relatively fixed. Therefore, the text of each theme can be presented by an attribute-value vector in an n-dimensional space based on lightweight domain ontology of failure analysis, which is frame-oriented and a set of classes, relations, attributes and values \cite{747902}.
+ontology. In addition, the language and sentence structure used to express and describe the failure phenomena are usually relatively fixed. Therefore, the text of each theme can be presented by an attribute-value vector in an n-dimensional space based on lightweight domain ontology of failure analysis, which is frame-oriented and a set of classes, relations, attributes and values \cite{747902}.
 
 \begin{definition}
   The attribute-value vector of theme $T_i$ in text is defined as:
@@ -368,7 +362,7 @@ $a_i$ represent the attributes in theme $T_i$, and $v_i$ represents the value of
 
 \end{definition}
 
-Concepts (or classes) are the abstract nodes or collections of objects. Attribute provides extra features used to identify and describe the concept. Each attribute has at least a name and a value, and is used to store information that is specific to the object it is attached to. In addition, the value of an attribute can be a complex data type, such as a numerical interval or a set. Relation is used to indicate a similarity between two concepts within ontology. The four elements are shown in Figure 3.
+Concepts (or classes) are the abstract nodes or collections of objects. Attributes provide extra features and are used to identify and describe the concept. Each attribute has at least a name and a value, and is used to store information that is specific to the object it is attached to. In addition, the value of an attribute can be a complex data type, such as a numerical interval or a set. Relation is used to indicate a similarity between two concepts within ontology. The four elements are shown in Figure 3.
 \begin{figure}[htb]
   \centering
   \includegraphics{esa/3.eps}
@@ -377,7 +371,7 @@ Concepts (or classes) are the abstract nodes or collections of objects. Attribut
 There are three steps to construct attribute-value vector.
 \begin{enumerate}
 \item Pretreatment. For the text of each theme in RDF documents to be processed, all the standing alone punctuation marks are removed first and the text will be divided into sections by full stop and comma.
-\item  Construct lightweight domain ontology. The lightweight domain ontology comprises two sub-ontology: failure analysis technique ontology and failure mode ontology. Ontology construction is a large and tedious task. But here we only need lightweight domain ontology to express all the concepts, relations, attributes and values. Thus it is much easier to construct it. What’s more, a synonym base will be also included to store all the words having the same or nearly the same meaning as the attribute and attribute value in a language. 
+\item  Construct lightweight domain ontology. The lightweight domain ontology comprises two sub-ontologies: failure analysis technique ontology and failure mode ontology. Ontology construction is a large and tedious task. But here we only need lightweight domain ontology to express all the concepts, relations, attributes and values. Thus, it is much easier to construct it. Moreover, a synonym base will be also included to store all the words having the same or nearly the same meaning as the attribute and attribute value in a language. 
 \item Extract attribute-value vector based on lightweight domain ontology.
 
 \end{enumerate}
@@ -407,10 +401,11 @@ Algorithm:
 Each sentence in the theme is divided into sub sections by full stop and comma to form a vector of sub sentence vector={C1,C2,…,Ci,…,Cn} 
 
 For each Ci, i=1,2,..n 
-For each ai of Ontolgoy 
+For each ai of Ontology 
 aSyn=GetSynonymy(ai)
     Foreach s of aSyn
 	  Search s in Ci
+
        IF similarity>a THEN
 		 For each vi,j of ai
   			vSyn=GetSynonymy(ai)
@@ -426,11 +421,22 @@ aSyn=GetSynonymy(ai)
 \section{Knowledge Acquisition Based on Theme Logic Model and Artificial Neural Network}
 \label{sec:knowl-acqu-based}
 
-Artificial neural network belongs to the family of learning-by-example paradigm in which problem-solving knowledge is automatically generated according to actual examples \cite{hassoun1995fan}. As there is a very complicated nonlinear relation between the phenomena of failure and the failure mode, it is difficult to establish a suitable model in practice. Artificial neural network with its adaptive, self-learning and non-linear system of powerful analytical capacity provides a new solution for failure analysis. The main steps include:
-Step1 Design the architecture of artificial neural network.
-Step2 Transform the theme logic model into the training set of the neural network, train and test the neural network. 
-Step3 Extract knowledge from neural network and represent the
+Artificial neural network belongs to the family of learning-by-example
+paradigm in which problem-solving knowledge is automatically generated
+according to actual examples \cite{hassoun1995fan}. As there is a very
+complicated nonlinear relation between the phenomena of failure and
+the failure mode, it is difficult to establish a suitable model in
+practice. Whereas, Artificial neural network with its adaptive, self-learning
+and non-linear system of powerful analytical capacity provides a new
+solution for failure analysis. The main steps are in the following:
+\begin{enumerate}
+\item Design the architecture of artificial neural network.
+\item Transform the theme logic model into the training set of the
+  neural network, train and test the neural network. 
+\item  Extract knowledge from neural network and represent the
 knowledge with rules.
+\end{enumerate}
+
 
 \subsection{Artificial Neural Network Design}
 \label{sec:artif-neur-netw}
@@ -444,29 +450,30 @@ learning method that can be used to solve non-linear problems. The
 learning stage of BPNN involves a forward pass and a backward pass. An
 advantage of BPNN is that it does not need to change the network
 structure or activation functions of nodes and only adjusts the
-weights between nodes in the network [40]. BPNN is one of the most
+weights between nodes in the network \cite{Massey2003}. BPNN is one of the most
 frequently utilized neural network techniques for classification and
-prediction \cite{graupe2007pan}. In this research, we also use the
+prediction \cite{graupe2007pan}. In this paper, the authors also use the
 BPNN architecture in a supervised learning method to acquire knowledge
 from domain text. The neural network is concerned with acquiring
 failure knowledge from a set of data consisting of the theme logic
 model. 
 
-BPNN architecture comprises an input layers, an output layer and hidden layers. The BPNN parameters include a number of hidden layers, a number of hidden neurons, an activation function, learning rate, momentum, etc. All of these have significant impact on the performance of BPNN.
+BPNN architecture comprises of an input layers, an output layer and hidden layers. The BPNN parameters include a number of hidden layers, a number of hidden neurons, an activation function, learning rate, momentum, etc. All of these have significant impact on the performance of BPNN.
 \begin{itemize}
-\item The input neurons are used to represent the phenomena of failure component, which is according to the attribute value of failure analysis technique ontology. For each attribute-value vector.
+\item The input neurons are used to represent the phenomena of failure
+  component for each attribute-value vector, which is according to the attribute value of failure analysis technique ontology.
 \item The output neurons are used to reflect the failure mode of failure component. There are different hierarchies of failure mode. We can assign the output neurons to reflect a specific hierarchy of failure mode and the knowledge mapping the phenomena to this hierarchy of failure mode will be acquired. 
 \item One hidden layer is sufficient for computing arbitrary decision
-  boundaries for the output in most cases [42]. It is import to
+  boundaries for the output in most cases \cite{Khaw1995}. It is important to
   mention that there is no standard formula for calculating the number
-  of nodes in the hidden layer [43]\cite{turban:oaj}. Maren, Harston
+  of nodes in the hidden layer \cite{turban:oaj}. Maren, Harston
   and Pap demonstrated that the bound of neurons in the hidden layer
   was between $2N_i+1$ and $N_o(N_i +1)$, where $N_i$ is the number of
-  input nodes and No is the number of output nodes
+  input nodes and $N_o$ is the number of output nodes
   \cite{maren1990hnc}. The number of hidden nodes are selected through
   experiment between $2N_i+1$ and $N_o(N_i +1)$. 
-\item The activation function is mathematical formula that determines the output of a processing neuron. Logistic activation functions are employer in the hidden layer and linear activation is utilized in the output layer.  
-\item As to the learning rate and momentum, most ANN software package provides default values for both parameters that typically work well. The learning rate determines the speed at which the weight change and the momentum constant prevent sudden changes in attaining the results.  
+\item The activation function is mathematical formula that determines the output of a processing neuron. Logistic activation functions are employers in the hidden layer and linear activation is utilized in the output layer.  
+\item As to the learning rate and momentum, most ANN software package provides default values for both parameters that typically work well. The learning rate determines the speed at which the weight changes and the momentum constant prevents sudden changes in attaining the results.  
 
 
 \end{itemize}
@@ -474,9 +481,14 @@ BPNN architecture comprises an input layers, an output layer and hidden layers. 
 \subsection{Transform the Theme Logic Model to Training Set}
 \label{sec:transf-theme-logic}
 
-Every training sample is represented by theme logic model, and then every theme in the mode will be represented by an attribute-value vector as the training data of the BPNN. The P theme will be transformed to attribute-value vector based on the failure analysis technique ontology, and be used as the input vector of the BPNN. While the M theme will be transformed to attribute-value vector based on the failure mode ontology, and be used as the output vector of the BPNN. Each attribute value in ontology will be included in the input vector or output vector. For an attribute-value vector of a theme to be transformed, if the attribute value exist in it, we assign the attribute value to 1 in the input vector else to 0. 
+Every training sample is represented by theme logic model, and then
+every theme in the mode will be represented by an attribute-value
+vector as the training data of the BPNN. The $P$ theme will be  used as
+the input vector of the BPNN while the $M$ theme as the output vector of
+the BPNN. Each attribute value in ontology will be included in the
+input vector or output vector. For each transformed result, if the attribute value exist in it, assign the attribute value to 1 in the input vector else to 0. 
 
-After transformation, we get a set of n-dimensional input vector. We put the entire input vectors transformed from m sample texts together to form the input matrix. 
+After transformation, a set of n-dimensional input vectors are obtained. Under  such condition, put the entire input vectors transformed from m sample texts together to form the input matrix. 
 
 \[
 Input - Matrix = \bordermatrix{%
@@ -490,45 +502,51 @@ Input - Matrix = \bordermatrix{%
 }
 \]
 
-In order to enhance the efficiency of BPNN, we define a threshold k to reduce the dimension of input vector by remove the input nodes whose k value is more than a threshold. For a specific attribute value vj, kj is defined as follows. In fact, a higher k value of a specific attribute value indicates a lower importance in identifying the failure mode. In experiment, k can be assigned different values to reduce the dimension of input vector and find the best k value for BPNN.
-
+In order to enhance the efficiency of BPNN, a threshold k is defined to
+reduce the dimension of input vector by removing the input nodes whose k
+value is more than a threshold. For a specific attribute value $v_j$,
+$k_j$ is defined as follows. 
 \[k_j = \frac{\sum_{i=1}^{m}no.of.zero(v_{ij})}{m}\]
 
-After determining the best k value, the BPNN can be trained and test by samples. The precision rate is the indicators for evaluating the BPNN’s performance, which measures the percentage of test samples are predicted to the right failure mode by the BPNN. 
+In fact, a higher k value of a specific attribute value indicates a lower importance in identifying the failure mode. In experiment, k can be assigned different values to reduce the dimension of input vector and find the best k value for BPNN.
+
+After determining the best k value, the BPNN can be trained and tested by samples. The precision rate is the indicators for evaluating the BPNN’s performance, which measures the percentage of  the right prediction of the test samples. 
 
 \subsection{Knowledge Extract from Artificial Neural Network }
 \label{sec:knowl-extr-from}
 
 Neural network generally represent knowledge at the lower level, while
 knowledge based systems use higher level knowledge
-representations. The knowledge acquired by neural network need to be
+representations. The knowledge acquired by neural network needs to be
 extracted and represented in the forms of rules, frames or semantic
 nets. Sestito and Dillion proposed a SD method to extract knowledge
 from neural network \cite{Sestito1991,130346}. The main steps include:
 
-Step1 Extend the input nodes to include all the output nodes and training the new network with Back-propagation.
-Step2 Compute the Sum of Squared Error (SSEab) to measure the contribution of input a to output b.
+\begin{enumerate}
+\item Extend the input nodes to include all the output nodes and
+  training the new network with Back-propagation.
+\item Compute the Sum of Squared Error (SSEab) to measure the contribution of input a to output b.
 \[SSE_{ab} = \sum_{j=0}^{no.of.hidden.units}{(w_{bj}-w_{aj})}^2\]
 
 $no.of.hidden.units$represents the number of hidden nodes,
 $w_{aj}$represents the value of the link between input $a$ and hidden
 node $j$, $w_{bj}$ represents the value of the link between output $b$
-and hidden node $j$.
-
-Step3 Negate the input attributes while keeping the output attributes
-constant and use the Hebb’s rule to determine the inhibitatory links
+and hidden node $j$. 
+\item  Negate the input attributes while keeping the output attributes
+constant and use the Hebb’s rule to determine the inhibition links
 $weight_{ab}$ between the input $a$ and the output $b$.
-
-Compute the product between $SSE_{ab}$ and
+\item Compute the product between $SSE_{ab}$ and
 $weight_{ab}$. $Product_{ab}$ indicates which input is associated with
 an output. These $Product_{ab}$ will be closed to or equivalent to
 zero for those attributes which are directly associated. Thus, the
 input attributes using a particular output which have a small or zero
 product are taken to the attributes defining the output. These input
 attributes are taken to be part of the antecedent and the output is
-taken to be the consequent of a rule. 
+taken to be the consequence of a rule. 
 
 \[Product_{ab} = SSE_{ab}\times weight_{ab}\]
+
+\end{enumerate}
 
 \section{Experiments and Discussions }
 \label{sec:exper-disc-}
@@ -538,23 +556,22 @@ taken to be the consequent of a rule.
 \label{sec:experiments-design-}
 
 In order to measure the performance of the framework, we develop a
-prototype using Visual C ++ 6.0 and Matlab7.0 to acquire domain
+prototype  to acquire domain
 knowledge from 400 failure analysis reports of aviation engine. All
 the reports were divided into two groups: 300 documents are used for
 training and 100 documents are used for testing. The reports are
 related to four kinds of fracture failure, namely brittle fracture,
 overload fracture, fatigue fracture, environment fracture
-[45]\cite{medema}.
+\cite{medema}.
 
 The BPNN’s development and training followed the algorithm analyzed in
-the previous sections using MATLAB 7 application tool and the program
-were executed on a Pentium PC with 1G RAM and CPU speed of 2.4G. There
+the previous sections using MATLAB 7 application tool. There
 are four output nodes according to four kind of fracture failure and
 the number of input node is determined by $k$. The maximum number of
 epoch for the BPNN was set as 2000 and the error goal was 0.001. As
 there are not formula to compute the number of nodes in hidden layer,
 it was selected through experiment around between $2Ni+1$ and $N_o(N_i
-+1)$. The BPNN used ‘traingdx’as learning algorithm. Other parameters
++1)$. The BPNN used ‘traingdx’ as learning algorithm. Other parameters
 used default. The architecture of BPNN is shown in Figure 4.
 \begin{figure}[htb]
   \centering
@@ -568,7 +585,7 @@ used default. The architecture of BPNN is shown in Figure 4.
 }
 \label{sec:results-analysis-}
 
-The attribute-value vector of the P theme is extracted by the prototype system as is shown in Figure 5.
+The attribute-value vector of the $P$ theme is extracted by the prototype system as is shown in Figure 5.
 
  \begin{figure}[htb]
   \centering
@@ -577,7 +594,7 @@ The attribute-value vector of the P theme is extracted by the prototype system a
 \label{fig:5}
 \end{figure}
 
-The neural network’s input nodes number is equal to the number of column in the input matrix, which is corresponding to the number of attribute value in domain ontology of failure analysis technique. There are 68 distinct attribute values for fracture failure. We remove the columns in the input matrix whose value is all zero, and 41 distinct attribute values remain. That means the number of inputs nodes range from 1 to 41. We assign 1, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7 to k and choose five different number of hidden nodes between $2N_i+1$ and $N_o(N_i +1)$ to design different BPNN. And the result is shown in Figure 6.
+The neural network’s input nodes number is equal to the number of column in the input matrix, corresponding to the number of attribute value in domain ontology of failure analysis technique. There are 68 distinct attribute values for fracture failure. We remove the columns in the input matrix whose value is all zero, and 41 distinct attribute values remain. That means the number of inputs nodes ranges from 1 to 41. We assign 1, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7 to k and choose five different number of hidden nodes between $2N_i+1$ and $N_o(N_i +1)$ to design different BPNN. And the result is shown in Figure 6.
 
  \begin{figure}[htb]
   \centering
@@ -586,7 +603,7 @@ The neural network’s input nodes number is equal to the number of column in th
 \label{fig:6}
 \end{figure}
  
-Out of all the networks tested, a network with $k$ equal to 0.8 and 56
+Out of all the networks tested, a network with $k$ is equal to 0.8 and 56
 hidden nodes reached the best performance goal when compared with
 other networks. Then $Product_{ab}$  was computed to indicate the
 association of a specific input node to an output node, namely the
@@ -623,21 +640,20 @@ THEN   ‘Failure mode’=‘Brittle fracture’
 }
 \label{sec:concl-future-rese}
 
-In this paper, a framework for knowledge acquisition from domain text
-based on theme logic model and artificial neural network is
-presented. A prototype system is implemented to acquire knowledge from
-failure analysis reports and the performance is evaluated. According
-to our experiments, the knowledge acquisition framework is relatively
-easy to use and can improve the productivity dramatically. 
-
+Extracting knowledge from semi-constructured is an indispensable while
+complicated task for knowledge organization. In this paper, the authors
+propose a framework for knowledge acquisition from domain text
+based on theme logic model and artificial neural network to acquire knowledge from
+failure analysis reports. And the  performance is evaluated. Experiments show the framework is relatively
+easy to use and can extract meaningful knowledge effectively. 
 Knowledge acquisition from domain text is a process of comprehensive
-analysis and incremental improvement. In future, more experiments are
+analysis and incremental improvement. In the future, more experiments are
 needed to carry out to testify the capability of this framework. And
 it should be extended to improve the domain ontology to enhance the
 efficiency of theme logic model generation.
 
-\section{Acknowledgement}
-\label{sec:acknowledgement}
+\section{Acknowledgment}
+\label{sec:acknowledgment}
 
 The work described in this paper was fully supported by a grant from ***( Project No.  ). 
 
@@ -647,3 +663,4 @@ The work described in this paper was fully supported by a grant from ***( Projec
 \bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee.bib,../../bibtex/springer,../../bibtex/internet,../../bibtex/worldacademic}
 
 \end{document}
+
