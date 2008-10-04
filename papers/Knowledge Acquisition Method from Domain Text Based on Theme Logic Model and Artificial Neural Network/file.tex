@@ -14,8 +14,8 @@
 
 
 \title{Knowledge Acquisition Method from Domain Text Based on Theme Logic Model and Artificial Neural Network \tnoteref{t1,t2}}
-\tnotetext[t1]{This document is a collaborative effort.}
-\tnotetext[t2]{The second title footnote.}
+%\tnotetext[t1]{This document is a collaborative effort.}
+%\tnotetext[t2]{The second title footnote.}
 
 % use optional labels to link authors explicitly to addresses:
 % \author[label1,label2]{}
@@ -24,17 +24,15 @@
 
 \author[buaa]{Jun Wang\corref{cor1}}
 \ead{king.wang@buaa.edu.cn}
-\author[buaa]{Yunpeng Wu\corref{cor2}}
+\author[buaa]{Yunpeng Wu}
 \ead{yunpeng.wu@sem.buaa.edu.cn}
-\author[buaa]{Xuening Liu\corref{cor2}}
-\ead{xx@gmail.com}
-
+\author[buaa]{Xuening Liu}
+\ead{lxnyoyo@gmail.com}
+\author[buaa]{Xiaoying Gao}
+\ead{cynsier@gmail.com}
 
 \cortext[cor1]{Corresponding author}
-\cortext[cor2]{Principal corresponding author}
-\fntext[fn1]{This is the specimen author footnote.}
-\fntext[fn2]{Another author footnote, but a little more longer.}
-
+%\cortext[cor2]{Principal corresponding author}
 
 
 \address[buaa]{School of Economics \& Management, Beihang University, Beijing 100083,
@@ -235,7 +233,7 @@ transformed from the theme logic model based on the domain ontology,
 and the acquired knowledge will be converted into knowledge rules. Finally, the acquired knowledge rules will be stored into a knowledge base.
 \begin{figure}[htp]
   \centering
-  \includegraphics{esa/1.eps}
+  \scalebox{0.55}{\includegraphics{esa/1.eps}}
 
   \caption{The Framework for Knowledge Acquisition from Domain Text}
   \label{fig:1}
@@ -252,10 +250,10 @@ structure of the domain text and use meta-knowledge to help manage
 them. As the base of OWL, RDF offers a generic framework and plays an
 important role in the construction of semantic web \cite{lassila1999rdf}. Thus we
 choose RDF and the output of the structure analysis is a set of RDF
-documents, as is shown in Figure2. 
+documents, as is shown in Figure 2. 
 \begin{figure}[htp]
   \centering
-  \includegraphics{esa/2.eps}
+\scalebox{0.7}{  \includegraphics{esa/2.eps}}
 
   \caption{Transform failure analysis report into RDF}
   \label{fig:2}
@@ -322,8 +320,7 @@ where $T$ represents a set of themes in the text, $R$ represents a set of logic 
 
 \end{definition}
 
-\section{Theme Logic Model of Dom
-}
+\section{Theme Logic Model of Domain Text Construction}
 \label{sec:theme-logic-model}
 
 In order to acquire the domain knowledge of failure analysis, we
@@ -368,7 +365,7 @@ $a_i$ represent the attributes in theme $T_i$, and $v_i$ represents the value of
 Concepts (or classes) are the abstract nodes or collections of objects. Attributes provide extra features and are used to identify and describe the concept. Each attribute has at least a name and a value, and is used to store information that is specific to the object it is attached to. In addition, the value of an attribute can be a complex data type, such as a numerical interval or a set. Relation is used to indicate a similarity between two concepts within ontology. The four elements are shown in Figure 3.
 \begin{figure}[htb]
   \centering
-  \includegraphics{esa/3.eps}
+ \scalebox{0.4}{ \includegraphics{esa/3.eps}}
   \caption{Elements in Lightweight Domain Ontology}
 \end{figure}
 There are three steps to construct attribute-value vector.
@@ -379,7 +376,7 @@ There are three steps to construct attribute-value vector.
 
 \end{enumerate}
 
-We do word segmentation and use string matching to identify and collect the attributes and values based on the lightweight domain ontology. The similarity of attribute (or attribute value) S1 of string S2 is defined as follows.
+We do word segmentation and use string matching to identify and collect the attributes and values based on the lightweight domain ontology. The similarity of attribute (or attribute value) $S1$ of string $S2$ is defined as follows.
 \begin{definition}
   Similarity of Attribute (or Value) S1 of String
   S2 \[similarity(S_1,S_2) = \frac{V(S_1) \cap V(S_2)}{V(S_1)} \]
@@ -392,22 +389,21 @@ $V(S_1)$ represents the number of single words in $S_1$, and $V(S_1)
 The algorithm to construct attribute-value vector is as follows. ‘a’ and ‘b’ are two indicators of similarity.
 
  \begin{algorithm}
- \caption{algorithm}
+ \caption{algorithm to construct attribute-value vector}
     \begin{algorithmic}
-    \STATE{   Input: A theme in RDF\\
-Lightweight domain ontology \\
-String[] GetSynonymy (String) //a function to get the synonym of a word
+    \STATE{   Input: A theme in RDF and lightweight domain ontology \\
 
-Output:attribute-value vector of a theme
-
-Algorithm:
+Output: attribute-value vector of a theme
+}
+ \\[1em]
+\STATE{
 Each sentence in the theme is divided into sub sections by full stop
 and comma to form a vector of sub sentence $vector={C_1,C_2
   ,\cdots,C_i,\cdots,C_n} $
 }
 \FORALL{ $C_i, i=1,2,..n$} {
             \FORALL {$a_i$ of Ontology} {
-                \STATE{$aSyn=GetSynonymy(a_i)$}
+                \STATE{$aSyn=GetSynonymy(a_i)$ //get the synonym of a word}
                  \FORALL {$s$ of $aSyn$}{
 	                  \STATE{ Search $s$ in $C_i$}
                     \IF {$similarity>a$} 
@@ -528,7 +524,10 @@ In order to enhance the efficiency of BPNN, a threshold k is defined to
 reduce the dimension of input vector by removing the input nodes whose k
 value is more than a threshold. For a specific attribute value $v_j$,
 $k_j$ is defined as follows. 
-\[k_j = \frac{\sum_{i=1}^{m}no.of.zero(v_{ij})}{m}\]
+\begin{equation}
+  \label{eq:1}
+  k_j = \frac{\sum_{i=1}^{m}no.of.zero(v_{ij})}{m}
+\end{equation}
 
 In fact, a higher k value of a specific attribute value indicates a lower importance in identifying the failure mode. In experiment, k can be assigned different values to reduce the dimension of input vector and find the best k value for BPNN.
 
@@ -547,8 +546,12 @@ from neural network \cite{Sestito1991,130346}. The main steps include:
 \begin{enumerate}
 \item Extend the input nodes to include all the output nodes and
   training the new network with Back-propagation.
-\item Compute the Sum of Squared Error (SSEab) to measure the contribution of input a to output b.
-\[SSE_{ab} = \sum_{j=0}^{no.of.hidden.units}{(w_{bj}-w_{aj})}^2\]
+\item Compute the Sum of Squared Error ($SSE_{ab}$) to measure the
+  contribution of input a to output b.
+  \begin{equation}
+    \label{eq:2}
+    SSE_{ab} = \sum_{j=0}^{no.of.hidden.units}{(w_{bj}-w_{aj})}^2
+  \end{equation}
 
 $no.of.hidden.units$represents the number of hidden nodes,
 $w_{aj}$represents the value of the link between input $a$ and hidden
@@ -566,7 +569,11 @@ product are taken to the attributes defining the output. These input
 attributes are taken to be part of the antecedent and the output is
 taken to be the consequence of a rule. 
 
-\[Product_{ab} = SSE_{ab}\times weight_{ab}\]
+\begin{equation}
+  \label{eq:3}
+  Product_{ab} = SSE_{ab}\times weight_{ab}
+\end{equation}
+
 
 \end{enumerate}
 
@@ -597,7 +604,7 @@ it was selected through experiment around between $2Ni+1$ and $N_o(N_i
 used default. The architecture of BPNN is shown in Figure 4.
 \begin{figure}[htb]
   \centering
-  \includegraphics{esa/4.eps}
+ \scalebox{0.38}{ \includegraphics{esa/4.eps}}
   \caption{Architecture of the BPNN for Knowledge Acquisition
   }
 \label{fig:4}
@@ -611,20 +618,20 @@ The attribute-value vector of the $P$ theme is extracted by the prototype system
 
  \begin{figure}[htb]
   \centering
-  \scalebox{0.38}{\includegraphics{esa/5.eps}}
+  \scalebox{0.36}{\includegraphics{esa/5.eps}}
   \caption{Theme logic model of training samples}
 \label{fig:5}
 \end{figure}
-
+\clearpage{} 
 The neural network’s input nodes number is equal to the number of column in the input matrix, corresponding to the number of attribute value in domain ontology of failure analysis technique. There are 68 distinct attribute values for fracture failure. We remove the columns in the input matrix whose value is all zero, and 41 distinct attribute values remain. That means the number of inputs nodes ranges from 1 to 41. We assign 1, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7 to k and choose five different number of hidden nodes between $2N_i+1$ and $N_o(N_i +1)$ to design different BPNN. And the result is shown in Figure 6.
 
  \begin{figure}[htb]
   \centering
-  \scalebox{0.33}{\includegraphics{esa/6.eps}}
+  \scalebox{0.36}{\includegraphics{esa/6.eps}}
   \caption{Experiment results of different $k$ value}
 \label{fig:6}
 \end{figure}
- 
+
 Out of all the networks tested, a network with $k$ is equal to 0.8 and 56
 hidden nodes reached the best performance goal when compared with
 other networks. Then $Product_{ab}$  was computed to indicate the
@@ -650,11 +657,10 @@ extracted:
 \begin{verbatim}
 
 (IF       ‘Surface morphology’=‘Pit’ 
-AND  ‘Defects in materials presented by fracture’=‘Yes’
-AND  ‘Tendency of fracture or crack’=‘Along crystal expansion’
-AND  ‘Trace type’=‘Trace of mechanical contacts’, ‘Manufacturing trace’
-THEN   ‘Failure mode’=‘Brittle fracture’
-）
+      AND  ‘Defects in materials presented by fracture’=‘Yes’
+      AND  ‘Tendency of fracture or crack’=‘Along crystal expansion’
+      AND  ‘Trace type’=‘Trace of mechanical contacts’, ‘Manufacturing trace’
+THEN   ‘Failure mode’=‘Brittle fracture’)
 
 \end{verbatim}
 
@@ -677,12 +683,224 @@ efficiency of theme logic model generation.
 \section{Acknowledgment}
 \label{sec:acknowledgment}
 
-The work described in this paper was fully supported by a grant from ***( Project No.  ). 
+The work described in this paper was fully supported by the National Natural
+Science Foundation of China under Grant No.70871006.
 
 
 
 \bibliographystyle{elsarticle-num}
-\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee.bib,../../bibtex/springer,../../bibtex/internet,../../bibtex/worldacademic}
+%\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee.bib,../../bibtex/springer,../../bibtex/internet,../../bibtex/worldacademic}
+
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem{Mitchell2003}
+T.~M. Mitchell, Machine Learning, China Machine Press, 2003.
+
+\bibitem{turban2001dss}
+E.~Turban, J.~Aronson, Decision Support Systems and Intelligent Systems,
+  Prentice Hall PTR Upper Saddle River, NJ, USA, 2001.
+
+\bibitem{Campos2004}
+L.~M. de~Campos, J.~M. Fern{\'a}ndez-Luna, J.~F. Huete,
+  {Using context information in structured document
+  retrieval: an approach based on influence diagrams}, Information Processing
+  \& Management 40~(5) (2004) 829--847.
+
+
+\bibitem{salton1975vsm}
+G.~Salton, A.~Wong, C.~Yang, A vector space model for information retrieval,
+  Journal of the American Society for Information Science 18~(11) (1975)
+  613--620.
+
+\bibitem{361220}
+G.~Salton, A.~Wong, C.~S. Yang, A vector space model for automatic indexing,
+  Commun. ACM 18~(11) (1975) 613--620.
+
+\bibitem{215383}
+C.~Buckley, G.~Salton, Optimization of relevance feedback weights, in: SIGIR
+  '95: Proceedings of the 18th annual international ACM SIGIR conference on
+  Research and development in information retrieval, ACM, New York, NY, USA,
+  1995, pp. 351--357.
+
+
+\bibitem{Tai2002}
+X.~Tai, F.~Ren, K.~Kita,
+ {An information retrieval model based on vector space
+  method by supervised learning}, Information Processing \& Management 38~(6)
+  (2002) 749--764.
+
+\bibitem{130346}
+S.~Sestito, T.~Dillon, Machine learning using single-layered and multi-layered
+  neural networks, Tools for Artificial Intelligence, 1990.,Proceedings of the
+  2nd International IEEE Conference on (1990) 269--275
+ 
+\bibitem{234834}
+G.~Salton, A.~Singhal, C.~Buckley, M.~Mitra, Automatic text decomposition using
+  text segments and text themes, in: HYPERTEXT '96: Proceedings of the the
+  seventh ACM conference on Hypertext, ACM, New York, NY, USA, 1996, pp.
+  53--65.
+
+
+\bibitem{Huang2002}
+S.~H. Huang, H.~Xing,
+ {Extract intelligible and concise fuzzy rules from
+  neural networks}, Fuzzy Sets and Systems 132~(2) (2002) 233--243.
+
+
+\bibitem{Kim2004}
+Y.~Kim, W.~N. Street,
+  {An intelligent system for customer targeting: a data
+  mining approach}, Decision Support Systems 37~(2) (2004) 215--228.
+
+
+\bibitem{Sestito1991}
+S.~Sestito, T.~Dillon, {Using
+  single-layered neural networks for the extraction of conjunctive rules and
+  hierarchical classifications}, Applied Intelligence 1~(2) (1991) 157--173.
+
+
+\bibitem{Hahn2000}
+U.~Hahn, M.~Romacker,
+ {Content management in the syndikate system--how
+  technical documents are automatically transformed to text knowledge bases},
+  Data \& Knowledge Engineering 35~(2) (2000) 137--159.
+
+
+\bibitem{Gunn1999}
+A.~Gunn, G.~Sutcliffe, D.~Walker,
+  {Knowledge acquisition for natural resource
+  management}, Computers and Electronics in Agriculture 23~(1) (1999) 71--82.
+
+
+\bibitem{matwin:tac}
+S.~Matwin, S.~Szpakowicz, Text analysis: How can machine learning help,
+  Proceedings of the 1st Conference of the Pacific Association for
+  Computational Linguistics (PACLING) (1993) 33--42.
+
+\bibitem{Richardson1997}
+S.~D. Richardson, Determining similarity and inferring relations in a lexical
+  knowledge base, Ph.D. thesis, The City University of New York (1997).
+
+\bibitem{Raghavan1986}
+V.~V. Raghavan, S.~K.~M. Wong,
+ {A critical analysis of vector space model for information retrieval},
+  Journal of the American Society for Information Science 37~(5) (1986)
+  279--287.
+
+\bibitem{Mao2007}
+W.~Mao, W.~W. Chu,
+ {The phrase-based vector space model for automatic
+  retrieval of free-text medical documents}, Data \& Knowledge Engineering
+  61~(1) (2007) 76--92.
+
+
+\bibitem{Wei2008}
+C.-P. Wei, C.~C. Yang, C.-M. Lin,
+  {A latent semantic indexing-based approach to
+  multilingual document clustering}, Decision Support Systems 45~(3) (2008)
+  606--620.
+
+
+\bibitem{Liao1999}
+T.~W. Liao, Z.-H. Zhan, C.~R. Mount,
+  {An integrated database and expert system for failure
+  mechanism identification: Part i--automated knowledge acquisition},
+  Engineering Failure Analysis 6~(6) (1999) 387--406.
+
+
+\bibitem{roberts1980stm}
+R.~Roberts, Should there be a methodology for failure analysis, Critical Issues
+  in Materials and Mechanical Engineering 47 (1980) 171--84.
+
+\bibitem{Castro2004}
+P.~M. S.~T. de~Castro, A.~A. Fernandes,
+ {Methodologies for failure analysis: a critical
+  survey}, Materials \& Design 25~(2) (2004) 117--123.
+
+
+\bibitem{Israel2006}
+I.~B. Santiago, J.-M. Faure, Y.~Papadopoulos, Including systematic faults into
+  fault tree analysis, in: Fault Detection, Supervision and Safety of Technical
+  Processes, 2006, pp. 765--770 765--770.
+
+\bibitem{Zakarian1999}
+V.~L. Zakarian, M.~J. Kaiser,
+ {An embedded hybrid neural network and expert system
+  in a computer-aided design system}, Expert Systems with Applications 16~(2)
+  (1999) 233--243.
+
+
+\bibitem{Chen2006}
+J.~Chen, C.~Robertsx, P.~Weston, Neuro-fuzzy fault detection and diagnosis for
+  railway track circuits, in: Fault Detection, Supervision and Safety of
+  Technical Processes, 2006, pp. 1366--1371.
+
+\bibitem{Mayer1990}
+P.~Mayer, Boiler tube failure mechanism recognition - an expert system, CIM
+  Bulletin 83~(939) (1990) 92--95.
+
+\bibitem{liao1999ida}
+T.~Liao, Z.~Zhan, C.~Mount, An integrated database and expert system for
+  failure mechanism identification: Part ii—the system and performance
+  testing, Engineering Failure Analysis 6~(6) (1999) 407--421.
+
+\bibitem{lassila1999rdf}
+O.~Lassila, R.~Swick, et~al., {Resource Description Framework (RDF) Model and
+  Syntax Specification} (1999).
+
+\bibitem{Wang2008}
+J.~Wang, X.~Liu, Y.~Wu, Research on knowledge acquisition method from domain
+  text, in: H.-G. Yu, Y.~Jiang (Eds.), Proceedings of First International
+  Conference on Modelling and Simulation, Vol.~4, World Academic Press, 2008,
+  pp. 259--262.
+
+\bibitem{747902}
+B.~Chandrasekaran, J.~Josephson, V.~Benjamins, What are ontologies, and why do
+  we need them?, Intelligent Systems and Their Applications, IEEE 14~(1) (1999)
+  20--26.
+
+
+\bibitem{hassoun1995fan}
+M.~Hassoun, Fundamentals of Artificial Neural Networks, A Bradford Book, The
+  MIT press Cambridge, Massachusetts, London, England, 1995.
+
+\bibitem{rumelhart1986lir}
+D.~Rumelhart, G.~Hinton, R.~Williams, Learning internal representations by
+  error propagation, Parallel distributed processing: explorations in the
+  microstructure of cognition, vol. 1: foundations, MIT Press, Cambridge, MA,
+  1986.
+
+\bibitem{Massey2003}
+L.~Massey,
+  {On the quality of art1 text clustering}, Neural
+  Networks 16~(5-6) (2003) 771--778.
+
+
+\bibitem{graupe2007pan}
+D.~Graupe, Principles of Artificial Neural Networks, World Scientific, 2007.
+
+\bibitem{Khaw1995}
+J.~F.~C. Khaw, B.~S. Lim, L.~E.~N. Lim,
+ {Optimal design of neural networks using the taguchi
+  method}, Neurocomputing 7~(3) (1995) 225--245.
+
+
+\bibitem{turban:oaj}
+E.~Turban, Decision Support and Expert Systems: Management Support Systems,
+  Prentice Hall International, London, England, 1995.
+
+\bibitem{maren1990hnc}
+A.~Maren, C.~Harston, R.~Pap, Handbook of Neural Computing Applications,
+  Academic Press, Inc. Orlando, FL, USA, 1990.
+
+\bibitem{medema}
+M.~design~manual Editorial~Board, Mechanical Design Manual, Vol.~5, China
+  Machine Press, Beijing, 2007.
+
+\end{thebibliography}
 
 \end{document}
 
