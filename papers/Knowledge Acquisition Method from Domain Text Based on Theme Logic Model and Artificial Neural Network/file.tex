@@ -1,4 +1,4 @@
-\documentclass{elsarticle}
+\documentclass{elsart}
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{graphics}
@@ -13,7 +13,7 @@
 \begin{frontmatter}
 
 
-\title{Knowledge Acquisition Method from Domain Text Based on Theme Logic Model and Artificial Neural Network \tnoteref{t1,t2}}
+\title{Knowledge Acquisition Method from Domain Text Based on Theme Logic Model and Artificial Neural Network}
 %\tnotetext[t1]{This document is a collaborative effort.}
 %\tnotetext[t2]{The second title footnote.}
 
@@ -22,21 +22,18 @@
 % \address[label1]{}
 % \address[label2]{}
 
-\author[buaa]{Jun Wang\corref{cor1}}
+\author[buaa]{Jun Wang},
 \ead{king.wang@buaa.edu.cn}
-\author[buaa]{Yunpeng Wu}
+\author[buaa]{Yunpeng Wu\corauthref{cor1}},
+\corauth[cor1]{Corresponding author}
 \ead{yunpeng.wu@sem.buaa.edu.cn}
-\author[buaa]{Xuening Liu}
+\author[buaa]{Xuening Liu},
 \ead{lxnyoyo@gmail.com}
 \author[buaa]{Xiaoying Gao}
 \ead{cynsier@gmail.com}
 
-\cortext[cor1]{Corresponding author}
-%\cortext[cor2]{Principal corresponding author}
-
-
-\address[buaa]{School of Economics \& Management, Beihang University, Beijing 100083,
-P.R. China }
+\address[buaa]{School of Economics \& Management, Beihang University, 
+Beijing 100083, P.R. China }
 
 
 \begin{abstract}
@@ -233,7 +230,7 @@ transformed from the theme logic model based on the domain ontology,
 and the acquired knowledge will be converted into knowledge rules. Finally, the acquired knowledge rules will be stored into a knowledge base.
 \begin{figure}[htp]
   \centering
-  \scalebox{0.55}{\includegraphics{esa/1.eps}}
+  \scalebox{0.55}{\includegraphics{1.eps}}
 
   \caption{The Framework for Knowledge Acquisition from Domain Text}
   \label{fig:1}
@@ -253,7 +250,7 @@ choose RDF and the output of the structure analysis is a set of RDF
 documents, as is shown in Figure 2. 
 \begin{figure}[htp]
   \centering
-\scalebox{0.7}{  \includegraphics{esa/2.eps}}
+\scalebox{0.7}{  \includegraphics{2.eps}}
 
   \caption{Transform failure analysis report into RDF}
   \label{fig:2}
@@ -365,7 +362,7 @@ $a_i$ represent the attributes in theme $T_i$, and $v_i$ represents the value of
 Concepts (or classes) are the abstract nodes or collections of objects. Attributes provide extra features and are used to identify and describe the concept. Each attribute has at least a name and a value, and is used to store information that is specific to the object it is attached to. In addition, the value of an attribute can be a complex data type, such as a numerical interval or a set. Relation is used to indicate a similarity between two concepts within ontology. The four elements are shown in Figure 3.
 \begin{figure}[htb]
   \centering
- \scalebox{0.4}{ \includegraphics{esa/3.eps}}
+ \scalebox{0.4}{ \includegraphics{3.eps}}
   \caption{Elements in Lightweight Domain Ontology}
 \end{figure}
 There are three steps to construct attribute-value vector.
@@ -604,7 +601,7 @@ it was selected through experiment around between $2Ni+1$ and $N_o(N_i
 used default. The architecture of BPNN is shown in Figure 4.
 \begin{figure}[htb]
   \centering
- \scalebox{0.38}{ \includegraphics{esa/4.eps}}
+ \scalebox{0.38}{ \includegraphics{4.eps}}
   \caption{Architecture of the BPNN for Knowledge Acquisition
   }
 \label{fig:4}
@@ -618,7 +615,7 @@ The attribute-value vector of the $P$ theme is extracted by the prototype system
 
  \begin{figure}[htb]
   \centering
-  \scalebox{0.36}{\includegraphics{esa/5.eps}}
+  \scalebox{0.36}{\includegraphics{5.eps}}
   \caption{Theme logic model of training samples}
 \label{fig:5}
 \end{figure}
@@ -627,7 +624,7 @@ The neural network’s input nodes number is equal to the number of column in th
 
  \begin{figure}[htb]
   \centering
-  \scalebox{0.36}{\includegraphics{esa/6.eps}}
+  \scalebox{0.36}{\includegraphics{6.eps}}
   \caption{Experiment results of different $k$ value}
 \label{fig:6}
 \end{figure}
@@ -641,7 +638,7 @@ shown in Figure 7.
 
  \begin{figure}[htb]
   \centering
-  \scalebox{0.33}{\includegraphics{esa/7.eps}}
+  \scalebox{0.33}{\includegraphics{7.eps}}
   \caption{The association of failure phenomenon to failure mode measured by $Product_{ab}$
 }
 \label{fig:7}
@@ -688,7 +685,7 @@ Science Foundation of China under Grant No.70871006.
 
 
 
-\bibliographystyle{elsarticle-num}
+\bibliographystyle{elsart-num}
 %\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee.bib,../../bibtex/springer,../../bibtex/internet,../../bibtex/worldacademic}
 
 \begin{thebibliography}{10}
