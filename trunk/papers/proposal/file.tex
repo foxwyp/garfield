@@ -3,6 +3,8 @@
 \usepackage{setspace}
 \usepackage{fontspec}
 \usepackage[CJKaddspaces]{xeCJK}
+
+
 \usepackage{amsmath}
 %\usepackage[numbers,sort\&compress]{natbib}
     %    \setlength{\bibsep}{0.5ex}  % vertical spacing between references
@@ -20,7 +22,8 @@
 \usepackage[dvips]{xcolor}
 \geometry{vmargin={25mm},hmargin={30mm,20mm}}
 
-
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
 \newcommand{\chuhao}{\fontsize{42pt}{\baselinestrench}\selectfont} % 字号设置
 \newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont} % 字号设置
 \newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont} % 字号设置
@@ -853,11 +856,63 @@ Jarvanpaa提出人们共享知识的行为反映了他们对共享的偏好态�
 
 \section{拟解决的关键问题 }
 \label{sec:-}
+论文拟解决的关键问题包括：
+\begin{enumerate}
+\item 提出行为主体参与实践社区知识协同活动的动机因素模型，分析这些因素
+  是如何影响知识协同行为的。
+\item 建立行为主体协同行为模式的模型。根据此模型分析行为主体知识协同行
+  为的变化。
+\item  分析实践社区中行为主题的社会关系，建立其社会网络模型，区分不同
+  类型的协同者，进而验证动机因素对不同类型的协同着是如何作用的。
+\item  构建行为主体动机-行为模型，验证动机因素与行为模式的一致性。
 
+
+\item 调查数据的取得。根据以往的研究成果，基于互联网的调查问卷回收率在
+  15％左右，其中合格的问卷数量更更少。如果问卷样本不足，将会严重影响分
+  析的准确性。为此拟采用如下措施，提高问卷的回收数量。
+  \begin{itemize}
+  \item 广泛发送调查邀请。通过在相关的论坛、社区发送调查邀请，向
+    调查对象发送邮件邀请，扩大调查的知名度，提高参与着的绝对数量。
+   \item 控制问卷题目数量。有研究指出基于web的调查问卷完成时间最好控制
+     在15-30分钟内，由此可以大致推断题目的数量。通过压缩题目的数量、将
+     提题目的模糊程度，尽量减少开放性题目的数量，争取让更多的人参与调
+     查，同时提高问卷质量。
+  \end{itemize}
+\item  问卷设计。
+\end{enumerate}
 
 \section{研究方法}
 
 \section{技术路线}
+\tikzstyle{decision} = [diamond, draw, fill=blue!20,
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {initialize model};
+    \node [cloud, left of=init] (expert) {expert};
+    \node [cloud, right of=init] (system) {system};
+    \node [block, below of=init] (identify) {identify candidate models};
+    \node [block, below of=identify] (evaluate) {evaluate candidate models};
+    \node [block, left of=evaluate, node distance=3cm] (update) {update model};
+    \node [decision, below of=evaluate] (decide) {is best candidate better?};
+    \node [block, below of=decide, node distance=3cm] (stop) {stop};
+    % Draw edges
+    \path [line] (init) -- (identify);
+    \path [line] (identify) -- (evaluate);
+    \path [line] (evaluate) -- (decide);
+    \path [line] (decide) -| node [near start] {yes} (update);
+    \path [line] (update) |- (identify);
+    \path [line] (decide) -- node {no}(stop);
+    \path [line,dashed] (expert) -- (init);
+    \path [line,dashed] (system) -- (init);
+    \path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
 
 \section{可行性分析}
 
