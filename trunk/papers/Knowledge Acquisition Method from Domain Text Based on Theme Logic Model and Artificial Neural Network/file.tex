@@ -250,7 +250,7 @@ choose RDF and the output of the structure analysis is a set of RDF
 documents, as is shown in Figure 2. 
 \begin{figure}[htp]
   \centering
-\scalebox{0.7}{  \includegraphics{2.eps}}
+\scalebox{0.55}{  \includegraphics{2.eps}}
 
   \caption{Transform failure analysis report into RDF}
   \label{fig:2}
@@ -362,7 +362,7 @@ $a_i$ represent the attributes in theme $T_i$, and $v_i$ represents the value of
 Concepts (or classes) are the abstract nodes or collections of objects. Attributes provide extra features and are used to identify and describe the concept. Each attribute has at least a name and a value, and is used to store information that is specific to the object it is attached to. In addition, the value of an attribute can be a complex data type, such as a numerical interval or a set. Relation is used to indicate a similarity between two concepts within ontology. The four elements are shown in Figure 3.
 \begin{figure}[htb]
   \centering
- \scalebox{0.4}{ \includegraphics{3.eps}}
+ \scalebox{0.55}{ \includegraphics{3.eps}}
   \caption{Elements in Lightweight Domain Ontology}
 \end{figure}
 There are three steps to construct attribute-value vector.
@@ -619,7 +619,7 @@ The attribute-value vector of the $P$ theme is extracted by the prototype system
   \caption{Theme logic model of training samples}
 \label{fig:5}
 \end{figure}
-\clearpage{} 
+
 The neural network’s input nodes number is equal to the number of column in the input matrix, corresponding to the number of attribute value in domain ontology of failure analysis technique. There are 68 distinct attribute values for fracture failure. We remove the columns in the input matrix whose value is all zero, and 41 distinct attribute values remain. That means the number of inputs nodes ranges from 1 to 41. We assign 1, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7 to k and choose five different number of hidden nodes between $2N_i+1$ and $N_o(N_i +1)$ to design different BPNN. And the result is shown in Figure 6.
 
  \begin{figure}[htb]
