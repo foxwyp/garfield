@@ -1,0 +1,182 @@
+\documentclass{elsarticle}
+\usepackage[colorinlistoftodos, textwidth=4cm]{todonotes}
+\usepackage{amsmath}
+\journal{Physica A}
+
+\begin{document}
+
+\begin{frontmatter}
+  \title{Social network analysis of Chinese Wikipedia \tnoteref{t1}}
+  \tnotetext[t1]{This research is supported by the National Natural
+    Science Foundation of China under Grant No.70871006.}
+
+  \author[buaa]{Yunpeng Wu\corref{cor1}\fnref{fn1}}
+  \ead{yunpeng.wu@sem.buaa.edu.cn}
+  \author[buaa]{Jun Wang}
+  \ead{king.wang@buaa.edu.cn}
+  \author[buaa]{Lu Liu}
+  \ead{liulu@buaa.edu.cn}
+  
+  \cortext[cor1]{Corresponding author}
+  \fntext[fn1]{This is the specimen author footnote.}
+
+  \address[buaa]{School of Economics \& Management, Beihang University, 
+    Beijing 100083, P.R. China}
+  
+  \begin{abstract}
+  
+  \end{abstract}
+
+  \begin{keyword}
+    Social network analysis, Chinese Wikipedia
+  \end{keyword}
+
+\end{frontmatter}
+
+\listoftodos
+\section{Introduction}
+\label{sec:introduction}
+ \todo[color=yellow!40]{Abstract needed} %
+Nowadays wikipedia has been the world largest online
+encyclopedia. Millions of people work together to add content to it
+even without knowing each other. The most interesting thing is how
+these different people organized and collaborate. To what extent can
+these participants involve in this activity and what the category they
+fall into. Although social network analysis has been developed a few
+decades and applied to research from SNS to e-commerce, few articles
+concentrate of the social organization on Wikipedia.
+
+One of the most interesting questions concerning to Wikipedia is who
+wrote the huge content. According to Wikipedia statistics until now
+Chinese Wikipedia already have 176 thousand articles\cite{wikistat}.
+While  register of Chinese Wikipedia has hit to  12
+thousand, not all of them get involved in content contribution and
+a lot of anonymous contributors also wrote some of the
+articles. Someone pointed just a small group of people of the whole
+community contribute the great part of content of Wikipedia which
+indicate the 80-20 rule is also applicable to Wikipedia content
+creation\cite{aswartz}. Though the claim has been questioned, no
+academic research yet dive into the issue and figure out how millions
+of articles are created, who wrote them and what portion of the
+'active ' writers. This study try to address these issues.
+
+\section{Chinese Wikipedia}
+\label{sec:introduction-1}
+Wikimedia provides the archivess of  wikipedia contents dumped
+regularly from
+Wikipedia's website.  There are three diffrent types of archive: 
+pages\nobreakdash{-}articles contains current versions of article content,
+pages-meta-current is  a   complete archive. Besides pages-articles
+content, discussion and user pages are also included.  The third type
+is pages-meta-history contains complete text of every revision of
+every page which very suitabel  for research. We take this archive for
+our study. The archive is a
+compressed xml file  contains complete, raw text of every revision and
+its meta data such as page title, article text, comment and revison
+timestamp etc. These meta data then can be used for further research.
+Wikipedia categorized its content into several categories, table 1
+list all of them:
+\begin{table}
+ \centering
+ \caption{Wikipedia category}
+  \begin{tabular}[center]{|c|c|c|}
+  \hline
+  No  & category name  & description \\
+  \hline
+   1 & Media & \\\hline 
+  2 &Special & \\\hline
+  3 & Talk & \\\hline
+  4 &  User  & \\\hline
+  5 & User Talk & \\\hline
+  6 & Wikipedia  & \\\hline
+  7 & Wikipedia Talk & \\\hline
+  8 &  Image & \\\hline
+  9 & Image Talk & \\\hline
+  10 &  MediaWiki& \\\hline
+  11 & MediaWiki Talk& \\\hline
+12 & Template& \\\hline
+13 & Template Talk& \\\hline
+14 & Help& \\\hline
+  \end{tabular}
+\end{table}
+We can see from table 1 most Wikipedia content contribution focus on
+limited categories while other categories aim to better organize and
+manage Wikipedia: contributors write page text, discuss what and how
+to write at Talk and  the image of the content at Image Talk. These
+three categories are regared as what a contributor trully share his
+intelligence and hard work to other people. In this study, we focus
+our eyes only on these categories. 
+ \section{Methodologies}
+ \label{sec:methodoligis}
+
+ We choose Chinese Wikipedia as our research target. The data archive
+ is  a huge XML file containing every action contributors did. Each
+ article has several, maybe millions, revision record the contributor
+ id, timestamp, action, comment and revised article content. These
+ information constitute basic element for our study.
+
+\subsection{Revision similarity}
+\label{sec:revision-similarity}
+
+Each page has several, sometimes hundreds of, revisions consitute edit
+history of the page. Every revision revise some content of the page:
+better words, more acurate description, adding more related content
+etc. From the long run, we can see the revisions as a continuous
+improvement process. Each revison represents a little step of
+improvement from previons work to next page revision. Of cource not
+every revision advance the content quility, since Wikipedia is open to
+everyone, either registered user or anonymouse user can edit it,
+lowing the content quality may be inevitable at some revision,
+including not
+only  indiliberate mistakes but intentional troublemaking. However
+this bad effect maybe erased very soon \todo{reference needed}. Thus
+we can see the content is '0' at the very beginning while '1' at the
+last revision of the page. The page content evolved from '0' to '1'
+during several revisions. If we give a metric to measure the
+similarity between  previouse revisions and the last revision, then
+we can see a group of the similarity   approaching 1 from 0, which
+means after a edit process, the page content is more similar to the
+last revision.  If we substract the similarity of every tow conjective
+revison, name it $\delta$, we see $\delta$ is the contribution a
+contributor made. The $\delta$ can be either positive or
+negative. Negative $\delta$ represents low quality content or mistake
+should be fixed after or even vandalism. Thus we can see the set of
+$\delta$ constitute a soring curve while some times get down(negative
+$\delta$) or zigzag(edit war).
+
+\subsection{Calculate similarity}
+\label{sec:calculate-similarity}
+
+Calculating similarity between tow revisions is not an easy task. The
+content may not evlove lineally. Each edit not only add extra content
+but adjust existing content and reorganize the content
+structure. If a revision reorganized the content structure, how can we
+evaluate  the contribution? Is it a great contribution since it
+'rewrite' the whole content or just a minor change since little new
+content added?
+
+\section{Data Analysis}
+\label{sec:data-analysis}
+
+\subsection{Similarity Analysis}
+\label{sec:similarity-analysis}
+\todo{show the intersection of edits and contribution}
+\subsection{80-20}
+\label{sec:80-20}
+\todo{show whether zhwiki apply 80-20 rule}
+
+\subsection{New Article Creation}
+\label{sec:new-article-creation}
+
+\todo{see new page crete }
+
+
+\bibliographystyle{elsarticle-num}
+\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
