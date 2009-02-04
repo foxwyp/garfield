@@ -178,7 +178,17 @@ the same size of the
 set. Sometimes an article is not attractive much contributor then we
 don't get 10 writers. On the other hand, number of candidates may
 exceed the size of set, the choice of which one shoulde be included
-will affect the final result of the page dramatically. Since 
+will affect the final result of the page dramatically. Since the
+contribution we compute is very accurate, it is not likely tow
+contributor will get the same contribution in a page. The number of
+edit, howerver, are much more likely to be equal. If we choose some
+candicate also included in the other set, the ratio thus will be
+higher than normal, otherwise will be lower. To deal with this
+problem, on easy way maybe discard  the whole rest candidates, which
+lead the size of set various one from another. This appraoch may harm
+what we want to compare. Another thought is although we know different
+choice of the rest candidate will affect the  page result, but to what
+extend it will affect the whole result is still unclear.   
 
 
 \subsection{Similarity Analysis}
