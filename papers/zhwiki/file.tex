@@ -190,7 +190,63 @@ what we want to compare. Another thought is although we know different
 choice of the rest candidate will affect the  page result, but to what
 extend it will affect the whole result is still unclear. 
   
+\todo{simplified chinese and traditional chinese}
+\todo{redirect page}
+\todo{robot and user-created robot}
 
+\subsection{Redirecting and Robot}
+\label{sec:redirecting-robot}
+
+Every page of Wikipdia is about a unique but correlated topic. It
+seems inevitable that tow people will create the same topic
+\``simultaneously\", that is, they don't konw the existence of each
+other. The tow same topic will also summon some other contributors and
+keep on completing the rest of work untill someone accidentally find
+there are tow pages concerning the same topic. The redudence of
+content in wikipedia will negatively affect both contributors and
+readers. Contributors may have to make their decisions that  which
+page to follow and readers are confronted to potential information
+loss. They may don't konw another page can provide some complementary
+information. Redundence content may be more serious in Chinese
+Wikipedia. A topic can have several versions: traditional Chinese,
+simplified Chinese, original topic name, translated name
+etc. Wikipedia provide a mechanism named 'Redirect  \cite{wikiredirect}
+to solve this issue.  Once marked redirect, when accessing the inferior one, the page will
+automatic directed to the better one. The inferior one just left edit
+history and no one will add any content to it. In the data archive of
+Wikipedia, there are lots orphan page left and it is important to
+decide what role these page play in our study. Though edited by many
+contributors, these pages are regared as incomplete, inferior quality
+comparing to the redirecting one. Readers will no longer access its
+content unless they are interested in the edit history. The content
+are also converd and extended by the directing one which has better quality. We believe the
+orphans should not be included in our research and we discard those
+content from the archive.
+
+Robots in wikipedia is an automatic tool usually created by user to do
+some tough and tedious work. It participate in the edit of page and
+change the content to apply for Wikipedia rules. While appeared in
+neraly every page edit history and made millions of edit, robots, as
+one can imagine, can not add valuable content sustantially. They just
+change the \"look\" of the page. Though seen as a real user, behavior
+of robot is not concerned in our research. We still compute the
+contribution of robot in each page so that the contribution delta is
+reflect the proper contribution of  each user.
+ 
+\subsection{Data analysis}
+\label{sec:data-analysis}
+
+After data proceesing we get selected summary data. We have 205499
+pages into our reseach from wiki content after discard directing
+ones. There are 55803 registered users and thandsands of anonymous
+users contribute 4623350 revisions, averaging  83 revisions per
+page. Thus we just focus our eyes on processed data.
+
+\subsubsection{Powerless of anonymous users}
+\label{sec:powerl-anonym-users}
+Wikipedia is  a open platform that anyone can edit even without
+register. In chinese Wikipedia there are 907763  revisions generated
+by anonymous users, account for 1.9\% of total revisions.  
 
 \subsection{Similarity Analysis}
 \label{sec:similarity-analysis}
@@ -227,6 +283,18 @@ extend it will affect the whole result is still unclear.
 \todo{see new page crete }
 
 
+total registered user:55803 \\
+
+total pages:205499
+human contribution:189624.26 92.28\%
+toal contributuion <10: 54229  97.18\%  contri : 18981.97
+total contribution <1: 48695 87.26 \%  contri 3162.99 1.67\%
+total contribution <0.5 : 43037 77.12\%  contri : -1217.68
+toal contribution >1000 : 23  contri: 48303 25.47\%
+total revision :4623350
+anonymous revision:907763 19.63\%
+
+anonymous contribution: 7438.95 3.92\%
 \bibliographystyle{elsarticle-num}
 \bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
 
