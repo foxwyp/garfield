@@ -24,7 +24,7 @@
     Beijing 100083, P.R. China}
   
   \begin{abstract}
-  
+    
   \end{abstract}
 
   \begin{keyword}
@@ -36,7 +36,7 @@
 \listoftodos
 \section{Introduction}
 \label{sec:introduction}
- \todo[color=yellow!40]{Abstract needed} %
+\todo[color=yellow!40]{Abstract needed} %
 Nowadays wikipedia has been the world largest online
 encyclopedia. Millions of people work together to add content to it
 even without knowing each other. The most interesting thing is how
@@ -77,26 +77,26 @@ timestamp etc. These meta data then can be used for further research.
 Wikipedia categorized its content into several categories, table 1
 list all of them:
 \begin{table}
- \centering
- \caption{Wikipedia category}
+  \centering
+  \caption{Wikipedia category}
   \begin{tabular}[center]{|c|c|c|}
-  \hline
-  No  & category name  & description \\
-  \hline
-   1 & Media & \\\hline 
-  2 &Special & \\\hline
-  3 & Talk & \\\hline
-  4 &  User  & \\\hline
-  5 & User Talk & \\\hline
-  6 & Wikipedia  & \\\hline
-  7 & Wikipedia Talk & \\\hline
-  8 &  Image & \\\hline
-  9 & Image Talk & \\\hline
-  10 &  MediaWiki& \\\hline
-  11 & MediaWiki Talk& \\\hline
-12 & Template& \\\hline
-13 & Template Talk& \\\hline
-14 & Help& \\\hline
+    \hline
+    No  & category name  & description \\
+    \hline
+    1 & Media & \\\hline 
+    2 &Special & \\\hline
+    3 & Talk & \\\hline
+    4 &  User  & \\\hline
+    5 & User Talk & \\\hline
+    6 & Wikipedia  & \\\hline
+    7 & Wikipedia Talk & \\\hline
+    8 &  Image & \\\hline
+    9 & Image Talk & \\\hline
+    10 &  MediaWiki& \\\hline
+    11 & MediaWiki Talk& \\\hline
+    12 & Template& \\\hline
+    13 & Template Talk& \\\hline
+    14 & Help& \\\hline
   \end{tabular}
 \end{table}
 We can see from table 1 most Wikipedia content contribution focus on
@@ -106,14 +106,14 @@ to write at Talk and  the image of the content at Image Talk. These
 three categories are regared as what a contributor trully share his
 intelligence and hard work to other people. In this study, we focus
 our eyes only on these categories. 
- \section{Methodologies}
- \label{sec:methodoligis}
+\section{Methodologies}
+\label{sec:methodoligis}
 
- We choose Chinese Wikipedia as our research target. The data archive
- is  a huge XML file containing every action contributors did. Each
- article has several, maybe millions, revision record the contributor
- id, timestamp, action, comment and revised article content. These
- information constitute basic element for our study.
+We choose Chinese Wikipedia as our research target. The data archive
+is  a huge XML file containing every action contributors did. Each
+article has several, maybe millions, revision record the contributor
+id, timestamp, action, comment and revised article content. These
+information constitute basic element for our study.
 
 \subsection{Revision similarity}
 \label{sec:revision-similarity}
@@ -189,7 +189,7 @@ lead the size of set various one from another. This appraoch may harm
 what we want to compare. Another thought is although we know different
 choice of the rest candidate will affect the  page result, but to what
 extend it will affect the whole result is still unclear. 
-  
+
 \todo{simplified chinese and traditional chinese}
 \todo{redirect page}
 \todo{robot and user-created robot}
@@ -279,26 +279,26 @@ and contribution, so it is no harm to our analysis.
 \todo{show the intersection of edits and contribution}
 
 \begin{table}
-    \centering
-    \caption{ratio}
-    \begin{tabular}[center]{|c|c|c|}
-      \hline\\
-      number & count & percentage \\\hline
-      0 & 287852& $65.71\%$\\\hline
-      1 & 108362& $24.74\%$\\\hline
-      2 & 10105& $2.31\%$\\\hline
-      3 & 11055& $2.52\%$\\\hline
-      4 & 9840&$2.25\%$ \\\hline
-      5 & 6613& $1.51\%$\\\hline
-      6 & 3033& $0.70\%$\\\hline
-      7 & 957& $0.22\%$\\\hline
-      8 & 197& $0.04\%$\\\hline
-      9 & 18& $0.004\%$\\\hline
-     
-    \end{tabular}
-   
- \end{table}
+  \centering
+  \caption{ratio}
+  \begin{tabular}[center]{|c|c|c|}
+    \hline\\
+    number & count & percentage \\\hline
+    0 & 287852& $65.71\%$\\\hline
+    1 & 108362& $24.74\%$\\\hline
+    2 & 10105& $2.31\%$\\\hline
+    3 & 11055& $2.52\%$\\\hline
+    4 & 9840&$2.25\%$ \\\hline
+    5 & 6613& $1.51\%$\\\hline
+    6 & 3033& $0.70\%$\\\hline
+    7 & 957& $0.22\%$\\\hline
+    8 & 197& $0.04\%$\\\hline
+    9 & 18& $0.004\%$\\\hline
+    
+  \end{tabular}
   
+\end{table}
+
 \subsection{80-20}
 \label{sec:80-20}
 \todo{show whether zhwiki apply 80-20 rule}
@@ -314,55 +314,30 @@ user distribution 80-20
 revisions 80-20
 Wikipeida commutiny also applies for 80-20 rule as other
 communities. A lot of low-level users that seldom getting involved in
-\begin{table}[h]
-  \centering
-  \caption{Wikipedians group}
-  \begin{tabular}[center]{|c|c|c|}
-    \hline
-    person contribution&number of people&percentage
-    \\\hline
-    $< 1$&48178&$87.25\%$\\\hline
-    $1<x<10$&5414&$9.8\%$\\\hline
-  \end{tabular}
 
-\end{table}
-
-\begin{table}[h]
-  \centering
-   \caption{some thoing}
- \begin{tabular}[center]{|c|c|c|c|c|}
-  
-   \hline
-    group&total page&percentage&total contribution&percentage \\\hline
-    $<1$&59505&$28.97\%$&3721&$1.96\%$ \\\hline
-    $<10$&68984&$33.59\%$&15581.72&$8.23\%$ \\\hline
-  \end{tabular}
-  
-\end{table}
 page editing formulate a long tail and a few high-level users take
 account for most of page edit and content contribution. In chinese
 wikipedia, concentratioan may be more obvious than others. The
 following table shows the detail:
 
+\begin{table}[h]
+  \centering
+  \caption{Wikipedians group}
+  \begin{tabular}[center]{|c|c|c|c|c|}
+    \hline
+     person contribution& $< 1$&1-200&200-900&$>900$ \\\hline
+    number of people&48178&6817&125&30 \\\hline
+    percentage&$87.25\%$&$12.35\%$&$0.23\%$&$0.05\%$ \\\hline
+    total page&59505&154270&134108&134615 \\\hline
+    percentage&$28.97\%$&$75.12\%$&$65.30\%$&$65.54\%$ \\\hline
+    total contribution&3720.96&75194.85&48152.63&54919.75 \\\hline
+    percentage&$2.04\%$&$41.32\%$&$26.46\%$&$30.18\%$ \\\hline 
+  \end{tabular}
+
+\end{table}
 
 \subsection{New Article Creation}
 \label{sec:new-article-creation}
-
-\todo{see new page crete }
-
-
-Total registered user:55803 \\
-
-total pages:205499
-human contribution:189624.26 92.28\%
-toal contributuion <10: 54229  97.18\%  contri : 18981.97
-total contribution <1: 48695 87.26 \%  contri 3162.99 1.67\%
-total contribution <0.5 : 43037 77.12\%  contri : -1217.68
-toal contribution >1000 : 23  contri: 48303 25.47\%
-total revision :4623350
-anonymous revision:907763 19.63\%
-
-anonymous contribution: 7438.95 3.92\%
 \bibliographystyle{elsarticle-num}
 \bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
 
