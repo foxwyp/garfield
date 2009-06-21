@@ -7,6 +7,7 @@
 \usepackage{graphics}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{subfigure}
 
 %\usepackage{algorithmicx}
 \journal{Expert System with Applications}
@@ -50,10 +51,10 @@ especially from computer science and social science.
  The scientific understanding to the quantitative and
 qualitative characteristics of complex network has been studied in
 different area such as sociology, mathematics, life sciences,
-engineering and many others. Complex networks show some non-trivial
+engineering and many others. The main differences between complex
+network and ordinary network are  some non-trivial
 topologicl features such as “small worlds” effect[7], scale-free[8],
-power law[9] and so on. Collaboration system is a good example of
-complex network. In this network, collaborators are represented by nodes of the network
+power law[9] and so on. A typical example of complex network is collaboration system. In this network, collaborators are represented by nodes of the network
 and their connnections are represented by edges. A piles of literature
 has studied the statistical perpoties[111] and give the mechanism of
 the network evlovement.
@@ -62,33 +63,60 @@ the network evlovement.
 %In recent years, bipartite networks have attracted more and more people's attention [10-13]. Factuallyt, many real-world networks are naturally bipartite, such as the actors-films network [11], the Scientist Co-authorship Collaboration network [12-13], the knowledge-cooperation network and so on.
 
 Wikipedia is the world largest online-encyclopedia based on wiki
-system,  characterized as \"ultra-lightweight\" content management systems
+system,  characterized as "ultra-lightweight" content management systems
 [14]. It is often seen as the typical knowledge-cooperation newtork and virtual
-practice community and attracted the intense attention of scholars
-because of its' unique characters. Unlike other social networks on the
+practice community. The huge content serves as an excellent example of
+a large complex network [1], thus attracted the intense attention of scholars
+because of its' unique characteristics. Unlike other social networks on the
 Internet，such as blog,  the
 collaboration in Wikipedia is expanding denotedly and connotedly while the collaboration in blog is non-themed or variable- themed. It will talk about a topic with a very full depth [16].
 
-Topic and users constitute the Wikipedia. Capossi etc describe topics by vertices and hyperlinks between them as edges, thus represent
+Topics and users constitute the Wikipedia. A topic is a content entry
+of Wikipedia relatively indepentent to others. The topology of netwotk  has
+been examined
+ from several facets. Capossi etc describe topics by vertices and hyperlinks between them as edges, thus represent
 this encyclopedia as a directed graph. The result shows Wikipedia has
-similar topological properties of to the World Wide Web.
+similar topological properties of to the World Wide Web. Zalatic etc use
+same methods and thogouly studied the network characteristics such as as their degree distributions, growth, topology, reciprocity, clustering, assortativity, path lengths, and triad
+signiﬁcance proﬁles in different language versions. Bolikowski
+studied the link between diferent language edition of topics and found
+the topic size distribution obeys the power law. Some others analyze
+the network alongwith time slices(Buriol,). The interesting thing is
+, as metioned before, though users are antoher foundation of Wikipedia
+content creation, they are ignored by current researchers in network
+analysis. There are interactio between users themself and connections
+between users and topics, both form a network and remain unclear of the topology and
+properties of the network.    
 
 
 
-In the current studies, complex network has shown a lot of valuable properties [7-13,17]. This paper focuses on two aspects: the wiki one-dimensional network, ties connected between users; the bipartite network, the ties connected users and topics. Through an empirical study of en-Wikipedia network’s data which is from January 2004 to January 2008, we discover that many properties of wiki network are similar with other networks. 
+ This paper keeps eyes  on these two kinds of networks: the wiki
+ one-dimensional network, representing users connections; the
+ bipartite network, which ties users and topics. Through an
+ empirical study of en-Wikipedia network’s data  from January
+ 2004 to January 2008, we discover that many properties of these tow networks are similar with other networks. 
 
-The rest of the paper is organized as follows. In section II, we
+The rest of the paper is organized as follows. In section 2, we
 introduce the complex social network mould wiki-based knowledge
 collaboration. The empirical analysis of the one-dimensional
-properties is presented in section III. On the meanwhile, section IV
-proposes the pilot study of the wiki bipartite network, namely, the
-relationship between network properties and scale. Section V is
-devoted to our conclusions and discussions.
+properties is presented in section 3. Section 4 examines properties
+and scale of the  bipartite network. Section V is
+the conclusions and discussions.
 
 \section{The network structure of Wiki-based knowledge collaboration}
 \label{sec:netw-struct-wiki}
 
-Wikipedia is a typical Knowledge collaboration- oriented virtual community, in which the group who has the same interest in the same topic can communicate and interact with each other through topic pages to participate in the knowledge collaboration activities. Wikipedia can be depicted as an open content encyclopedia，the open materials of which allow unrestricted access to any third party to copy, modify, thus, it  provides great convenience for people from various sectors. On the meantime, the users can increase their knowledge and enrich themselves. As of April 25, 2009, according to Wikipedia statistics (Wiki Stats Statistics) [18], the English version has 16,550,111 entries, user groups have been 9,505,160.Over a period of time, there will be a certain number of user groups to participate in the discussion of a topic.
+Wikipedia is a typical Knowledge collaboration- oriented virtual
+community, in which the group who has the same interest in the same
+topic can communicate and interact with each other through topic pages
+to participate in the knowledge collaboration activities. Wikipedia
+can be depicted as an open content encyclopedia，the open materials of
+which allow unrestricted access to any third party to copy, modify,
+thus, it  provides great convenience for people from various
+sectors. On the meantime, the users can increase their knowledge and
+enrich themselves. As of April 25, 2009, according to Wikipedia
+statistics (Wiki Stats Statistics) [18], the English version has
+16,550,111 entries, user groups have been 9,505,160. Over a period of time, there will be a certain number of user groups to participate in the discussion of a topic.
 
 As to the characteristics of Wikipedia knowledge collaboration network, the authors of this paper build a collaborative Wiki-based knowledge network model, as shown in Figure 1. There are also two types of ties: C and A: C is the collaboration among users, shown as white lines in Fig.1, while the A express the affiliation between T and U, shown as dark color lines in Fig.1. The collaboration relationship among C ties comes into being through participating in the A ties discussions.  
 
@@ -118,23 +146,52 @@ This model does not clearly define the direction of the relationship, thus, the 
 
 
 
-\begin{align*}
-  \begin{matrix} 
- &u_1 & u_2 \\  
- u_1\ldelim[{2}{0.1cm}&1&0&\rdelim]{2}{0.1cm}\\
- u_2 &0&1\\
-\end{matrix}
-& \qquad \qquad 
-\begin{matrix}  & T_1 & T_2 \\ 
- u_1\ldelim[{2}{0.1cm}&1&0&\rdelim]{2}{0.1cm}\\
- u_2&1&0 \\
-\end{matrix}
-\end{align*}
-
+\begin{displaymath}
+  B_u = \bordermatrix{%
+    &u_1&u_2&u_3&u_4&u_5&u_6&u_7&u_8&u_9&u_{10}&u_{11}&u_{12} \cr
+  u_1&0&1 \cr
+  u_2&1&0 \cr
+  u_3&&&0&1&1&1 \cr
+   u_4&&&1&0&1&1 \cr
+ u_5&&&1&1&0&1 \cr
+ u_6&&&1&1&1&0&1&1&1&1 \cr
+ u_7&&&&&&1&0&1&1&1 \cr
+ u_8&&&&&&1&1&0&1&1 \cr
+u_9&&&&&&1&1&1&0&1&1&1 \cr
+  u_{10}&&&&&&1&1&1&1&0&1&1 \cr
+   u_{11}&&&&&&&&&1&1&0&1 \cr
+  u_{12}&&&&&&&&&1&1&1&0 \cr
+}
+\end{displaymath}
+\begin{displaymath}
+   B_t = \bordermatrix{%
+    &T_1&T_2&T_3&T_4 \cr
+   u_1&1 \cr
+   u_2&1 \cr
+    u_3&&1 \cr
+    u_4&&1 \cr
+    u_5&&1 \cr
+    u_6&&1&1 \cr
+    u_7&&&1 \cr
+    u_8&&&1 \cr
+    u_9&&&1&1 \cr
+    u_{10}&&&1&1 \cr
+    u_{11}&&&&1 \cr
+    u_{12}&&&&1 \cr
+}
+\end{displaymath}
 \section{The empirical study of single-dimensional Wiki-based knowledge collaboration network}
 \label{sec:empir-study-single}
 
-Since Wikipedia provides all kinds of comprehensive, convenient, and accurate archives of history data which are stored in the form of . XML and SQL files, the researchers can download for free according to their different requirements. We choose “enwiki-20081008-stub-meta-history.xml”[19] as our research data. These files contain no page text, only revision metadata before December 8th 2008. Because the Wikipedia community was in an unstable phase before 2003, we choose the data from 2004 to 2008. In order to better observe the changes of the network properties at different time periods, we divided the time duration into months, build 48 sub-networks of each month from January 2004 to December 2007 and calculate the special data of the 48 sub-networks.
+Since Wikipedia provides all kinds of comprehensive, convenient, and
+accurate archives of history data which are stored in the form of
+XML and SQL files, the researchers can download for free according
+to their different requirements. We choose
+“enwiki-20081008-stub-meta-history.xml”[19] as our research
+data. These files contain no page text, only revision metadata before
+December 8th 2008. Because the Wikipedia community was in an unstable
+phase before 2003, we choose the data from 2004 to 2008. In order to
+better observe the changes of the network  properties at different time periods, we divided the time duration into months, build 48 sub-networks of each month from January 2004 to December 2007 and calculate the special data of the 48 sub-networks.
 
 The data on access in this study are filtered and cleared in the following steps. Step 1, screen out all contributors data in the above-mentioned time periods and all the related contributors versions, topic pages data. Then clear the data twice. Step 2: do the first clearing: exclude the data which have no user ids but only IP addresses, since we are unable to check the identity and track his activities without user ID. Factually, we need to track the contributors’ activities and user id is the identification to be followed up. Step 3: do the second clearing: delete isolated nodes, namely, those nodes which have only one user under a topic. In this study, it is admitted that there is no collaboration relationship between this user and other users under such topic.
 
@@ -142,7 +199,7 @@ In order to illustrate the data changes, ultimately the 24 odd-numbered subnets 
 % Table generated by Excel2LaTeX from sheet 'Working'
 \begin{table}[htbp]
  
-  \caption{Add caption}
+  \caption{. The 24 odd-numbered Wikipedia data summary from 2004 to 2007}
    \begin{tabular}{lllllll}
         & Users & Pages & W &  \parbox{1.4
 cm}{Average Degree} &  \parbox{1.7cm}{Clustering Coefficient} &  Density \\\hline
@@ -196,6 +253,40 @@ The degree distributions of the above 24 Wikipedia subnet are
 displayed as curves in double logarithmic coordinates, as shown in
 Figure 2. To show conveniently, each subgraph in Figure 2 identifies
 the subnets of three months.
+\begin{figure}[p]
+  \centering
+  \subfigure[a]{
+     \scalebox{0.3}{\includegraphics{02-1}}
+   } \quad
+  \subfigure[b]{ 
+       \scalebox{0.3}{\includegraphics{02-2}}
+   } 
+   \end{figure}
+   \begin{figure}[p]
+    \subfigure[c]{
+     \scalebox{0.3}{\includegraphics{02-3}}
+   } \quad
+  \subfigure[d]{ 
+       \scalebox{0.3}{\includegraphics{02-4}}
+   } 
+    \end{figure}
+   \begin{figure}[p]
+    \subfigure[e]{
+     \scalebox{0.3}{\includegraphics{02-5}}
+   } \quad
+  \subfigure[f]{ 
+       \scalebox{0.3}{\includegraphics{02-6}}
+   } 
+ \end{figure}
+   \begin{figure}[p]
+    \subfigure[g]{
+     \scalebox{0.3}{\includegraphics{02-7}}
+   } \quad
+  \subfigure[h]{ 
+       \scalebox{0.3}{\includegraphics{02-8}}
+   } 
+   \caption{Distribution of degree in odd months from 2004 to 2007}
+\end{figure}
 
 Master equation method is adopted to further analyze degree
 distributions of the above collaboration networks[21]. Degree
@@ -233,7 +324,7 @@ connections, namely, which demonstrates the “long tail” phenomenon.
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics{03}
+  \scalebox{0.3}{\includegraphics{03}}
   \caption{The Changes curve of the average degree over time}
 \end{figure}
 
@@ -281,7 +372,7 @@ In wiki-based knowledge collaboration networks, the Clustering Coefficients in p
 Wiki-based知识协同网络的集聚程度随时间的变化如图4所示(上一段已经提过)，In wiki-based knowledge collaboration networks, the Clustering Coefficients changes are presented in Fig.4. The results of the experiments show that the Clustering Coefficient focus on about 0.55. Threrefore, it is natural to draw the conclusion that many types of complex networks, especially social networks, aren’t entirely random networks, on the contrary, they have the characteristic of “Like attracts like.” Practice community is defined as: the people who pay close attention to a certain subject and hold strong passion for this topic, furthermore, they increase their knowledge and skills in this field through sustained communicating and exchanging knowledge with each other [24]. As a typical virtual community of practice, the members in wikipedia community participate in editing the pages of some topics in accordance with their interests, hobbies and professions, naturally, there exists a feature of “People groups” among them.
 \begin{figure}[htpb]
   \centering
-  \includegraphics{04}
+  \scalebox{0.3}{\includegraphics{04}}
   \caption{ The Clustering Coefficient Changes with Time}
 \end{figure}
 
@@ -322,9 +413,55 @@ important quantitative indicators of the hierarchical Network is the
 dependent relationship between clustering coefficient and degree obey
 the power-law distribution, which is $C_k\sim k^{-\beta}$  . This indicates the nodes with very small degree possess high clustering coefficient, on the contrary, the nodes with high degree have lower clustering coefficient, whose role is to connect the different modules.
 
-In order to further explain the characteristics of Wikipedia hierarchical network, we draw the two sub-networks C(k) curves of the first weeks of 2004 and 2005 in double logarithmic coordinates, shown in Fig.4(这句话在这里作用是什么？). The six subnets of January and March of 2004, 2005, and 2006 are chosen as representatives and the six C(k)curves in Log-Log coordinates, shown in Fig. 5. From the curves, it is found that the Wiki-based network doesn’t show obvious linear features when the network scale is small, which means knowledge collaboration one-dimensional networks of small scale are not hierarchical networks. The small scale network is consistent with the BA scale-free network characteristics and doesn’t possess hierarchical topology. Furthermore, the network node’s clustering coefficient C(k) has nothing with the degree k of the node. However, when the network size increases with time, the network gradually reveals certain level of hierarchy. Consequently, a conclusion can be drawn naturally that the wiki-based collaboration knowledge network doesn’t contain the hierarchical mechanism which is conducive to the module emergence at the early stage of the structuring process of it. However, as the network size increases, network mechanism helps the emergence of modules. 
+In order to further explain the characteristics of Wikipedia
+hierarchical network, we draw the two sub-networks C(k) curves of the
+first weeks of 2004 and 2005 in double logarithmic coordinates, shown
+in Fig.4(这句话在这里作用是什么？). The six subnets of January and
+March of 2004, 2005, and 2006 are chosen as representatives and the
+six C(k)curves in Log-Log coordinates, shown in Fig. 5. From the
+curves, it is found that the Wiki-based network doesn’t show obvious
+linear features when the network scale is small, which means knowledge
+collaboration one-dimensional networks of small scale are not
+hierarchical networks. The small scale network is consistent with the
+BA scale-free network characteristics and doesn’t possess hierarchical
+topology. Furthermore, the network node’s clustering coefficient C(k)
+has nothing with the degree k of the node. However, when the network
+size increases with time, the network gradually reveals certain level
+of hierarchy. Consequently, a conclusion can be drawn naturally that
+the wiki-based collaboration knowledge network doesn’t contain the
+hierarchical mechanism which is conducive to the module emergence at
+the early stage of the structuring process of it. However, as the
+network size increases, network mechanism helps the emergence of
+modules. 
 
-\section{4The pilot study of the wiki bipartite network}
+\begin{figure}[p]
+  \centering
+  \subfigure[a]{
+     \scalebox{0.3}{\includegraphics{05-1}}
+   } \quad
+  \subfigure[b]{ 
+       \scalebox{0.3}{\includegraphics{05-2}}
+   } 
+   \end{figure}
+   \begin{figure}[p]
+    \subfigure[c]{
+     \scalebox{0.3}{\includegraphics{05-3}}
+   } \quad
+  \subfigure[d]{ 
+       \scalebox{0.3}{\includegraphics{05-4}}
+   } 
+    \end{figure}
+   \begin{figure}[p]
+    \subfigure[e]{
+     \scalebox{0.3}{\includegraphics{05-5}}
+   } \quad
+  \subfigure[f]{ 
+       \scalebox{0.3}{\includegraphics{05-6}}
+   } 
+   \caption{Distribution of degree in odd months from 2004 to 2007}
+\end{figure}
+
+\section{The pilot study of the wiki bipartite network}
 \label{sec:4the-pilot-study}
 
 There are one-dimensional and two-dimensional networks in the social
@@ -356,6 +493,41 @@ refers to the probability of a node with exact degree k in the
 selected network. Figure 6 presents the curves of the theme degree
 $P(k_t)$  distribution  in odd months of 2004-2007 in Log-Log
 coordinates. 
+
+\begin{figure}[p]
+  \centering
+  \subfigure[a]{
+     \scalebox{0.3}{\includegraphics{06-1}}
+   } \quad
+  \subfigure[b]{ 
+       \scalebox{0.3}{\includegraphics{06-2}}
+   } 
+   \end{figure}
+   \begin{figure}[p]
+    \subfigure[c]{
+     \scalebox{0.3}{\includegraphics{06-3}}
+   } \quad
+  \subfigure[d]{ 
+       \scalebox{0.3}{\includegraphics{06-4}}
+   } 
+    \end{figure}
+   \begin{figure}[p]
+    \subfigure[e]{
+     \scalebox{0.3}{\includegraphics{06-5}}
+   } \quad
+  \subfigure[f]{ 
+       \scalebox{0.3}{\includegraphics{06-6}}
+   } 
+ \end{figure}
+   \begin{figure}[p]
+    \subfigure[g]{
+     \scalebox{0.3}{\includegraphics{06-7}}
+   } \quad
+  \subfigure[h]{ 
+       \scalebox{0.3}{\includegraphics{06-8}}
+   } 
+   \caption{Distribution of degree in odd months from 2004 to 2007}
+\end{figure}
 
 Obviously, the theme distribution curve of the bipartite network is the same with it of the one-dimentional network: exponential function, and both are subject to the power-law distribution, that is: 
 \begin{equation}
@@ -405,6 +577,40 @@ on the meantime, there is a competitive relationship between the topic
 nodes and the user nodes, which is called “the bipartite competition
 network”. 
 
+\begin{figure}[p]
+  \centering
+  \subfigure[a]{
+     \scalebox{0.3}{\includegraphics{07-1}}
+   } \quad
+  \subfigure[b]{ 
+       \scalebox{0.3}{\includegraphics{07-2}}
+   } 
+   \end{figure}
+   \begin{figure}[p]
+    \subfigure[c]{
+     \scalebox{0.3}{\includegraphics{07-3}}
+   } \quad
+  \subfigure[d]{ 
+       \scalebox{0.3}{\includegraphics{07-4}}
+   } 
+    \end{figure}
+   \begin{figure}[p]
+    \subfigure[e]{
+     \scalebox{0.3}{\includegraphics{07-5}}
+   } \quad
+  \subfigure[f]{ 
+       \scalebox{0.3}{\includegraphics{07-6}}
+   } 
+ \end{figure}
+   \begin{figure}[p]
+    \subfigure[g]{
+     \scalebox{0.3}{\includegraphics{07-7}}
+   } \quad
+  \subfigure[h]{ 
+       \scalebox{0.3}{\includegraphics{07-8}}
+   } 
+   \caption{Distribution of degree in odd months from 2004 to 2007}
+\end{figure}
 \subsection{The relationship between the network density and the scale ratio}
 \label{sec:relat-betw-netw}
 The scale ratio is introduced in this paper to go on further study on
@@ -423,7 +629,7 @@ network size. This study focuses on the dependency relationship
 between the scale ratio and its corresponding one-dimensional network.
 \begin{figure}[htpb]
   \centering
-  \includegraphics{08}
+  \scalebox{0.3}{\includegraphics{08}}
   \caption{the changes curve of the scale ration W over time}
 \end{figure}
 In addition, network density has become the most commonly used measure of the social network analysis and it has played an important role in the social network analysis. In graph theory, the network density is used to aggregate the total distribution of various lines so as to measure the gap between such distribution and a complete graph.Sepecifically speaking, density refers to the close degree between various nodes of a network. In the non-oriented and absence of weight-absent social networks, the density can be expressed as:
@@ -434,7 +640,7 @@ In addition, network density has become the most commonly used measure of the so
 Figure 9 indicates the relationship between the Wikipedia density and the scale ratio. 
 \begin{figure}[htpb]
   \centering
-  \includegraphics{09}
+  \scalebox{0.3}{\includegraphics{09}}
   \caption{The relationship between the Wikipedia density and the scale ratio （with the lunar cycle）}
 \end{figure}
 From Figure 8 and 9, it is clearly shown that there is a downward trend in the network density with the increasing of the scale ratio W which means the relative value of the number of the user nodes number and the topic nodes number increases. This is because the relationship between the user nodes is linked through the topic nodes. It is obvious that when the topic nodes are in a certain number, the network density is smaller the user nodes are more. When the user nodes are fixed but the number of the topic nodes increase, more links are bound to be built among the fixed users, which means that the network density is certain to grow. In order to establish closer links between the users in the knowledge collaboration network, then knowledge can be spread among more users, two efficient methods are efficient to keep a dense network: the first is to increase topic nodes to adapt to the user nodes’ increasing speed; the other is to encourage the topic senders, especially those more active, new topic senders. 
@@ -458,7 +664,7 @@ $\bar{C}$ and the scale ratio is shown in Figure 10.
 With the increase of W value, the clustering coefficient does not decrease, but increases slightly. Although the data is not very ideal, they are consistent with the objective network. On one hand, the scale ratio W is not continuous, but discrete points; on the other hand, according to the studying on the clustering coefficient in section III, it does not change significantly, but in a small range. Such insignificant positive correlation between the clustering coefficient and the scale ratio illustrates the balanced growth between Wiki user nodes and the topic nodes, which is essential for the steady development of the clustering coefficient. 
 \begin{figure}[htpb]
   \centering
-  \includegraphics{10}
+  \scalebox{0.3}{\includegraphics{10}}
   \caption{The relationship between the  Clustering Coefficient  and the scale ratio}
 \end{figure}
 
@@ -492,5 +698,5 @@ This work was partly supported by the National Natural Science Foundation of Chi
 
 
 \bibliographystyle{elsarticle-num}
-\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
+\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor,../..arXiv}
 \end{document}
