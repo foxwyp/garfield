@@ -8,9 +8,10 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{subfigure}
+\usepackage{kbordermatrix}
 
 %\usepackage{algorithmicx}
-\journal{Expert System with Applications}
+\journal{Physica A}
 
 \newtheorem{definition}{Definition}
 
@@ -106,47 +107,57 @@ the conclusions and discussions.
 \section{The network structure of Wiki-based knowledge collaboration}
 \label{sec:netw-struct-wiki}
 
-Wikipedia is a typical Knowledge collaboration- oriented virtual
-community, in which the group who has the same interest in the same
-topic can communicate and interact with each other through topic pages
-to participate in the knowledge collaboration activities. Wikipedia
+ Wikipedia
 can be depicted as an open content encyclopedia，the open materials of
 which allow unrestricted access to any third party to copy, modify,
 thus, it  provides great convenience for people from various
 sectors. On the meantime, the users can increase their knowledge and
 enrich themselves. As of April 25, 2009, according to Wikipedia
 statistics (Wiki Stats Statistics) [18], the English version has
-16,550,111 entries, user groups have been 9,505,160. Over a period of time, there will be a certain number of user groups to participate in the discussion of a topic.
+16,550,111 entries, user groups have been 9,505,160. Wikipedia allows users to edit the topics collabortively. They can add
+new content, fix other's error, revert previous edit. The
+collaboration content creation activities thus connect the user who
+engaged in the same topic into a network, which is our reseach object. 
 
-As to the characteristics of Wikipedia knowledge collaboration network, the authors of this paper build a collaborative Wiki-based knowledge network model, as shown in Figure 1. There are also two types of ties: C and A: C is the collaboration among users, shown as white lines in Fig.1, while the A express the affiliation between T and U, shown as dark color lines in Fig.1. The collaboration relationship among C ties comes into being through participating in the A ties discussions.  
+
+As to the characteristics of Wikipedia knowledge collaboration
+network, the authors of this paper build a collaborative Wiki-based
+knowledge network model, as shown in Figure 1. There are also two
+types of ties: connection, noted as C, and afilliation, noted as A. C
+is the collaboration among users, shown by white lines in Fig.1, while
+A express the affiliation between topics and users, noted as T and U respectively, shown as dark color lines in Fig.1. 
 
 \begin{figure}[h]
   \centering
-  \includegraphics{01}
-  \caption{The Two-dimensional, Wiki-based Knowledge Collaboration Network Mould}
+  \scalebox{0.8}{\includegraphics{01}}
+  \caption{The Two-dimensional, Wiki-based Knowledge Collaboration Network Model}
 \end{figure}
 
-From the network model in figure 1, it is easily found that this model
-includes two complex networks: one-dimensional networks of
+This figure depicts  two kind of  networks: one-dimensional networks of
 single-layer and bipartite two-dimensional networks. 
-
-In the single-layer networks, all the users in the same Topic collaboration process builds Undirected and Unweighted Complete Sub-graph (UUCSG), shown as [u1-u2] [u3-u6] [u6-u10] [u9-u12] in Fig.1.The entire single-layer network is composed of n UUCSGs, in which N represents the number of Topics. The whole network can be expressed as an adjacency matrix “Bu”.
-
- the bipartite networks, the UUCSG is constructed by all the UUCSGs in
+In the single-layer networks, all the users involved in the same topic
+collaboration process builds an Undirected and Unweighted Complete
+Sub-graph (UUCSG), shown as [u1-u2] [u3-u6] [u6-u10] [u9-u12] in
+Fig.1.The entire single-layer network is composed of $N$ UUCSGs, in
+which $N$ represents the number of topics. The whole network can be
+expressed as an adjacency matrix, noted by Bu.
+For bipartite networks, it's UUCSG is constructed by all the UUCSGs in
  the single-layer networks and the topics which the UUCSG belong
  to. The number of nodes is equal to the numbers of the User
- nodes. Therefore, the bipartite networks can be described as an
- adjacency matrix “Bt”. The ratio between Users and Topics exists in
- the bipartite networks, which is called scale ratio and can be
+ nodes. Each bipartite network focus on  certain areas but ignore
+ others. It  constitute a circle which has high
+ cohesion but loosely-coupled. Therefore, the bipartite networks can be described as an
+ adjacency matrix Bt. We define scale ratio  between users and topics  in
+ the bipartite networks,
  described as
  \begin{math}
  W = N_{user}/N_{topic}   
- \end{math}
-This model does not clearly define the direction of the relationship, thus, the model belongs to Undirected and Unweighted Complete Sub-graph. However, such network model vividly displays virtual communities of practice networks which aims for knowledge collaboration and innovation, such as Wikipedia.
+ \end{math}.
+We then can depict the whole collaboration activities in the
+content-generating community and analyze their properties.
 
-
-
-\begin{displaymath}
+\scalebox{0.73}{
+$
   B_u = \bordermatrix{%
     &u_1&u_2&u_3&u_4&u_5&u_6&u_7&u_8&u_9&u_{10}&u_{11}&u_{12} \cr
   u_1&0&1 \cr
@@ -162,8 +173,9 @@ u_9&&&&&&1&1&1&0&1&1&1 \cr
    u_{11}&&&&&&&&&1&1&0&1 \cr
   u_{12}&&&&&&&&&1&1&1&0 \cr
 }
-\end{displaymath}
-\begin{displaymath}
+$
+
+$
    B_t = \bordermatrix{%
     &T_1&T_2&T_3&T_4 \cr
    u_1&1 \cr
@@ -179,23 +191,51 @@ u_9&&&&&&1&1&1&0&1&1&1 \cr
     u_{11}&&&&1 \cr
     u_{12}&&&&1 \cr
 }
-\end{displaymath}
+$
+}
 \section{The empirical study of single-dimensional Wiki-based knowledge collaboration network}
 \label{sec:empir-study-single}
-
-Since Wikipedia provides all kinds of comprehensive, convenient, and
-accurate archives of history data which are stored in the form of
-XML and SQL files, the researchers can download for free according
-to their different requirements. We choose
+Wikimedia provides the archivess of  wikipedia contents dumped
+regularly from
+Wikipedia's website.  There are three diffrent types of archive: 
+pages\nobreakdash{-}articles contains current versons of article content,
+pages-meta-current is  a   complete archive. Besides pages-articles
+content, discussion and user pages are also included.  The third type
+is pages-meta-history contains complete text of every revision of
+every page which very suitabel  for research.
+In this study, we choose
 “enwiki-20081008-stub-meta-history.xml”[19] as our research
-data. These files contain no page text, only revision metadata before
+data. It contains no page text but only revision metadata before
 December 8th 2008. Because the Wikipedia community was in an unstable
-phase before 2003, we choose the data from 2004 to 2008. In order to
-better observe the changes of the network  properties at different time periods, we divided the time duration into months, build 48 sub-networks of each month from January 2004 to December 2007 and calculate the special data of the 48 sub-networks.
+phase before 2003, we re-select the data from 2004 to 2008 in order to
+better observe the changes of the network  properties at different time periods. We divided the time duration into months, build 48 sub-networks of each month from January 2004 to December 2007 and calculate the special data of the 48 sub-networks.
 
-The data on access in this study are filtered and cleared in the following steps. Step 1, screen out all contributors data in the above-mentioned time periods and all the related contributors versions, topic pages data. Then clear the data twice. Step 2: do the first clearing: exclude the data which have no user ids but only IP addresses, since we are unable to check the identity and track his activities without user ID. Factually, we need to track the contributors’ activities and user id is the identification to be followed up. Step 3: do the second clearing: delete isolated nodes, namely, those nodes which have only one user under a topic. In this study, it is admitted that there is no collaboration relationship between this user and other users under such topic.
+The data archive has to be filtered and cleared before analysing:
+\begin{enumerate}
+\item Abonden all the contributors data in the above-mentioned time
+  periods and all the related contributors versions, topic pages data
+  for these data are useless to our study.
+\item Exclude anonymouse contribution. Wikipedia allows anonymous edit
+  and show the editor's IP addresses. However, we are unable to check
+  the identity and track his activities without user ID. Only
+  registered user are included in this study.
+\item Delete isolated nodes, namely, the topics which have only one
+  contributor. We presume that there is no collaboration relationship
+  between this user and other users under isolated nodes.
 
-In order to illustrate the data changes, ultimately the 24 odd-numbered subnets are selected as representatives to describe the network characteristics. The summary of the cleared network data are shown in table 1, which clearly describes the static parameters changes of Wiki-based knowledge collaboration networks over time. The increase of Wiki-based knowledge collaboration networks is decided by the growth of the Wikipedia practice community. With the Wikipedia culture is receiving increasing attention since 2004, the scale of the Wikipedia virtual community is gradually expanding. And there were more than 1400 million pages in Wikipedia until October 2008. However, it is also obvious that the network scale grew quickly from 2004 to the mid of 2007, but declined later.
+\end{enumerate}
+ 
+In order to illustrate the data changes, ultimately the 24
+odd-numbered subnets are selected as representatives to describe the
+network characteristics. The summary of the cleared network data are
+shown in table 1, which clearly describes the static parameters
+changes of Wiki-based knowledge collaboration networks over time. The
+increase of Wiki-based knowledge collaboration networks is decided by
+the growth of the Wikipedia community. With the Wikipedia culture is
+receiving increasing attention since 2004, the scale of the Wikipedia
+virtual community is gradually expanding. There were more than 1400
+million pages in Wikipedia until October 2008. The network scale grew
+quickly from 2004 to the mid of 2007, nevertheless, declined later.
 % Table generated by Excel2LaTeX from sheet 'Working'
 \begin{table}[htbp]
  
@@ -230,7 +270,10 @@ cm}{Average Degree} &  \parbox{1.7cm}{Clustering Coefficient} &  Density \\\hlin
        \end{tabular}
   \label{tab:addlabel}
 \end{table}
-In order to observe the network changes with time in more details, this paper gives a more figurative description of the topological properties of the one-dimensional complex network of knowledge-oriented collaboration. And the description expands from five aspects: power Law, average degree, clustering coefficient, small world and hierarchical network.
+In order to observe the network changes with time in more details,
+this paper gives a more figurative description of the topological
+properties of the one-dimensional complex network of
+knowledge-oriented collaboration. We will discuss from five aspects: power Law, average degree, clustering coefficient, small world and hierarchical network.
 
 \subsection{The analysis of scale-free structure}
 \label{sec:analysis-scale-free}
@@ -248,42 +291,39 @@ scale-free network is in line with the shifted power-law, that is
 $P(k)\thicksim k^\gamma+\alpha$  , and the $\gamma$ and $\alpha$ are both
 constants. 
 
-上述24个Wikipedia子网的度分布$P(k)$ 在双对数坐标下的曲线，如图2所示。
+
 The degree distributions of the above 24 Wikipedia subnet are
 displayed as curves in double logarithmic coordinates, as shown in
 Figure 2. To show conveniently, each subgraph in Figure 2 identifies
 the subnets of three months.
-\begin{figure}[p]
+\begin{figure}[htpb]
   \centering
   \subfigure[a]{
-     \scalebox{0.3}{\includegraphics{02-1}}
+     \scalebox{0.18}{\includegraphics{02-1}}
    } \quad
   \subfigure[b]{ 
-       \scalebox{0.3}{\includegraphics{02-2}}
+       \scalebox{0.18}{\includegraphics{02-2}}
    } 
-   \end{figure}
-   \begin{figure}[p]
+   
     \subfigure[c]{
-     \scalebox{0.3}{\includegraphics{02-3}}
+     \scalebox{0.18}{\includegraphics{02-3}}
    } \quad
   \subfigure[d]{ 
-       \scalebox{0.3}{\includegraphics{02-4}}
+       \scalebox{0.18}{\includegraphics{02-4}}
    } 
-    \end{figure}
-   \begin{figure}[p]
+  
     \subfigure[e]{
-     \scalebox{0.3}{\includegraphics{02-5}}
+     \scalebox{0.18}{\includegraphics{02-5}}
    } \quad
   \subfigure[f]{ 
-       \scalebox{0.3}{\includegraphics{02-6}}
+       \scalebox{0.18}{\includegraphics{02-6}}
    } 
- \end{figure}
-   \begin{figure}[p]
+
     \subfigure[g]{
-     \scalebox{0.3}{\includegraphics{02-7}}
+     \scalebox{0.18}{\includegraphics{02-7}}
    } \quad
   \subfigure[h]{ 
-       \scalebox{0.3}{\includegraphics{02-8}}
+       \scalebox{0.18}{\includegraphics{02-8}}
    } 
    \caption{Distribution of degree in odd months from 2004 to 2007}
 \end{figure}
@@ -295,16 +335,15 @@ the Power-law function with Power index for the 3. As Figure 2 shows,
 the slope of the power-law distribution function of the Wiki-based
 collaborative knowledge network in log-log coordinates is approximate
 to (1E-2-1E-3), and has similar values like m (the intercept of Fit
-Linear is approximate). Wiki-based知识协同网络的幂律分布函数在双对数坐
-标下，斜率近似为（1E-2—1E-3），并且具有相近似的m值（Fit Linear的截距近
-似）。Therefore, wiki-based knowledge collaboration network is a type
+Linear is approximate).Therefore, wiki-based knowledge collaboration network is a type
 of BA scale-free network, and its characteristics which conform to the
 BA scale-free network are：
 
 Growth: The size of BA network is continually growing. Every day there
 are many new users joining in the wiki-based knowledge collaboration
 community. According to the internal data of
-Wikipedia（http://stats.wikimedia.org/EN/TablesWikipediansNew.htm）,
+Wikipedia%（http://stats.wikimedia.org/EN/TablesWikipediansNew.htm）
+,
 there are a certain amount of new wikipedians participating in the
 collaborative activities every day. 
 
@@ -334,7 +373,7 @@ connections, namely, which demonstrates the “long tail” phenomenon.
 With the development of the Wiki culture, such knowledge collaboration
 and innovation pattern is attaching more and more attentions. On the
 meantime, the number of the Wiki users is increasing, as Figure
-1shows. There are two reasons for the increase of the users: the first
+1 shows. There are two reasons for the increase of the users: the first
 is the increasing new topics. According to the internal data of
 Wikipedia, new entries of wiki network have increased each year [22],
 thus, attracts more users to join in the topics of common concern. The
@@ -387,6 +426,7 @@ The results of table 2 indicate two conclusions. On the one hand, the clustering
   \centering
  \caption{The clustering coefficient and average distance} 
  \begin{tabular}{|c|c|c|}
+   \hline
     &Clustering Coefficient&Average distance\\\hline
   04 1st week&0.5085&2.546\\\hline
   04 18th week&0.5020&2.745\\\hline
@@ -434,29 +474,27 @@ the early stage of the structuring process of it. However, as the
 network size increases, network mechanism helps the emergence of
 modules. 
 
-\begin{figure}[p]
+\begin{figure}[htpb]
   \centering
   \subfigure[a]{
-     \scalebox{0.3}{\includegraphics{05-1}}
+     \scalebox{0.18}{\includegraphics{05-1}}
    } \quad
   \subfigure[b]{ 
-       \scalebox{0.3}{\includegraphics{05-2}}
+       \scalebox{0.18}{\includegraphics{05-2}}
    } 
-   \end{figure}
-   \begin{figure}[p]
+  
     \subfigure[c]{
-     \scalebox{0.3}{\includegraphics{05-3}}
+     \scalebox{0.18}{\includegraphics{05-3}}
    } \quad
   \subfigure[d]{ 
-       \scalebox{0.3}{\includegraphics{05-4}}
+       \scalebox{0.18}{\includegraphics{05-4}}
    } 
-    \end{figure}
-   \begin{figure}[p]
+   
     \subfigure[e]{
-     \scalebox{0.3}{\includegraphics{05-5}}
+     \scalebox{0.18}{\includegraphics{05-5}}
    } \quad
   \subfigure[f]{ 
-       \scalebox{0.3}{\includegraphics{05-6}}
+       \scalebox{0.18}{\includegraphics{05-6}}
    } 
    \caption{Distribution of degree in odd months from 2004 to 2007}
 \end{figure}
@@ -494,37 +532,34 @@ selected network. Figure 6 presents the curves of the theme degree
 $P(k_t)$  distribution  in odd months of 2004-2007 in Log-Log
 coordinates. 
 
-\begin{figure}[p]
+\begin{figure}[htpb]
   \centering
   \subfigure[a]{
-     \scalebox{0.3}{\includegraphics{06-1}}
+     \scalebox{0.18}{\includegraphics{06-1}}
    } \quad
   \subfigure[b]{ 
-       \scalebox{0.3}{\includegraphics{06-2}}
+       \scalebox{0.18}{\includegraphics{06-2}}
    } 
-   \end{figure}
-   \begin{figure}[p]
+  
     \subfigure[c]{
-     \scalebox{0.3}{\includegraphics{06-3}}
+     \scalebox{0.18}{\includegraphics{06-3}}
    } \quad
   \subfigure[d]{ 
-       \scalebox{0.3}{\includegraphics{06-4}}
+       \scalebox{0.18}{\includegraphics{06-4}}
    } 
-    \end{figure}
-   \begin{figure}[p]
+  
     \subfigure[e]{
-     \scalebox{0.3}{\includegraphics{06-5}}
+     \scalebox{0.18}{\includegraphics{06-5}}
    } \quad
   \subfigure[f]{ 
-       \scalebox{0.3}{\includegraphics{06-6}}
+       \scalebox{0.18}{\includegraphics{06-6}}
    } 
- \end{figure}
-   \begin{figure}[p]
+
     \subfigure[g]{
-     \scalebox{0.3}{\includegraphics{06-7}}
+     \scalebox{0.18}{\includegraphics{06-7}}
    } \quad
   \subfigure[h]{ 
-       \scalebox{0.3}{\includegraphics{06-8}}
+       \scalebox{0.18}{\includegraphics{06-8}}
    } 
    \caption{Distribution of degree in odd months from 2004 to 2007}
 \end{figure}
@@ -577,37 +612,35 @@ on the meantime, there is a competitive relationship between the topic
 nodes and the user nodes, which is called “the bipartite competition
 network”. 
 
-\begin{figure}[p]
+\begin{figure}[htpb]
   \centering
   \subfigure[a]{
-     \scalebox{0.3}{\includegraphics{07-1}}
+     \scalebox{0.18}{\includegraphics{07-1}}
    } \quad
   \subfigure[b]{ 
-       \scalebox{0.3}{\includegraphics{07-2}}
+       \scalebox{0.18}{\includegraphics{07-2}}
    } 
-   \end{figure}
-   \begin{figure}[p]
+   \
     \subfigure[c]{
-     \scalebox{0.3}{\includegraphics{07-3}}
+     \scalebox{0.18}{\includegraphics{07-3}}
    } \quad
   \subfigure[d]{ 
-       \scalebox{0.3}{\includegraphics{07-4}}
+       \scalebox{0.18}{\includegraphics{07-4}}
    } 
-    \end{figure}
-   \begin{figure}[p]
+  
+
     \subfigure[e]{
-     \scalebox{0.3}{\includegraphics{07-5}}
+     \scalebox{0.18}{\includegraphics{07-5}}
    } \quad
   \subfigure[f]{ 
-       \scalebox{0.3}{\includegraphics{07-6}}
+       \scalebox{0.18}{\includegraphics{07-6}}
    } 
- \end{figure}
-   \begin{figure}[p]
+
     \subfigure[g]{
-     \scalebox{0.3}{\includegraphics{07-7}}
+     \scalebox{0.18}{\includegraphics{07-7}}
    } \quad
   \subfigure[h]{ 
-       \scalebox{0.3}{\includegraphics{07-8}}
+       \scalebox{0.18}{\includegraphics{07-8}}
    } 
    \caption{Distribution of degree in odd months from 2004 to 2007}
 \end{figure}
@@ -671,21 +704,30 @@ With the increase of W value, the clustering coefficient does not decrease, but 
 \section{Conclusion and discussion }
 \label{sec:5concl-disc-}
 
-In summary, we have proposed a knowledge collaboration network model
-based on Wikipedia archive data, and analyze the statistical
-properties of the network model. We have found that the
+Analysing the interaction between users and topics is important to
+understand the mechanism of content collaboration behavior. 
+In this paper, we propose a knowledge collaboration network model
+using  Wikipedia archive data, and analyze the statistical
+properties of the network. The result shows that the
 one-dimensional network of this model is a scale-free structure and
 its distribution function is subject to the characteristics of the
 power law, BA scale-free structure growth and preferential
-attachment. From the observation on the changes of the average degree,
-the number of the relationships in the knowledge collaboration network
-shows cyclical fluctuations, and the links tend to closer. In the
-one-dimensional knowledge collaboration network, with the increasing
-of network size, the clustering coefficient will be inclined to a
-non-zero constant（0.65）. Meanwhile, the network average distance is
-less than 4, which reflects that the small-world effect exists
-obviously in the knowledge collaboration network. 在网络发展初期不具有
-明显的等级拓扑结构，随着网络规模的增长，并不显著的表现出等级性。另外，
+attachment. The average degree of the network is getting bigger
+alongwith the time elapsed, marked an upward trend of collabroation
+activities between users. Meanwhile,  the clustering coefficient is
+relatively steady despite of the increase of network size. The network
+also demonstrate  small-world effect. The network average distance is
+less than 4, reflecting the tight relationship between nodes of the
+network. We also dicuss the hierachy of the network. It is not
+hierachical character at the early stage of the network. However, with
+the development of the network,  the network gradually reveals certain
+level of hierarchy. 
+
+The biparty network shows similar property to the one-dimensional
+network. The distribution of theme of the user node obeys the
+power-law distribution. The network density is increased with the
+network size, indicating the  
+另外，
 在知识协同二维网络模型中，话题节点的主题度分布同一维BA一维网络度分布一
 样，服从幂律分布，具有“长尾性”等特征。一维网络特性中网络密度随着规模比
 的增长而增长，集聚系数则呈现出震荡上升的趋势，有一种不显著的相关性。本
