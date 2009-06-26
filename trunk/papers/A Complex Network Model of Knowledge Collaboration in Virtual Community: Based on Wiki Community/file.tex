@@ -28,13 +28,24 @@
 \ead{yunpeng.wu@sem.buaa.edu.cn}
 
 \author[buaa]{Xin Jin}
-\ead{sssss}
+\ead{sss}
 
 \address[buaa]{School of Economics and Management, Beihang University, 
 Beijing 100083, P.R. China}
 
 \begin{abstract}
-  
+  Wikipedia is a typical konwledge collaboration community. Though
+  it's network topology has been studied by many schloars, the
+  relationship among users and affiliation among topic and users are
+  still remains untouched. This paper propose two kinds of networks:
+one-dimensional network aiming at modelling users collaboration and
+two-dimensional network aiming at modelling users and topics affiliation. The
+result shows these networks are both complex networks, not only demonstrate  characteristics of conmplex networks such as
+power-law and scale-free, also demonstrate hierarchical character  and
+small world phenomenon. The properties of the networks including
+cluster coefficient, average degree, scale ratio etc are also discussed
+in detail.
+
 \end{abstract}
 
 \begin{keyword}
@@ -54,10 +65,10 @@ qualitative characteristics of complex network has been studied in
 different area such as sociology, mathematics, life sciences,
 engineering and many others. The main differences between complex
 network and ordinary network are  some non-trivial
-topologicl features such as “small worlds” effect[7], scale-free[8],
-power law[9] and so on. A typical example of complex network is collaboration system. In this network, collaborators are represented by nodes of the network
+topologicl features such as “small worlds” effect\cite{Watts2003}, scale-free\cite{PhysRevLett.90.058701},
+power law\cite{wang2003cns} and so on. A typical example of complex network is collaboration system. In this network, collaborators are represented by nodes of the network
 and their connnections are represented by edges. A piles of literature
-has studied the statistical perpoties[111] and give the mechanism of
+has studied the statistical propeties\cite{albert-2002-74,dorogovtsev2002en,pastorsatorras2004eas} and give the mechanism of
 the network evlovement.
 
 
@@ -65,24 +76,24 @@ the network evlovement.
 
 Wikipedia is the world largest online-encyclopedia based on wiki
 system,  characterized as "ultra-lightweight" content management systems
-[14]. It is often seen as the typical knowledge-cooperation newtork and virtual
+\cite{mattison2003qst}. It is often seen as the typical knowledge-cooperation newtork and virtual
 practice community. The huge content serves as an excellent example of
-a large complex network [1], thus attracted the intense attention of scholars
+a large complex network\cite{Barabasi2003}, thus attracted the intense attention of scholars
 because of its' unique characteristics. Unlike other social networks on the
 Internet，such as blog,  the
-collaboration in Wikipedia is expanding denotedly and connotedly while the collaboration in blog is non-themed or variable- themed. It will talk about a topic with a very full depth [16].
+collaboration in Wikipedia is expanding denotedly and connotedly while the collaboration in blog is non-themed or variable- themed. It will talk about a topic with a very full depth\cite{Sauer2005}.
 
 Topics and users constitute the Wikipedia. A topic is a content entry
 of Wikipedia relatively indepentent to others. The topology of netwotk  has
 been examined
  from several facets. Capossi etc describe topics by vertices and hyperlinks between them as edges, thus represent
-this encyclopedia as a directed graph. The result shows Wikipedia has
-similar topological properties of to the World Wide Web. Zalatic etc use
+this encyclopedia as a directed graph\cite{capocci-2006}. The result shows Wikipedia has
+similar topological properties of to the World Wide Web. Zlati\'{c} etc use
 same methods and thogouly studied the network characteristics such as as their degree distributions, growth, topology, reciprocity, clustering, assortativity, path lengths, and triad
-signiﬁcance proﬁles in different language versions. Bolikowski
+signiﬁcance proﬁles in different language versions\cite{zlatic:016115}. Bolikowski
 studied the link between diferent language edition of topics and found
-the topic size distribution obeys the power law. Some others analyze
-the network alongwith time slices(Buriol,). The interesting thing is
+the topic size distribution obeys the power law\cite{bolikowski-2009}. Some others analyze
+the network alongwith time slices\cite{buriol2006taw}. The interesting thing is
 , as metioned before, though users are antoher foundation of Wikipedia
 content creation, they are ignored by current researchers in network
 analysis. There are interactio between users themself and connections
@@ -95,7 +106,7 @@ properties of the network.
  one-dimensional network, representing users connections; the
  bipartite network, which ties users and topics. Through an
  empirical study of en-Wikipedia network’s data  from January
- 2004 to January 2008, we discover that many properties of these tow networks are similar with other networks. 
+ 2004 to January 2008, we discover that many properties of these two networks are similar with other networks. 
 
 The rest of the paper is organized as follows. In section 2, we
 introduce the complex social network mould wiki-based knowledge
@@ -113,7 +124,7 @@ which allow unrestricted access to any third party to copy, modify,
 thus, it  provides great convenience for people from various
 sectors. On the meantime, the users can increase their knowledge and
 enrich themselves. As of April 25, 2009, according to Wikipedia
-statistics (Wiki Stats Statistics) [18], the English version has
+statistics (Wiki Stats Statistics)\footnote{http://s23.org/wikistats/wikipedias\_html.php}, the English version has
 16,550,111 entries, user groups have been 9,505,160. Wikipedia allows users to edit the topics collabortively. They can add
 new content, fix other's error, revert previous edit. The
 collaboration content creation activities thus connect the user who
@@ -204,7 +215,7 @@ content, discussion and user pages are also included.  The third type
 is pages-meta-history contains complete text of every revision of
 every page which very suitabel  for research.
 In this study, we choose
-“enwiki-20081008-stub-meta-history.xml”[19] as our research
+“enwiki-20081008-stub-meta-history.xml”\footnote{http://download.wikimedia.org/enwiki/20081008/} as our research
 data. It contains no page text but only revision metadata before
 December 8th 2008. Because the Wikipedia community was in an unstable
 phase before 2003, we re-select the data from 2004 to 2008 in order to
@@ -278,12 +289,13 @@ knowledge-oriented collaboration. We will discuss from five aspects: power Law, 
 \subsection{The analysis of scale-free structure}
 \label{sec:analysis-scale-free}
 
-In network description, degree distribution attracts more and more researchers’ attention because of its inherent important topology information and network evolution information. In order to explain the generation mechanism of power-law distribution, Barabási and Albert proposed a scale-free network model, known as the BA model now[20].  The degree of the node refers to the number of the node's adjacent nodes or the number of adjacent edges. In Wiki-based knowledge collaboration network descriptions, the degree of Node i is described as in (1): 
+Degree distribution is one of the most
+importand peoperty of a network because of its inherent important topology information and network evolution information. In order to explain the generation mechanism of power-law distribution, Barabási and Albert proposed a scale-free network model, known as the BA model\cite{barabasi1999esr}.  The degree of the node refers to the number of the node's adjacent nodes or the number of adjacent edges. In Wiki-based knowledge collaboration network descriptions, the degree of Node $i$ is described as follow: 
 \begin{equation}
   K_i=\sum_{j\in\mu_i}C_{ij}
 \end{equation}
 
-$\mu_j$represents the adjacency matrix of the user node. If nodes $i$
+$\mu_j$represents the adjacency matrix of the user node. If node $i$
 and $j$ are linked, the value  is 1, otherwise 0. Degree distribution
 refers to the probability of a node with exact degree $k$ in the
 selected network. Studies show that degree distribution of BA
@@ -298,56 +310,51 @@ Figure 2. To show conveniently, each subgraph in Figure 2 identifies
 the subnets of three months.
 \begin{figure}[htpb]
   \centering
-  \subfigure[a]{
+  \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{02-1}}
    } \quad
-  \subfigure[b]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{02-2}}
    } 
    
-    \subfigure[c]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{02-3}}
    } \quad
-  \subfigure[d]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{02-4}}
    } 
   
-    \subfigure[e]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{02-5}}
    } \quad
-  \subfigure[f]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{02-6}}
    } 
 
-    \subfigure[g]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{02-7}}
    } \quad
-  \subfigure[h]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{02-8}}
    } 
    \caption{Distribution of degree in odd months from 2004 to 2007}
 \end{figure}
 
 Master equation method is adopted to further analyze degree
-distributions of the above collaboration networks[21]. Degree
+distributions of the above collaboration networks\cite{PhysRevLett.85.4633}. Degree
 distribution function of the BA network can be similarly described by
 the Power-law function with Power index for the 3. As Figure 2 shows,
 the slope of the power-law distribution function of the Wiki-based
 collaborative knowledge network in log-log coordinates is approximate
-to (1E-2-1E-3), and has similar values like m (the intercept of Fit
-Linear is approximate).Therefore, wiki-based knowledge collaboration network is a type
-of BA scale-free network, and its characteristics which conform to the
-BA scale-free network are：
+to (1E-2-1E-3), and has similar interception of 
+linear approximatiton. Therefore, this network is a type
+of BA scale-free network and its properties  conform to the
+BA scale-free network.
 
-Growth: The size of BA network is continually growing. Every day there
+The size of BA network is continually growing. Every day there
 are many new users joining in the wiki-based knowledge collaboration
-community. According to the internal data of
-Wikipedia%（http://stats.wikimedia.org/EN/TablesWikipediansNew.htm）
-,
-there are a certain amount of new wikipedians participating in the
-collaborative activities every day. 
-
-Preferential Attachment: The new node prefers to connect with those
+community.  
+The new node prefers to connect with those
 “big nodes” with higher degree. This phenomenon is also known as "the
 rich get richer" or "Matthew Effect". In wiki-based knowledge
 collaboration network, new wikipedians tend to participate in editing
@@ -355,72 +362,97 @@ the pages whose editors are “big nodes”. The way of network evolution
 is moving closer to the central node, thereby forms the polarization
 between the rich and the poor. The Scale-free networks can grow from
 very few nodes to a complex network with a large number of nodes. Here
-the so-called “big” nodes are referred to as “active users.” When the
+the so-called “big” nodes are referred to as “more active users.” When the
 quantity of the network nodes grows to a certain scale, the network
 will indicate that: only a few users have a large number of connected
 nodes, while a great many users only have a small number of
-connections, namely, which demonstrates the “long tail” phenomenon. 
+connections, namely, the “long tail” phenomenon. 
 
+
+\subsection{The changes of average degree}
+\label{sec:chang-aver-degr}
+
+With the development of the Wiki culture, more and more people devote
+their efforts to contribute to the free content.  There are two
+reasons explain the increase of the users: the first
+is the increasing new topics. According to the internal data of
+Wikipedia, new entries of wiki network have increased each year.
+Wider scope of content enables more users to join in the topic editing. The
+second is that more and more users are participating in the
+contribution under the existing topics. Therefore, the average degree
+is introduced to describe the number of relationship within Wiki
+network, noted as $AverageDegree = \sum_iK_i/\text{Number of Users}$
+
+The change curve of average degree over time is shown in Figure 3. 
 \begin{figure}[htpb]
   \centering
   \scalebox{0.3}{\includegraphics{03}}
   \caption{The Changes curve of the average degree over time}
 \end{figure}
-
-\subsection{The changes of average degree}
-\label{sec:chang-aver-degr}
-
-With the development of the Wiki culture, such knowledge collaboration
-and innovation pattern is attaching more and more attentions. On the
-meantime, the number of the Wiki users is increasing, as Figure
-1 shows. There are two reasons for the increase of the users: the first
-is the increasing new topics. According to the internal data of
-Wikipedia, new entries of wiki network have increased each year [22],
-thus, attracts more users to join in the topics of common concern. The
-second is that more and more users are participating in the
-contribution under the existing topics. Therefore, the average degree
-is introduced to describe the number of relationship within Wiki
-network, namely,$AverageDegree = \sum_iK_i/\text{Number of Users}$
-
-The change curve of average degree over time is shown in Figure 3. Obviously, the average degree presents a certain cyclical change over time, and there is an upward shocks trend, which indicates the number of the “innate relations” of the knowledge collaborative networks shows cyclical fluctuations and more closely linked trend. In the Wikipedia community, average degree concussion is caused by the shock of the Topic node. Take the topic “the Festival” as example, the number of the editing increases apparently in January and February of each year. Another example is "financial crisis", and the dynamism of it increases sharply in 2008. Therefore, the average degree will be showing a shock for a long time, which is closely related to the degree of concern within Wikipedia topic.
+Obviously, the average degree presents a certain cyclical change over
+time. The upward shocks trend indicates the number of the “innate
+relations” of the  networks increasing intensively. In the Wikipedia
+community, average degree concussion is often caused by the shock of
+the topic node. Take the topic “the Festival” as example, the number
+of the editing increases apparently in January and February of each
+year. Another example is "financial crisis". The amount of editing  increases sharply in 2008. Therefore, the average degree is closely related to the degree of concern within Wikipedia topic.
 
 \subsection{ The changes of Clustering Coefficient}
 \label{sec:chang-clust-coeff}
 
 Clustering Coefficient, also known as Congregate Extent, describes the
-clustering effect of the complex network, while reflects the property
+clustering effect of the complex network, reflecting the property
 of “Like attract like”. Suppose that the degree of a node $i$ in the
-network is $k_i$  , $k_i$  -nodes which are connected with $i$ are
-known as Node i’s neighbors. Then $C_i$ which refers to the Clustering
-Coefficient of the Node $i$ can be defined as the ratio between the
-real number of the edges among the $k_i$  nodes and the possible total
-number of edges $k_i(k_i-1)/2$ : $C_i=2E_i/k_i(k_i-1)$ . And the
+network is $k_i$  , $k_i$ -nodes are neighbor's of $i$ which
+connecting to $i$.  $C_i$  refers to the Clustering
+Coefficient of the Node $i$,  defined as the ratio between the
+real number of the edges among the $k_i$-nodes and the possible total
+number of edges: $k_i(k_i-1)/2$ : $C_i=2E_i/k_i(k_i-1)$. The
 Clustering Coefficient of the whole network C is the average of all
 the nodes’ clustering coefficient.
 
 The changes of the Clustering Coefficient of the knowledge
-collaboration one-dimensional network are shown in Figure 4. In
-one-dimensional network, C value will tend to a certain non-zero
-constant with the increasing of network size, that is, when
-$N\rightarrow\infty,C=O(1)$ . The Clustering Coefficient of the
-free-scale network BA can be defined as $C=\beta[\ln(t)]^2/t$ , and
-is network evolution constant.
-
-In wiki-based knowledge collaboration networks, the Clustering Coefficients in period 2004 to 2008 are presented in Fig.3. The result shows that the Clustering Coefficient averages to 0.55. In fact, many types of complex networks, especially social networks, aren’t entirely random network. In a way, they show the "people to group" features. This conclusion is obvious, according to the definition of communities of practice: the people who pay attention to certain subject, and with strong passion for this topic, increase their knowledge and skills through communicating and exchanging knowledge in this field with each other sustained[18]. As a typical virtual community of practice, the members participate in editing the pages of some topics  in accordance with their interests, hobbies, professional. In general, wikipedians show the "people to group" features.
-
-Wiki-based知识协同网络的集聚程度随时间的变化如图4所示(上一段已经提过)，In wiki-based knowledge collaboration networks, the Clustering Coefficients changes are presented in Fig.4. The results of the experiments show that the Clustering Coefficient focus on about 0.55. Threrefore, it is natural to draw the conclusion that many types of complex networks, especially social networks, aren’t entirely random networks, on the contrary, they have the characteristic of “Like attracts like.” Practice community is defined as: the people who pay close attention to a certain subject and hold strong passion for this topic, furthermore, they increase their knowledge and skills in this field through sustained communicating and exchanging knowledge with each other [24]. As a typical virtual community of practice, the members in wikipedia community participate in editing the pages of some topics in accordance with their interests, hobbies and professions, naturally, there exists a feature of “People groups” among them.
+collaboration one-dimensional network are shown in Figure 4.
 \begin{figure}[htpb]
   \centering
   \scalebox{0.3}{\includegraphics{04}}
   \caption{ The Clustering Coefficient Changes with Time}
 \end{figure}
+ In one-dimensional network, $C$ value will tend to a certain non-zero
+constant with the increasing of network size, that is, when
+$N\rightarrow\infty,C=O(1)$ . The Clustering Coefficient of the
+free-scale network BA can be defined as $C=\beta[\ln(t)]^2/t$. $\beta$
+is network evolution constant.
+
+In wiki-based knowledge collaboration networks, the Clustering
+Coefficients in period 2004 to 2008 are presented in Fig.4. The result
+shows that the Clustering Coefficient averages to 0.55. In fact, many
+types of complex networks, especially social networks, aren’t entirely
+random network. As a community of practice, Wikipedia network shows
+the "people to group" features. This conclusion is obvious, according
+to the definition of communities of practice: the people who pay
+attention to certain subject, and with strong passion for this topic,
+increase their knowledge and skills through communicating and
+exchanging knowledge in this field with each other sustained[18].
+Members of the community participate in editing the pages of some topics  in accordance with their interests, hobbies, professional. 
+
+
 
 \subsection{“Small world” phenomenon }
 \label{sec:small-world-phen}
 
-Small world phenomenon reflects a kind of social network characteristics, that is, most of the people and their friends are in the same circle of people. On the other hand, there are some people living far away, or even living in a foreign country. Many studies have shown that small-world phenomenon exists in many real networks. This network has two characteristics: shorter average path length and higher clustering coefficient. Here, average path length L means the minimum number of edges connecting a pair of vertices, averaged over all pairs of vertices, which plays an important role in both transportation and communication within a network. Because of the large calculation scale of the average path and the limitation of calculation, this study only calculates and analyzes the average distances of the 6 sub-networks of the 1st, 18th, and 35th weeks of 2004 and 2005 whose size are still relatively small, as shown in table 2.
-
-The results of table 2 indicate two conclusions. On the one hand, the clustering coefficients are around 0.5, which is higher. On the other hand, the average path length is small (<4), that is, any two people in the network can find each other through less than 4 individuals on average. Therefore, wiki-based knowledge collaboration networks turn on apparent property of small-world phonamenon. 因此，在知识协同网络中表现出明显的小世界现象。
+Small world phenomenon reflects a kind of social network
+characteristics: most of the people and their friends are in the same
+circle of people. Many studies have shown that small-world phenomenon
+exists in many real networks. Small world phenomenor refected by two
+characteristics: shorter average path length and higher clustering
+coefficient. The average path length $L$ is the average length of
+all minimum number of edges connecting a pair of vertices. Because of
+the large calculation scale of the average path and the limitation of
+calculation, this study only calculates and analyzes the average
+distances of the 6 sub-networks of the 1st, 18th, and 35th weeks of
+2004 and 2005 whose size are still relatively small, as shown in table
+2.
 
 \begin{table}[htpb]
   \centering
@@ -437,63 +469,67 @@ The results of table 2 indicate two conclusions. On the one hand, the clustering
    \end{tabular}
  
 \end{table}
-The study found that "small world" phenomenon exists in the knowledge
-collaboration network. That is, take some nodes as central nodes, and
-then knowledge can be transferred from a user node to other nodes only
-through a few steps.
 
-Because of the shorter path between nodes, the cost of information transferring in scale-free networks is lower than in networks with other structures. Accordingly, after adequate knowledge collaboration and sharing when当网络为小世界网络时，经过充分的知识协同和共享后，整个社会的平均知识水平最高, 并且知识差异接近最低。这个研究结果对于提高整个社会的知识水平具有丰富的政策涵义。正是由于在节点之间存在着较短的路径，无标度网络与其他结构的网络相比，具有较低的传播成本。(上一段刚刚说过此句)
+Table 2 indicate two conclusions. On the one hand, the
+clustering coefficients are around 0.5, which is higher. On the other
+hand, the average path length is small (<4), that is, any two people
+in the network can find each other through less than 4 individuals on
+average. Because of the shorter path between nodes, the cost of
+information transferring is lower than in
+networks with other structures. The result shows a user is easy to find an cooperator
+alongwith an proper path, which in turn improve the efficiency of collaboration.
 
-\subsection{Hierarchical network}
+
+
+ \subsection{Hierarchical network}
 \label{sec:hierarchical-network}
 
 Studies have shown that the topology modules in some networks are
-organized in accordance with Hierarchy[25-26]. One of the most
+organized in accordance with Hierarchy\cite{PhysRevE.67.026112,PhysRevE.65.066122}. One of the most
 important quantitative indicators of the hierarchical Network is the
 dependent relationship between clustering coefficient and degree obey
-the power-law distribution, which is $C_k\sim k^{-\beta}$  . This indicates the nodes with very small degree possess high clustering coefficient, on the contrary, the nodes with high degree have lower clustering coefficient, whose role is to connect the different modules.
+the power-law distribution: $C_k\sim k^{-\beta}$. This indicates the
+nodes with very small degree possess high clustering coefficient,
+while the nodes with high degree have lower clustering coefficient, whose role is to connect the different modules.
 
 In order to further explain the characteristics of Wikipedia
-hierarchical network, we draw the two sub-networks C(k) curves of the
+hierarchical network, we draw the two sub-networks $C(k)$ curves of the
 first weeks of 2004 and 2005 in double logarithmic coordinates, shown
-in Fig.4(这句话在这里作用是什么？). The six subnets of January and
-March of 2004, 2005, and 2006 are chosen as representatives and the
-six C(k)curves in Log-Log coordinates, shown in Fig. 5. From the
-curves, it is found that the Wiki-based network doesn’t show obvious
-linear features when the network scale is small, which means knowledge
-collaboration one-dimensional networks of small scale are not
-hierarchical networks. The small scale network is consistent with the
+in Fig.4(这句话在这里作用是什么？). We select subnet of  January and
+March of 2004, 2005, and 2006  as representatives, shown in
+Fig. 5. These figures show the  network doesn’t show obvious
+linear features when the network scale is small. The small scale network is consistent with the
 BA scale-free network characteristics and doesn’t possess hierarchical
-topology. Furthermore, the network node’s clustering coefficient C(k)
-has nothing with the degree k of the node. However, when the network
-size increases with time, the network gradually reveals certain level
-of hierarchy. Consequently, a conclusion can be drawn naturally that
-the wiki-based collaboration knowledge network doesn’t contain the
+topology. Furthermore, the network node’s clustering coefficient $C(k)$
+has nothing to do with the degree k of the node. We see the  network doesn’t contain the
 hierarchical mechanism which is conducive to the module emergence at
-the early stage of the structuring process of it. However, as the
+the early stage of the structuring process of it. However, when the network
+size increases with time, the network gradually reveals certain level
+of hierarchy. As the
 network size increases, network mechanism helps the emergence of
 modules. 
 
+
 \begin{figure}[htpb]
   \centering
-  \subfigure[a]{
+  \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{05-1}}
    } \quad
-  \subfigure[b]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{05-2}}
    } 
   
-    \subfigure[c]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{05-3}}
    } \quad
-  \subfigure[d]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{05-4}}
    } 
    
-    \subfigure[e]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{05-5}}
    } \quad
-  \subfigure[f]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{05-6}}
    } 
    \caption{Distribution of degree in odd months from 2004 to 2007}
@@ -502,29 +538,31 @@ modules.
 \section{The pilot study of the wiki bipartite network}
 \label{sec:4the-pilot-study}
 
-There are one-dimensional and two-dimensional networks in the social
-network model shown in Figure 1, and they correspond to the degree of
-the user node k and the theme degree of the user node kt
-respectively. Factually, most of the networks of the virtual practice
-community present the characteristics of the two-dimensional
-network. Therefore, it is very significant to study the
+In recent years, bipartite networks have attracted more and more people's attention\cite{watts1998sw,morris-2005,PhysRevE.64.026118}. Factuallyt, many real-world networks are naturally bipartite, such as the actors-films network\cite{watts1998sw}, the Scientist Co-authorship Collaboration network\cite{morris-2005,PhysRevE.64.026118}, the knowledge-cooperation network and so on.
+
+The two-dimensional networks are  bipartite network much larger than the one-dimensional
+networks, interacting more and collabrating more among users. Not only
+direct collaboration, but indirect collaboration and topic nodes are
+also included in this network model. Therefore, it is  significant to study the
 two-dimensional networks of the knowledge collaboration. 
 
 \subsection{The theme distribution of the user node obeys the power-law distribution}
 \label{sec:theme-distr-user}
 
-The theme degree is the quantization between the user nodes
-affiliation. With a corresponding to the concept of one dimension, the
-theme degree describes the user node theme, or the number of the
-affiliation. In the wiki bipartite network, the theme degree i is
+Topics are created and edited by users. The affiliation depicted in
+figure.1 demonstrate these kind of relationship. 
+The theme degree $K_t$ is the quantification of
+affiliation between  the user nodes and topics. The theme degree of
+node $i$ is
 defined as:
 \begin{equation}
   \label{eq:1}
   k_{ti}=\sum_{j \in \tau_i} T_{ij}
 \end{equation}
-Thereinto, $\tau_i$ denotes the adjacency matrix of the user node i Bt
-matrix. If the user node i belongs to the topic j，and $T_{ij}=1$ ，or
-it is 0. In the knowledge collaboration network, the theme degree is
+In this definition, $\tau_i$ denotes the adjacency matrix of the user node $i$ $Bt$
+matrix. If the user node $i$ get involved in  edting the topic
+$j$, then $T_{ij}=1$, otherwise
+it is 0. The theme degree is
 another important quantified indicator that portrays the degree of
 user participating in the topic. Theme degree distribution $P(k_t)$
 refers to the probability of a node with exact degree k in the
@@ -534,31 +572,31 @@ coordinates.
 
 \begin{figure}[htpb]
   \centering
-  \subfigure[a]{
+  \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{06-1}}
    } \quad
-  \subfigure[b]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{06-2}}
    } 
   
-    \subfigure[c]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{06-3}}
    } \quad
-  \subfigure[d]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{06-4}}
    } 
   
-    \subfigure[e]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{06-5}}
    } \quad
-  \subfigure[f]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{06-6}}
    } 
 
-    \subfigure[g]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{06-7}}
    } \quad
-  \subfigure[h]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{06-8}}
    } 
    \caption{Distribution of degree in odd months from 2004 to 2007}
@@ -570,23 +608,27 @@ Obviously, the theme distribution curve of the bipartite network is the same wit
   P(k_t)\sim k_t^{\gamma}+\alpha
 \end{equation}
 
-Figure 6 indicates clearly that the theme distribution of the bipartite network知识协同二维网络的主题度分布和一维网络的用户节点的度分布有着相同的，甚至更强的特性，即服从幂律分布，表现为无标度性。Therefore, there is growth and preferential attachment in the topic nodes, just as in the user nodes. The network size is growing, and new nodes prefer to connect with those “big” nodes with higher degrees. When the network nodes grow to a certain number, a phoomenon will arise: a small number of user nodes connect with a large number of themes nodes, and a lot of user nodes only participate in a small number of topic contribution, which shows obvious feature of “the Long Tail”. Many topics are visited once and then no one shows any interest in. Such nodes are low-efficient ones. On the meanwhile, there are some topics that are visited frequently, which are regarded as “active nodes”. 
+Figure 6 indicates clearly that the theme distribution of the
+bipartite network has similar, or even more prominant characteristics
+, like power-law and scale-free, 
+to the distribution of user node degree in one-dimensional network.
+With network size expanding,  new nodes prefer to connect with those
+“big” nodes with higher degrees. This result means in a enough large
+network a small number of user nodes connect with a greate part of
+themes nodes, while most of user nodes only participate in a small number of topic contribution, presenting obvious feature of “the Long Tail”. Many topics are visited once and then no one shows any interest in. Such nodes are low-efficient ones. On the meanwhile, there are some topics that are visited frequently, which are regarded as “active nodes”. 
 
 \subsection{Topic Size}
 \label{sec:topic-size}
 
-Corresponding to the theme degree, the topic size describes the
-bipartite collaboration network from the perspective of the topic
-nodes. In the the bipartite network, besides the number of topic
+In the the bipartite network, besides the number of topic
 nodes, another important quantitative indicator is the number of user
 nodes of the topic nodes, which portrays the number of user nodes
-contained in each topic node, also can be called topic node size: $S_j
-= \sum_{i \in \tau_{J}}T_{ij}$ . In the formula, $\tau_i$  represents
-the adjacency matrix of the Bt matrix of the topic node j. If the user
-node i belongs to the topic node j, then $T_{ij}=1$ , otherwise, for
-0. It is apparent that the topic size is the sum of the column vector
+belonging to a certain  topic node, noted as topic node size: $S_j
+= \sum_{i \in \tau_{J}}T_{ij}$. $\tau_i$  represents
+the adjacency matrix of the $Bt$ matrix of the topic node $j$. If the user
+node $i$ belongs to the topic node $j$, then $T_{ij}=1$ , otherwise0. It is apparent that the topic size is the sum of the column vector
 elements in the matrix. The probability density function $P(T)$  of
-the Topic Size represents that the probability of the topic node which
+the topic size represents that the probability of the topic node which
 is chosen casually in the selected network is $T$. Meanwhile, the
 probability density function $P(T>t)$  of the Topic Size indicates
 that the probability of the Topic Size T of the topic node which is
@@ -595,144 +637,143 @@ of the function $P(T)$  and  $P(T>t)$  in Log-Log coordinates are
 shown in Figure 7.  Here lists 8 curves of the sub-networksof every
 January and July of 2004-2007 in Wikipedia data.
 
-Figure 7 shows the distribution function curve and the cumulative
-distribution function curve of the topic size. Obviously, the two
-curves in Log-Log coordinate are both Quasi-linear curves. 
 
-Firstly, the cumulative distribution function is exponential function,
-which is different from the conclusions that are drawn from the
-complex networks research on the reality network. In the past studies,
-the cumulative distribution function is described as Shifted Poisson
-distribution, which is consistent with the study results of section
-III: “the Long Tail”, the growth and Preferential Attachment of the
-topic nodes. Secondly, this network model is common in real
-life. Actually, there is clear collaboration relationship between the
-user nodes, which is called “one-dimensional collaboration network”;
-on the meantime, there is a competitive relationship between the topic
-nodes and the user nodes, which is called “the bipartite competition
-network”. 
 
 \begin{figure}[htpb]
   \centering
-  \subfigure[a]{
+  \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{07-1}}
    } \quad
-  \subfigure[b]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{07-2}}
    } 
    \
-    \subfigure[c]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{07-3}}
    } \quad
-  \subfigure[d]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{07-4}}
    } 
   
 
-    \subfigure[e]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{07-5}}
    } \quad
-  \subfigure[f]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{07-6}}
    } 
 
-    \subfigure[g]{
+    \subfigure[ ]{
      \scalebox{0.18}{\includegraphics{07-7}}
    } \quad
-  \subfigure[h]{ 
+  \subfigure[ ]{ 
        \scalebox{0.18}{\includegraphics{07-8}}
    } 
-   \caption{Distribution of degree in odd months from 2004 to 2007}
+   \caption{The topic size distribution }
 \end{figure}
+
+Figure 7 shows the distribution function curve and the cumulative
+distribution function curve of the topic size. Obviously, the two
+curves in Log-Log coordinate are both Quasi-linear curves. 
+The cumulative distribution function is exponential function,
+which is different from the conclusions that are drawn from the
+complex networks research on the reality network. Previous studies show
+the cumulative distribution function is described as Shifted Poisson
+distribution, appearing the long tail. The figure indicats the topic
+size scattered proportionately in a certain range for most of topics,
+and only a few of them have extreme large topic size.
+
 \subsection{The relationship between the network density and the scale ratio}
 \label{sec:relat-betw-netw}
-The scale ratio is introduced in this paper to go on further study on
-the the bipartite network of the knowledge collaboration. The scale
-ratio is the ratio of the number of user nodes and the topic nodes in
+ The scale
+ratio $W$ is the ratio of the number of user nodes and the topic nodes in
 the network:$W=N_{user}/N_{topic}$ . It is an important quantitative
-indicators of the the bipartite network, and it describes the relative
-value between the Topic Layer and the User Layer of the the bipartite
-network. The changes curve of the scale ratio W of Wikipedia over time
+indicators of the the bipartite network, which describes the relative
+value between the topic layer and the user layer of the the bipartite
+network. The changes curve of the scale ratio $W$ of Wikipedia over time
 is shown in Figure 8. With time passing,the scale ratio W is rising
 gradually. When rising to 0.35, W is becoming more and more stable
-with slight fluctuations. Data show that there was a downward trend in
-Wikipedia scale ratio after 2006. From the above facts and analysis,
-it is known that the scale ratio is an important indicator of the
-network size. This study focuses on the dependency relationship
-between the scale ratio and its corresponding one-dimensional network.
+with slight fluctuations. Data shows that there was a downward trend in
+Wikipedia scale ratio after 2006. Since we exclude non-collaborating
+users, either no contribution or working alone, we can draw a
+conclusion that the increase the users and topics is in a favorite
+way. New users collaborate with others actively and new topics attract
+a goupe of users.
 \begin{figure}[htpb]
   \centering
   \scalebox{0.3}{\includegraphics{08}}
   \caption{the changes curve of the scale ration W over time}
 \end{figure}
-In addition, network density has become the most commonly used measure of the social network analysis and it has played an important role in the social network analysis. In graph theory, the network density is used to aggregate the total distribution of various lines so as to measure the gap between such distribution and a complete graph.Sepecifically speaking, density refers to the close degree between various nodes of a network. In the non-oriented and absence of weight-absent social networks, the density can be expressed as:
+In addition, network density has become the most commonly used measure
+of the network analysis. According to graph theory, the network
+density is used to aggregate the total distribution of various lines
+so as to measure the gap between such distribution and a complete
+graph. Sepecifically speaking, density refers to the close degree between various nodes of a network. In the non-oriented and absence of weight-absent  networks, the density can be expressed as:
 \begin{equation}
   \label{eq:3}
   Density=\frac{n\times AverageDegree}{n\times(n-1)/2}=\frac{2\times AverageDegree}{n-1}
 \end{equation}
-Figure 9 indicates the relationship between the Wikipedia density and the scale ratio. 
+When the topic nodes are in a certain number, the network density is
+smaller if the user nodes are more. When the user nodes are fixed but the
+number of the topic nodes increase, more links are bound to be built
+among the fixed users, which means that the network density is certain
+to grow. Figure 9 indicates the relationship between the Wikipedia density and the scale ratio. 
 \begin{figure}[htpb]
   \centering
   \scalebox{0.3}{\includegraphics{09}}
   \caption{The relationship between the Wikipedia density and the scale ratio （with the lunar cycle）}
 \end{figure}
-From Figure 8 and 9, it is clearly shown that there is a downward trend in the network density with the increasing of the scale ratio W which means the relative value of the number of the user nodes number and the topic nodes number increases. This is because the relationship between the user nodes is linked through the topic nodes. It is obvious that when the topic nodes are in a certain number, the network density is smaller the user nodes are more. When the user nodes are fixed but the number of the topic nodes increase, more links are bound to be built among the fixed users, which means that the network density is certain to grow. In order to establish closer links between the users in the knowledge collaboration network, then knowledge can be spread among more users, two efficient methods are efficient to keep a dense network: the first is to increase topic nodes to adapt to the user nodes’ increasing speed; the other is to encourage the topic senders, especially those more active, new topic senders. 
+From Figure 8 and 9, it is clearly shown that there is a downward
+trend in the network density with the increasing of the scale ratio W
+which means the relative value of the number of the user nodes number
+and the topic nodes number increases. This is because the relationship
+between the user nodes is linked through the topic nodes.  In order to
+establish more links between the users in the knowledge collaboration
+network,  two efficient methods are efficient to keep a dense network:
+the first is to increase topic nodes to adapt to the user nodes’
+increasing speed; the other is to encourage the topic
+contributors(users of Wikipedia), especially those more active, new topic-created users. 
 
 \subsection{ The relationship between the clustering coefficient and the scale ratio}
 \label{sec:relat-betw-clust}
-
-The law of the clustering coefficient changes over time, which is
-studied in Section III, is the clustering coefficient fluctuates in a
-relatively small range. Furthermore, the clustering coefficient is an
-important one-dimensional network indicator in both the research of
-the small world and the hierarchical network. In order to thoroughly
+ In Section 3, we show the clustering coefficient fluctuates in a
+relatively small range.  In order to thoroughly
 analyze the bipartite knowledge collaboration network, this article
 further studies the relationship between the clustering coefficient C
-and the scale ratio W. And the clustering coefficient of the whole
+and the scale ratio $W$. The clustering coefficient of the whole
 network can be expressed by the average clustering coefficient:
-$\bar{C}=2\times \sum E_i/k_i(k_i-1)N_{user}$ . In addition, the
+$\bar{C}=2\times \sum E_i/k_i(k_i-1)N_{user}$ . The
 relationship between the average Wikipedia clustering coefficient
 $\bar{C}$ and the scale ratio is shown in Figure 10. 
-
-With the increase of W value, the clustering coefficient does not decrease, but increases slightly. Although the data is not very ideal, they are consistent with the objective network. On one hand, the scale ratio W is not continuous, but discrete points; on the other hand, according to the studying on the clustering coefficient in section III, it does not change significantly, but in a small range. Such insignificant positive correlation between the clustering coefficient and the scale ratio illustrates the balanced growth between Wiki user nodes and the topic nodes, which is essential for the steady development of the clustering coefficient. 
 \begin{figure}[htpb]
   \centering
   \scalebox{0.3}{\includegraphics{10}}
   \caption{The relationship between the  Clustering Coefficient  and the scale ratio}
 \end{figure}
 
-\section{Conclusion and discussion }
+With the increase of $W$, the clustering coefficient does not decrease, but increases slightly. Although the data is not very ideal, they are consistent with the objective network. On one hand, the scale ratio W is not continuous, but discrete points; on the other hand, according to the studying on the clustering coefficient in section III, it does not change significantly, but in a small range. Such insignificant positive correlation between the clustering coefficient and the scale ratio illustrates the balanced growth between Wiki user nodes and the topic nodes, which is essential for the steady development of the clustering coefficient. 
+
+
+\section{Conclusion}
 \label{sec:5concl-disc-}
 
 Analysing the interaction between users and topics is important to
 understand the mechanism of content collaboration behavior. 
 In this paper, we propose a knowledge collaboration network model
 using  Wikipedia archive data, and analyze the statistical
-properties of the network. The result shows that the
-one-dimensional network of this model is a scale-free structure and
-its distribution function is subject to the characteristics of the
-power law, BA scale-free structure growth and preferential
-attachment. The average degree of the network is getting bigger
-alongwith the time elapsed, marked an upward trend of collabroation
-activities between users. Meanwhile,  the clustering coefficient is
-relatively steady despite of the increase of network size. The network
-also demonstrate  small-world effect. The network average distance is
-less than 4, reflecting the tight relationship between nodes of the
-network. We also dicuss the hierachy of the network. It is not
-hierachical character at the early stage of the network. However, with
-the development of the network,  the network gradually reveals certain
-level of hierarchy. 
+properties of the network. We discuss two kinds of networks:
+one-dimensional network aiming at modelling users collaboration and
+two-dimensional network aiming at modelling users and topics
+affiliation. The result shows that those two kinds of networks are
+both complex networks. The characterisitcs of the networks such as
+distribution of degree and clustering coefficient are also analyzed in
+detail in this study. The limitation of this study is root from the
+limited data processing ability to the
+huge Wikipedia data. We have to select some slice the data and divided
+into sub-networks. The
+phrase change of hierachicl topology is  not included in this paper
+neither. All will be the future research works.  
 
-The biparty network shows similar property to the one-dimensional
-network. The distribution of theme of the user node obeys the
-power-law distribution. The network density is increased with the
-network size, indicating the  
-另外，
-在知识协同二维网络模型中，话题节点的主题度分布同一维BA一维网络度分布一
-样，服从幂律分布，具有“长尾性”等特征。一维网络特性中网络密度随着规模比
-的增长而增长，集聚系数则呈现出震荡上升的趋势，有一种不显著的相关性。本
-研究还有一些局限性和不足之处，比如数据片段选取的科学性，等级拓扑结构的
-阶段性，以及集聚系数与规模比关系等方面尚需进一步讨论。
 
 \section*{Acknowledgment}
 \label{sec:acknowledgment}
@@ -740,5 +781,5 @@ This work was partly supported by the National Natural Science Foundation of Chi
 
 
 \bibliographystyle{elsarticle-num}
-\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor,../..arXiv}
+\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor,../../bibtex/arXiv}
 \end{document}
