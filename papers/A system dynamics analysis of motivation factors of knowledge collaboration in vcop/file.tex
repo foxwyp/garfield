@@ -1,0 +1,719 @@
+\documentclass{elsarticle}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bigdelim}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subfigure}
+\usepackage{booktabs}
+
+
+%\usepackage{algorithmicx}
+\journal{International Journal of Human-Computer Studies}
+
+\newtheorem{definition}{Definition}
+
+
+\begin{document}
+
+\begin{frontmatter}
+\title{A system dynamics analysis of motivation factors of knowledge collaboration in vcop}
+\author[buaa]{Jun Wang}
+\ead{king.wang@buaa.edu.cn}
+
+\author[buaa]{Yunpeng Wu}
+\ead{yunpeng.wu@sem.buaa.edu.cn}
+
+\author[buaa]{Di Wu}
+\ead{sss}
+
+\address[buaa]{School of Economics and Management, Beihang University, 
+Beijing 100083, P.R. China}
+
+\begin{abstract}
+ With the development of Virtual Community of Practice (VCoP), a lot of research was done on the mechanism and structure of virtual community, while little research was about the motivation of users’ behaviors. Based on achievement motivation theories and community theories, the motivation factors of users to participate knowledge collaboration are elaborated from individual and group environment perspectives. For further explanation, we developed a dynamic model to simulate the motivation factors of users in VCoP, which was compared with the historical data from Wikipedia,. Finally, based on the simulation and analysis results we propose the strategy to improve the virtual community development and the future study. 
+
+\end{abstract}
+
+\begin{keyword}
+  Virtual Community of Practice, System Dynamics, Motivation Factors, Achievement Motivation, Sense of Community, simulation model
+
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}
+\label{sec:introduction}
+Morden information technology enables people to communicate in a way
+even not having to meet each other. Online communication gradually changes the
+traditional communities to virtual communities.  A sufficient number of
+people  aggregate in cyberspace and participate in  an open discussion
+long enough, with sufficient emotions, setting up  their personal
+relationship. Howard Rheingold(1993) This kind of community is also
+named as online community and computer mediated community. While
+virtual communities may seem common to people's daily life,
+researchers of knowledge management find virtual communities are great
+form to better share and transfer knowledge in organizations. Member
+of these communities in an organization do sth which forms virtual
+communities of practice. 
+
+Techniques and topics vary with different virtual communities, but the
+information exchange and mutual support always takes priority in
+virtual community[3]. Rheingold argued that compared to other online
+organization, virtual community is particularly important owing to its
+self-maintenance and convenience for participants to connect each
+other. Therefore, cognitive theories in sociology and psychology
+theories can be adopted when we intend to describe and solve social
+problems in virtual community. With the development of virtual
+community, there is an increasing number of people who are focus on
+the motivation factors affecting users in virtual community. For
+example, Teo，Lim and Lai(1999) divided the motivation of consumption
+community users as external and internal motivation[4]；Shang et
+al. (2005)divided the motivation of online shopping as external and
+internal motivation[5]；Rheingold argued that compared to other online
+organization, virtual community is particularly important owing to its
+self-maintenance and convenience for participants to connect each
+other. Therefore, cognitive theories in sociology and psychology
+theories can be adopted when we intend to describe and solve social
+problems in virtual community.
+
+The motivation of users in virtual community is a systematic problem involving personal influence factors, group influence factors and the relationship between different factors, and its practical results are decided by interaction of those factors. The fundamental of system dynamic modeling is its systems view and the unique process of recognizing and the solving problems from unity to part and from outside to inside with manifold loops. Consequently, it is natural to choose system dynamics to research the motivation factors from personal requirement and organization environment perspectives. 
+The next section discusses the background and literature review. The following three sections present  。。。。。  Finally, the contributions and limitations of this study, and implications for future research are discussed.
+
+\section{Background and literature review}
+\label{sec:backgr-liter-revi}
+
+According to Houston, motivation is the dynamic factor formed by
+individuals collaborating the internal requirements(such as instinct,
+need and drive) and external cause of behavior(such as goals, reward
+and punishment), which can inspire and maintain the behaviors. Based
+on the most popular motivation theories, which are presented by
+Sigmoid Freud, Abraham Maslow and Frederick Herzberg respectively,
+scholars divide motivation as physiological motivation, psychological
+motivation and social motivation. physiological motivation means
+various consumption motivation to maintain, prolong and develop the
+life, which is caused by inherent and physiological factors. This
+motivation, generated in real world, rarely exists in virtual
+world. Psychological motivation develops with the psychological
+process such as personal recognition, emotion and will; Social
+motivation is caused by the socialized need of social interaction,
+sense of belonging, achievement, respect, self realization, affected
+by natural condition, life circumstances and various social factors
+such as politics, laws, customs, education, economy and
+classes. Motivation driving users to participate virtual community of
+practice is mostly psychological and social motivation, therefore,
+this study focuses on personal achievement motivation and motivation
+on the group level. 
+
+Achievement Motivation Theory was proposed by the American
+psychologist David McClelland in the 1940s, which was defined as the
+internal motivation factors affecting the desire for success while
+accomplishing the tasks. In McClelland’s theory there are three
+important motivations or needs, including need for achievement, need
+for affiliation and need for power. Need for achievement is the one to
+succeed and perform the best; Need for power is the one to affect or
+control other without being controlled; Need for affiliation is the
+one to establish intimate and friendly interpersonal
+relationship. Those people with high achievement motivation tend to be
+active and enthusiastic in work and studies. 
+
+In communities, individuals will contribute their knowledge and
+thereby influence ideas of other people. Individuals with high
+achievement motivation will make their effort to solve questions asked
+by other community members, so that they will feel satisfied after
+completing difficult tasks. In virtual community, the motivation
+factors are the inner driving force which inspires individuals to
+perform best in the tasks perceived valuable and important.  
+
+Sense of community belongs to social psychology. ………[6]. Burroughs and Eby argues that sense of community appears in community because its ability to generate satisfaction and the loyalty to community. Moreover, it is closely related to community activity and expected to solve the problems[7]. Sarason(1986) is the first scholar to define the affection between community members and the community itself as the fundamental cause of a successful community[8]. McMillan和Chavis(1986) defined it as the sense of belonging, the perception of important relationships and the significance of community, and the common belief that needs of community members should be met by group obligations[9]. They also developed community theory with describing it as feelings of membership, identity, belonging and attachment with the group. This theory has been widely accepted, based on which scholars made a large quantity of theoretical and empirical study[9]. 
+
+With the advent of virtual community, scholars began to study the community cognition in virtual community. After studying the internet chatroom with sense of community theory, Roberts find the sense of virtual community existing in online community users[10]. Obst, Zinkiewicz and Smith contrasted the virtual community for novels and the neighbor relationship only to find some weaker virtual community relationship[11]. Koh and Kim contrasted the research done by Obst, Zinkiewicz and Smith with their own study, where the relationship between V.I.P members and their influence are defined as factors, finding that sense of community can by no means exist in virtual community as a whole[12]. Blanchard and Markus(2004) studied the sense of virtual community of a newsgroup and draws the similar conclusions as McMillan and Chavis, including feelings of Membership, integration of needs, and shared emotional connections[13]. 
+
+Through internet, the virtual community provides places and service for community members in order to meet their needs. In the co-creating process of virtual community members, the value and emotion identification is established among members. Also, the establishment is closely related to the motivation to prompt participation, the behaviors in the community and their personalities, simultaneously affecting the members’ self-evaluation and performance in the community. Since virtual community is endowed with the same traits as the real community, this paper will adopt the community theory to study the motivation factors for participation of community members. 
+
+System dynamics attaches great importance on the complicated requirements in decision making process and the cognition process generated naturally or by the education. Recently, an increasing number of scholars have accepted system dynamics as the tool in virtual community research. For example, Diker [14] developed a membership growth model in an open online system. Yan Mao et al. built a system dynamics model of an online collaborative system and studied its motivation mechanism[15]. Werner W. Wittmannl and Keith Hattrup adopted system dynamic to create a feedback model for information overload[17]. Tina and Stavredes presented a system dynamics model of the evaluation system of educational techniques. 
+
+Similar with the studies mentioned, we viewed wiki community as a system and developed a system dynamics model to simulate the motivation factors, where the individual psychological factors and the group influence psychological factors are mainly studied. In this model, the cause and effect relationship and the influence factors need to be verified and modified constantly, and this can be realized by computer technology and simulation software, which also helps to identify the complicated relationship between the system factors and the system structure. In this study, we developed a system dynamic model of motivation factors of wiki users to participate the practical activity with Vensim PLE[19].
+
+\section{Motivation factors analysis of knowledge collaboration in virtual community of practice}
+\label{sec:motiv-fact-analys}
+
+\subsection{The classification of uses}
+\label{sec:classification-uses}
+
+Because of individuals’ different personalities, motivations,
+behaviors and qualifications, various levels of activeness,
+characteristics, ability of expression, knowledge, and roles in
+community interaction, users in the same virtual community will be
+differentiated in the sense of community and grouped spontaneously. 
+
+Amsrtnog and Hgael(1997)argue that, individuals are attracted by topics they are interested in before they devote themselves to the related community in the complex internet. Inclined to join the community as they are, whether they can be converted from simple browsers to community users who will enter the community repeatedly, interact with others and contribute knowledge, depends on the amount of their interest and satisfaction. Amsrtnog and Hgael divided virtual community members as four types according to their level of participation and value: browser, lurker, contributor and shopper. Adler and Christopher(1998) presented the four types of users as passive member, positive member, inductor and manager[20]. After a long time of observation of game-programming MUD virtual community, Bartle(1990）classified the users as killers, achievers, socializes and explorers according to their motivation and related behaviors. Kozinest(1999) , when studying the consumer virtual communities, divided the members as tourist, mingler, devotee and insiders based on the relationship between users and consuming activities and relationship between users and virtual communities. According to Kozinest, the final identification depends on two related factors: the degree of the relationship between individuals and certain consuming behaviors, and the social relation between individuals and other members in the community. According to the two factors, community members can be divided as four types shown in figure 1.   
+\begin{figure}[htpb]
+  \centering
+  \scalebox{0.75}{\includegraphics{01}}
+  \caption{Classification of members in Vcop}
+  \label{fig:classification}
+\end{figure}
+
+
+\begin{enumerate}
+\item Browser: lack of intense social relationship with groups; having
+  temporary or little interest in consuming behavior. 
+\item Mingler: intense relationship with groups; but little interest in core consuming behavior.
+\item Devotee: enthusiastic with consuming behavior,; weak
+  relationship with groups. 
+\item  Insider: intense relationship with consuming behaviors and groups. 
+\end{enumerate}
+
+ 80/20 principle in management science indicates that 80\% of the
+ total value comes from 20\% of all factors, and the other 20\% of the
+ value comes from the 80\% of all factors. About 80\% of products and
+ service are consumed by 20\%of the consumers. Some preliminary
+ studies indicates that for virtual community, the core market covers
+ devotees and insiders. The loyal consumers will form or join the
+ consumers’ communities once they can approach the internet. At the
+ same time, virtual communities could increase the loyal users through
+ cultural and socialized consumption. In this way, tourists and
+ minglers will be converted to devotees and
+ insiders(Kozinest，1999)[22]. Virtual community of practice is
+ similar to consume virtual community except that users gather to
+ complete a task or acquire some certain knowledge. Therefore, 80/20
+ principle is also applicable in this condition, that is, 80\% of the
+ valuable practice results are acquired by 80\%of the practitioners
+ while the remaining 20\% are generated by the 80\% of all
+ practitioners. Based on characteristics of virtual community of
+ practice, this study divides its users as two types according to the
+ extent of their participation and interaction in the community.
+
+(1)  Experienced members: Experienced members are opinion leaders with highest influence. They are most familiar with the related information and knowledge, also they are willing to interact with others and provide their assistance. Generally, they are the most passionate and active members in the community, not only contributing their original product but also organizing or participating in discussions or activities as much as possible. 
+
+(2)  ordinary members: ordinary members are members who just participate in the community and those browsers. The former, lack of strong social relationship with others, usually browse casually and contribute little to the community. Moreover, they are inclined to dive in the community, and obtain the knowledge they need without much contribution. The browsers mean tourists who browse and learn in the community with little contribution to it. 
+
+\subsection{Collaborative behavior analysis in virtual community of practice }
+\label{sec:coll-behav-analys}
+
+Members in virtual community of practice will organize themselves to work and learn together in a certain field, and achieve some goal by communication and knowledge sharing. Essentially, it is a process of knowledge collaboration and knowledge-based task performance.  
+
+Knowledge collaboration, which is the knowledge exchange through
+communication and interaction, happens only when there are
+requirements for some certain knowledge and there are members who will
+provide the corresponding knowledge. In this condition, communication
+and exchange is generated. Similarly, knowledge exchange will never
+happen if there are few members who is willing to share and contribute
+their knowledge[23]. So communication in knowledge communication is a
+bidirectional process in knowledge collaboration. Hendriks points out
+that knowledge sharing and exchange involves two objects[24],
+including:
+\begin{enumerate}
+\item knowledge providers: Those who are knowledgeable and willing to provide their knowledge by presentation, works and behaviors. They either provide the related knowledge to solve the problems presented by other members, or post messages in the community to introduce their experience and techniques. In the collaboration process, knowledge providers contribute their own knowledge to the community.  
+\item knowledge requestors: knowledge receivers. Those who learn and
+  understand knowledge by imitation, listening and reading. Knowledge
+  requestors acquire the knowledge they need in the collaboration
+  process,.
+
+\end{enumerate}
+In virtual community, knowledge providers help others by publishing articles or upload the codes, and knowledge requestors can acquire the knowledge by browsing the page or download the document. The two identities will be mutually converted constantly. For instance, if user A helps user B with problem 1, B can be the knowledge provider on problem 2 with A being conversely the requestor. Based on the previous studies, the four types of behaviors are defined as follows:
+
+(1) Browsing: Acquiring knowledge from others passively by browsing the publications of other community members. 
+(2 ) Collaboration: Participating in the activities or discussions initiated by others, and then offering his advice and methods. Problems could be solved by the collaboration between members.
+(3) Communication: The act of initiating some discussions or activities which are not related to the tasks, such as some chat or greeting expected to establish emotional relations. 
+(4) Management: A mediating role between community members and
+community operators, in charge of everyday concerns. 
+
+\subsection{The analysis of motivation factors to collaboration in the virtual community }
+\label{sec:analys-motiv-fact}
+
+ Dholkaai et al. (2004)divides the users’ motivation to participation as two sorts: One is the motivation on the individual level, including achieving goals, maintaining social relationship, social reinforcement and entertainment; The other is the motivation on the group level, including internalization and recognition. It refers to the social influence factors affecting the members’ participation in the virtual community. Therefore, we study the motivation factors affecting the members’ participation in the virtual community from two aspects: on the individual level and group level.  
+
+\subsubsection{Individual level}
+\label{sec:individual-level}
+
+Based on Theory of Reasoned Action presented by Fishbein and Ajzen, Davis(1989) presented Technology Acceptance Model, which indicates that the perception of computer system will affect the users’ attitude which will further affect the intention, consequently they will start the using behavior[25]. Teo, Lim and Lai(1999) studied the users’ motivation to use the internet with TAM model. The motivations can be categorized as extrinsic motivation and intrinsic motivation[4]. Extrinsic motivation is generated by objective factors other than individuals themselves. It focuses on the efficacy of the activities, which are regarded as a tool to achieve the goal. Besides, extrinsic motivation can be observed and felt and it is acquired by the exchange of material, energy and information. Intrinsic motivation stems from individuals themselves and involving in the activities without any effect of external force. It focuses on the process of activities instead of the efficacy, including sense of responsibility, sense of achievement and need for achievement, and so on. 
+
+Dholakia（2004）also classified the factors affecting members’
+participation in the virtual community as individual factors and group
+factors. He studied some of the individual factors, finding that the
+informational and instrumental value is the vital
+factor[26]. Davenport points out that it is like Utopia to think that
+knowledge will naturally distribute without economic incentives,
+because people are not likely to contribute valuable knowledge without
+any returns[27]. .ZhuGe Hai summarized the motivation factors of
+knowledge sharing in an organization. Except altruism, the factors
+include: the hope for material reward, praise from other members,
+honorary recognition, the environment of reciprocity, and the
+accessibility of knowledge from others when there is some
+need[28]. According to the analysis of the above and other scholars,
+we define the extrinsic motivation on the individual level as:
+
+  information value: Information value is not only the result of
+  virtual community of practice but also the primary factor of members
+  to participate in the community. Individuals will not be interested
+  in other factors of the virtual community unless they could obtain
+  the related information to meet their needs for knowledge. Flanagin
+  and Metzger argues that information value contains acquiring
+  information, learning to handle affairs, providing information and
+  contributing all the knowledge to a pool of information. 
+
+Instrumental value: Participants will complete a certain task through
+online interaction, such as solving a problem, providing an original
+view, affecting others, and evaluating a decision. These tasks are all
+instrumental, which is often defined as the easiness to achieve the
+specific goals. Flnagani and Metgze argue that instrumental
+value(instrumental need) means view generation, negotiation, problem
+solution, finding others for assistance and decision making.
+
+  extrinsic rewards: Generally, in virtual communities the rewards are
+  not presented in material. But larger personal spaces and more
+  privilege for functions have become the extrinsic motivation factors
+  for users to participate in the community practice.
+ 
+reciprocity: Since everyone is limited in his abilities, the
+completion rate will be increased by exchanging knowledge with
+others. Usually, reciprocity is not realized simultaneously, but the
+efficiency could be improved by interaction and mutual assistance.
+
+A large quantity of empirical studies have proved the important role
+of extrinsic motivation. However, it is hard to determine which factor
+takes the priority, Furthermore, virtual communities, like wiki, all
+developed with the enthusiasm of users instead of extrinsic
+rewards. Therefore, intrinsic motivation is as important as extrinsic
+motivation. Intrinsic motivation is generated from the altruism of
+individuals and the satisfaction of the psychological needs, or from
+the pursuit of some certain moral principles. Intrinsic motivation is
+mostly the satisfaction of some certain psychological
+needs. Nicholls（1982）discovers the intrinsic dynamic for people to
+strive for success when they are performing a task, that is, the inner
+drive for people to do those tasks perceived to be important and
+valuable. It is defined as achievement motivation. Clark、Varadarajan
+and Pride also take achievement motivation as the competition for
+excellence or the hope for realizing one’s goals[32]. According to
+Elliot and Andrew J, the achievement motivation is the
+competition-based emotion, cognition, activation and orientation of
+behaviors. In the achievement needs theory brought by
+David·C·McClelland, personal achievement motivation includes
+achievement needs, power needs, and affiliation needs. Within personal
+achievement, self-efficacy is a vital category which is defined as
+“Individuals’ perception or belief of their ability to control the
+life” [34] He discovers that the act of individuals not only depends
+on their willpower but also on their self-assurance of the effective
+use of power, which can be realized by self-efficacy. As a latent
+important factor affecting knowledge collaboration, self-efficacy is
+the belief of the organization and execution ability needed for the
+expected condition. According to the above analysis, the intrinsic
+motivation factors on the individual level can be defined as the
+follows: 
+
+(1) Need for achievement: It means the individuals’ requirements for
+success and best performance. David·C·McClelland argues that people
+with strong need for achievement aspire to do things in a perfect way,
+improve working efficiency and become more successful. They are
+concerned with the joy in overcoming difficulties, solving problems
+and the sense of achievement after success, but material award is not
+their concern. The sense of achievement is closely related with the
+standard of economics, culture, society and government, as well as the
+social moralities. The sense of achievement of individuals is
+satisfied in the practice, which inversely encourages the individuals
+to participate in the virtual community. 
+
+(2)  Need for power: It is the requirement of affecting or controlling
+others without being controlled. Also, it refers to the drive to
+control and influence others. The extent of aspire for power
+varies. Those who are endowed with a strong aspire for power are
+interested in controlling, ordering, and claiming for
+power. Correspondingly, they are typically argumentative, talkative,
+straight, and clear-minded; they are born instructors and
+lecturers. They pursue excellence and competitive environment not for
+the sense of achievement as those with strong need for achievement,
+but for acquiring power and status or maintaining the present
+power. One kind of participants, called community leaders in virtual
+community, whose advice can influence other members to a great degree,
+will make lectures and instruct others when there is a debate, and
+later they will obtain higher status and power in the community. 
+
+3)  Need for affiliation： It is the need to establish intimate social
+relationship, and a desire to seek for being loved and
+accepted. People with strong need for affiliation are fond of
+associating with others, which brings joy to them. Sensitive to
+interpersonal relationship, they prefer cooperative to competitive
+working atmosphere, and need more communication and mutual
+understanding. Sometimes, this kind of need is presented as the fear
+to lose intimate relationships and the withdraw in front of
+interpersonal conflict. In virtual communities, the need for
+affiliation is important to keep social association and harmonious
+interpersonal relationships.
+
+(4)  Self-efficacy: It is an significant intrinsic motivation which
+helps to initiate knowledge collaboration between community
+members. In the context of achievement, self-efficacy is an intuitive
+or personal judgment made by an individual on whether he is competent
+for the task before undertaking it. It is both self-perception of
+competence and an emotional private experience. After studying the
+motivation factors for workers to contribute knowledge to enterprise
+knowledge base,  Kankanhalli believes that the motivation will be
+weakened if the workers think their knowledge has no effect to the
+enterprise. Hsu gets the similar conclusion after studying the
+motivation factors of knowledge sharing in virtual community:
+Self-efficacy is an important motivation of knowledge sharing.
+
+\subsubsection{group level}
+\label{sec:group-level}
+
+Virtual community is a social group formed by the aggregation of online users Since the sociality is a typical feature of virtual community, social factors are crucial in motivating members to participate in virtual community. The sense of community, which is a combination of the sense of belonging, sense of identity, emotional connection and the feeling of stability, reflects the need for others and the interaction with others of each individual. Furthermore, there will be active impact of the sense of community. Mcmillan and Charvis presents the most influential and typical definition of the sense of community, that is, the sense of belonging, the perception of important relationships and community significance, and the common belief that the group is obliged to meet the members’ needs. Although there is no face-to-face interaction and regional association in the computer-based virtual community, the sense of community will be generated from it. The anonymity (the real identity will not be exposed) and selectivity (people can enter or leave the community at any time) enables people to explore themselves and build identity more freely, thus brings a more interactive and open society. Therefore, virtual communities could meet the needs of sense of community that can not be satisfied in real communities. In this study, we define community identity, community attachment, community cohesion, and community satisfaction as four fundamentals of the sense of community in virtual communities.      
+
+(1) community identity involves the semiotic significance and social value for people, that is, the process and extent of the community becoming the self-identity of individuals, which seems like the sense of membership. Sense of identity is the extent individuals feel themselves as part of the group. Roland Warron indicates that, the extent of the sense of identity varies with different individuals or groups[37], and the sense can be analyzed in cognitive, afflictive and evaluative aspects. Dholkaia argues that the sense of identity includes cognition, affiliation and evaluation. From the view of cognition, identity is a process of classification, which means the extent of individuals’ recognition of themselves as a member in the virtual community.(similar with the members and different from non-members) ; From the view of affiliation, identity means the emotional state of belonging to a virtual community; Evaluation is what users evaluating themselves in the virtual community.    
+
+(2)  Community attachment is the emotional engagement in the community which is similar with “mutual emotional relationship”. The individuals participate in virtual communities to escape from loneliness and communicate with people of the same thoughts, obtaining friendship and social support. The members will tend to participate owning to their sense of the membership. Postmes argues that the attractiveness of virtual communities comes from the sense of cluster, which is a positive experience of members gathering together to communicate with each other in the virtual community.     
+
+(3)  community cohesion emphasizes on the group interaction and the
+unity between individual goals and group goals, which seems like
+“influence” and “the integration and realization of needs”. There is
+an phenomena named internalization in community cohesion. The
+internalization means making decisions based on the overlap between
+one’s sense of worth and others’. Eagly and Chaiken indicates that the
+sense of worth cover a large quantity of concepts, such as belief,
+attitude and other moral belief [39]. For members in the virtual
+community, internalization happens when they share the same sense of
+worth with others. In the virtual community of practice, an expertise
+in java may meet others who like java as he does, or a fan of
+archaeology will meet with other fans who are posting their comments
+on the relate topics. In every condition, there is some apparent
+overlap of the sense of worth. Owning to the casualness of selection,
+that is, community members could select the virtual group that share
+the same sense of worth with themselves, Bagozzie and Dholakia(2002)
+view internalization as an important influential factor of community
+members. Internalization develops in the information exchange among
+community members and keep growing when the information means a lot to
+the participants. 
+
+\begin{table}[htpb]
+  \centering
+   \caption{the classification of motivation factors for the virtual
+    community members to participate in knowledge collaboration}
+\begin{tabular}{ccc}
+    \toprule
+    \multicolumn{ 1}{c|}{Individual level} & \multicolumn{ 1}{|c|}{extrinsic motivation} & Information value \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 1}{|c|}{} & Instrumental value \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 1}{|c|}{} & Extrinsic rewards \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 1}{|c|}{} & Reciprocity \\\cline{2-3}
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 1}{|c|}{Intrinsic motivation} & Need for achievement \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 1}{|c|}{} & Need for power \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 1}{|c|}{} & Need for affiliation \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 1}{|c|}{} & Self-efficacy \\\hline
+    \multicolumn{ 1}{c|}{Group level} & \multicolumn{ 2}{|c}{Community identity} \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 2}{|c}{Community attachment} \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 2}{|c}{Community cohesion} \\
+    \multicolumn{ 1}{c|}{} & \multicolumn{ 2}{|c}{Community satisfaction} \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+(4) Community satisfaction is an emotional state of community
+evaluation. It is also close to community cohesion, referring to the
+subjective evaluation of the objective condition in the community. The
+research on community satisfaction made by Malans and Jess(1975) is
+the most prominent one. They find that the features of the objective
+condition where an individual lives are not equal to his feelings in
+that condition. Most people, even those living in a lower standard are
+satisfied with their community. In most circumstances, satisfaction is
+highly related with the affiliation to the family and the friends
+living in the community [41]. John Buckner, the psychologist, presents
+a research of studying community (cohesion) sense on the group level,
+and presents three dimensional indexes measuring the neighborhood
+cohesion: the sense of community of residents in the neighborhood, the
+livings of residents and the level of residents’ attractiveness to
+other neighbors, and the level of interaction with neighbors. 
+
+\section{the modeling process}
+\label{sec:modeling-process}
+
+There is a mutual supportive or restrictive relationship between the
+intrinsic and extrinsic motivation on individual level, and the same
+relationship exists between the individual level and group
+level. Dholakia discovers that the target value of t=individuals will
+strengthen their sense of identity, which brings the common sense of
+members resulting in the community cohesion. David Mcmillan and David
+Chaves argue that the common experience and interaction embodies
+important psychological rules. ① Association hypothesis : The more
+people interact with each other, the more intimate they will be. ②The
+quality of interaction: The more active the experience and
+relationship is, the more close the relations will be; Achievements
+promote cohesion. ③ Behavior prevention: Uncertain interactions and
+the non-completion of community tasks will prevent the community
+cohesion. ④The hypothesis of equivalent events: the greater events
+people have experienced together, the closer connections will be. (For
+example, people will get closer connection if they have experienced a
+catastrophe together); ⑤Devotion: The devotion determines the
+importance of the history and current situation to community
+members(For example, the one who devotes more to the community will
+feel the impact of community events more easily; Also he will have
+more affection on the community); ⑥The influence of the honor and
+humiliation on community members: The honor and humiliation is very
+influential on the members’ attitude on the community. ⑦Spiritual
+connections: connections generated or strengthened by common
+spirit(such as the religion and racism)[43]. Bagozzi and
+Dholakia(2002) finds out the sense of identity will increase the
+individuals’ desire, which is reflected as various psychological
+requirements, when they are moderating the MGB model. Moreover, active
+emotion expectations will increase the individuals’ psychological
+desire[40]. Based on the analysis, we conclude the basic
+cause-and-effect relationship between motivation factors in virtual
+communities of practice shown as figure 2.
+\begin{figure}[htpb]
+  \centering
+  \label{fig:cause-and-effect}
+  \includegraphics{02}
+  \caption{虚拟实践社区动机因素基本因果关系}
+\end{figure}
+
+\subsection{The motivation factor model of experienced members}
+\label{sec:motiv-fact-model}
+
+ Experienced members in virtual community of practice mainly
+ participate in the collaboration and discussion, but rarely browse or
+ manage in the community. Therefore, in this model the behavior
+ dimension includes two horizontal variables: collaboration and
+ communication. 
+
+   On the individual level, experienced members will focus on the
+   instrumental value of the community and the extrinsic rewards will
+   have effect on some of them. Reciprocity is also meaningful for the
+   experienced members. Because they join the collaboration mainly for
+   solving problems instead of acquiring information, the information
+   value of the community is not very distinct. In general,
+   experienced members have stronger need for achievement, and some of
+   them have stronger need for power or need for affiliation. They
+   would like to undertake the responsibility and complete the task
+   with some achievement, so their self-efficacy is higher and has
+   positive impact on themselves. On the group level, experienced
+   members have become regular members in the community, with their
+   sense of identity, belonging, cohesion, and satisfaction at a
+   higher level. Those psychological factors will correspondingly
+   prompt them to participate in the collaboration more
+   frequently. Consequently, the motivation factor dimension includes
+   11 horizontal variables: instrumental value, extrinsic rewards,
+   reciprocity, need for achievement, need for power, need for
+   affiliation, self-efficacy, community identity, community
+   attachment, community cohesion, and community satisfaction. The
+   motivation factor model of experienced members is shown as figure
+   3.
+\begin{figure}[htpb]
+  \centering
+  \label{fig:senior member}
+  \includegraphics{03}
+  \caption{资深成员动机因素模型}
+\end{figure}
+
+\subsection{motivation factor model of common members}
+\label{sec:motiv-fact-model-1}
+
+Common members in virtual communities take no activity except browsing, which is the only horizontal variable in the behavior dimension in this motivation factor model of common members. 
+
+On the individual level, common members often lay great emphasis on
+the information value and instrumental value of the community in
+practice. Without undertaking any tasks, there is rarely any extrinsic
+rewards and reciprocity between members. Although there are only a few
+common members who contribute little to the community, there is some
+latent need for achievement and need for affiliation. And there is
+little need for power among them. Because their behavior is mainly
+browsing that is seldom affected by self-efficacy, the horizontal
+variables do not involve self-efficacy in this model. On the group
+level, the common members’ sense of identity, belonging, cohesion and
+satisfaction is weaker compared to the experienced members, but these
+psychological factors will spur them to participate in the
+collaboration. Therefore, the motivation dimension includes 8
+horizontal variables: information value, instrumental value, need for
+achievement, need for affiliation, community identity, community
+attachment, community cohesion, and community satisfaction. The
+motivation factor model of common members is shown as figure 4.  
+\begin{figure}[htpb]
+  \centering
+  \label{fig:common-member}
+  \includegraphics{04}
+  \caption{成员动机因素模型}
+\end{figure}
+
+\section{Simulation research }
+\label{sec:simulation-research-}
+
+ Based on the basic model, we moderate the model according to
+    Wikipedia, and make a system simulation research. A contrastive
+    analysis is made between the simulation results and the real
+    data. 
+
+\subsection{The background of simulation research: wikipedia}
+\label{sec:backgr-simul-rese}
+
+Wiki is an open hypertext system subject to collaborative creation, which is developed in 1995 by Ward Cunningham, the father of Wiki. Ward Cunningham defines Wiki as a social computing system which allows a cluster of users to create and connect web pages with simple markup language[44]. In wiki, there is a system that enables users to make and moderate simple HTML web pages, and a system recording and arranging all the alternations. Social group-oriented collaborative writing is supported by Wiki system, which provides necessary assistance to the writing process. The writers of Wiki naturally form a social group and their simple communicating tools are provided by Wiki. As a open community, wiki helps users to share knowledge of one field in a social group and collaborating with others. Therefore, we choose wiki in our case study, and make simulation analysis of the motivation factors for users to participate in knowledge collaboration. 
+
+   
+
+A system is an functional aggregation with distinct and interactive parts connected together. We should first define the boundary of system and make primary feedback analysis before the system dynamics model could be built. Users edit entries through the behavior of edit, and communicate with each other through the behavior of Talk. This study describes virtual community of practice in two perspectives: a) the result of users’ practice; b) the psychological factors prompting the generation of practice results, including factors on the individual level and group level. In wiki, users collaborate with each other by editing entries and they can talk with each other about entries and texts of questions. Individuals complete editing entries voluntarily without any extrinsic rewards, which indicates that users in wiki are endowed with the similar and strong self-efficacy. The basic concept model includes Edit, Talk, need for achievement and the sense of community. The constant participation behavior of users influenced by individual and environmental factors is featured by positive feedback and the tendency of self-reinforcement. The moderated model is explained by the cause-and-effect graph shown in figure 5. 
+
+\begin{figure}[htpb]
+  \centering
+\includegraphics{05}
+  \caption{sds}
+\end{figure}
+\subsection{The definition of factors in the Wiki system simulation model
+}
+\label{sec:defin-fact-wiki}
+
+In wiki, users collaborate with each other on a question and they can talk with each other about questions and texts of other topics. In this study, we adopt need for achievement and the theory of sense of community to explain the psychological factors driving community members to collaborate and communicate with each other. Based on the basic cause-and-effect graph, we make further feedback analysis on the motivation factors for community users to participate in knowledge collaboration, and define the horizontal variables of the system dynamic model of motivation factors in wiki as 
+Level 1 Edit: The way in which users participate in practice. As an open community, the virtual community of practice allows users to collaborate with each other by creating and moderating entries. In editing, which is an equal collaboration, each member has the identical power and responsibility. The knowledge collaboration is completed by the edit of entries or categories, thus edit is treated as a horizontal variable of this study. 
+Level 2 Talk: The way in which users communicate with each other. The communication through text among members in virtual communities reflects the coordination and affiliation between the members. Because users could discuss and exchange ideas on entries and categories through Talk pages, Talk is included as the horizontal variable indicating the communication between members. 
+Level 3 Need for achievement: Meclelland believes that people with strong need for achievement aspire to work more efficiently and struggle for greater success. They are not concerned with material rewards. This sense will increase with personal achievement and decrease for some other reasons, such as the attribution and comparison, so the need for achievement is defined as a variable in this study.
+Level 4 Need for affiliation: The need for affiliation and the shared
+emotional connections in the sense of community indicates that members
+can reduce the personal distance between them by communication and
+establishing intimate social relationships. With the increasing level
+of intimacy between individuals, the community cohesion will be
+strengthened, and it will also be weakened owning to the community
+policy. Consequently, we define the need for affiliation as the
+horizontal variable.  
+Level 5 Sense of belonging: The sense of membership includes 5 factors: Boundary, sense of security, sense of belonging and identity, personal investment, and the common semiotic system. In the virtual community, there are open boundaries, the sense of security with little impact on the open community, the personal investment which could be reflected by knowledge collaboration and the common semiotic system defined by the system itself. Therefore, only the sense of belonging can be defined as the horizontal variable reflecting the membership in the community.
+Level 6 People: The individual is an important factor of the community constitution, and it is defined as the horizontal variable in this study. 
+Collaboration in Wiki emphasizes on the equality and coordination of
+the relationship between numbers. Consequently, there is no community
+leaders whose power transcend other individuals, thus, there is no
+need for power and no desire for leadership in the community. Though
+McMillan and Chavis take influential power as the most important
+factor in the sense of community, Anita L. Blanchard discovers strong
+relationship between members and weaker individual impact, and
+furthermore, the exchange and support between members is significant
+for the community development [45]. Some other scholars also prove
+that the influence in the sense of virtual community is not as
+important as SOC. As a result, we do not include influential power as
+a factor. 
+
+\subsection{Wikipedia系统仿真模型结构优化}
+\label{sec:wikipedia}
+
+McMillan and Chavis argue that the common experience and interaction
+of community members reflect important psychological activity
+rules. Moreover, they find that more interaction will bring higher
+intimacy, and more active relationship promotes closer
+connection. Cohesion is strengthened by achievement, while investment
+determines the significance of the community to members. The sense of
+community becomes stronger with larger investment. Influenced by
+individual and environmental factors, users participate in the
+practice constantly, so the 5 horizontal variables are mutually
+promotive and featured by the self-reinforcement of positive
+feedback. Figure 6 describes the moderated motivation factor model of
+users to participate in knowledge collaboration according to real data
+from wiki.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics{06}
+  \caption{sfd}
+\end{figure}
+
+Based on the previous analysis of the effect of intrinsic motivation
+on behavior, the users’ knowledge will accumulate in practice, at the
+same time, their need for achievement and affiliation will grow until
+it becomes stable. The input stream that influences the need for
+achievement and the need for affiliation is defined: Arising A and
+Arising Af; The motivation itself will also not grow infinitely, so
+two output streams are designed for need achievement and need for
+affiliation: Satisfacting \underline{xiahuaxian} A, Satisfacting Af. As time goes on,
+members’ sense of community will grow with the increase of knowledge
+collaborators, so the input stream of sense of belonging is defined:
+generating B. According to psychology principles, the human feelings
+will decay as time goes on, and the output stream of sense of
+belonging is defined as: consuming B. The details of variables and
+parameters are shown as table 2. 
+\begin{table}[htpb]
+  \centering
+ 
+  \caption{ the variables and input/output parameters in system
+    dynamic model}
+\begin{tabular}{rrrrr}
+   
+    \toprule
+    horizontal variable & \multicolumn{ 2}{|c}{input stream params} &
+    \multicolumn{ 2}{|c}{output stream params} \\
+    \midrule
+    the name of variables & name  & parameter significance & name  & parameter significance \\
+    \multicolumn{ 1}{|r|}{Need for Achievement} & \multicolumn{ 1}{|r}{A/Edit} & \multicolumn{ 1}{r|}{the incremental n need for achievement of users per Edit} & sA/E  & the satisfaction of users of the need for achievement per Edit \\
+    \multicolumn{ 1}{|r|}{} & \multicolumn{ 1}{|r}{} & \multicolumn{ 1}{r|}{} & sA/T  & the satisfaction of users to the need for achievement per Talk \\
+    \multicolumn{ 1}{|r|}{Need for Affiliation} & Af/Talk & the incremental need for affiliation of users per Talk & \multicolumn{ 1}{|r}{sAF/T} & \multicolumn{ 1}{r|}{the satisfaction of users to the need for affiliation per Talk} \\
+    \multicolumn{ 1}{|r|}{} & Af/B  & the need for affiliation generated per affiliation & \multicolumn{ 1}{|r}{} & \multicolumn{ 1}{r|}{} \\
+    Sense of Belonging & B/Talk & the incremental sense of belonging per Talk & /     & / \\
+    \multicolumn{ 1}{|r|}{Edit} & Edit/A & Edit generated per unit of need for achievement & /     & / \\
+    \multicolumn{ 1}{|r|}{} & Edit/B & Edit generated per unit of sense of belonging & /     & / \\
+    \multicolumn{ 1}{|r|}{Talk} & Talk/B & Talk generated per unit of sense of belonging & /     & / \\
+    \multicolumn{ 1}{|r|}{} & T/Af  & Talk generated per unit of need fro affiliation & /     & / \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{the hypothesis and parameters of Wiki system simulation }
+\label{sec:hypoth-param-wiki}
+Based on the above analysis, users in wiki are affected by both the individual psychological factors and group factors. A lot of scholars have studied users’ participation in virtual communities. Consequently, we present the following hypothesis in this simulation model.
+① The number of users participating in practice increases at a certain rate. We do not consider the motivation factors for the users to join and quit. 
+② The individuals share similar characteristics, and variations are not considered. The dissipation and encouragement are similar, used as the mean value for community members. 
+② The unit of measurement has no specific meanings, but reflects the trend and the influence on knowledge collaboration.
+The initial parameters is the static ones reflecting system features in system dynamic flow chart. They are selected according to the characteristics of virtual communities, which are set as table 3. This study simulates the dynamic factors for users to participate in knowledge collaboration in virtual communities with Vensim PLE, with the period of 65 months.
+\begin{table}[htpb]
+  \centering
+ 
+\begin{tabular}{crrr}
+    \addlinespace
+    \toprule
+    {\bf the name of variables} & {\bf unit} & {\bf initial value} & {\bf scope of variales} \\
+    \midrule
+    Edit  & ŽÎ     & 100   & 0- \\
+    Talk  & ŽÎ     & 100   & 0- \\
+    Need for Achievement & /     & 30    & 0-100 \\
+    Need for Affiliation & /     & 20    & 0-100 \\
+    Sense of Belonging, & /     & 10    & 0-100 \\
+    People & ÈË     & 100   & 0- \\
+    \bottomrule
+    \end{tabular}
+  \caption{sdsdfsf}
+\end{table}
+
+
+\subsection{The comparison between system simulation results and the historical data from wiki}
+\label{sec:comp-betw-syst}
+
+In order to prove the validity of the model, we present a comparison between simulation results and the historical data from wiki which is shown as figure 7. The historical data is gathered from the statistics of Wikipedia, ranging from Jan, 2001 to May, 2006. 
+The simulation results show that the system dynamic model is
+approximately in accordance with the statistics in Wikipedia which
+indicates the reasonability of using simulation results to explain the
+motivation factors of wiki users. The model and the simulation results
+tell us enhancing the users’ need for achievement will encourage them
+to participate in the community practice more actively and devote more
+to edit the entries. Therefore, wiki managers could establish an
+incentive mechanism, rewarding the users based on the number of times
+they edit the entries, how long they involve in the community, the
+quality of entries they create, and so on. Thus, stronger needs for
+achievement are provoked, which will promote users’ practice and
+develop the virtual community of practice. 
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics{07}
+  \caption{result}
+\end{figure}
+
+\section{conclusion}
+\label{sec:conclusion}
+
+ In this study, we discover that the theory of the need for
+ achievement could explain the motivation factors for members in the
+ virtual community of practice to participate in knowledge
+ collaboration. The motivation factors include the need for
+ achievement that drives individuals to achieve their goals, the need
+ for affiliation that is relate to the individuals’ social
+ relationship. The theory of community explains those motivation
+ factors in that community members will acquire  the sense of
+ belonging encouraging more communication. The simulation with system
+ dynamics will help operators to fully understand the nature of
+ virtual community, the need of community members, and the main
+ factors affecting the success of community.
+
+From the study, managers could learn to build the sense of identity by holding activities regularly and strengthening collective goals. First, on the individual motivation, the managers should let others know about the individual’s contribution to make the individual feel respected. Or else, managers can promote the contributors to higher level, which effectively spurs their need for achievement. The friendly atmosphere is needed to stimulate their need for affiliation, which helps members to feel themselves as part of the community. As a result, the knowledge collaboration in the virtual community of practice is promoted. On the group level, the community operators should avail the members to discuss and interact with each other on the website. The social interaction will promote the members’ sense of belonging. The operators are expected to hold regular online activities to form the common impression and group consciousness, encouraging knowledge practice by improving their sense of identity. In addition, the managers should be ready to discover the members’ dissatisfaction with the community or new needs, and improve the community service to solve the conflicts between users or from system factors. The will of users to contribute to the community could be encouraged by improving their satisfaction with the community. 
+It should be noted that virtual communities are a new phenomenon with the development of network techniques, and the related studies are at the beginning phase with plenty of limitations. Therefore, there exist many limitations in this study inevitably, which need to be modified in future study. This paper aims at presenting a primary exploration of the users’ behavior in virtual communities of practice. 
+\end{document}
