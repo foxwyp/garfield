@@ -1,0 +1,193 @@
+\documentclass[doublespacing]{elsarticle}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bigdelim}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{todonotes}
+
+% \usepackage{algorithmicx}
+\journal{Expert Systems with Applications}
+
+\newtheorem{definition}{Definition}
+
+
+\begin{document}
+
+\begin{frontmatter}
+
+  \title{A Business Process Driven Model For Automating Process Knowledge Extraction}
+
+  \author[buaa]{Jun Wang\corref{cor1}}
+  \ead{king.wang@buaa.edu.cn}
+
+  \author[buaa]{Yunpeng Wu}
+  \ead{yunpeng.wu@sem.buaa.edu.cn}
+
+  \author[buaa]{Guannan Liu}
+  \ead{wd33082208@126.com}
+
+  \author[buaa]{Huili Wang}
+  \ead{wd33082208@126.com}
+
+  \cortext[cor1]{Corresponding author}
+
+  \address[buaa]{School of Economics and Management, Beihang University, \par
+    Beijing 100083, P.R. China}
+
+  \begin{abstract}
+    Knowledge Management Process (KMP) is the core issue of Knowledge
+    Management (KM) in organizations. It needs continuous improvement
+    and is closely related with corresponding Business Process
+    (BP). Many knowledge management practices in organizations, however,
+    are less effective since organizations failed to integrate KMP with
+    BP. This study proposes a methodology for knowledge management
+    process modeling based on business process-driven, providing better
+    support for the collaboration between BP and KMP and in turn
+    continuously optimize knowledge management process. This methodology
+    includes the architecture of the business process driven knowledge
+    management process modeling system, the depiction of business
+    process, a knowledge management process modeling methodology based
+    on XML, the depiction and storage for the driven-rules from business
+    process to knowledge management process and so on. Finally we give a
+    case study of an aviation manufacturing enterprise to illustrate how
+    this methodology can support the collaboration between its
+    production design process and knowledge management process, in which
+    an implementation evaluation will also be given to verify the
+    methodology.
+
+  \end{abstract}
+
+  \begin{keyword}
+    Knowledge management process; Business-driven; Process modeling;
+    Driven rules
+  \end{keyword}
+\end{frontmatter}
+
+\section{Introduction}
+\label{sec:introduction}
+Among many organization assets,knowledge is treated as a critical
+driving force for attaining organization performance goals because
+knowledge facilitates the better business decision makings in a timely
+fashion[1]. There has been a growing interest in treating knowledge as
+significant organizational resource[2].
+
+
+Knowledge management characterizes a deliberate and systematic
+approach to ensure the full utilization of the knowledge base of an
+organization[1]. Effective knowledge management is an increasingly
+important source of competitive advantage and a key to the success of
+modern organizations[4], especially for intelligence-intensive
+enterprises. Therefore knowledge management is receiving increasing
+focus from scholars and organizers.  Many knowledge management efforts have been largely concerned with capturing, codifying, storing and disseminating knowledge that is held by people in organizations in the pursuit of strategic competitiveness. However, since knowledge is created and utilized during the execution of business processes, if knowledge is separated from the business process context, it does not lead to the ability to take the right action for target performance[1]. Knowledge management is an evolving practice [6]. Desouza and Awazu argued that the rare combination with organizations has limited the use of knowledge management when considered in the context of organizations [7, 8].  Without appropriate contextual
+information, knowledge can be isolated from other relevant
+knowledge, consequently resulting in a limited or distorted
+understanding[9].
+
+The key issue of combining shared context knowledge into existing
+enterprise knowledge is to  to describe and organize
+content so that intended end users are aware of its existence and can
+easily access and apply this content(Dalkir 2005). Usually these
+context knowledge reside in the business process, that is,  a collection of
+interdependent activities or tasks organized to achieve specific
+business goals. These process-related knowledge are important to
+effective knowledge management. However, extracting
+process knowledge is not easy. The first problem is the rapid changing
+business process leads to fast expiring of the process knowledge. In order to survive in the current
+competitive and global business environment, most organizations are
+struggling to change their existing business processes into more agile,
+product- and customer-oriented structures[11]. While continuing changing
+business process create new business knowledge, process knowledge need
+to be renewed to adaptive the change. The second problem is process
+knowledge are easily lost. Process konwledge are created or generated
+during business process. These konwledge are more  implicit than the
+direct business knowledge output. Knowledge works may unintentionally
+neglect process knowledge or just do not know how to extract these
+knowledge. Moreover, codifying process knowledge burdens knowledge
+workers since these knowledge are not directly related to business,
+thus knowledge works are less stimulated.  Also most organizations are lack of
+well defined meta-knowledge to represent the process
+knowledge. Without help of automating tools, extracting process
+knowledge is a strenuous and  inefficient.
+
+In this paper, we propose a business process driven methodology
+\todo{or framework or model}
+for  process knowledge extracting and modeling, providing better support for
+the integration between business process and knowledge management
+process and in turn continuous optimizing knowledge management
+process. This framework models the business process and a set of
+pre-defined driven rules to elicit process knowledge. When business
+process change, corresponding process knowledge are automated
+recreated according to driven rules and stored in knowledge base. 
+ We also
+give a case study of an aviation manufacturing enterprise to illustrate
+how this methodology can support the integration between its
+production design process and knowledge management process, in which an
+implementation evaluation will also be given to verify the
+methodology.
+
+The remainder of the paper is organized as follows. Section 2
+identifies the needs for better
+business driven automation support for  process knowledge
+modeling as well as briefly reviews the related works. Section 3
+describes the architecture of the business process driven process knowledge modeling system. Section 4 represented the business
+process models using UML. Section 5 depicts the knowledge management
+process modeling methodology based on XML as well as its
+implementation. The driven rules classification, inference principles
+and the storage of driven-rules based on the
+relational database between
+business process and knowledge management process are discussed in
+Section 6. To better understand the methodology, section 7 depicts a
+case study taking an aerial product enterprise as the background. We
+conclude the paper in Section 8 by summarizing our research
+contributions and pointing out future research directions.
+
+
+
+\section{ The Architecture Of Business  Driven Process Knowledge
+    Management System}
+\label{sec:backgr-liter}
+The interests in the notion of process-oriented knowledge management
+(PKM) from academia and industry have been significantly
+increased[15]. Process konwledge are organizational related konwledge. It can be
+divided to three parts:1)the role of organization memory, 2)structure
+of the organization, and 3)organization incentives[nissen]. The change
+of  business
+process affect the  contextual factors, giving rise to consequent
+alternation of roles, policies and rules of organization.
+ The advantage of process-oriented
+knowledge management is that it can help users avoid information
+overload and concentrate on important information which is essential
+for company value chains[31] It can also improve the usability of
+knowledge in company and the efficiency of implementing knowledge
+management system[32]. 
+
+
+
+The process-oriented knowledge management system should extract the
+process knowledge  in real time, storing these knowledge for future
+retrieve and application. 
+ Ideally, when new
+business requirements come into being, changing business rule should
+intrigue process knowledge re-generating immediately  To achieve the goal, organizations have to
+collect knowledge of driven-rules, adjusting process knowledge  to
+reflect new business process. Process knowledge can be embedded into
+the organization ontology[1], so that when new business knowledge object created
+the system can  obtain the process knowledge either. The weakness of
+this method is the system can not fully integrated with workflow
+engine, which is a important source of process knowledge(lai and
+fan). In this paper, we adopt a
+relatively "dynamic" method. The system is seem as a expert system,
+extracting knowledge from, instead of human computer, business process.  
+
+There have been various efforts to introduce the process concept to knowledge management (Knowledge Management) or the knowledge concept to business process management (BPM) in order to combine the advantages of the two paradigms[16,17,18,19,20].In the context of IPM, I. Choi, J. Jung and M. Song proposed a comprehensive framework for integrating Knowledge Management and BPM was proposed[19]. Lai \& Fan, suggested the importance of integrating knowledge management and BPM (business process management) towards PCKM (Process Centered Knowledge Management) in order to maximize and optimize business performance [13, 14]. As well Kwan Hee Han, Jun Woo Park (2009) proposed a concept of process-centered knowledge management (PCKM) as well as a framework for process-centered knowledge model[1]. K.H. Han and Maurer, F et al. proposed a MILOS system in order to integrate Knowledge Management with project-planning and process coordination[26,27]. Jung et al., J. Jung, I. Choi and M. Song, 2007 further proposed integration architecture for integrating knowledge management systems (KMSs) and business process management systems (BPMSs) to combine the advantages of the two paradigms based on a comprehensive framework that reflects lifecycle requirements of both Knowledge Management and BPM。The architecture, which is comprehensive since it is derived from the extended requirements from the lifecycle perspective, will provide a basis for research and development of process-oriented knowledge management systems. A prototype system is presented to demonstrate the feasibility of the proposed architecture[15]. 
+Jablonski, Horn, and Schlundt (2001) combined business process modeling with Knowledge Management and developed process-oriented KMS prototype for car manufacturing[28]. Woitsch and Karagiannis, 2005 proposed a service-based approach in which the Knowledge Management services separate technical implementation and conceptual requirements. However, the relationship between Knowledge Management services and business process was not shown in their study[29]. 
+
+\end{document}
