@@ -1,0 +1,64 @@
+% Author: Pável Calado
+% the tikz-er2.sty package is available at:
+% http://tagus.inesc-id.pt/~pcalado/tikzer2/tikz-er2.html
+
+
+\documentclass[adobefonts]{ctexart}
+
+
+\usepackage{tikz}
+%%<
+\usepackage{verbatim}
+
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\tikzstyle{entity} = [top color=white, bottom color=blue!30, 
+                            draw=blue!50!black!100]
+\tikzstyle{attribute} = [top color=white, bottom color=yellow!50, 
+                               draw=yellow, node
+                               distance=1cm,rounded corners=3mm]
+
+\centering
+
+\begin{tikzpicture}[node distance=2.5cm]
+
+  \node[entity] (kc) {组织知识协同};
+%一级影响因素
+  \node[attribute] (env) [left of= kc, xshift=-35mm ] {组织环境};
+  \node[attribute] (communication) [above of= env, yshift=20mm ] {沟通能力};
+\node[attribute] (knowledge) [above of= communication,yshift=30mm ] {知识水平};
+\node[attribute] (IT) [below of= env, yshift=-20mm ] {IT基础设施};
+\node[attribute] (control) [below of= IT,yshift=-20mm] {管理控制};
+
+%二级影响因素
+%env
+\node[attribute] (dao) [left of= env,xshift=-35mm] {知识孤岛};
+\node[attribute] (leader) [below of= dao] {领导示范};
+\node[attribute] (culture) [above of= dao] {组织文化};
+
+%communication
+\node[attribute] (trust) [left of= communication,xshift=-35mm] {信任};
+\node[attribute] (willingnes) [below of= trust] {协同意愿};
+\node[attribute] (skill) [above of= trust] {沟通技巧};
+
+%knowledge
+\node[attribute] (extent) [left of= knowledge,xshift=-35mm] {知识广度};
+\node[attribute] (currency) [below of= extent] {时新程度};
+\node[attribute] (outside) [above of= extent] {外部资源};
+\node[attribute] (expierence) [above of= outside] {经验};
+\node[attribute] (xxx) [below of= currency] {同行认可};
+%IT
+\node[attribute] (tools) [left of= IT,xshift=-35mm] {协同工具};
+\node[attribute] (platform) [below of= tools] {共享平台};
+\node[attribute] (recommendation) [above of= tools] {专家推荐};
+
+%control
+\node[attribute] (process) [left of= control,xshift=-35mm] {过程控制};
+\node[attribute] (motivation) [below of= process] {激励机制};
+\node[attribute] (strategy) [above of= process] {组织战略};
+\end{tikzpicture}
+\end{document}
