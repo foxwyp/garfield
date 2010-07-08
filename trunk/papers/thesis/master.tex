@@ -1,0 +1,48 @@
+\documentclass[adobefonts,cs4size,a4paper]{ctexbook}
+\usepackage{supertabular}
+\usepackage{tabularx}
+\usepackage{ltxtable}
+\usepackage{chngcntr}
+
+\CTEXsetup[format={\heiti\zihao{3}\centering}]{chapter}
+\CTEXsetup[format+={\heiti\zihao{4}\flushleft},number={\arabic{section}}]{section}
+\CTEXsetup[format+={\heiti\zihao{-4}\flushleft},number={\arabic{section}.\arabic{subsection}}]{subsection}
+\setmainfont{Times New Roman}
+
+\usepackage{titlesec}
+\titlespacing{\chapter}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+\usepackage{geometry}
+\geometry{paper=a4paper,vmargin={25mm},hmargin={30mm,20mm},footskip={10mm},headheight={6mm},headsep={4mm}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[co]{北京航空航天大学博士学位论文}
+\fancyhead[ce]{\leftmark}
+\cfoot{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{第 \chinese{chapter} 章 \quad
+    #1}{}}
+
+
+\counterwithout{table}{chapter}
+\renewcommand{\baselinestretch}{1.62}
+
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+
+
+\begin{document}
+%\include{ch1}
+\include{ch3}
+
+\bibliographystyle{unabuser}
+\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
