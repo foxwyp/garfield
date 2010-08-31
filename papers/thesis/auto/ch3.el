@@ -6,7 +6,12 @@
      "sec:similarity"
      "eq:2"
      "eq:3"
-     "fig:contribution")
+     "fig:contribution"
+     "text-feature"
+     "eq:1"
+     "sec:dataset"
+     "tab:coefficient"
+     "tab:model-test")
     (TeX-run-style-hooks
      "contribution")))
 

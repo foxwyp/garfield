@@ -27,6 +27,8 @@
      "fancyhdr"
      "geometry"
      "titlesec"
+     "slashbox"
+     "graphics"
      "algorithmic"
      "amsmath"
      "algorithm"
@@ -42,5 +44,6 @@
      "adobefonts"
      "cs4size"
      "a4paper"
-     "ch3")))
+     "openany"
+     "ch4")))
 
