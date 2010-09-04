@@ -11,13 +11,15 @@
 \usepackage{graphics}
 \usepackage{slashbox}
 
-\CTEXsetup[format={\heiti\zihao{3}\centering}]{chapter}
+\CTEXsetup[format={\heiti\zihao{3}\centering},beforeskip={0pt}]{chapter}
 \CTEXsetup[format+={\heiti\zihao{4}\flushleft},number={\arabic{chapter}.\arabic{section}}]{section}
-\CTEXsetup[format+={\heiti\zihao{-4}\flushleft},number={\arabic{section}.\arabic{subsection}}]{subsection}
+\CTEXsetup[format+={\heiti\zihao{-4}\flushleft},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}}]{subsection}
 \setmainfont{Times New Roman}
 
 \usepackage{titlesec}
-\titlespacing{\chapter}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+%\titlespacing*{\chapter}{0pt}{-4\baselineskip}{0.5\baselineskip}
+\titlespacing{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+\titlespacing{\subsection}{0pt}{0.5\baselineskip}{0.5\baselineskip}
 \usepackage{geometry}
 \geometry{paper=a4paper,vmargin={25mm},hmargin={30mm,20mm},footskip={10mm},headheight={6mm},headsep={4mm}}
 
@@ -44,7 +46,8 @@
 \begin{document}
 %\include{ch1}
 %\include{ch3}
-\include{ch4}
+%\include{ch4}
+\include{ch5}
 \bibliographystyle{unabuser}
 \bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
 
