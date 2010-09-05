@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  4 SEP 2010 23:11
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  5 SEP 2010 23:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -555,20 +555,47 @@ ine 116.
 Underfull \vbox (badness 6268) has occurred while \output is active []
 
  [4]
-[5] [6]) [7]
+[5] [6]
+
+LaTeX Warning: Citation `bundura' on page 7 undefined on input line 257.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+
+LaTeX Warning: Citation `(Gist' on page 8 undefined on input line 272.
+
+
+LaTeX Warning: Citation `bundura' on page 8 undefined on input line 279.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+[9]
+
+LaTeX Warning: Reference `fig:motivation' on page 10 undefined on input line 35
+1.
+
+File: motivation.pdf Graphic file (type QTm)
+<use  "motivation.pdf" >) [10] [11]
 No file master.bbl.
 (./master.aux (./ch5.aux))
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 5843 strings out of 494664
- 101259 string characters out of 3167327
- 199184 words of memory out of 3000000
- 8901 multiletter control sequences out of 15000+200000
- 4170 words of font info for 44 fonts, out of 3000000 for 9000
+ 5864 strings out of 494664
+ 101666 string characters out of 3167327
+ 200212 words of memory out of 3000000
+ 8918 multiletter control sequences out of 15000+200000
+ 4186 words of font info for 46 fonts, out of 3000000 for 9000
  669 hyphenation exceptions out of 8191
- 45i,11n,64p,559b,230s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,11n,64p,597b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on master.pdf (7 pages).
+Output written on master.pdf (11 pages).
