@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  5 SEP 2010 23:06
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  10 SEP 2010 19:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -363,15 +363,22 @@ slashbox style by K.Yasuoka, May 1993.
 \@slashboxht=\count136
 \@slashsepl=\dimen137
 \@slashsepr=\dimen138
+) (/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2009/11/07 8.31a (PWD, AO)
+\bibhang=\skip60
+\bibsep=\skip61
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count137
 )
-\c@zf@famc@Times New Roman=\count137
+\c@zf@famc@Times New Roman=\count138
 Package fontspec Info: Defining font family for 'Times New Roman'with options [
 Mapping=tex-text,] on input line 17.
- (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+
+(/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2007/08/12 v2.8 Sectioning titles
 \ttl@box=\box38
-\beforetitleunit=\skip60
-\aftertitleunit=\skip61
+\beforetitleunit=\skip62
+\aftertitleunit=\skip63
 \ttl@plus=\dimen139
 \ttl@minus=\dimen140
 \ttl@toksa=\toks28
@@ -386,9 +393,9 @@ Package: geometry 2008/12/21 v4.2 Page Geometry
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count138
-\Gm@cntv=\count139
-\c@Gm@tempcnt=\count140
+\Gm@cnth=\count139
+\Gm@cntv=\count140
+\c@Gm@tempcnt=\count141
 \Gm@bindingoffset=\dimen144
 \Gm@wd@mp=\dimen145
 \Gm@odd@mp=\dimen146
@@ -397,15 +404,15 @@ Package ifvtex Info: VTeX not detected.
 
 (/usr/share/texmf-dist/tex/xelatex/xetexconfig/geometry.cfg))
 (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip62
-\f@ncyO@elh=\skip63
-\f@ncyO@erh=\skip64
-\f@ncyO@olh=\skip65
-\f@ncyO@orh=\skip66
-\f@ncyO@elf=\skip67
-\f@ncyO@erf=\skip68
-\f@ncyO@olf=\skip69
-\f@ncyO@orf=\skip70
+\fancy@headwidth=\skip64
+\f@ncyO@elh=\skip65
+\f@ncyO@erh=\skip66
+\f@ncyO@olh=\skip67
+\f@ncyO@orh=\skip68
+\f@ncyO@elf=\skip69
+\f@ncyO@erf=\skip70
+\f@ncyO@olf=\skip71
+\f@ncyO@orf=\skip72
 ) (./master.aux
 (./ch5.aux))
 \openout1 = `master.aux'.
@@ -539,6 +546,18 @@ driver: pdftex
 (./ch5.tex
 第一章
 
+Package natbib Warning: Citation `Zhugea' on page 1 undefined on input line 30.
+
+
+
+Package natbib Warning: Citation `Glott2009' on page 1 undefined on input line 
+34.
+
+
+Package natbib Warning: Citation `1099205' on page 1 undefined on input line 35
+.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -546,56 +565,104 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+
+Package natbib Warning: Citation `oreg2008exploring' on page 2 undefined on inp
+ut line 70.
+
+
+Package natbib Warning: Citation `Smith1999' on page 2 undefined on input line 
+73.
+
+
+Package natbib Warning: Citation `kuznetsov2006motivations' on page 2 undefined
+ on input line 74.
+
+
+Package natbib Warning: Citation `4076406' on page 2 undefined on input line 75
+.
+
 [2] [3]
 
-LaTeX Warning: Citation `raban2007investigating' on page 4 undefined on input l
-ine 116.
+Package natbib Warning: Citation `raban2007investigating' on page 4 undefined o
+n input line 131.
+
+[4] [5] [6]
+
+Package natbib Warning: Citation `bundura' on page 7 undefined on input line 24
+4.
 
 
+Package natbib Warning: Citation `(Gist' on page 7 undefined on input line 259.
+
+
+
+Package natbib Warning: Citation `bundura' on page 7 undefined on input line 26
+6.
+
+[7] [8] [9]
+File: motivation.pdf Graphic file (type QTm)
+ <use  "motivation.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+LaTeX Font Info:    Font shape `OMX/cmex/m/n' in size <10.54> not available
+(Font)              size <10.95> substituted on input line 373.
+
+[11]
+Underfull \vbox (badness 2644) has occurred while \output is active []
+
+ [12]
 Underfull \vbox (badness 6268) has occurred while \output is active []
 
- [4]
-[5] [6]
+ [13]
+[14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Citation `bundura' on page 7 undefined on input line 257.
+ [15]
+
+Package natbib Warning: Citation `Rafaeli2008' on page 16 undefined on input li
+ne 571.
+
+File: motive1.pdf Graphic file (type QTm)
+<use  "motive1.pdf" >
+Overfull \hbox (44.31886pt too wide) in paragraph at lines 598--599
+ [][] 
+ []
+
+
+Underfull \vbox (badness 5696) has occurred while \output is active []
+
+ [16]
+[17]
+File: motive1.pdf Graphic file (type QTm)
+ <use  "motive1.pdf" >
+Overfull \hbox (44.31886pt too wide) in paragraph at lines 641--642
+ [][] 
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-
-LaTeX Warning: Citation `(Gist' on page 8 undefined on input line 272.
-
-
-LaTeX Warning: Citation `bundura' on page 8 undefined on input line 279.
-
-
+ [18])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
-[9]
-
-LaTeX Warning: Reference `fig:motivation' on page 10 undefined on input line 35
-1.
-
-File: motivation.pdf Graphic file (type QTm)
-<use  "motivation.pdf" >) [10] [11]
+ [19]
+[20]
 No file master.bbl.
+
+Package natbib Warning: There were undefined citations.
+
 (./master.aux (./ch5.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+LaTeX Font Info:    Size substitutions with differences
+(Font)              up to 0.41pt have occurred.
  ) 
 Here is how much of TeX's memory you used:
- 5864 strings out of 494664
- 101666 string characters out of 3167327
- 200212 words of memory out of 3000000
- 8918 multiletter control sequences out of 15000+200000
- 4186 words of font info for 46 fonts, out of 3000000 for 9000
+ 6254 strings out of 494664
+ 106525 string characters out of 3167327
+ 211170 words of memory out of 3000000
+ 9289 multiletter control sequences out of 15000+200000
+ 9230 words of font info for 69 fonts, out of 3000000 for 9000
  669 hyphenation exceptions out of 8191
- 45i,11n,64p,597b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,11n,64p,597b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on master.pdf (11 pages).
+Output written on master.pdf (20 pages).
