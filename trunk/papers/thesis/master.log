@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  10 SEP 2010 19:57
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  11 SEP 2010 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -414,7 +414,7 @@ Package ifvtex Info: VTeX not detected.
 \f@ncyO@olf=\skip71
 \f@ncyO@orf=\skip72
 ) (./master.aux
-(./ch5.aux))
+(./ch6.aux))
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -541,128 +541,31 @@ driver: pdftex
 \@twosidetrue \@mparswitchtrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-\openout2 = `ch5.aux'.
+\openout2 = `ch6.aux'.
 
-(./ch5.tex
+(./ch6.tex
 第一章
-
-Package natbib Warning: Citation `Zhugea' on page 1 undefined on input line 30.
-
-
-
-Package natbib Warning: Citation `Glott2009' on page 1 undefined on input line 
-34.
-
-
-Package natbib Warning: Citation `1099205' on page 1 undefined on input line 35
-.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+File: vensim.pdf Graphic file (type QTm)
+<use  "vensim.pdf" > [1
 
 
 
 ]
+Underfull \vbox (badness 1360) has occurred while \output is active []
 
-Package natbib Warning: Citation `oreg2008exploring' on page 2 undefined on inp
-ut line 70.
+ [2]
+File: refinedmodel1.pdf Graphic file (type QTm)
 
-
-Package natbib Warning: Citation `Smith1999' on page 2 undefined on input line 
-73.
-
-
-Package natbib Warning: Citation `kuznetsov2006motivations' on page 2 undefined
- on input line 74.
-
-
-Package natbib Warning: Citation `4076406' on page 2 undefined on input line 75
-.
-
-[2] [3]
-
-Package natbib Warning: Citation `raban2007investigating' on page 4 undefined o
-n input line 131.
-
-[4] [5] [6]
-
-Package natbib Warning: Citation `bundura' on page 7 undefined on input line 24
-4.
-
-
-Package natbib Warning: Citation `(Gist' on page 7 undefined on input line 259.
-
-
-
-Package natbib Warning: Citation `bundura' on page 7 undefined on input line 26
-6.
-
-[7] [8] [9]
-File: motivation.pdf Graphic file (type QTm)
- <use  "motivation.pdf" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-LaTeX Font Info:    Font shape `OMX/cmex/m/n' in size <10.54> not available
-(Font)              size <10.95> substituted on input line 373.
-
-[11]
-Underfull \vbox (badness 2644) has occurred while \output is active []
-
- [12]
-Underfull \vbox (badness 6268) has occurred while \output is active []
-
- [13]
-[14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-
-Package natbib Warning: Citation `Rafaeli2008' on page 16 undefined on input li
-ne 571.
-
-File: motive1.pdf Graphic file (type QTm)
-<use  "motive1.pdf" >
-Overfull \hbox (44.31886pt too wide) in paragraph at lines 598--599
- [][] 
- []
-
-
-Underfull \vbox (badness 5696) has occurred while \output is active []
-
- [16]
-[17]
-File: motive1.pdf Graphic file (type QTm)
- <use  "motive1.pdf" >
-Overfull \hbox (44.31886pt too wide) in paragraph at lines 641--642
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
-[20]
+<use  "refinedmodel1.pdf" >) [3] [4]
 No file master.bbl.
-
-Package natbib Warning: There were undefined citations.
-
-(./master.aux (./ch5.aux))
-LaTeX Font Info:    Size substitutions with differences
-(Font)              up to 0.41pt have occurred.
- ) 
+(./master.aux (./ch6.aux)) ) 
 Here is how much of TeX's memory you used:
- 6254 strings out of 494664
- 106525 string characters out of 3167327
- 211170 words of memory out of 3000000
- 9289 multiletter control sequences out of 15000+200000
- 9230 words of font info for 69 fonts, out of 3000000 for 9000
+ 6190 strings out of 494664
+ 105281 string characters out of 3167327
+ 203061 words of memory out of 3000000
+ 9228 multiletter control sequences out of 15000+200000
+ 7612 words of font info for 60 fonts, out of 3000000 for 9000
  669 hyphenation exceptions out of 8191
- 45i,11n,64p,597b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,11n,64p,596b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on master.pdf (20 pages).
+Output written on master.pdf (4 pages).
