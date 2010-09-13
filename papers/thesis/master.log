@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  11 SEP 2010 22:12
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  13 SEP 2010 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -556,16 +556,62 @@ Underfull \vbox (badness 1360) has occurred while \output is active []
  [2]
 File: refinedmodel1.pdf Graphic file (type QTm)
 
-<use  "refinedmodel1.pdf" >) [3] [4]
-No file master.bbl.
-(./master.aux (./ch6.aux)) ) 
-Here is how much of TeX's memory you used:
- 6190 strings out of 494664
- 105281 string characters out of 3167327
- 203061 words of memory out of 3000000
- 9228 multiletter control sequences out of 15000+200000
- 7612 words of font info for 60 fonts, out of 3000000 for 9000
- 669 hyphenation exceptions out of 8191
- 45i,11n,64p,596b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+<use  "refinedmodel1.pdf" > [3] [4]
 
-Output written on master.pdf (4 pages).
+Package natbib Warning: Citation `linwenhao2002' on page 5 undefined on input l
+ine 146.
+
+[5]
+LaTeX Font Info:    Font shape `OMX/cmex/m/n' in size <10.54> not available
+(Font)              size <10.95> substituted on input line 159.
+
+
+LaTeX Warning: Float too large for page by 9.40956pt on input line 231.
+
+File: simu-1.pdf Graphic file (type QTm)
+<use  "simu-1.pdf" >
+Overfull \hbox (25.34673pt too wide) in paragraph at lines 255--256
+ [][] 
+ []
+
+[6]
+File: simu-2.pdf Graphic file (type QTm)
+ <use  "simu-2.pdf" >
+Overfull \hbox (22.6418pt too wide) in paragraph at lines 266--267
+ [][] 
+ []
+
+File: simu-3.pdf Graphic file (type QTm)
+<use  "simu-3.pdf" >
+File: simu-4.pdf Graphic file (type QTm)
+ <use  "simu-4.pdf" >
+Overfull \hbox (10.08986pt too wide) in paragraph at lines 289--290
+ [][] 
+ []
+
+[7]
+File: simu-5.pdf Graphic file (type QTm)
+ <use  "simu-5.pdf" >
+Overfull \hbox (25.34673pt too wide) in paragraph at lines 300--301
+ [][] 
+ []
+
+) [8] [9] [10]
+No file master.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+(./master.aux (./ch6.aux))
+LaTeX Font Info:    Size substitutions with differences
+(Font)              up to 0.41pt have occurred.
+ ) 
+Here is how much of TeX's memory you used:
+ 6234 strings out of 494664
+ 106034 string characters out of 3167327
+ 217061 words of memory out of 3000000
+ 9264 multiletter control sequences out of 15000+200000
+ 9230 words of font info for 69 fonts, out of 3000000 for 9000
+ 669 hyphenation exceptions out of 8191
+ 45i,11n,64p,596b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on master.pdf (10 pages).
