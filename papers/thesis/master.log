@@ -1,8 +1,8 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  14 SEP 2010 22:37
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  20 SEP 2010 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**master.tex
+**master
 (./master.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -414,7 +414,7 @@ Package ifvtex Info: VTeX not detected.
 \f@ncyO@olf=\skip71
 \f@ncyO@orf=\skip72
 ) (./master.aux
-(./ch6.aux))
+(./ch3.aux))
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -541,85 +541,96 @@ driver: pdftex
 \@twosidetrue \@mparswitchtrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-\openout2 = `ch6.aux'.
+\openout2 = `ch3.aux'.
 
-(./ch6.tex
+(./ch3.tex
 第一章
-File: vensim.pdf Graphic file (type QTm)
-<use  "vensim.pdf" > [1
+
+Package natbib Warning: Citation `raymond1999cab' on page 1 undefined on input 
+line 25.
+
+
+Package natbib Warning: Citation `surowiecki:190' on page 1 undefined on input 
+line 32.
+
+
+Package natbib Warning: Citation `liccardi2007caws' on page 1 undefined on inpu
+t line 41.
+
+[1
 
 
 
-]
-Underfull \vbox (badness 1360) has occurred while \output is active []
 
- [2]
-File: refinedmodel1.pdf Graphic file (type QTm)
+] [2] (./namespace.tbl) (./namespace.tbl) (./namespace.tbl [3]) [4]
+(./collaboration.tbl) (./collaboration.tbl) (./collaboration.tbl [5])
+(./user.tbl) (./user.tbl) (./user.tbl [6])
+LaTeX Font Info:    Try loading font information for OMS+TimesNewRoman(0) on in
+put line 173.
+LaTeX Font Info:    No file OMSTimesNewRoman(0).fd. on input line 173.
+LaTeX Font Info:    Font shape `OMS/TimesNewRoman(0)/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 173.
+ [7]
 
-<use  "refinedmodel1.pdf" > [3] [4]
+Package natbib Warning: Citation `aswartz' on page 8 undefined on input line 22
+0.
 
-Package natbib Warning: Citation `linwenhao2002' on page 5 undefined on input l
-ine 146.
+[8]
 
-[5]
+Package natbib Warning: Citation `Adler2008' on page 9 undefined on input line 
+224.
+
+
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [9]
+[10] [11] [12]
+Underfull \vbox (badness 2644) has occurred while \output is active []
+
+ [13]
+Overfull \hbox (10.85028pt too wide) in alignment at lines 452--467
+ [][][] []
+ []
+
+[14] [15] (./contribution.tex
+\plotpoint=\box39
+) [16] [17] [18]
+
+Package natbib Warning: Citation `thomas.woehner' on page 19 undefined on input
+ line 610.
+
+
+Underfull \vbox (badness 6125) has occurred while \output is active []
+
+ [19]
+
+Package natbib Warning: Citation `Adler2008' on page 20 undefined on input line
+ 648.
+
 LaTeX Font Info:    Font shape `OMX/cmex/m/n' in size <10.54> not available
-(Font)              size <10.95> substituted on input line 159.
+(Font)              size <10.95> substituted on input line 668.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Float too large for page by 9.40956pt on input line 231.
-
-File: simu-1.pdf Graphic file (type QTm)
-<use  "simu-1.pdf" >
-Overfull \hbox (25.34673pt too wide) in paragraph at lines 255--256
- [][] 
- []
-
-[6]
-File: simu-2.pdf Graphic file (type QTm)
- <use  "simu-2.pdf" >
-Overfull \hbox (22.6418pt too wide) in paragraph at lines 266--267
- [][] 
- []
-
-File: simu-3.pdf Graphic file (type QTm)
-<use  "simu-3.pdf" >
-File: simu-4.pdf Graphic file (type QTm)
- <use  "simu-4.pdf" >
-Overfull \hbox (10.08986pt too wide) in paragraph at lines 289--290
- [][] 
- []
-
-[7]
-File: simu-5.pdf Graphic file (type QTm)
- <use  "simu-5.pdf" >
-Overfull \hbox (25.34673pt too wide) in paragraph at lines 300--301
- [][] 
- []
-
-
-Underfull \vbox (badness 1253) has occurred while \output is active []
-
- [8]
-[9]) [10] [11]
+ [20]
+[21] [22] [23]) [24]
 No file master.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-(./master.aux (./ch6.aux))
+(./master.aux (./ch3.aux))
 LaTeX Font Info:    Size substitutions with differences
 (Font)              up to 0.41pt have occurred.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+LaTeX Font Info:    Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
- 6234 strings out of 494664
- 106047 string characters out of 3167327
- 217061 words of memory out of 3000000
- 9264 multiletter control sequences out of 15000+200000
- 9230 words of font info for 69 fonts, out of 3000000 for 9000
+ 6332 strings out of 494664
+ 107430 string characters out of 3167327
+ 269274 words of memory out of 3000000
+ 9333 multiletter control sequences out of 15000+200000
+ 10415 words of font info for 79 fonts, out of 3000000 for 9000
  669 hyphenation exceptions out of 8191
- 45i,11n,64p,596b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,12n,64p,595b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on master.pdf (11 pages).
+Output written on master.pdf (24 pages).

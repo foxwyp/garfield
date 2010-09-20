@@ -30,6 +30,7 @@
      "natbib"
      "super"
      "square"
+     "compress"
      "slashbox"
      "graphics"
      "algorithmic"
@@ -48,5 +49,5 @@
      "cs4size"
      "a4paper"
      "openany"
-     "ch6")))
+     "ch3")))
 
