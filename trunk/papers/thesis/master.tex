@@ -10,7 +10,7 @@
 \usepackage{algorithmic}
 \usepackage{graphics}
 \usepackage{slashbox}
-\usepackage[super,square]{natbib}
+\usepackage[super,square,compress]{natbib}
 \CTEXsetup[format={\heiti\zihao{3}\centering},beforeskip={0pt}]{chapter}
 \CTEXsetup[format+={\heiti\zihao{4}\flushleft},number={\arabic{chapter}.\arabic{section}}]{section}
 \CTEXsetup[format+={\heiti\zihao{-4}\flushleft},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}}]{subsection}
@@ -44,11 +44,14 @@
 
 
 \begin{document}
+%\tableofcontents
+\mainmatter
 %\include{ch1}
-%\include{ch3}
+%\include{ch2}
+\include{ch3}
 %\include{ch4}
 %\include{ch5}
-\include{ch6}
+%\include{ch6}
 \bibliographystyle{unabuser}
 \bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
 
