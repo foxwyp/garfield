@@ -27,10 +27,12 @@
      "fancyhdr"
      "geometry"
      "titlesec"
+     "caption"
      "natbib"
+     "numbers"
      "super"
      "square"
-     "compress"
+     "sort&compress"
      "slashbox"
      "graphics"
      "algorithmic"
@@ -49,5 +51,11 @@
      "cs4size"
      "a4paper"
      "openany"
-     "ch4")))
+     "ch1"
+     "ch2"
+     "ch3"
+     "ch4"
+     "ch5"
+     "ch6"
+     "ch7")))
 

@@ -1,7 +1,7 @@
 \zihao{5}
 
 \begin{longtable} {|c|X|X|X|}
-  \caption{协同与合作} 
+  \caption{\small{\textbf{协同与合作}}} 
  \label{tab:collaboration}
 \\
 

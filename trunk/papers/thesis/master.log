@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  27 SEP 2010 21:55
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Arch Linux) (format=xelatex 2010.1.22)  4 OCT 2010 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,21 +370,52 @@ Package: natbib 2009/11/07 8.31a (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count137
 )
-\c@zf@famc@Times New Roman=\count138
+(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2010/01/09 v3.1m Customizing captions (AR)
+
+(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+\captionmargin=\dimen139
+\captionmargin@=\dimen140
+\captionwidth=\dimen141
+\caption@indent=\dimen142
+\caption@parindent=\dimen143
+\caption@hangindent=\dimen144
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used on input line 1084.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
+p \sbox \@tempboxa {#1\CTEX@caption@delimiter #2}\ifdim \wd \@tempboxa >\hsize 
+#1\CTEX@caption@delimiter #2\par \else \global \@minipagefalse \hb@xt@ \hsize {
+\hfil \box \@tempboxa \hfil }\fi \vskip \belowcaptionskip .
+\c@ContinuedFloat=\count138
+Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+(/usr/share/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2008/03/28 v1.2 longtable captions (AR)
+)
+Package caption Info: supertabular package is loaded.
+)
+\c@zf@famc@Times New Roman=\count139
 Package fontspec Info: Defining font family for 'Times New Roman'with options [
-Mapping=tex-text,] on input line 17.
+Mapping=tex-text,] on input line 18.
 
 (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2007/08/12 v2.8 Sectioning titles
 \ttl@box=\box38
 \beforetitleunit=\skip62
 \aftertitleunit=\skip63
-\ttl@plus=\dimen139
-\ttl@minus=\dimen140
+\ttl@plus=\dimen145
+\ttl@minus=\dimen146
 \ttl@toksa=\toks28
-\titlewidth=\dimen141
-\titlewidthlast=\dimen142
-\titlewidthfirst=\dimen143
+\titlewidth=\dimen147
+\titlewidthlast=\dimen148
+\titlewidthfirst=\dimen149
 )
 (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2008/12/21 v4.2 Page Geometry
@@ -393,13 +424,13 @@ Package: geometry 2008/12/21 v4.2 Page Geometry
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count139
-\Gm@cntv=\count140
-\c@Gm@tempcnt=\count141
-\Gm@bindingoffset=\dimen144
-\Gm@wd@mp=\dimen145
-\Gm@odd@mp=\dimen146
-\Gm@even@mp=\dimen147
+\Gm@cnth=\count140
+\Gm@cntv=\count141
+\c@Gm@tempcnt=\count142
+\Gm@bindingoffset=\dimen150
+\Gm@wd@mp=\dimen151
+\Gm@odd@mp=\dimen152
+\Gm@even@mp=\dimen153
 \Gm@dimlist=\toks29
 
 (/usr/share/texmf-dist/tex/xelatex/xetexconfig/geometry.cfg))
@@ -414,92 +445,95 @@ Package ifvtex Info: VTeX not detected.
 \f@ncyO@olf=\skip71
 \f@ncyO@orf=\skip72
 ) (./master.aux
-(./ch4.aux))
+(./ch1.aux) (./ch2.aux) (./ch3.aux) (./ch4.aux) (./ch5.aux) (./ch6.aux)
+(./ch7.aux))
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid this).
- on input line 46.
+ on input line 51.
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 46.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 46.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 46.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 46.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 46.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 46.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 46.
-LaTeX Font Info:    Redeclaring math accent \check on input line 46.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 46.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 46.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 46.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 46.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 51.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 51.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 51.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 51.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 51.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 51.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 51.
+LaTeX Font Info:    Redeclaring math accent \check on input line 51.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 51.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 51.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 51.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 51.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 46.
+(Font)              `operators' in the math version `normal' on input line 51.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> EU1/TimesNewRoman(0)/m/n on input line 
-46.
+51.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 46.
+(Font)              `operators' in the math version `bold' on input line 51.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU1/TimesNewRoman(0)/m/n on input line
- 46.
+ 51.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/TimesNewRoman(0)/m/n --> EU1/TimesNewRoman(0)/m/n o
-n input line 46.
+n input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  EU1/TimesNewRoman(0)/m/n --> EU1/TimesNewRoman(0)/m/n o
-n input line 46.
+n input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> EU1/TimesNewRoman(0)/m/it on input lin
-e 46.
+e 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> EU1/TimesNewRoman(0)/bx/n on input lin
-e 46.
+e 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 46.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 46.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 51.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/TimesNewRoman(0)/m/n --> EU1/TimesNewRoman(0)/bx/n 
-on input line 46.
+on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  EU1/TimesNewRoman(0)/m/n --> EU1/TimesNewRoman(0)/bx/n 
-on input line 46.
+on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> EU1/TimesNewRoman(0)/bx/it on input l
-ine 46.
+ine 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 46.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 46.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 51.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
 *geometry detected driver: pdftex*
 -------------------- Geometry parameters
@@ -541,97 +575,343 @@ driver: pdftex
 \@twosidetrue \@mparswitchtrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
+(./master.toc [1
+
+
+] [2])
+\tf@toc=\write3
+\openout3 = `master.toc'.
+
+ [3] [4
+
+]
+\openout2 = `ch1.aux'.
+
+ (./ch1.tex
+第一章
+[1
+
+
+] [2] [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+[11]
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [12]
+[13]
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+[18]) [19]
+\openout2 = `ch2.aux'.
+
+ (./ch2.tex)
+\openout2 = `ch3.aux'.
+
+ (./ch3.tex
+第二章
+[20
+
+
+
+
+
+] [21]
+
+Package natbib Warning: Citation `denise1999collaboration' on page 22 undefined
+ on input line 92.
+
+(./collaboration.tbl) (./collaboration.tbl) (./collaboration.tbl [22])
+(./namespace.tbl) (./namespace.tbl) (./namespace.tbl [23]) [24] (./user.tbl)
+(./user.tbl) (./user.tbl [25])
+LaTeX Font Info:    Try loading font information for OMS+TimesNewRoman(0) on in
+put line 183.
+LaTeX Font Info:    No file OMSTimesNewRoman(0).fd. on input line 183.
+LaTeX Font Info:    Font shape `OMS/TimesNewRoman(0)/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 183.
+ [26] [27]
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [28]
+[29] [30] [31] [32]
+Overfull \hbox (10.85028pt too wide) in alignment at lines 462--477
+ [][][] []
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+(./contribution.tex
+\plotpoint=\box39
+) [35] [36] [37]
+
+Package natbib Warning: Citation `1641333' on page 38 undefined on input line 6
+21.
+
+[38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+LaTeX Font Info:    Font shape `OMX/cmex/m/n' in size <10.54> not available
+(Font)              size <10.95> substituted on input line 679.
+
+[40] [41] [42]) [43]
 \openout2 = `ch4.aux'.
 
-(./ch4.tex
-第一章
-
-Package natbib Warning: Citation `1099205' on page 1 undefined on input line 17
-.
-
+ (./ch4.tex
+第三章
 File: 02-3.eps Graphic file (type eps)
 <02-3.eps>
 Underfull \vbox (badness 5245) has occurred while \output is active []
 
- [1
-
+ [44
 
 
 
 ]
 File: users.jpg Graphic file (type QTm)
 
-<use  "users.jpg" >
-LaTeX Font Info:    Font shape `OMX/cmex/m/n' in size <10.54> not available
-(Font)              size <10.95> substituted on input line 69.
-
+<use  "users.jpg" > [45]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
-[3]
-LaTeX Font Info:    Try loading font information for OMS+TimesNewRoman(0) on in
-put line 111.
-LaTeX Font Info:    No file OMSTimesNewRoman(0).fd. on input line 111.
-LaTeX Font Info:    Font shape `OMS/TimesNewRoman(0)/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 111.
+ [46]
 LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 127
 .
- (/usr/share/texmf-dist/tex/xelatex/euenc/eu1lmtt.fd
+
+(/usr/share/texmf-dist/tex/xelatex/euenc/eu1lmtt.fd
 File: eu1lmtt.fd 2007/01/14 v1.3 Font defs for Latin Modern
-) [4]
+) [47]
 Overfull \hbox (14.32455pt too wide) in paragraph at lines 144--144
 []      \EU1/lmtt/m/n/12.05 <text xml:space="preserve">Below is a list of the m
 ost recent file uploads.[] 
  []
 
-[5] [6] [7]
+[48] [49] [50]
 
-Package natbib Warning: Citation `4052703' on page 8 undefined on input line 25
-8.
+Package caption Warning: \label before \caption on input line 289.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:con-detri' on page 51 undefined on input line 286
+.
 
 File: con-distri.jpg Graphic file (type QTm)
-<use  "con-distri.jpg" > [8] [9]
+<use  "con-distri.jpg" > [51] [52]
 File: user-entry-1.jpg Graphic file (type QTm)
  <use  "user-entry-1.jpg" >
 File: user-entry-2.jpg Graphic file (type QTm)
 
-<use  "user-entry-2.jpg" > [10]
-Underfull \vbox (badness 3098) has occurred while \output is active []
+<use  "user-entry-2.jpg" > [53]
+Underfull \vbox (badness 4713) has occurred while \output is active []
 
- [11]
-[12]
+ [54]
+[55]
 File: user-cat.pdf Graphic file (type QTm)
- <use  "user-cat.pdf" >
-Underfull \vbox (badness 1881) has occurred while \output is active []
-
- [13]
+ <use  "user-cat.pdf" > [56]
 Underfull \vbox (badness 3590) has occurred while \output is active []
 
- [14]
+ [57]
 Underfull \vbox (badness 1354) has occurred while \output is active []
 
- [15]
+ [58]
 Underfull \vbox (badness 2644) has occurred while \output is active []
 
- [16])
-[17] [18]
-No file master.bbl.
+ [59])
+[60] [61]
+\openout2 = `ch5.aux'.
+
+ (./ch5.tex
+第四章
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62
+
+
+
+]
+[63] [64] [65] [66] [67] [68]
+
+Package natbib Warning: Citation `Gist' on page 69 undefined on input line 271.
+
+
+[69] [70]
+File: factors.pdf Graphic file (type QTm)
+ <use  "factors.pdf" > [71] [72]
+Underfull \vbox (badness 2644) has occurred while \output is active []
+
+ [73]
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [74]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75]
+[76] [77]
+File: motive1.pdf Graphic file (type QTm)
+ <use  "motive1.pdf" >
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [78]
+[79]
+File: motive2.pdf Graphic file (type QTm)
+ <use  "motive2.pdf" >
+File: motive3.pdf Graphic file (type QTm)
+ <use  "motive3.pdf" > [80]) [81] [82]
+\openout2 = `ch6.aux'.
+
+ (./ch6.tex
+第五章
+File: vensim.pdf Graphic file (type QTm)
+<use  "vensim.pdf" > [83
+
+
+
+]
+Underfull \vbox (badness 2818) has occurred while \output is active []
+
+ [84]
+File: io1.pdf Graphic file (type QTm)
+
+<use  "io1.pdf" >
+File: io2.pdf Graphic file (type QTm)
+ <use  "io2.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [85]
+[86] [87]
+File: simu-1.pdf Graphic file (type QTm)
+ <use  "simu-1.pdf" > [88]
+File: simu-2.pdf Graphic file (type QTm)
+ <use  "simu-2.pdf" >
+File: simu-3.pdf Graphic file (type QTm)
+ <use  "simu-3.pdf" >
+File: simu-4.pdf Graphic file (type QTm)
+
+<use  "simu-4.pdf" >
+Underfull \vbox (badness 7468) has occurred while \output is active []
+
+ [89]
+File: simu-5.pdf Graphic file (type QTm)
+
+<use  "simu-5.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [90]
+[91]
+File: improve1.pdf Graphic file (type QTm)
+ <use  "improve1.pdf" >
+Underfull \vbox (badness 2181) has occurred while \output is active []
+
+ [92]
+File: improve2.pdf Graphic file (type QTm)
+
+<use  "improve2.pdf" > [93]
+File: improve4.pdf Graphic file (type QTm)
+ <use  "improve4.pdf" > [94]
+File: improve3.pdf Graphic file (type QTm)
+ <use  "improve3.pdf" >
+[95]
+File: improve5.pdf Graphic file (type QTm)
+ <use  "improve5.pdf" >
+File: improve6.pdf Graphic file (type QTm)
+ <use  "improve6.pdf" > [96] [97]
+File: improve7.pdf Graphic file (type QTm)
+
+<use  "improve7.pdf" >
+File: improve8.pdf Graphic file (type QTm)
+ <use  "improve8.pdf" > [98]
+File: improve9.pdf Graphic file (type QTm)
+ <use  "improve9.pdf" >
+[99]) [100]
+\openout2 = `ch7.aux'.
+
+ (./ch7.tex [101
+
+
+
+] [102]) [103] (./master.bbl [104
+
+
+]
+LaTeX Font Info:    Try loading font information for OT1+TimesNewRoman(0) on in
+put line 107.
+LaTeX Font Info:    No file OT1TimesNewRoman(0).fd. on input line 107.
+LaTeX Font Info:    Font shape `OT1/TimesNewRoman(0)/m/n' undefined
+(Font)              using `OT1/cmr/m/n' instead on input line 107.
+ [105] [106]
+Invalid UTF-8 byte or sequence at line 245 replaced by U+FFFD.
+Missing character: There is no � in font Adobe Song Std L/ICU:mapping=tex-tex
+t,!
+
+[107] [108] [109] [110] [111]
+Underfull \hbox (badness 1152) in paragraph at lines 545--549
+\EU1/TimesNewRoman(0)/m/n/12.05 tivation, Social Development, and Well-Being[J]
+.  American Psychologist, 2000,
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 558--562
+[]\EU1/TimesNewRoman(0)/m/n/12.05 RAWSTHORNE L J, ELLIOT A J.  Achievement Goal
+s and Intrinsic Motiva-
+ []
+
+[112] [113] [114] [115] [116] [117] [118]
+Missing character: There is no ™ in font Adobe Song Std L/ICU:mapping=tex-tex
+t,!
+ [119])
 
 Package natbib Warning: There were undefined citations.
 
-(./master.aux (./ch4.aux))
+[120] (./master.aux (./ch1.aux) (./ch2.aux) (./ch3.aux) (./ch4.aux) (./ch5.aux)
+(./ch6.aux) (./ch7.aux))
 LaTeX Font Info:    Size substitutions with differences
 (Font)              up to 0.41pt have occurred.
 LaTeX Font Info:    Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 6304 strings out of 494664
- 107513 string characters out of 3167327
- 211122 words of memory out of 3000000
- 9317 multiletter control sequences out of 15000+200000
- 10415 words of font info for 79 fonts, out of 3000000 for 9000
+ 8095 strings out of 494664
+ 140187 string characters out of 3167327
+ 298261 words of memory out of 3000000
+ 11001 multiletter control sequences out of 15000+200000
+ 10439 words of font info for 82 fonts, out of 3000000 for 9000
  669 hyphenation exceptions out of 8191
- 45i,15n,64p,601b,399s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,15n,92p,620b,682s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on master.pdf (18 pages).
+Output written on master.pdf (124 pages).
