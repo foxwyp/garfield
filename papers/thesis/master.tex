@@ -10,7 +10,8 @@
 \usepackage{algorithmic}
 \usepackage{graphics}
 \usepackage{slashbox}
-\usepackage[super,square,compress]{natbib}
+\usepackage[numbers,super,square,sort&compress]{natbib}
+\usepackage{caption}
 \CTEXsetup[format={\heiti\zihao{3}\centering},beforeskip={0pt}]{chapter}
 \CTEXsetup[format+={\heiti\zihao{4}\flushleft},number={\arabic{chapter}.\arabic{section}}]{section}
 \CTEXsetup[format+={\heiti\zihao{-4}\flushleft},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}}]{subsection}
@@ -33,9 +34,13 @@
 \renewcommand{\chaptermark}[1]{\markboth{第 \chinese{chapter} 章 \quad
     #1}{}}
 
-
-
+%\captiondelim{~~}
+%\captionsetup{labelsep=none}
 \counterwithout{table}{chapter}
+\counterwithout{figure}{chapter}
+
+\renewcommand\figurename{\small \textbf 图}
+\renewcommand\tablename{\small \textbf 表}
 \renewcommand{\baselinestretch}{1.62}
 
 \makeatletter
@@ -44,15 +49,18 @@
 
 
 \begin{document}
-%\tableofcontents
+\tableofcontents
 \mainmatter
-%\include{ch1}
-%\include{ch2}
-%\include{ch3}
+\include{ch1}
+\include{ch2}
+\include{ch3}
 \include{ch4}
-%\include{ch5}
-%\include{ch6}
-\bibliographystyle{unabuser}
+\include{ch5}
+\include{ch6}
+\include{ch7}
+\addcontentsline{toc}{chapter}{结论}
+\addcontentsline{toc}{chapter}{参考文献}%在目录中添加“参考文献”的标记
+\bibliographystyle{GBT7714-2005NLang-UTF8}
 \bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
 
 \end{document}
