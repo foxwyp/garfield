@@ -11,14 +11,16 @@
 \usepackage{graphics}
 \usepackage{slashbox}
 \usepackage[numbers,super,square,sort&compress]{natbib}
-\usepackage{caption}
-\CTEXsetup[format={\heiti\zihao{3}\centering},beforeskip={0pt}]{chapter}
-\CTEXsetup[format+={\heiti\zihao{4}\flushleft},number={\arabic{chapter}.\arabic{section}}]{section}
-\CTEXsetup[format+={\heiti\zihao{-4}\flushleft},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}}]{subsection}
+%\usepackage{caption}
+\usepackage{caption2}
+
+\CTEXsetup[nameformat={\zihao{3}\bfseries},titleformat={\zihao{3}\bfseries},beforeskip={0pt},afterskip={15pt}]{chapter}
+\CTEXsetup[format+={\zihao{4}\flushleft},number={\arabic{chapter}.\arabic{section}}]{section}
+\CTEXsetup[format+={\zihao{-4}\flushleft},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}}]{subsection}
 \setmainfont{Times New Roman}
 
 \usepackage{titlesec}
-%\titlespacing*{\chapter}{0pt}{-4\baselineskip}{0.5\baselineskip}
+\titlespacing{\chapter}{0pt}{-4\baselineskip}{0.5\baselineskip}
 \titlespacing{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip}
 \titlespacing{\subsection}{0pt}{0.5\baselineskip}{0.5\baselineskip}
 \usepackage{geometry}
@@ -36,6 +38,8 @@
 
 %\captiondelim{~~}
 %\captionsetup{labelsep=none}
+\renewcommand{\captionlabeldelim}{~}
+
 \counterwithout{table}{chapter}
 \counterwithout{figure}{chapter}
 
@@ -43,13 +47,17 @@
 \renewcommand\tablename{\small \textbf 表}
 \renewcommand{\baselinestretch}{1.62}
 
+\renewcommand{\bibfont}{\small}
+
 \makeatletter
 \newcommand\arraybslash{\let\\\@arraycr}
 \makeatother
 
 
 \begin{document}
+\frontmatter
 \tableofcontents
+
 \mainmatter
 \include{ch1}
 \include{ch2}
@@ -61,7 +69,7 @@
 \addcontentsline{toc}{chapter}{结论}
 \addcontentsline{toc}{chapter}{参考文献}%在目录中添加“参考文献”的标记
 \bibliographystyle{GBT7714-2005NLang-UTF8}
-\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor}
+\bibliography{../../bibtex/elsevier,../../bibtex/emerald,../../bibtex/chinese,../../bibtex/jstor,../../bibtex/citeseer,../../bibtex/acm,../../bibtex/wiley,../../bibtex/book,../../bibtex/thesis,../../bibtex/ebsco,../../bibtex/old,../../bibtex/ieee,../../bibtex/internet,../../bibtex/ssrn,../../bibtex/apa,../../bibtex/blackwell,../../bibtex/sage,../../bibtex/springer,../../bibtex/MESharp,../../bibtex/taylor,../../bibtex/arXiv}
 
 \end{document}
 

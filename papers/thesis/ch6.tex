@@ -262,8 +262,9 @@
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{simu-1.pdf}}
-  \caption{\small{\textbf{领导者用户仿真结果}}}
+ % \scalebox{0.65}{\includegraphics{simu-1.pdf}}
+\input{leader.tex} 
+ \caption{\small{\textbf{领导者用户仿真结果}}}
   \label{fig:simu1}
 \end{figure}
 
@@ -273,8 +274,9 @@
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{simu-2.pdf}}
-  \caption{\small{\textbf{领域专家用户仿真结果}}}
+%  \scalebox{0.65}{\includegraphics{simu-2.pdf}}
+ \input{expert.tex} 
+ \caption{\small{\textbf{领域专家用户仿真结果}}}
   \label{fig:simu2}
 \end{figure}
 
@@ -285,7 +287,8 @@
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{simu-3.pdf}}
+%  \scalebox{0.65}{\includegraphics{simu-3.pdf}}
+ \input{contributor.tex} 
   \caption{\small{\textbf{内容贡献者用户仿真结果}}}
   \label{fig:simu3}
 \end{figure}
@@ -296,7 +299,8 @@
 说明模型对于分析内容维护者的行为是有效的。
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{simu-4.pdf}}
+%  \scalebox{0.65}{\includegraphics{simu-4.pdf}}
+   \input{maintainer.tex} 
   \caption{\small{\textbf{内容维护者用户仿真结果}}}
   \label{fig:simu4}
 \end{figure}
@@ -307,7 +311,8 @@
 然反映了真实系统的变动趋势。
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{simu-5.pdf}}
+%  \scalebox{0.65}{\includegraphics{simu-5.pdf}}
+\input{rider.tex}
   \caption{\small{\textbf{边缘用户仿真结果}}}
   \label{fig:simu5}
 \end{figure}
@@ -351,7 +356,7 @@ $10\%$，如果个体的协同行为已经达到了最大值，那么即使提�
 
 \begin{figure}
   \centering
-  \scalebox{0.65}{\includegraphics{improve1.pdf}}
+  \input{leader-sim1.tex}
   \caption{\small{\textbf{提升领导者用户初始动机的仿真结果}}}
   \label{fig:improve1}
 \end{figure}
@@ -363,8 +368,9 @@ $10\%$，如果个体的协同行为已经达到了最大值，那么即使提�
 
 \begin{figure}
   \centering
-  \scalebox{0.65}{\includegraphics{improve2.pdf}}
-  \caption{\small{\textbf{提升领导者用户最大工作时间的仿真结果}}}
+  %\scalebox{0.65}{\includegraphics{improve2.pdf}}
+\input{leader-sim2.tex}  
+\caption{\small{\textbf{提升领导者用户最大工作时间的仿真结果}}}
   \label{fig:improve2}
 \end{figure}
 
@@ -410,8 +416,9 @@ $10\%$，如果个体的协同行为已经达到了最大值，那么即使提�
 不是激励用户提升其动机水平是改进领域专家用户绩效行之有效的方法。
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{improve4.pdf}}
-  \caption{\small{\textbf{提升领域专家所有动机的仿真结果}}}
+%  \scalebox{0.65}{\includegraphics{improve4.pdf}}
+  \input{expert-sim1.tex} 
+ \caption{\small{\textbf{提升领域专家所有动机的仿真结果}}}
   \label{fig:improve4}
 \end{figure}
 
@@ -427,8 +434,9 @@ $10\%$，如果个体的协同行为已经达到了最大值，那么即使提�
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{improve3.pdf}}
+%  \scalebox{0.65}{\includegraphics{improve3.pdf}}
   \caption{\small{\textbf{提升领域专家成就动机的仿真结果}}}
+  \input{expert-sim2.tex} 
   \label{fig:improve3}
 \end{figure}
 
@@ -465,8 +473,9 @@ $18\%$。这意味着内容贡献者的工作水平非常高，大部分编辑�
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{improve5.pdf}}
-  \caption{\small{\textbf{提升内容贡献者个体动机的仿真结果}}}
+%  \scalebox{0.65}{\includegraphics{improve5.pdf}}
+  \input{contributor-sim1.tex}
+ \caption{\small{\textbf{提升内容贡献者个体动机的仿真结果}}}
   \label{fig:improve5}
 \end{figure}
 
@@ -478,7 +487,8 @@ $18\%$。这意味着内容贡献者的工作水平非常高，大部分编辑�
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{improve6.pdf}}
+%  \scalebox{0.65}{\includegraphics{improve6.pdf}}
+  \input{contributor-sim2.tex}
   \caption{\small{\textbf{提升内容贡献者人际间动机的仿真结果}}}
   \label{fig:improve6}
 \end{figure}
@@ -501,10 +511,17 @@ $18\%$。这意味着内容贡献者的工作水平非常高，大部分编辑�
 
 负反馈之所以能够占据主导地位，是因为内容维护者对于负反馈的敏感程度要大
 于正反馈的敏感程度。考虑到内容维护者的贡献还是以正贡献居多，如果个体更
-看重正反馈的话是不可能使贡献度不断下降的。图是将所有的负反馈的转换系数
+看重正反馈的话是不可能使贡献度不断下降的。图\ref{fig:improveX}是将所有的负反馈的转换系数
 降低$35\%$后的仿真结果。降低转换系数意味着个体的负反馈的敏感程度下降，
 由此可以检验其对个体动机的影响。仿真结果显示个体的贡献度变化趋势发生了
 明显变化，由下降趋势转为缓慢上升，意味着正反馈占据了主导力量。
+
+\begin{figure}[!htb]
+  \centering
+   \input{maintainer-sim1.tex}
+  \caption{\small{\textbf{降低内容维护者负反馈转换系数的仿真结果}}}
+  \label{fig:improveX}
+\end{figure}
 
 图\ref{fig:improve7}和图\ref{fig:improve8}进一步比较了个体动机因素和人际间动机因素对内容维护者的影响。
 仿真分别降低个体层次动机的负反馈的转换系数和群体层次的动机负反馈的转换
@@ -513,15 +530,17 @@ $18\%$。这意味着内容贡献者的工作水平非常高，大部分编辑�
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{improve7.pdf}}
+ % \scalebox{0.65}{\includegraphics{improve7.pdf}}
+  \input{maintainer-sim2.tex}
   \caption{\small{\textbf{提升内容维护者个体动机的仿真结果}}}
   \label{fig:improve7}
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{improve8.pdf}}
-  \caption{\small{\textbf{提升内容维护者个体动机的仿真结果}}}
+  %\scalebox{0.65}{\includegraphics{improve8.pdf}}
+  \input{maintainer-sim3.tex}
+  \caption{\small{\textbf{提升内容维护者人际间动机的仿真结果}}}
   \label{fig:improve8}
 \end{figure}
 满足自身的社会需求是内容维护者参与社区的主要因素。内容维护者希望借由参
@@ -560,8 +579,9 @@ $18\%$。这意味着内容贡献者的工作水平非常高，大部分编辑�
 
 \begin{figure}[!htb]
   \centering
-  \scalebox{0.65}{\includegraphics{improve9.pdf}}
-  \caption{\small{\textbf{提升边缘用户动机的仿真结果}}}
+%  \scalebox{0.65}{\includegraphics{improve9.pdf}}
+ \input{rider-sim1} 
+ \caption{\small{\textbf{提升边缘用户动机的仿真结果}}}
   \label{fig:improve9}
 \end{figure}
 
