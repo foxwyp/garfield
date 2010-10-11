@@ -1,5 +1,5 @@
 \zihao{5}
-\begin{longtable}{c|c|X}
+\begin{longtable}{|c|c|X|}
 
  \caption{维基百科的命名空间}
 \label{tab:namespace}

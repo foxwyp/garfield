@@ -3,6 +3,7 @@
     (LaTeX-add-labels
      "cha:wikipedian"
      "sec:participants"
+     "fig:motive-behaviour"
      "sec:similarity"
      "eq:2"
      "eq:3"
