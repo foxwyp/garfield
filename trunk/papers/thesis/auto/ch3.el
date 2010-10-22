@@ -8,6 +8,7 @@
      "eq:2"
      "eq:3"
      "fig:contribution"
+     "tab:en-wiki-character"
      "text-feature"
      "eq:1"
      "sec:dataset"
