@@ -11,7 +11,6 @@
      "tab:en-wiki-character"
      "text-feature"
      "eq:1"
-     "sec:dataset"
      "tab:coefficient"
      "tab:model-test")
     (TeX-run-style-hooks
