@@ -1,0 +1,535 @@
+\documentclass[slidestop,compress,mathserif,table]{beamer}
+\usepackage{ctex}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{slashbox}
+\setCJKmainfont{Adobe Song Std}
+
+
+\usepackage{pgf}
+\usetheme{Boadilla}
+%\usetheme{Madrid}
+%\usetheme{Antibes}
+                                                                          
+\begin{document}
+
+
+\title{ 虚拟实践社区知识协同动机因素研究 \vspace{1.5cm}}
+    \author{作者姓名 \ 吴云鹏 \\指导教师  \ 刘\ \ \ 鲁\ }
+   % \institute[buaa]{北京航空航天大学}
+    \begin{frame}
+      \titlepage
+    \end{frame}
+
+    \begin{frame}
+      \frametitle{章节结构}
+      \begin{enumerate}
+      \item 绪论
+       \item 用户协同行为分析
+         \item 用户分类研究
+           \item 知识协同动机因素模型
+\item 模型仿真与决策分析
+\item 结论与展望
+      \end{enumerate}
+    \end{frame}
+
+    \begin{frame}
+       \begin{block}{知识协同定义}
+   Denise指出：知识协同是一个共同创新的过程。群体利用其互补的知识和能力在交互
+过程中建立关于某种事物共同的理解，这种理解任何人之前都不曾拥有过，个人
+也不太可能独立产生这种理解。知识协同最终产生出关于某种过程、产品或者事件的
+共同知识。
+     \end{block}
+\pause
+\vfill
+\begin{block}{维基百科中的知识协同}
+在本文中，将
+知识协同定义为：由用户参与的维基百科条目内容的协同创作活动。
+  
+\end{block}
+    \end{frame}
+
+    \begin{frame}{协同行为的度量}
+      \begin{block}{协同贡献}
+        编辑次数？\\
+        新增内容数量？
+      \end{block}
+
+  \pause \vfill
+  \begin{block}{理想的度量方式}
+    \begin{enumerate}
+     \item 维护公平性。度量结果必须要客观反应所有参与者的工作成绩，并且保证
+  工作成效高的成员其度量结果也高。
+\item 阻止个体的作弊倾向。
+\item 符合评价者的价值取向。
+    \end{enumerate}
+     
+\end{block}
+    \end{frame}
+    
+\begin{frame}{基于文本相似度的协同贡献度量}
+  \begin{block}{核心思想}
+    个体的协同贡献可以经由比较个体编
+辑的内容与最终版本的文本相似度得到。
+  \end{block}
+\vfill
+\begin{block}{基本思路}
+  每次用户
+的编辑都会增添或者删改一部分内容，这些内容最后都可能在条目的最后版本中
+得到保留。因此， 用户在每一次编辑过程所做的贡献可以视为究竟有多少内容
+在最后版本中仍然存在。如果两个版本中有一部分文字相同，则两个版本的文字
+在一定程度上是相似的，如果存在一个函数
+$similarity(v_{i,j_1},v_{i,j_2})$能够将相似程度以数值的程度表示出来，
+则相似度的差值可以作为用户在一次编辑中所做出的贡献。
+\end{block}
+    \end{frame}
+
+    \begin{frame}{相似度的确定}
+      \begin{exampleblock}{Ratcliff/Obershelp算法}
+         设有两段文本$T_1$、$T_2$，其长度分别为$t_1$、$t_2$，两段文本可以完
+全匹配的最长字文本串为$S_1$、$S_2$，其长度为$s$，则两段文本的相似程度
+可以表示为：
+\[
+similarity(T_1,T_2)=\frac{2 \cdot  s}{t_1+t_2}
+\]
+        
+      \end{exampleblock}
+
+\pause
+\begin{block}{算法的缺陷}
+
+  \begin{enumerate}
+  \item 对于新增文本的位置敏感。
+\item 如果在编辑过程中编辑行为是
+重组文本顺序，则Ratcliff/Obershelp算法同样显示出极大的不足。
+  \end{enumerate}
+  
+\end{block}
+    \end{frame}
+
+    \begin{frame}{算法改进}
+    
+
+文本的相似度不应仅考虑最大完全匹配子串的长度，而是应
+该考虑所有的完全匹配字串。两段文本中的每一个完全匹配的字串均可以计算得到一个相似度，这
+些相似度的线性组合最终成为整段文本的相似度。为此，可以在首次计算相似度
+之后，将两段文本中的最大完全匹配子串移除，同时使用一个虚拟字符代替该字串，即保
+持原有文本其他字串的相对位置不变。重新计算两个新的文本段落的相似度，并乘以
+适当的系数。反复使用该算法进行迭代，直到新生成的文本段落没有完全匹
+配字串。则迭代过程中所得到的所有相似度的和即为两段原始文本的相似度。
+
+    \end{frame}
+
+ \begin{frame}{用户在一次编辑中的协同贡献}
+   \[
+c_{i,j}=s(v_{i,j},v_{i,n})-s(v_{i,j-1},v_{i,n}), \quad 1<j \leq n
+\]
+   \scalebox{0.85}{\input{contribution.tex}}
+ \end{frame}
+
+ \begin{frame}{条目内容质量评价}
+   \begin{block}{维基百科的评价准则}
+     详实的内容；恰
+当的遣词；观点中立客观；引用外部资料准确；内容结构编排合理；适当添加图
+片说明；符合格式指南；无错别字，且标点符号应用得当；链接适当，没有多余的链接。
+   \end{block}
+    \vfill
+   \begin{block}{其他学者的评价准则}
+     Stvilia等提取了七个指标作为评价条目内容质量的度量，包
+括：1）内容涉及的范围；2）内容的格式；3）内容的独创性；4）内容的权威
+性；5）内容的准确程度；6）内容的时效性以及7）内容的可访问性。
+   \end{block}
+ \end{frame}
+
+ \begin{frame}{量化指标}
+ \scriptsize
+    \begin{tabular}{|c|c|c|c|}
+ 
+    \hline
+    表层特征&结构特征&可读性度量&语法特征\\\hline
+    字符数量&内部链接数\footnotemark[1]&Gunning Fog指标&名词短语数\\\hline
+    单词数量&外部链接数\footnotemark[2]&Coleman-Liau指标&限定词数\\\hline
+    句子数量&所属内容分类&Flesch-Kincaid指标&形容词数\\\hline
+    音节数量&图、表的数量&SMOG index&名词数\\\hline
+    分词数量&参考文献数量&Automated Readability指标&副词数\\\hline
+    单音节词数量&内容段落数量&FORCAST readability指标&过去式动词数量\\\hline
+    复合词数量& & &过去分词数量\\\hline
+  \end{tabular}
+ \end{frame}
+
+ \begin{frame}{量化指标}
+\scriptsize
+   \begin{tabular}{|c|c|c|c|}
+ \hline
+    文字特征&结构特征&演化特征&其他特征\\\hline
+    条目内容的长度&条目划分的段落&条目的编辑次数&该条目被其他\\
+ &内部链接数量&参与编写的用户数量&内容引用
+    次数\\
+ &外部链接数量&条目编辑的频率& \\
+ &条目中图、表的数量& &\\
+  &参考文献的数量&& \\\hline
+  \end{tabular}
+\pause
+\begin{block}{回归分析结果}
+  \begin{enumerate}
+  \item 条目内容的长度
+\item 内部链接数
+\item 参考文献数
+\item 编辑次数
+\item 用户数
+量
+  \end{enumerate}
+\end{block}
+ \end{frame}
+
+ \begin{frame}{用户每次编辑的协同贡献}
+   \vfill
+通过评价条目内容的质量，使得用户贡献有了一致的比较基准。为了同用户贡献
+一致，也可以将条目质量归一化。用户每次编辑的贡献最终可
+以定义为：
+\begin{exampleblock}
+
+  \[
+\text{每次编辑的协同贡献}=\text{条目内容质量} \times  
+\text{用户当次编辑的贡献值}
+\]
+\end{exampleblock}
+\vfill
+ \end{frame}
+
+
+ \begin{frame}{用户分类研究}
+   在虚拟社区中，用户是内容的创建者和分享者。社区的活力取决于用户的参与和
+活跃程度，并最终影响到社区能否持续存在。
+虚拟实践社区中个人的特质、参与动机、参与行为和资历的各不相同，每人的积
+极程度、个人性格、表达能力和知识水平也不同，个体在社区互动中扮演的角色
+不同，因而在同一虚拟社区内的用户会在社区中具有不同的行为模方式，并自然分化为多
+个不同的群体。
+
+研究用户分类对于分析用户参与知识协同动机非常重要。一方面，对于不同类型的用
+户起作用的动机因素有所不同；另一方面，对于协同行为的结果，不同类型的用
+户也会有不同的反应。
+ \end{frame}
+
+ \begin{frame}{已有分类研究: Kozinets}
+    \scalebox{0.88}{ \includegraphics{users.jpg}}
+ \end{frame}
+
+ \begin{frame}{已有分类研究: 杨堤雅}
+   \tiny \vfill
+   \begin{tabular}{|c|c|c|c|c|}
+    \hline
+\backslashbox{特性}{角色} &参与程度&专业知识 &成员互动& 文章主要内容
+\\\hline
+成员领袖&高$\backslash$ 中&高&高&提供意见、分享经验\\\hline
+意见呼应者&高$\backslash$ 中&中$\backslash$低&高&提供意见、分享经验
+\\\hline
+自我揭露者&中$\backslash$ 低&低&低&分享经验\\\hline
+经验意见分享者&高$\backslash$ 中$\backslash$低$\backslash$路过&高
+$\backslash$中&中&提供意见、分享经验\\\hline
+查询者&低$\backslash$路过&中
+$\backslash$低&中$\backslash$低&提问\\\hline
+信息推广者&高$\backslash$ 中$\backslash$低$\backslash$路过&高
+$\backslash$中&高$\backslash$ 中$\backslash$低&信息推广、建立关系
+\\\hline
+浏览者&---&低&低&无\\\hline
+干扰者&低$\backslash$路过&低&低&其他\\\hline
+  \end{tabular}
+\vfill
+ \end{frame}
+
+ \begin{frame}{分类维度}
+   \begin{block}{条目平均贡献}
+     用户所参与的所有条目所获得贡献的平均值，该值反映了用户参与的深度。
+   \end{block}
+\scalebox{0.77}{ \input{dist-1.tex}}  
+ \end{frame}
+
+ \begin{frame}{分类维度}
+    \begin{block}{参与条目数量}
+     用户所参与的所有条目数量，该值反映了用户参与的广度。
+   \end{block}
+\scalebox{0.77}{ \input{dist-2.tex}}  
+ \end{frame}
+
+ \begin{frame}{分类维度}
+ 
+\scalebox{0.77}{ \input{dist-3.tex}}  
+ \end{frame}
+
+ \begin{frame}{用户分类}
+    \scalebox{0.51}{\includegraphics{user-cat.pdf}}
+ \end{frame}
+
+ \begin{frame}{用户特点}
+   \begin{block}{ 领导者}
+    这类用户的特点是广泛深入地参与到社区的协同活动中去。不但
+  参与了大量条目的编辑工作，而且对于每个条目都积极投入，是协同编辑主要
+  的领导者和最重要的贡献者。这类用户所占的比例极小，但是却起到了引领社
+  区前进和发展的作用。
+   \end{block}
+
+   \begin{block}{领域专家}
+     这类用户的特点是对某些领域的知识精通。对于该领域下的条
+  目具有独立撰写、或者领导其他用户共同完成编写条目的能力。对于每个参与
+  的条目，他们都能深入地参与并贡献高质量的内容。同领导者群体
+  不同，领域专家参与社区活动的热情要小得多，只求做好自己擅长的工作即可。
+  因此他们实际参与的条目数量都比较小。
+   \end{block}
+ \end{frame}
+
+ \begin{frame}{用户特点}
+   \begin{block}{ 内容贡献者}
+    这类用户是协同活动的积极参与者。尽管他们限于自身的知识水
+  平和个人能力还不足以起到领导知识协同的作用，但是他们是领域专家和领导者的追随者。他
+  们的工作对于补充、丰富条目的内容起到了重要的作用。对于前两类用户所忽
+  视或者涉及不到的内容，都是由这类用户完成的。尽管由于时间和精力的原因
+  他们参与的广泛程度不同，但是参与的动机基本是一致的。
+   \end{block}
+ \end{frame}
+
+ \begin{frame}{用户特点}
+   \begin{block}{ 内容维护者}
+   内容维护者的主要作用在于修补条目内容的疏漏，及时更新
+  过时、无效的信息。对于每个条目，内容维护者参与的程度都不高，但是其参
+  与的范围却很广泛。
+ \end{block}
+ \begin{block}{ 边缘用户}
+   边缘用户是所有用户类别中数量最为庞大的群体。他们很少参
+  与到协同活动中，即使偶尔参与协同也往往会由于经验不足而贡献低质量的内
+  容，很快被回退或被其他用户修改。从主观上讲，边缘用户愿意参与到社区活
+  动中，这是他们区别于破坏者和潜水者的显著特征。但是他们的意愿收到了某
+  种客观条件的制约，一旦条件成熟，将促进边缘用户向更高级的用户转变。
+ \end{block}
+ \end{frame}
+
+ \begin{frame}{不同用户间的相互关系}
+   \begin{block}{领导者和领域专家}
+     领域专家和领导者两类用户都属于能够主导条目编写的类型，用户之间几
+     乎没有任何凝聚效应，与其他用户的关联非常稀疏，较少收到其他人行为
+     的影响。
+   \end{block}
+\vfill
+   \begin{block}{其他用户}
+     与其他用户的关联紧密，容易收到其他人行为的影响。
+   \end{block}
+ \end{frame}   
+   \begin{frame}{两种协同形式}
+     \begin{block}{少数人的力量}
+       是以领导者或者领域专家
+为主导，内容贡献者和维护者参与辅助性工作最终完成条目的编写；
+     \end{block}
+\vfill
+     \begin{block}{多数人的智慧}
+       参
+与编写的条目中没有真正的主导者，而是由多个内容贡献者和维护者通力合作，
+利用集体的力量共同完成的。
+     \end{block}
+   \end{frame}
+
+   \begin{frame}{知识协同的动机因素}
+     \begin{block}{个体动机因素}
+       个体动机因素强调个体固有的感受和需要，即使
+个体处于一个“独立”的环境下，个体因素仍然可以起作用，促使其从事某种行
+为。在这种动机的作用下，个体更看中行为本身所带来的心理上的满足感。
+     \end{block}
+\vfill
+\begin{block}{人际间动机因素}
+  人际
+间动机则存在于个体之间的互动过程中，是其他人的行为加于个体自身的感受和
+需要。这时个体关注的焦点是其他人的行为对自身的影响。在知识协同过程中，
+个体动机因素和人际间动机因素同时起作
+用，共同影响了个体的
+行为。
+\end{block}
+   \end{frame}
+
+   \begin{frame}{本文所研究的动机因素}
+     \scalebox{0.55}{\includegraphics{factors.pdf}}
+   \end{frame}
+
+   \begin{frame}{领导者和领域专家动机因素因果图}
+     \scalebox{0.5}{\includegraphics{motive1.pdf}}
+   \end{frame}
+
+   \begin{frame}{内容贡献者、维护者和边缘用户动机因素因果图}
+       \scalebox{0.53}{\includegraphics{motive2.pdf}}
+   \end{frame}
+
+   \begin{frame}{内容贡献者、维护者和边缘用户动机因素因果图}
+       \scalebox{0.73}{\includegraphics{motive3.pdf}}
+   \end{frame}
+
+   \begin{frame}{知识协同个体动机因素的存量流量图}
+     \scalebox{0.45}{\includegraphics{io1.pdf}}
+   \end{frame}
+
+ \begin{frame}{知识协同人际动机因素的存量流量图}
+     \scalebox{0.45}{\includegraphics{io2.pdf}}
+   \end{frame}
+
+   \begin{frame}{参数估计}
+\scriptsize
+    \begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multicolumn{ 1}{|c|}{变量名称} &                                     \multicolumn{ 5}{|c|}{初始值} \\
+\hline
+\multicolumn{ 1}{|c|}{} &        领导者 &       领域专家 &      内容贡献者 &      内容维护者 &       边缘用户 \\
+\hline
+      利他主义 &      13      &        13    &        10    &   10         &      10      \\
+\hline
+    感知到的意义 &      10      &     10       &     10       &   10         &      10      \\
+\hline
+      自我决定 &      20      &     18       &      15      &          10  &    10        \\
+\hline
+      自我效能 &     25       &      15      &        15    &        8    &       5     \\
+\hline
+      自我肯定 &      25      &    15        &     10       &      10      &       10     \\
+\hline
+      成就需求 &     20       &     18       &      18      &      5      &        5    \\
+\hline
+      认知失调 &     $\slash$       &       $\slash$       &      10      &       15     &      9      \\
+\hline
+      群体效能 &     $\slash$         &          $\slash$    &    15        &      10      &       5     \\
+\hline
+       归属感 &       $\slash$       &     $\slash$         &      18      &        18    &        5    \\\hline
+\end{tabular}  
+
+   \end{frame}
+
+   \begin{frame}{历史检验}
+     领导者用户
+\scalebox{0.8}{\input{leader.tex}} 
+   \end{frame}
+
+   \begin{frame}{历史检验}
+     领域专家用户
+\scalebox{0.8}{\input{expert.tex}} 
+   \end{frame}
+
+   \begin{frame}{历史检验}
+     内容贡献者用户
+\scalebox{0.8}{\input{contributor.tex}} 
+   \end{frame}
+
+   \begin{frame}{历史检验}
+     内容维护者用户
+\scalebox{0.8}{\input{maintainer.tex}} 
+   \end{frame}
+
+   \begin{frame}{历史检验}
+     边缘用户
+\scalebox{0.8}{\input{rider.tex}} 
+   \end{frame}
+   \begin{frame}{敏感性分析}
+     \begin{block}{两个主要目的}
+1）加深对模型的理解，促进模型描述从定性到定量；2）进行政策调控仿
+真，分析参数变化对系统行为的影响。
+     \end{block} \vfill
+     \begin{block}{三种类别}
+       数值敏感性、行为敏感性以及政策敏感性。数值敏感性关注于参
+数和模型输出结果的精确性；行为敏感性关注参数值的改变是否会改变系统行
+为；政策敏感性则关注当模型假设发生改变时最优策略的变化情况。
+     \end{block}
+   \end{frame}
+
+   \begin{frame}{参数选择}
+     由于系统对于大多数参数是不敏感的，因此对所有的参数进行敏感性分析是不必
+要的。针对不同参数的敏感程度排序，快速筛选出那些最敏感、可能改变系统行
+为的变量是非常重要的。Ford和Flynn提出使用Pearson相关分析进行进行快速筛
+选。通过计算模型参数与输出结果之间的Pearson相关系数，选择系数较大的参
+数进行敏感性分析。相关系数越大，说明参数对于输出结果的影响越大，其变化
+越有可能改变系统行为。
+   \end{frame}
+
+   \begin{frame}{测试参数}
+     \begin{enumerate}
+\item 领导者用户。没有符合条件的参数，既模型对于所有动机因素的变化均不
+  敏感。
+\item 领域专家用户。成就需求是协同行为的主要影响因素，将分析其变化对模
+  型的影响。
+\item 内容贡献者。没有符合条件的参数，既模型对于所有动机因素的变化均不
+  敏感。
+\item 内容维护者。自我效能和认知失调是协同行为的主要影响因素，将分析其变化对模
+  型的影响。
+\item 边缘用户。自我效能和归属感是协同行为的主要影响因素，将分析其变化对模
+  型的影响。
+\end{enumerate}
+   \end{frame}
+
+   \begin{frame}
+     提升领导者用户初始动机的仿真结果
+\scalebox{0.8}{\input{leader-sim1.tex}}
+   \end{frame}
+
+   \begin{frame}
+     提升领导者用户最大工作时间的仿真结果
+\scalebox{0.8}{\input{leader-sim2.tex}}
+   \end{frame}
+
+  \begin{frame}
+提升领域专家所有非敏感动机的仿真结果
+\scalebox{0.8}{\input{expert-sim1.tex}}
+   \end{frame}
+
+  \begin{frame}
+提升领域专家成就需求的仿真结果
+\scalebox{0.8}{\input{expert-sim2.tex}}
+   \end{frame}
+
+  \begin{frame}
+提升内容贡献者个体动机的仿真结果
+\scalebox{0.8}{\input{contributor-sim1.tex}}
+   \end{frame}
+
+  \begin{frame}
+提升内容贡献者人际动机的仿真结果
+\scalebox{0.8}{\input{contributor-sim2.tex}}
+   \end{frame}
+
+
+   \begin{frame}
+提升自我效能和认知失调的仿真结果
+     \scalebox{0.8}{\input{maintainer-sim1.tex}}
+   \end{frame}
+
+ \begin{frame}
+提升其他个体动机的仿真结果
+     \scalebox{0.8}{\input{maintainer-sim2.tex}}
+   \end{frame}
+ \begin{frame}
+提升其他人际动机的仿真结果
+     \scalebox{0.8}{\input{maintainer-sim3.tex}}
+   \end{frame}
+
+ \begin{frame}
+提升自我效能和归属感的仿真结果
+     \scalebox{0.8}{\input{rider-sim1}}
+   \end{frame}
+
+   \begin{frame}{主要创新之处}
+\small
+     \begin{enumerate}
+\item 虚拟实践社区中的协同行为研究。通过深入分析虚拟实践社区中的用户行
+  为，明确知识协同行为的定义和特点，并确定协同行为的度量方法，将协同行
+  为进行量化。
+\item 虚拟实践社区中的用户分类研究。虚拟实践社区中存在着不同类型的用
+  户，这些用户间的协同行为和模式各不相同。利用量化的用户贡献度和用户参
+  与水平两个维度，将不同类型的用户区分开。
+\item 知识协同的动机因素模型研究。协同活动的特点决定了协同的动机不仅仅
+包括个人动机，也包括人际动机。两种动机的共同作用影响了人的实际行为。这
+一部分研究将这两类动机融入到动机模型中，建立适合分析协同活动的动机模型。
+
+\item 模型仿真与结果分析。使用实际数据验证模型的有效性，并利用模型分析
+  动机因素是如何影响用户行为的。在此基础上，提出相应的管理建议，促进社
+  区提升管理水平，达到良性发展的目的。
+
+\end{enumerate}
+   \end{frame}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

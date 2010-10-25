@@ -1,3 +1,62 @@
+\message{ !name(master.tex)}\documentclass[adobefonts,cs4size,a4paper,openany]{ctexbook}
+\usepackage{supertabular}
+\usepackage{tabularx}
+\usepackage{ltxtable}
+\usepackage{chngcntr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{amsmath}
+\usepackage{algorithmic}
+\usepackage{graphics}
+\usepackage{slashbox}
+\usepackage[numbers,super,square,sort&compress]{natbib}
+%\usepackage{caption}
+\usepackage{caption2}
+
+\CTEXsetup[nameformat={\zihao{3}\bfseries},titleformat={\zihao{3}\bfseries},beforeskip={0pt},afterskip={15pt}]{chapter}
+\CTEXsetup[format+={\zihao{4}\flushleft},number={\arabic{chapter}.\arabic{section}}]{section}
+\CTEXsetup[format+={\zihao{-4}\flushleft},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}}]{subsection}
+\setmainfont{Times New Roman}
+
+\usepackage{titlesec}
+\titlespacing{\chapter}{0pt}{-4\baselineskip}{0.5\baselineskip}
+\titlespacing{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+\titlespacing{\subsection}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+\usepackage{geometry}
+\geometry{paper=a4paper,vmargin={25mm},hmargin={30mm,20mm},footskip={10mm},headheight={6mm},headsep={4mm}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[co]{北京航空航天大学博士学位论文}
+\fancyhead[ce]{\leftmark}
+\cfoot{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{第 \chinese{chapter} 章 \quad
+    #1}{}}
+
+%\captiondelim{~~}
+%\captionsetup{labelsep=none}
+\renewcommand{\captionlabeldelim}{~}
+
+\counterwithout{table}{chapter}
+\counterwithout{figure}{chapter}
+
+\renewcommand\figurename{\small \textbf 图}
+\renewcommand\tablename{\small \textbf 表}
+\renewcommand{\baselinestretch}{1.62}
+
+\renewcommand{\bibfont}{\small}
+
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+
+
+\begin{document}
+
+\message{ !name(ch3.tex) !offset(-59) }
 
 \chapter{维基百科用户协同行为分析}
 \label{cha:wikipedian}
@@ -226,7 +285,7 @@ Denise指出：知识协同是一个共同创新的过程。群体利用其互�
 在上一部分中，本研究明确定义了维基百科社区的知识协同：维基百科普通用户
 共同参与条目内容的编写。参与同一条目编写的用户可能会多达数百人，尽管每
 个人都为内容创建贡献了自己的时间、精力和知识，但是每个人对于条目内容的
-贡献程度却是各不相同的。为了反映社区成员参与知识协同活动的积极程度和
+贡献程度却是各不相同的。为了反应社区成员参与知识协同活动的积极程度和共
 贡献大小，需要对用户的协同行为进行度量。度量协同行为对于研究维基百科社区知识协同的模
 式、理解协同行为具有重要的意义。首先，度量用户的协同贡献可以更好地促进
 虚拟实践社区的发展。对于贡献程度很大的用户，社区可以通过表彰，激励等手
@@ -363,7 +422,7 @@ Denise指出：知识协同是一个共同创新的过程。群体利用其互�
 一个稳定的版本。尽管维基百科的所有条目本质上并不存在一个最终的版本，但
 是经过较长时间的演化，条目的内容基本上已经固定，修订则主要集中在新内容
 的添加及修正原有内容的错误等方面，在总体上已经十分接近最终版本。因此，
-本研究认为，在某个时间点上，对于那些内容十分稳定成熟的条目来说，可以使用该
+本研究认为，在某个时间点上，对于那些内容十分稳定成熟的来说，可以使用该
 事件点上的最后一个版本作为条目最终版本的近似，以最后版本为标杆，分析协同用户各自的具
 体贡献。
 
@@ -377,7 +436,7 @@ $e_i$在没有任何内容时的初始状态版本，这时条目$e_i$实际上�
 在最后版本中仍然存在。如果两个版本中有一部分文字相同，则两个版本的文字
 在一定程度上是相似的，如果存在一个函数
 $similarity(v_{i,j_1},v_{i,j_2})$能够将相似程度以数值的程度表示出来，
-则相邻版本间相似度的差值可以作为用户在一次编辑中所做出的贡献。为此，可
+则该值可以作为用户在一次编辑中所做出的贡献。为此，可
 以定义条目$e_i$的各个中间版本同版本$v_{i,n}$的相似度$s$：
 \[
 s_{i,j}=
@@ -425,7 +484,7 @@ $T(T_1,\alpha,T_2)$。文本$T$和$T'$的唯一区别就是在$T'$中多增加�
 符$\alpha$。根据相似度计算公式：$s=\frac{2 \cdot t_1}{2(t_1+t_2)}$。在
 极端情况下，两段文本的相似度仅为$0.5$。这意味着新增加文本的位置对于文
 本相似度有很大的影响。如果一个用户在某一条目版本的基础上新增加了内容，
-并且该内容最终被接受，仅仅是由于添加的位置不同，可能会使新版本同最后版
+并且该内容最终被接收，仅仅是由于添加的位置不同，可能会使新版本同最后版
 本间的相似度小于老版本同最终版本的相似度。这不仅与直觉不符，结果也不合理。
 
 其次，如果在编辑过程中编辑行为是
@@ -524,13 +583,13 @@ $\sum c =1$。改进后的算法可以满足改进的要求。首先证明使用
 \end{eqnarray*}
 
 为了进一步验证算法的有效性，本文随机选取了5000个维基条目，每个条目中
-各选取两个版本，应用改进算法同Ratcliff/Obershelp算法进行比对。同时，本
+个选取两个版本，应用改进算法同Ratcliff/Obershelp算法进行比对。同时，本
 文将编辑行为进行了分类，归纳为：文本的增减、文本重排、文本增减/重排三
 种类型。通过比对实验发现：对于纯粹的文本增减，两个算法所得到的相似度值
 基本一致，波动幅度小于$1\%$；对于纯粹的文本重排，改进算法所得到的相似
 度值相对传统算法有明显提升，平均提升幅度为$12\%$；而对于文本增减和重排
 混合类型的编辑，改进算法所得到的相似度值相对传统算法有小幅提升，平均提
-升幅度为$4\%$。试验结果表明，改进算法既保留了传统算法的优点，同时对于
+升幅度为$4\%$。试验结果表明，改进算法即保留了传统算法的优点，同时对于
 传统算法所不适合处理的文本重排类型的编辑有较大幅度的改进。
 
 改进的Ratcliff/Obershelp算法是一个理想的计算用户协同贡献的方
@@ -539,7 +598,7 @@ $\sum c =1$。改进后的算法可以满足改进的要求。首先证明使用
 $e_i$，用户在版本$v_{i,j-1}$基础上进行编辑，得到版本$v_{i,j}$所做出的
 实际贡献可以表示为:
 \[
-c_{i,j}=s(v_{i,j},v_{i,n})-s(v_{i,j-1},v_{i,n}), \quad 1<j \leq n
+c_{i,j}=v_{i,j}-v_{i,j-1}, \quad 1<j \leq n
 \]
 图\ref{fig:contribution}显示了一个典型的条目编辑演化过
 程，以及用户在各个版本的贡献。
@@ -590,7 +649,7 @@ $[1,-1]$之间。如果$c_{i,j}>0$，则意味着用户在当前版本的编辑�
 地区分了不同用户的协同贡献，主要表现为：
 \begin{enumerate}
 \item 协同编辑的每一次版本变更均可以计算用户在该次编辑中所做的实际贡
-  献，贡献值既考虑了编辑内容的数量，也体现了内容质量的优劣。 用户的贡
+  献，贡献值即考虑了编辑内容的数量，也体现了内容质量的优劣。 用户的贡
   献同时还体现了他人对协同工作的反馈情况，正贡献意味着外界的正面反馈，
   而负的贡献则反映了他人的负面反应。
 \item 用户对于某一条目的贡献是其在每一个版本中的贡献的总和，这对于那些
@@ -634,9 +693,6 @@ $[1,-1]$之间。如果$c_{i,j}>0$，则意味着用户在当前版本的编辑�
   了本条目的其他协同用户的认可得以保留，也不代表其质量可以获得到社区其他用户和读
   者的认同。因此为了比较协同用户在社区中所做的实际贡献贡
   献，必须要考虑条目的编写质量。
-
-\subsection{已有研究成果}
-
 
 维基百科社区为高质量的条目制定了一系列的评价准则，包括：详实的内容；恰
 当的遣词；观点中立客观；引用外部资料准确；内容结构编排合理；适当添加图
@@ -701,35 +757,29 @@ $[1,-1]$之间。如果$c_{i,j}>0$，则意味着用户在当前版本的编辑�
 量。本研究认为，利用条目内容自身的属性来评价其内容质量更符合质量评价的
 准则，利
 用条目内容自身的属性完全可以用来进行条目质量的评价。Blumenstock总结了
-现有研究关于文本自身的特征属性，这些属性均是可量化的文本特征，如表\ref{tab:en-wiki-character}所示。
+现有研究关于文本自身的特征属性，这些属性均是可量化的文本特，征如表所示。
 
 \begin{table}[!htb]
   \centering
   \small
-\caption{\small{\textbf{英文维基百科内容质量特征属性}}} 
- \begin{tabular}{|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|}
     \hline
     表层特征&结构特征&可读性度量&语法特征\\\hline
-    字符数量&内部链接数\footnotemark[1]&Gunning Fog指标&名词短语数\\\hline
-    单词数量&外部链接数\footnotemark[2]&Coleman-Liau指标&限定词数\\\hline
+    字符数量&内部链接数&Gunning Fog指标&名词短语数\\\hline
+    单词数量&外部链接数&Coleman-Liau指标&限定词数\\\hline
     句子数量&所属内容分类&Flesch-Kincaid指标&形容词数\\\hline
     音节数量&图、表的数量&SMOG index&名词数\\\hline
     分词数量&参考文献数量&Automated Readability指标&副词数\\\hline
     单音节词数量&内容段落数量&FORCAST readability指标&过去式动词数量\\\hline
     复合词数量& & &过去分词数量\\\hline
   \end{tabular}
-
+  \caption{英文维基百科内容质量特征属性}
   \label{tab:en-wiki-character}
 \end{table}
-\footnotetext[1]{维基百科内部页面间的相互引用数量}
-  \footnotetext[2]{条目引用参考外部内容的数量}
 
-\subsection{条目质量评价方法}
-
-
-由于目前主要的评价方法都是针对英文维基百科的，有相
-当一部分并不适合中文的特征（如音节、分词、时态等）。本研究在综合分析的基础上，
-去除了不适合的文本特征以及那些针对特定语言而设计的可读性指标，总结归纳了适用于中文维基的文本特征，如表
+由于这些特征是针对英文维基百科的，有相
+当一部分并不适合中文维基（如音节、分词等）。本研究在综合分析的基础上，
+去除了不适合的文本特征，总结归纳了适用于中文维基的文本特征，如表
 \ref{text-feature}所示。
 \begin{table}[!htb]
   \centering
@@ -779,6 +829,8 @@ $[1,-1]$之间。如果$c_{i,j}>0$，则意味着用户在当前版本的编辑�
 模型中的$\alpha$和$\beta$为待定系数，$\epsilon$为随机误差，服从均值为
 $0$，方差为$\sigma^2$的正态分布。
 
+\subsection{数据集的选择}
+\label{sec:dataset}
 中文维基百科目前并没有非常完善的分级制度，仅有的两类级别分别是特色条目
 和小作品。小作品是比较短的文章，通常只有一段或更少，大多数小作品除了一
 点儿微不足道的主题之外，就没有其他资讯了
@@ -789,7 +841,7 @@ $0$，方差为$\sigma^2$的正态分布。
 截止到2010年8月，中文维基百科共有特色条目152条，小作品173个，这些条目
 都将纳入到数据集中。质量尚可的条目将从其他条目中选取。对于其他
 未评级的条目，可能既包括质量很高，但是因为各种原因还未进入到特色条目
-中的条目；也包括一些质量同小作品相似，但是未被表示为小作品的条目。这就
+中的跳木；也包括一些质量同小作品相似，但是未被表示为小作品的条目。这就
 给选择质量一般的条目带来了一定的困难。本文所采取的方式是，
 选择一定长度的条目进入数据集。当前特色条目的内容长度至少达到20000字，而小
 条目则规定长度不超过3000字。因此本文选取内容长度在5000--10000的条目。
@@ -813,11 +865,7 @@ $0$，方差为$\sigma^2$的正态分布。
 %   \label{tab:data-stat}
 % \end{table}
 
-
-
-
-通过使用最小二乘法拟合数据，可以求得线性回归模型的各项系数，具体值如表
-\ref{tab:coefficient}所示。
+通过使用最小二乘法拟合数据，可以求得线性回归模型的各项系数，具体值如下：
 \begin{table}[!htb]
   \centering
 \caption{\small{\bf{回归模型系数}}}
@@ -863,14 +911,14 @@ $R^2=91.34\%$，$F$检验的结果$F=22.85, sig.=0.000$，说明模型拟合优�
 可以看到，模型对于条目内容质量的评价具有较高的正确率和可靠性。相对于特
 色条目来说，对
 于小作品和一般条目的评价的准确度更高，说明判断一个条目内容“不够好”要
-比判断条目内容是否“足够好”要容易的多。这也是模型可以继续改进的方向。
+比判断条目内容是否“足够好”要容易的多。这也只是模型可以继续改进的方向。
 
 通过评价条目内容的质量，使得用户贡献有了一致的比较基准。为了同用户贡献
 一致，也可以将条目质量归一化。用户每次编辑的贡献最终可
 以定义为：
 \[
-\text{用户对某条目每次编辑的协同贡献}=\text{条目内容质量} \times  
-\text{用户当次编辑的贡献值}
+\text{用户对某条目每次编辑的协同贡献}=\text{条目质量} \times  \sum
+\text{用户当此次贡献}
 \]
 
 
@@ -893,4 +941,13 @@ $R^2=91.34\%$，$F$检验的结果$F=22.85, sig.=0.000$，说明模型拟合优�
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "master"
+%%% End: 
+
+\message{ !name(master.tex) !offset(-874) }
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
 %%% End: 

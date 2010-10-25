@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9997.4 (TeX Live 2010/Arch Linux) (format=xelatex 2010.10.15)  22 OCT 2010 20:43
+This is XeTeX, Version 3.1415926-2.2-0.9997.4 (TeX Live 2010/Arch Linux) (format=xelatex 2010.10.15)  25 OCT 2010 15:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,21 +908,12 @@ Missing character: There is no • in font Adobe Song Std L/ICU:script=latn;lan
 guage=DFLT;mapping=tex-text;color=000000FF ;!
 Missing character: There is no • in font Adobe Song Std L/ICU:script=latn;lan
 guage=DFLT;mapping=tex-text;color=000000FF ;!
-
-
-Package natbib Warning: Citation `gist1992self' on page 28 undefined on input l
-ine 215.
-
 File: motive-behaviour.pdf Graphic file (type QTm)
-<use  "motive-behaviour.pdf" > [28]
+ <use  "motive-behaviour.pdf" >
+[28]
 Underfull \vbox (badness 5374) has occurred while \output is active []
 
  [29]
-
-Package natbib Warning: Citation `1242608' on page 30 undefined on input line 2
-97.
-
-
 Underfull \vbox (badness 6268) has occurred while \output is active []
 
  [30]
@@ -940,32 +931,12 @@ Underfull \vbox (badness 1377) has occurred while \output is active []
  [35]
 [36] (./contribution.tex
 \plotpoint=\box40
-) [37] [38] [39]
-
-Package natbib Warning: Citation `Lih04wikipediaas' on page 40 undefined on inp
-ut line 664.
-
-
-Package natbib Warning: Citation `1249051' on page 40 undefined on input line 6
-69.
-
-
-Package natbib Warning: Citation `1501445' on page 40 undefined on input line 6
-69.
-
-
-Package natbib Warning: Citation `stvilia2005assessing' on page 40 undefined on
- input line 677.
-
-
-Underfull \vbox (badness 6125) has occurred while \output is active []
-
- [40]
+) [37] [38] [39] [40]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
 LaTeX Font Info:    Font shape `OMX/cmex/m/n' in size <10.54> not available
-(Font)              size <10.95> substituted on input line 707.
+(Font)              size <10.95> substituted on input line 710.
 
 [42] [43] [44]) [45]
 \openout2 = `ch4.aux'.
@@ -1055,32 +1026,37 @@ Underfull \vbox (badness 3058) has occurred while \output is active []
 
 
 ]
-[67] [68] [69] [70] [71] [72] [73] [74]
+[67] [68]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+[70] [71] [72] [73]
 File: factors.pdf Graphic file (type QTm)
- <use  "factors.pdf" > [75] [76]
-Underfull \vbox (badness 2644) has occurred while \output is active []
+ <use  "factors.pdf" > [74] [75] [76]
+Underfull \vbox (badness 6268) has occurred while \output is active []
 
  [77]
-Underfull \vbox (badness 6268) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [78]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [79]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [80]
-[81]
-File: motive1.pdf Graphic file (type QTm)
- <use  "motive1.pdf" >
+[79] [80]
 Underfull \vbox (badness 6268) has occurred while \output is active []
 
+ [81]
+File: motive1.pdf Graphic file (type QTm)
+
+<use  "motive1.pdf" >
+Underfull \vbox (badness 2644) has occurred while \output is active []
+
  [82]
-[83]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [83]
 File: motive2.pdf Graphic file (type QTm)
- <use  "motive2.pdf" >
+
+<use  "motive2.pdf" >
 File: motive3.pdf Graphic file (type QTm)
- <use  "motive3.pdf" > [84]) [85]
+ <use  "motive3.pdf" >) [84] [85]
 \openout2 = `ch6.aux'.
 
  (./ch6.tex
@@ -1099,12 +1075,12 @@ File: io1.pdf Graphic file (type QTm)
 <use  "io1.pdf" >
 File: io2.pdf Graphic file (type QTm)
  <use  "io2.pdf" > [88] [89]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1436) has occurred while \output is active []
 
  [90]
 (./leader.tex) [91] (./expert.tex) (./contributor.tex) (./maintainer.tex)
 [92] (./rider.tex)
-Underfull \vbox (badness 1895) has occurred while \output is active []
+Underfull \vbox (badness 3281) has occurred while \output is active []
 
  [93]
 Underfull \vbox (badness 6412) has occurred while \output is active []
@@ -1121,48 +1097,49 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 6477) has occurred while \output is active []
 
  [104]
-(./rider-sim1.tex) [105]) [106]
+(./rider-sim1.tex) [105] [106] [107] (./suggestion.tex) [108]) [109]
 \openout2 = `ch7.aux'.
 
- (./ch7.tex [107
+ (./ch7.tex [110
 
 
 
-] [108]) [109] (./master.bbl
-[110
+] [111]) [112] (./master.bbl [113
 
 
 ]
-Underfull \hbox (badness 1168) in paragraph at lines 124--128
+Underfull \hbox (badness 1168) in paragraph at lines 119--123
 []\EU1/TimesNewRoman(0)/m/n/10.54 ARDICHVILI A, PAGE V, WENTLING T.  Motivation
  and barriers to participation in vir-
  []
 
-[111] [112] [113] [114] [115] [116] [117] [118] [119]
-Underfull \hbox (badness 3260) in paragraph at lines 873--878
+[114] [115] [116] [117] [118] [119] [120] [121] [122]
+Underfull \hbox (badness 3260) in paragraph at lines 846--851
 []\EU1/TimesNewRoman(0)/m/n/10.54 ZHANG X, ZHU F.   Intrinsic motivation of ope
 n content contributors: The case of
  []
 
-[120] [121] [122]
+[123] [124] [125] [126]
 Missing character: There is no ™ in font Adobe Song Std L/ICU:script=latn;lan
 guage=DFLT;mapping=tex-text;color=000000FF ;!
- [123])
+ [127]
+Underfull \hbox (badness 10000) in paragraph at lines 1246--1249
+[]\EU1/TimesNewRoman(0)/m/n/10.54 BEZROUKOV N.  A Second Look at the Cathedral 
+and the Bazaar[J].
+ []
 
-Package natbib Warning: There were undefined citations.
-
-[124] (./master.aux (./ch1.aux) (./ch2.aux) (./ch3.aux) (./ch4.aux) (./ch5.aux)
-(./ch6.aux) (./ch7.aux))
+) [128] [129] (./master.aux (./ch1.aux) (./ch2.aux) (./ch3.aux) (./ch4.aux)
+(./ch5.aux) (./ch6.aux) (./ch7.aux))
 LaTeX Font Info:    Size substitutions with differences
 (Font)              up to 0.41pt have occurred.
  ) 
 Here is how much of TeX's memory you used:
- 15528 strings out of 494535
- 264425 string characters out of 3161609
- 681752 words of memory out of 3000000
- 18322 multiletter control sequences out of 15000+200000
- 10511 words of font info for 91 fonts, out of 3000000 for 9000
+ 15575 strings out of 494535
+ 265491 string characters out of 3161609
+ 683354 words of memory out of 3000000
+ 18369 multiletter control sequences out of 15000+200000
+ 10495 words of font info for 89 fonts, out of 3000000 for 9000
  669 hyphenation exceptions out of 8191
- 53i,15n,92p,613b,754s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,15n,92p,613b,778s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on master.pdf (128 pages).
+Output written on master.pdf (133 pages).
