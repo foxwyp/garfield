@@ -24,41 +24,22 @@
 
 \centering
 
-\begin{tikzpicture}[node distance=2.5cm]
+\begin{tikzpicture}[node distance=1.5cm]
 
-  \node[entity] (kc) {组织知识协同};
+  \node[attribute] (kc) {组织知识协同能力};
 %一级影响因素
-  \node[attribute] (env) [left of= kc, xshift=-35mm ] {组织环境};
-  \node[attribute] (communication) [above of= env, yshift=20mm ] {沟通能力};
-\node[attribute] (knowledge) [above of= communication,yshift=30mm ] {知识水平};
-\node[attribute] (IT) [below of= env, yshift=-20mm ] {IT基础设施};
-\node[attribute] (control) [below of= IT,yshift=-20mm] {管理控制};
+  \node[entity] (env) [left of= kc, xshift=-15mm ] {$X_1$};
+  \node[entity] (communication) [above of= env, yshift=10mm ] {$X_2$};
+\node[entity] (knowledge) [right of= kc,xshift=15mm,yshift=10mm ] {$X_3$};
+\node[entity] (IT) [below of= env, yshift=-20mm ] {$X_4$};
+\node[entity] (control) [below of= knowledge , yshift=-10mm] {$X_5$};
 
 %二级影响因素
 %env
-\node[attribute] (dao) [left of= env,xshift=-35mm] {知识孤岛};
-\node[attribute] (leader) [below of= dao] {领导示范};
-\node[attribute] (culture) [above of= dao] {组织文化};
+\node[attribute] (dao) [left of= env,xshift=-35mm] {$x_{11}$};
+\node[attribute] (leader) [below of= dao] {$x_{12}$};
+\node[attribute] (culture) [above of= dao] {$x_{13}$};
+\node[attribute] (culture) [above of= dao] {$x_{14}$};
 
-%communication
-\node[attribute] (trust) [left of= communication,xshift=-35mm] {信任};
-\node[attribute] (willingnes) [below of= trust] {协同意愿};
-\node[attribute] (skill) [above of= trust] {沟通技巧};
-
-%knowledge
-\node[attribute] (extent) [left of= knowledge,xshift=-35mm] {知识广度};
-\node[attribute] (currency) [below of= extent] {时新程度};
-\node[attribute] (outside) [above of= extent] {外部资源};
-\node[attribute] (expierence) [above of= outside] {经验};
-\node[attribute] (xxx) [below of= currency] {同行认可};
-%IT
-\node[attribute] (tools) [left of= IT,xshift=-35mm] {协同工具};
-\node[attribute] (platform) [below of= tools] {共享平台};
-\node[attribute] (recommendation) [above of= tools] {专家推荐};
-
-%control
-\node[attribute] (process) [left of= control,xshift=-35mm] {过程控制};
-\node[attribute] (motivation) [below of= process] {激励机制};
-\node[attribute] (strategy) [above of= process] {组织战略};
 \end{tikzpicture}
 \end{document}

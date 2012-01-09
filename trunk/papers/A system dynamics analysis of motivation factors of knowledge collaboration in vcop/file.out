@@ -1,15 +1,28 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}
-\BOOKMARK [1][-]{section.2}{Background and literature review}{}
+\BOOKMARK [1][-]{section.2}{The classification of members in VCoP}{}
 \BOOKMARK [1][-]{section.3}{Motivation factors analysis of knowledge collaboration in virtual community of practice}{}
-\BOOKMARK [2][-]{subsection.3.1}{The classification of uses}{section.3}
-\BOOKMARK [2][-]{subsection.3.2}{Collaborative behavior analysis in virtual community of practice }{section.3}
-\BOOKMARK [2][-]{subsection.3.3}{The analysis of motivation factors to collaboration in the virtual community }{section.3}
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Individual level}{subsection.3.3}
-\BOOKMARK [3][-]{subsubsection.3.3.2}{group level}{subsection.3.3}
-\BOOKMARK [1][-]{section.4}{the modeling process}{}
-\BOOKMARK [2][-]{subsection.4.1}{The motivation factor model of experienced members}{section.4}
-\BOOKMARK [2][-]{subsection.4.2}{motivation factor model of common members}{section.4}
+\BOOKMARK [2][-]{subsection.3.1}{Individual level motivation factors}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.1.1}{ Information value}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Instrumental value}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Extrinsic rewards}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Reciprocity}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.5}{Need for achievement}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.6}{ Need for power}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.7}{ Need for affiliation}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.8}{Self-efficacy}{subsection.3.1}
+\BOOKMARK [2][-]{subsection.3.2}{Group level}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Community identity}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Community attachment}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Community cohesion}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Community satisfaction}{subsection.3.2}
+\BOOKMARK [1][-]{section.4}{The causality of motivation factors and human behavior}{}
+\BOOKMARK [2][-]{subsection.4.1}{The motivation factors model of experienced members}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{The motivation factors model of common members}{section.4}
 \BOOKMARK [1][-]{section.5}{Simulation research }{}
-\BOOKMARK [2][-]{subsection.5.1}{The background of simulation research: wikipedia}{section.5}
-\BOOKMARK [2][-]{subsection.5.2}{The definition of factors in the Wiki system simulation model }{section.5}
-\BOOKMARK [2][-]{subsection.5.3}{Wikipedia系统仿真模型结构优化}{section.5}
+\BOOKMARK [2][-]{subsection.5.1}{The background of simulation research: Wikipedia}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{The elements in the simulation model }{section.5}
+\BOOKMARK [2][-]{subsection.5.3}{The hypothesis and initial parameters of simulation model }{section.5}
+\BOOKMARK [2][-]{subsection.5.4}{System dynamics model of Wikipedia community}{section.5}
+\BOOKMARK [2][-]{subsection.5.5}{The comparison between system simulation results and the historical data of Wikipedia}{section.5}
+\BOOKMARK [1][-]{section.6}{conclusion}{}
+\BOOKMARK [1][-]{section.7}{Acknowledgment}{}
