@@ -1,0 +1,60 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("programming"
+ (filename . "~/document/ebook/programming/")
+ (front-context-string . "Awk\n  drwx---r-x")
+ (rear-context-string . "20 Aug 19 10:19 ")
+ (position . 133))
+("thesis"
+ (filename . "~/document/working papers/papers/thesis")
+ (front-context-string . "thesis\n  drwx---")
+ (rear-context-string . "9K Oct  5 10:28 ")
+ (position . 1110))
+("qq"
+ (filename . "~/document/ebook/docs/My QQ Files/")
+ (front-context-string . "hebe.rmvb\n  -rw-")
+ (rear-context-string . "2G Dec  5 15:14 ")
+ (position . 139))
+("perl"
+ (filename . "~/document/ebook/programming/perl/")
+ (front-context-string . "1930110006.pdf\n ")
+ (rear-context-string . "7M Apr 23  2005 ")
+ (position . 139))
+("fun"
+ (filename . "~/document/ebook/fun/")
+ (front-context-string . "jinyongquanji\n  ")
+ (rear-context-string . "68 Jan 19 09:58 ")
+ (position . 127))
+("downloads"
+ (filename . "~/downloads/")
+ (front-context-string . "犯罪心理四季全\n  drwxr-")
+ (rear-context-string . "04 Dec 22 16:20 ")
+ (position . 913))
+("R"
+ (filename . "~/document/ebook/programming/R/")
+ (front-context-string)
+ (rear-context-string . "6M Aug  9  2007 ")
+ (position . 1979))
+("papers"
+ (filename . "~/document/papers/")
+ (front-context-string . ".svn\n  drwx---r-")
+ (rear-context-string . "009-04-22 20:22 ")
+ (position . 244))
+("music"
+ (filename . "~/document/music/")
+ (front-context-string . "CDImage.cue\n  -r")
+ (rear-context-string . "006-06-10 15:35 ")
+ (position . 3091))
+("latex"
+ (filename . "~/document/ebook/computer science/latex/")
+ (front-context-string . "document class\n ")
+ (rear-context-string . "009-04-22 20:03 ")
+ (position . 265))
+("working"
+ (filename . "~/document/working papers/papers/")
+ (front-context-string . ".svn\n  drwx---r-")
+ (rear-context-string . "009-11-09 10:40 ")
+ (position . 246))
+)

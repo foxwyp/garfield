@@ -1,0 +1,36 @@
+#+STARTUP: overview
+#+TAGS:  code(c) reading(r)  library(l) paper(p) fun(f) someday(s)
+#+STARTUP: hidestars
+#+SEQ_TODO: TODO(t) STARTED(s!) WAITING(w) APPT(a) | DONE(d!) CANCELLED(c) DEFERRED(f@/!)
+#+PROPERTY: Effort_ALL 0 0:10 0:20 0:30 1:00 2:00 4:00 6:00 8:00
+#+COLUMNS: %40ITEM(Task) %8PRIORITY(Priority) %15Effort(Estimated Effort){:} %8CLOCKSUM %TAGS(Tags)
+
+
+* Tasks
+** TODO Take a glance over "On Communication"			    :reading:
+** STARTED copy "option, future and derivitives"
+   - State "STARTED"    from ""           [2010-01-10 Sun 14:12]
+** How Reputation Affects Knowledge Sharing Among Colleagues	    :library:
+* Projects
+** knowledge collaboration measurement
+*** TODO [#A] complete impact factors section			      :paper:
+    - State "TODO"       from "STARTED"    [2009-12-11 Fri 15:35]
+    - State "STARTED"    from "TODO"       [2009-12-11 Fri 15:35]
+    - State "TODO"       from "STARTED"    [2009-12-11 Fri 15:34]
+    :PROPERTIES:
+    :Effort:   6:00
+    :END:
+*** DONE complete matrix compute				      :paper:
+    CLOSED: [2010-01-10 Sun 22:43]
+    - State "DONE"       from "STARTED"    [2010-01-10 Sun 22:43]
+    - State "STARTED"    from ""           [2010-01-10 Sun 10:01]
+*** DONE complete diagram of all weights			      :paper:
+    CLOSED: [2010-01-10 Sun 22:44]
+    - State "DONE"       from ""           [2010-01-10 Sun 22:44]
+*** finish team comparison based on impactor knowledge level	      :paper:
+*** finish draft 1 						      :paper:
+* Fun
+** DONE Watch detective conan					    :someday:
+   CLOSED: [2009-12-13 Sun 15:39]
+   - State "DONE"       from "APPT"       [2009-12-13 Sun 15:39]
+   - State "STARTED"    from "TODO"       [2009-12-13 Sun 15:39]
