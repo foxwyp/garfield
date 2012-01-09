@@ -174,6 +174,7 @@
      "tice1993social"
      "clark1956hope"
      "atkinson1953achievement"
+     "mcclelland1976am"
      "stajkovic2009collective"
      "gist1987self"
      "festinger1957theory"
@@ -187,8 +188,9 @@
      "deci2001need"
      "tedjamulia2005motivating")
     (TeX-add-symbols
-     '("doi" 1)
-     '("url" 1)
-     '("natexlab" 1)
-     "doi")))
+     '("eprint" ["argument"] 1)
+     '("bibAnnote" 2)
+     '("bibAnnoteFile" 1)
+     "url"
+     "urlprefix")))
 
