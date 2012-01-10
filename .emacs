@@ -1,42 +1,187 @@
-;;;chinese
-(setq ascii-font 
-   "-outline-Courier New-normal-r-normal-normal-13-97-96-96-c-*-iso8859-1") 
-(setq chinese-font 
-  "-outline-ĞÂËÎÌå-normal-r-normal-normal-16-*-96-96-c-*-iso10646-1") 
-(defun zw-set-font (en-font cn-font) 
-  (create-fontset-from-fontset-spec 
-   (replace-regexp-in-string "iso8859-1" "fontset-zw" en-font)) 
-  (set-fontset-font "fontset-zw" 'gb18030 cn-font) 
-  (set-fontset-font "fontset-zw" 'latin en-font) 
-  (set-fontset-font "fontset-default" 'gb18030 cn-font) 
-  (set-fontset-font "fontset-default" 'latin en-font) 
-  (set-default-font "fontset-zw") 
-  (setq default-frame-alist 
-        (append '((font . "fontset-zw")) default-frame-alist))) 
+(add-to-list 'load-path "~/.emacs.d/")
+(setq load-path (append load-path '("~/.emacs.d")))
 
-(zw-set-font ascii-font chinese-font) 
+;;bookmark
+
+;; ä¹¦ç­¾æ–‡ä»¶çš„è·¯å¾„åŠæ–‡ä»¶å
+(setq bookmark-default-file "~/.emacs.d/.emacs.bmk")
+
+;; åŒæ­¥æ›´æ–°ä¹¦ç­¾æ–‡ä»¶ ;; æˆ–è€…é€€å‡ºæ—¶ä¿å­˜
+(setq bookmark-save-flag 1)
+;;EMMS
+(require 'init-emms)
+(require 'emms-extension)
+
+;;save buffer location
+(require 'saveplace)
+(setq-default save-place t)
+;; Put this file into your load-path and the following into your ~/.emacs:
+
+;; (require 'desktop-recover)
+;; ;; optionallly:
+
+; (setq desktop-recover-location
+
+; (desktop-recover-fixdir "$HOME/.emacs.d/")) ;; ~/.emacs.d is the default
+;; Something like this is highly recommended:
+; (prefer-coding-system 'utf-8)
+;; ;; Brings up the interactive buffer restore menu
+; (desktop-recover-interactive)
+;; ;; Note that after using this menu, your desktop will be saved
+;; ;; automatically (triggered by the auto-save mechanism).
 
 
-(set-language-environment "Chinese-GB18030") 
-(setq file-name-coding-system 'gb18030) 
+(require 'unicad)
 
-;;;set load path
-;;;(setq load-path (append load-path '("~\.emacs.d")))
+;(require 'sunrise-commander) 
+					;(require 'sunrise-x-buttons) 
 
-;;;ÎªÊ²Ã´²»ÄÜÏÔÊ¾¸öÊ±¼äÊ²Ã´µÄ
+					;(require 'saveplace)
+					;(setq-default save-place t)
+
+					;(setq-default desktop-load-default t) 
+
+
+					;(desktop-save-mode 1)
+;; Customization follows below
+					;   (setq history-length 250)
+					;  (add-to-list 'desktop-globals-to-save 'file-name-history)
+
+;;(load-library "vc-svn")
+(add-to-list 'vc-handled-backends 'SVN)
+
+
+
+;;auto fill buffer 
+
+ (add-hook 'text-mode-hook 'turn-on-auto-fill)
+;; (setq-default auto-fill-function 'do-auto-fill)
+
+(require 'zenburn)
+(color-theme-zenburn)
+
+;å­—ä½“è®¾ç½®
+				
+(set-default-font "DejaVu Sans Mono:pixelsize=15")
+(set-fontset-font "fontset-default" 'han '("Microsoft Yahei" . "unicode-bmp"))
+
+
+
+;;å‰ªåˆ‡æ¿
+(setq x-select-enable-clipboard t)
+
+(set-scroll-bar-mode nil)
+
+(tool-bar-mode nil)
+
 (display-time)
 
-;;;ÎªÊ²Ã´²»ÏÔÊ¾µ±Ç°ËùÔÚµÄĞĞºÅºÍÁĞºÅ
-(column-number-mode t)
-(require 'setnu)
-(setnu-mode t)
-(global-set-key [f3] (quote setnu-mode))
+(setq inhibit-startup-message t)
 
-;;;flyspell
-(add-hook 'LaTex-load-hook 'flyspell-mode)
-(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
-(setq-default ispell-program-name "aspell")
-(setq-default ispell-local-dictionary "american")
+(setq gnus-inhibit-startup-message t)
+
+(global-set-key (kbd "M-g") 'goto-line)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(show-paren-mode t)
+
+(column-number-mode t)
+
+(setq version-control t)
+(setq kept-new-versions 3)
+(setq delete-old-versions t)
+(setq kept-old-versions 2)
+(setq dired-kept-versions 1)
+
+
+(setq kill-ring-max 200)
+
+
+(setq calendar-latitude +39.54)
+(setq calendar-longitude +116.28)
+(setq calendar-location-name "åŒ—äº¬")
+
+
+;;é˜´å†
+					; (require 'cal-china-x)
+
+
+
+;; åˆ·æ–°æ–‡ä»¶ã€‚
+(global-set-key (kbd "C-c u") 'revert-buffer)
+
+;; é€’å½’çš„å¤åˆ¶å’Œåˆ é™¤ç›®å½•ã€‚
+(setq dired-recursive-copies 'top)
+(setq dired-recursive-deletes 'top)
+
+(setq dired-listing-switches "-lh")
+
+(add-hook 'dired-mode-hook (lambda ()
+			     (interactive)
+			     (make-local-variable  'dired-sort-map)
+			     (setq dired-sort-map (make-sparse-keymap))
+			     (define-key dired-mode-map "s" dired-sort-map)
+			     (define-key dired-sort-map "s"
+			       '(lambda () "sort by Size"
+				  (interactive) (dired-sort-other (concat dired-listing-switches "S"))))
+			     (define-key dired-sort-map "x"
+			       '(lambda () "sort by eXtension"
+				  (interactive) (dired-sort-other (concat dired-listing-switches "X"))))
+			     (define-key dired-sort-map "t"
+			       '(lambda () "sort by Time"
+				  (interactive) (dired-sort-other (concat dired-listing-switches "t"))))
+			     (define-key dired-sort-map "n"
+			       '(lambda () "sort by Name"
+				  (interactive) (dired-sort-other (concat dired-listing-switches ""))))))
+
+;; sort:directories first (emacswiki Ã‰ÃÃ„Â³Å¸Ã½Ã–Â®Ã—Ã·)
+(defun his-dired-sort ()
+  "Dired sort hook to list directories first."
+  (save-excursion
+    (let (buffer-read-only)
+      (forward-line 2) ;; beyond dir. header
+      (sort-regexp-fields t "^.*$" "[ ]*." (point)
+                          (point-max))))
+  (and (featurep 'xemacs)
+       (fboundp 'dired-insert-set-properties)
+       (dired-insert-set-properties (point-min) (point-max)))
+  (set-buffer-modified-p nil))
+(add-hook 'dired-after-readin-hook 'his-dired-sort)
+
+
+;;ÃÂªÃŠÂ²ÃƒÅ½Â²Â»Ã„ÃœÃÃ±WindowsÃÃ‚Â±Ã Å’Â­Ã†Ã·Ã„Ã‡Ã‘Ã¹, Å¾ÃŸÃÃÃÃ”ÃŠÅ¸Ã’ÂªÂ¿Å“Â±Å½ÂµÃ„Ã‡Ã¸Ã“Ã²
+
+(transient-mark-mode t)
+
+;;dired
+(require 'dired-x nil t)
+(add-to-list 'dired-guess-shell-alist-default '("\\.avi$" "smplayer * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.rm" "smplayer * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.rmvb$" "smplayer * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.pdf$" "acroread * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.chm$" "chmsee * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.doc$" "soffice * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.xls$" "soffice * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.ppt$" "soffice * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.odf$" "soffice * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.odt$" "soffice * &"))
+(add-to-list 'dired-guess-shell-alist-default '("\\.ods$" "soffice * &"))
+
+;;ÃÃ’Ã’ÂªÃÃ”ÃŠÅ¸Ã†Â¥Ã…Ã¤ÂµÃ„Ã€Å¡ÂºÃ…
+
+
+
+(require 'ido)
+(ido-mode t)
+
+
+(require 'tabbar)
+(tabbar-mode)
+(global-set-key (kbd "M--") 'tabbar-backward-group)
+(global-set-key (kbd "M-=") 'tabbar-forward-group)
+(global-set-key (kbd "M-1") 'tabbar-backward)
+(global-set-key (kbd "M-2") 'tabbar-forward) 
 
 
 ;;;auctex
@@ -47,28 +192,32 @@
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill) 
 
+(add-hook 'LaTeX-mode-hook(lambda()
+					;(define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
+                            (TeX-PDF-mode t)
+                            (setq TeX-save-query  nil )
+                            (setq TeX-show-compilation t)
+                            ))
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(display-time-mode t)
+ '(org-agenda-files (quote ("~/.emacs.d/org-mode/fox.org")))
+ '(show-paren-mode t))
 
-;;;version control
-(setq version-control t)
-(setq kept-new-versions 3)
-(setq delete-old-versions t)
-(setq kept-old-versions 2)
-(setq dired-kept-versions 1)
 
-;; ÎÒ³ĞÈÏÎÒ³£³£É¾³ıÖØÒªµÄ¶«Î÷£¬200Ò²²»Ò»¶¨¹»µÄ
-(setq kill-ring-max 200)
+'(org-agenda-files (quote ("~/fox.org")))
 
-;; ÏëÔÚÊäÈëtexÃüÁîÊ±µÃµ½°ïÖúÂğ
 (setq  TeX-electric-escape t)
-
-;; ºÜÈİÒ×ÊäÈëÊıÑ§·ûºÅ£¬µ«Ã»ÓĞcdlatexÇ¿
 (setq LaTeX-math-mode t) 
 
-;; ÔÚ±à¼­texÊ±×Ô¶¯µ÷ÓÃpreview-latex
+(load "preview-latex.el" nil t t)
 (autoload 'LaTeX-preview-setup "preview")
 (add-hook 'LaTeX-mode-hook #'LaTeX-preview-setup)
 
-;;;·´ÏòËÑË÷
 (setq TeX-source-specials-mode t)
 
 ;;;reftex
@@ -77,207 +226,195 @@
 (add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
 (setq reftex-section-levels 
       '(("part" . 0) ("chapter" . 1) ("section" . 2) ("subsection" . 3)
-       ("subsubsection" . 4)  ("paragraph" . 5)
+	("subsubsection" . 4)  ("paragraph" . 5)
         ("subparagraph" . 6)  ("frametitle" . 4)  ("addchap" . -1) ("addsec" . -2)))
-;;ÉèÖÃÕÂ½Ú²ã´Î
 
 
-;; ÈÃemacsÄÜ¼ÆËãÈÕ³öÈÕÂäµÄÊ±¼ä£¬ÔÚ calendar ÉÏÓÃ S ¼´¿É¿´µ½
-(setq calendar-latitude +39.54)
-(setq calendar-longitude +116.28)
-(setq calendar-location-name "±±¾©")
 
-;; ÉèÖÃÒõÀúÏÔÊ¾£¬ÔÚ calendar ÉÏÓÃ pC ÏÔÊ¾ÒõÀú
-(setq chinese-calendar-celestial-stem
-  ["¼×" "ÒÒ" "±û" "¶¡" "Îì" "¼º" "¸ı" "ĞÁ" "ÈÉ" "¹ï"])
-(setq chinese-calendar-terrestrial-branch
-  ["×Ó" "³ó" "Òú" "Ã®" "³½" "ËÈ" "Îì" "Î´" "Éê" "ÓÏ" "Ğç" "º¥"])
-  
-;; ÉèÖÃ calendar µÄÏÔÊ¾
-(setq calendar-remove-frame-by-deleting t)
-(setq calendar-week-start-day 1)            ; ÉèÖÃĞÇÆÚÒ»ÎªÃ¿ÖÜµÄµÚÒ»Ìì
-(setq mark-diary-entries-in-calendar t)     ; ±ê¼ÇcalendarÉÏÓĞdiaryµÄÈÕÆÚ
-(setq mark-holidays-in-calendar nil)        ; ÎªÁËÍ»³öÓĞdiaryµÄÈÕÆÚ£¬calendarÉÏ²»±ê¼Ç½ÚÈÕ
-(setq view-calendar-holidays-initially nil) ; ´ò¿ªcalendarµÄÊ±ºò²»ÏÔÊ¾Ò»¶Ñ½ÚÈÕ 
+;; Define a count of the number of words in a highlighted region and bind to F6
+;; Handy for forms with word limits and titles with character limits
+(defun word-count (start end)
+  (interactive "r")
+  (let ((words 0) (lines 0) (chars 0))
+    (save-excursion
+      (goto-char start)
+      (while (< (point) end) (forward-word 1) (setq words (1+ words))))
+    (setq lines (count-lines start end) chars (- end start))
+    (message "Region has  %d lines;   %d words;   %d characters."
+             lines words chars)))
+(global-set-key [f6] 'word-count)
 
-;; È¥µô²»¹ØĞÄµÄ½ÚÈÕ£¬Éè¶¨×Ô¼ºÔÚÒâµÄ½ÚÈÕ£¬ÔÚ calendar ÉÏÓÃ h ÏÔÊ¾½ÚÈÕ
-(setq christian-holidays nil)
-(setq hebrew-holidays nil)
-(setq islamic-holidays nil)
-(setq solar-holidays nil)
-(setq general-holidays '((holiday-fixed 1 1 "Ôªµ©")
-                         (holiday-fixed 2 14 "ÇéÈË½Ú")
-                         (holiday-fixed 3 14 "°×É«ÇéÈË½Ú")
-                         (holiday-fixed 4 1 "ÓŞÈË½Ú")
-                         (holiday-fixed 5 1 "ÀÍ¶¯½Ú")
-                         (holiday-float 5 0 2 "Ä¸Ç×½Ú")
-                         (holiday-fixed 6 1 "¶ùÍ¯½Ú")
-                         (holiday-float 6 0 3 "¸¸Ç×½Ú")
-                         (holiday-fixed 7 1 "½¨µ³½Ú")
-                         (holiday-fixed 8 1 "½¨¾ü½Ú")
-                         (holiday-fixed 9 10 "½ÌÊ¦½Ú")
-                         (holiday-fixed 10 1 "¹úÇì½Ú")
-                         (holiday-fixed 12 25 "Ê¥µ®½Ú")))
-						 
-						 
-		
+(setq-default ispell-program-name "aspell")
 
+;;cc-mode
+(autoload 'awk-mode "cc-mode" nil t)
 
-;; user shell to execute the file
-(defun w32-browser (doc)
-  "Browse to a particular file/URL using default web browser"
-  (w32-shell-execute 1 doc))
+					;python mode
+(autoload 'python-mode "python-mode.el" "Python mode." t)
+(setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 
-(eval-after-load "dired"
-  '(define-key dired-mode-map [f3] (lambda () 
-				     (interactive)
-				     (w32-browser
-				      (dired-replace-in-string 
-				       "/" "\\" 
-				       (dired-get-filename))))))
+					;(put 'scroll-left 'disabled nil)
 
- ; ¿ÉÒÔµİ¹éµÄÉ¾³ıÄ¿Â¼
-(setq dired-recursive-deletes t)
-; ¿ÉÒÔµİ¹éµÄ½øĞĞ¿½±´
-(setq dired-recursive-copies t)  
+;;--------------------------------------------------------------------
+;; Lines enabling gnuplot-mode
 
-;   1. s s °´ÕÕÎÄ¼ş´óĞ¡ÅÅĞò¡£
-;   2. s x °´ÕÕÎÄ¼şÀ©Õ¹ÃûÅÅĞò¡£
-;   3. s t °´ÕÕÎÄ¼ş·ÃÎÊÊ±¼äÅÅĞò¡£
-;   4. s b °´ÕÕÎÄ¼şÃû³ÆµÄ×ÖÄ¸Ë³ĞòÅÅĞò¡£
+;; move the files gnuplot.el to someplace in your lisp load-path or
+;; use a line like
+;;  (setq load-path (append (list "/path/to/gnuplot") load-path))
 
-(add-hook 'dired-mode-hook (lambda ()
-  (interactive)
-  (make-local-variable  'dired-sort-map)
-  (setq dired-sort-map (make-sparse-keymap))
-  (define-key dired-mode-map "s" dired-sort-map)
-  (define-key dired-sort-map "s"
-              '(lambda () "sort by Size"
-                (interactive) (dired-sort-other (concat dired-listing-switches "S"))))
-  (define-key dired-sort-map "x"
-              '(lambda () "sort by eXtension"
-                 (interactive) (dired-sort-other (concat dired-listing-switches "X"))))
-  (define-key dired-sort-map "t"
-              '(lambda () "sort by Time"
-                 (interactive) (dired-sort-other (concat dired-listing-switches "t"))))
-  (define-key dired-sort-map "n"
-              '(lambda () "sort by Name"
-                 (interactive) (dired-sort-other (concat dired-listing-switches ""))))))
+;; these lines enable the use of gnuplot mode
+(autoload 'gnuplot-mode "gnuplot" "gnuplot major mode" t)
+(autoload 'gnuplot-make-buffer "gnuplot" "open a buffer in gnuplot mode" t)
 
-;;ÎªÊ²Ã´²»ÄÜÏñWindowsÏÂ±à¼­Æ÷ÄÇÑù, ¸ßÁÁÏÔÊ¾Òª¿½±´µÄÇøÓò
+;; this line automatically causes all files with the .gp extension to
+;; be loaded into gnuplot mode
+(setq auto-mode-alist (append '(("\\.gp$" . gnuplot-mode)) auto-mode-alist))
 
-(transient-mark-mode t)
+;; This line binds the function-9 key so that it opens a buffer into
+;; gnuplot mode 
+(global-set-key [(f9)] 'gnuplot-make-buffer)
 
-;;ÎÒÒªÏÔÊ¾Æ¥ÅäµÄÀ¨ºÅ
-
-(show-paren-mode t)
-
-(require 'ido)
-(ido-mode t)
-
-(load-file "~/.emacs.d/site/tabbar.el")
-(require 'tabbar)
-(tabbar-mode)
-(global-set-key (kbd "M--") 'tabbar-backward-group)
-(global-set-key (kbd "M-=") 'tabbar-forward-group)
-(global-set-key (kbd "M-1") 'tabbar-backward)
-(global-set-key (kbd "M-2") 'tabbar-forward) 
+;; end of line for gnuplot-mode
+;;--------------------------------------------------------------------
 
 
-;; Load CEDET
-(load-file "~/.emacs.d/cedet-1.0pre4/common/cedet.el")
 
-;; Enabling various SEMANTIC minor modes.  See semantic/INSTALL for more ideas.
-;; Select one of the following:
 
-;; * This enables the database and idle reparse engines
-;;(semantic-load-enable-minimum-features)
 
-;; * This enables some tools useful for coding, such as summary mode
-;;   imenu support, and the semantic navigator
-(semantic-load-enable-code-helpers)
+;;; turn on syntax hilighting
+(global-font-lock-mode 1)
 
-;; * This enables even more coding tools such as the nascent intellisense mode
-;;   decoration mode, and stickyfunc mode (plus regular code helpers)
-;; (semantic-load-enable-guady-code-helpers)
 
-;; * This turns on which-func support (Plus all other code helpers)
-;; (semantic-load-enable-excessive-code-helpers)
 
-;; This turns on modes that aid in grammar writing and semantic tool
-;; development.  It does not enable any other features such as code
-;; helpers above.
-;; (semantic-load-enable-semantic-debugging-helpers)
-(global-set-key [(f5)] 'speedbar)
+(add-to-list 'auto-mode-alist '("\\.groovy\\'" . groovy-mode))
+(autoload 'groovy-mode "groovy" nil t)
 
-;;; jdee
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site/jde/lisp"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/site/elib"))
-  (require 'jde)
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(ecb-options-version "2.32")
- '(ecb-source-path (quote ("e:/spps" "e:/paper.trunk" "e:/paper.trunk")))
- '(ecb-tar-setup (quote cons))
- '(jde-jdk-registry (quote (("1.6.0" . "D:\\Program Files\\Java\\jdk1.6.0_03"))))
- '(truncate-partial-width-windows nil))
+
+;(load "/usr/share/emacs/site-lisp/ess/ess-site")
+
+
+					; automatically get the correct mode 
+auto-mode-alist (append (list '("\\.c$" . c-mode)
+			      
+			      '("\\.S$" . S-mode)
+			      '("\\.s$" . S-mode)
+			      '("\\.R$" . R-mode)
+			      '("\\.r$" . R-mode)
+			      '("\\.html$" . html-mode)
+					;l '("\\.emacs" . emacs-lisp-mode)
+			      )
+			auto-mode-alist)
+
+
+
+
+(setq-default inferior-S+6-program-name "Splus")
+(setq-default inferior-R-program-name "R")
+
+;;lua-mode
+(setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+
+;;maxima
+
+(setq load-path (cons "/usr/share/maxima/5.17.1/emacs" load-path))
+(autoload 'dbl "dbl")
+
+
+;;; add autoload of imaxima and maxima.
+
+(autoload 'imaxima "imaxima" "Frontend for maxima with Image support" t)
+
+(autoload 'maxima "maxima" "Frontend for maxima" t)
+
+;;; add autoload of imath.
+
+(autoload 'imath-mode "imath" "Imath mode for math formula input" t)
+
+
+;;; Make the line effective if you want to use maxima mode with imaxima.
+
+;; (setq imaxima-use-maxima-mode-flag t)
+
+
+
+;;graphviz
+					; Commentary:
+;; Use this mode for editing files in the dot-language (www.graphviz.org and
+;; http://www.research.att.com/sw/tools/graphviz/).
+;;
+;; To use graphviz-dot-mode, add
+(load-file "~/.emacs.d/graphviz-dot-mode.el")
+;; to your .emacs or ~/.xemacs/init.el
+;;
+;; The graphviz-dot-mode will do font locking, indentation, preview of graphs
+;; and eases compilation/error location. There is support for both GNU Emacs
+;; and XEmacs.
+;;
+;; Font locking is automatic, indentation uses the same commands as
+;; other modes, tab, M-j and C-M-q. Insertion of comments uses the
+;; same commands as other modes, M-; . You can compile a file using
+;; M-x compile or C-c c, after that M-x next-error will also work.
+;; There is support for viewing an generated image with C-c p.
+
+;;org-mode
+;; The following lines are always needed.  Choose your own keys.
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(add-hook 'org-mode-hook 'turn-on-font-lock)  ; 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 121 :width normal :foundry "microsoft" :family "å¾®è½¯é›…é»‘")))))
+
+
+
+(defun gtd ()
+   (interactive)
+   (find-file "~/.emacs.d/org-mode/fox.org")
  )
+ (setq org-log-done 'time)
 
- 
- ;;cc-mode
- (autoload 'awk-mode "cc-mode" nil t)
- 
- ;;cscope
- (add-to-list 'load-path (expand-file-name "~/.emacs.d/site/xcscope"))
-(require 'xcscope) 
 
-;;;groovy-mode
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site/groovy"))
-;;; turn on syntax hilighting
-(global-font-lock-mode 1)
 
-;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
-(autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
-(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
-(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
-;;for sage
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site/sage"))
+;;; This was installed by package-install.el.
+;;; This provides support for the package system and
+;;; interfacing with ELPA, the package archive.
+;;; Move this code earlier if you want to reference
+;;; packages in your .emacs.
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
 
-(load "pyrex-mode")
-(load "python-mode")
-(setq ipython-command "~/bin/sage")  ;; depends on where your sage is.
-(load "sage") 
-(require 'ipython)
 
-(fset 'py-shell-fullscreen
-   [?\M-x ?p ?y ?- ?s ?h ?e ?l ?l return ?\C-x ?1])
-(define-key esc-map "i" 'py-shell-fullscreen)
+(add-to-list 'load-path (expand-file-name "/home/fox/code/lisp/emacs-eclim"))
 
-(setq auto-mode-alist (cons '("\\.pyx\\'" . pyrex-mode) auto-mode-alist)) 
-(setq auto-mode-alist (cons '("\\.pxd\\'" . pyrex-mode) auto-mode-alist)) 
-(setq auto-mode-alist (cons '("\\.pxi\\'" . python-mode) auto-mode-alist)) 
+				;	(require 'eclim)
 
-;;yasnippet
-(add-to-list 'load-path
-             "~/.emacs.d/site/yasnippet-0.2.1")
-(require 'yasnippet-bundle)
+				;	(setq eclim-auto-save t)
+				;	(global-eclim-mode)
 
-;;ECB
-(add-to-list 'load-path
-             "~/.emacs.d/site/ecb-2.32")
-(require 'ecb-autoloads)
+ ;(load "/usr/share/emacs/site-lisp/nxhtml/autostart.elc")
 
-;;javascript
-(load-file "~/.emacs.d/site/javascript.el")
-(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
-(autoload 'javascript-mode "javascript" nil t)
+(add-to-list 'load-path "~/.emacs.d/emacs-jabber-0.8.0")
+(require 'jabber-autoloads)
+  (setq jabber-account-list
+    '(("foxwu718@gmail.com" 
+       (:network-server . "talk.google.com")
+       (:connection-type . ssl))))
 
+
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
+(ac-config-default)
+
+(add-to-list 'load-path "~/.emacs.d/ajc-java-complete") 
+(require 'ajc-java-complete-config)
+
+ (global-auto-revert-mode 1)
